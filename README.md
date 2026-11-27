@@ -16,7 +16,7 @@
 
 ## 快速开始
 
-在本仓库中打开 Codex 会话，直接指定 `qnx-llm-wiki` Skill。`wiki/` 已初始化，目前还没有入库的知识页。
+在本仓库中打开 Codex 会话，直接指定 `qnx-llm-wiki` Skill。**这里安装的是 1 个 Skill；Init、Ingest、Query、Lint 是它内部的 4 种操作，不是 4 个独立的 Skill 或斜杠命令。** `wiki/` 已初始化，目前还没有入库的知识页。
 
 ### 0. Init：建立空 Wiki
 
