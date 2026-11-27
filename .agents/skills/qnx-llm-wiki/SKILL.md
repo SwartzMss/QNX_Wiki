@@ -1,6 +1,6 @@
 ---
 name: qnx-llm-wiki
-description: "Use when the user asks to ingest QNX documentation from this project's existing raw/ HTML archive, build or query a QNX LLM wiki, or lint that wiki."
+description: "Use when the user asks to initialize, ingest, query, or lint this project's QNX LLM wiki using its existing raw/ HTML archive."
 ---
 
 # QNX LLM Wiki
@@ -25,16 +25,16 @@ Three layers, all under the user's project root:
 
 Templates live in `references/` relative to this file. Read them when you need the exact format for raw files, articles, archive pages, or the index.
 
-### Initialization
+## Init
 
-Triggers only on the first Ingest. Check whether `raw/` and `wiki/` exist. Create only what is missing; never overwrite existing files:
+When the user asks to initialize the wiki, check that `raw/` and `raw/manifest.tsv` exist, then create only missing wiki structure:
 
-- `raw/` directory (with `.gitkeep`)
-- `wiki/` directory (with `.gitkeep`)
 - `wiki/index.md` — heading `# Knowledge Base Index`, empty body
 - `wiki/log.md` — heading `# Wiki Log`, empty body
 
-If Query or Lint cannot find the wiki structure, tell the user: "Run an ingest first to initialize the wiki." Do not auto-create.
+Do not overwrite existing files, ingest sources, create topic articles, or alter `raw/`. Repeated Init is a no-op when both files already exist. If one file exists, create only the missing file; report the resulting state. When a new `wiki/log.md` is created, append `## [YYYY-MM-DD] init | wiki initialized` once. An explicit Ingest may perform this same initialization first if Init has not been run.
+
+If Query or Lint cannot find the wiki structure, tell the user to run Init or Ingest. Query on an initialized but empty wiki reports that no knowledge has been ingested yet; it does not create articles.
 
 ## The Grounding Invariant
 
@@ -44,7 +44,7 @@ Every load-bearing fact in wiki/ — numbers, dates, direct quotes — must be s
 
 ## Ingest
 
-For an existing QNX source, read it in raw/ and compile it into wiki/ only if it adds something useful. Fetch only newly supplied sources. Ingest a user-selected page or bounded chapter set; do not treat the 730 archived HTML pages as one automatic batch. Whether to compile depends on the triage below.
+Ensure Init has run, then read an existing QNX source in raw/ and compile it into wiki/ only if it adds something useful. Fetch only newly supplied sources. Ingest a user-selected page or bounded chapter set; do not treat the 730 archived HTML pages as one automatic batch. Whether to compile depends on the triage below.
 
 ### Fetch (raw/)
 
@@ -118,6 +118,12 @@ Omit `- Updated:` lines when no cascade updates occur. For No material, log and 
 ```
 
 The exact no-material heading is the machine-readable inventory key; the Disposition line remains required for a complete human-readable log entry.
+
+### Check This Ingest
+
+Before finishing each Ingest that creates or updates articles, automatically check every touched article, including cascade updates. Verify its `Raw` paths, wiki links, index entry, and `Updated` date. Run `scripts/check_evidence.py` with those article paths and inspect the reported fidelity suspects and evidence errors against the cited raw text. Fix safe structural mistakes and factual mistakes with clear source evidence; report unresolved questions. The script also prints a global unreferenced-raw inventory; treat that as backlog, not as a failure of this ingest. Summarize the check in the response without adding a separate Lint log entry. A No material ingest only needs its required log entry and no article check.
+
+This scoped check is part of Ingest. The full-wiki Lint below remains available on request for cross-article consistency and maintenance.
 
 ### Research (multi-source ingest)
 
@@ -230,4 +236,4 @@ Append to `wiki/log.md`:
 - wiki/ supports one level of topic subdirectories only. No deeper nesting.
 - Today's date for log entries, Collected dates, and Archived dates. Updated dates reflect when the article's knowledge content last changed. Published dates come from the source (use `Unknown` when unavailable).
 - Inside wiki/ files, all markdown links use paths relative to the current file. In conversation output, use project-root-relative paths (e.g., `wiki/topic/article.md`).
-- Ingest updates both `wiki/index.md` and `wiki/log.md` (a No material ingest updates only the log). Archive (from Query) updates both. Lint updates `wiki/log.md` (and `wiki/index.md` only when auto-fixing index entries). Plain queries do not write any files.
+- Init creates only missing wiki scaffolding. Ingest updates both `wiki/index.md` and `wiki/log.md` (a No material ingest updates only the log) and checks touched articles before finishing. Archive (from Query) updates both. Full Lint updates `wiki/log.md` (and `wiki/index.md` only when auto-fixing index entries). Plain queries do not write any files.
