@@ -1,0 +1,283 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us" data-whc_version="26.0">
+    <head><link rel="shortcut icon" href="../../oxygen-webhelp/template/images/favicon.png"/><link rel="icon" href="../../oxygen-webhelp/template/images/favicon.png"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="description" content="Architecting a QNX OS application as a team of cooperating threads and processes via Send/Receive/Reply results in a system that uses synchronous notification. IPC thus occurs at specified transitions within the system, rather than asynchronously."/><meta name="keywords" content="robustness, of implementations with Send/Receive/Reply, QNX SDP, 8.0, System Architecture, Developer, User"/><meta name="indexterms" content="robustness of implementations with Send/Receive/Reply; "/>        
+      <title>Robust implementations with Send/Receive/Reply</title><!--  Generated with Oxygen version 26.0, build number 2023100510.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="Robust-d114126e6554"/><meta name="wh-source-relpath" content="com.qnx.doc.neutrino.sys_arch/topic/ipc_Robust.xml"/><meta name="wh-out-relpath" content="com.qnx.doc.neutrino.sys_arch/topic/ipc_Robust.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/commons.css?buildId=2023100510"/>
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic.css?buildId=2023100510"/>
+
+    <script src="../../oxygen-webhelp/app/options/properties.js?buildId=20261105112733"></script>
+    <script src="../../oxygen-webhelp/app/localization/strings.js?buildId=2023100510"></script>
+    <script src="../../oxygen-webhelp/app/search/index/keywords.js?buildId=20261105112733"></script>
+    <script defer="defer" src="../../oxygen-webhelp/app/commons.js?buildId=2023100510"></script>
+    <script defer="defer" src="../../oxygen-webhelp/app/topic.js?buildId=2023100510"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/css/qnx-webhelp.css?buildId=2023100510"/></head>
+
+    <body id="Robust" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid" id="wh_header_container">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../../index.html" class=" wh_logo d-none d-sm-block "><img src="../../oxygen-webhelp/template/images/QNX-Logo-CORAL-RGB.png" alt=""/></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="title"></span></a></div>
+                    
+                </div>
+
+                
+            </div>
+
+            <div class="wh_nav_and_search">
+                <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                    
+                    
+                    <div class=" wh_indexterms_link "><a href="../../indexTerms.html" title="Index" aria-label="Go to index terms page"><span>Index</span></a></div>
+                    
+                </div>
+                <div class=" wh_search_input navbar-form wh_main_page_search search " role="form">
+                    
+                    
+
+                    
+                    <form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+
+                    <!-- Link to Advanced search page on qnx.com -->
+                    <div id="advanced_search" title="Search all Blackberry QNX product documentation">
+                        <a class="advanced_search" target="_blank" href="https://qnx.software/en/search#t=ProductDocumentation">
+                            <span>Advanced search</span>
+                        </a>
+                    </div>
+
+                    
+                    
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref" data-id="about"><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/bookset.html">QNX Software Development Platform</a><div class="wh-tooltip"><p class="shortdesc">     QNX SDP is a cross-compiling and debugging environment, including an IDE and command-line tools,     for building binary images and programs for target boards running the <span class="keyword">QNX OS</span> 8.0.   </p></div></div></div></li><li><div class="topicref" data-id="about"><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/about.html">System Architecture</a><div class="wh-tooltip"><p class="shortdesc"> The <em class="ph i">System Architecture</em> guide accompanies the <span class="keyword">QNX OS</span> and is intended for both application developers and end-users. </p></div></div></div></li><li><div class="topicref" data-id="ipc"><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ipc.html">Interprocess Communication (IPC)</a><div class="wh-tooltip"><p class="shortdesc"> Interprocess Communication (IPC) plays a fundamental role in the transformation of the <span class="keyword">microkernel</span> from an embedded realtime kernel into a full-scale POSIX operating system. As various service-providing processes are added to the microkernel, IPC is the <q class="q">glue</q> that connects those components into a cohesive whole. </p></div></div></div></li><li class="active"><div class="topicref" data-id="Robust"><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ipc_Robust.html">Robust implementations with Send/Receive/Reply</a><div class="wh-tooltip"><p class="shortdesc"> Architecting a <span class="keyword">QNX OS</span> application as a team of cooperating threads and processes via Send/Receive/Reply results in a system that uses <em class="ph i">synchronous</em> notification. IPC thus occurs at specified transitions within the system, rather than asynchronously. </p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+					
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+								<!--<whc:external_resourse_link 
+                            href="${param(webhelp.pdf.link.url)}"
+                            title="${param(webhelp.pdf.link.text)}"
+                            image="${param(webhelp.pdf.link.icon.path)}"
+                            type="pdf_link"                            
+							/>-->
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e10" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e10-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.ide.userguide/topic/about.html" id="about-d114126e10-link">QNX Momentics IDE User's Guide</a><div class="wh-tooltip"><p class="shortdesc">         This <em class="ph i">User's Guide</em> describes version 8.0 of the Integrated Development Environment (IDE) that's part of the         <span class="keyword">QNX Tool Suite</span>.     </p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="about-d114126e4055" class="topicref" data-id="about" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action about-d114126e4055-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/bookset.html" id="about-d114126e4055-link">QNX Software Development Platform</a><div class="wh-tooltip"><p class="shortdesc">     QNX SDP is a cross-compiling and debugging environment, including an IDE and command-line tools,     for building binary images and programs for target boards running the <span class="keyword">QNX OS</span> 8.0.   </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="AboutThisGuide-d114126e4069" class="topicref" data-id="AboutThisGuide" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action AboutThisGuide-d114126e4069-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.quickstart/topic/about.html" id="AboutThisGuide-d114126e4069-link">Quickstart Guide</a><div class="wh-tooltip"><p class="shortdesc">These guidelines will help you install the QNX Software Development Platform, quickly develop a program,     and run it on a <span class="keyword">QNX OS</span> target.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="about-d114126e5772" class="topicref" data-id="about" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action about-d114126e5772-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/about.html" id="about-d114126e5772-link">System Architecture</a><div class="wh-tooltip"><p class="shortdesc"> The <em class="ph i">System Architecture</em> guide accompanies the <span class="keyword">QNX OS</span> and is intended for both application developers and end-users. </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="intro-d114126e5822" class="topicref" data-id="intro" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action intro-d114126e5822-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/intro.html" id="intro-d114126e5822-link">The Philosophy of the <span class="keyword">QNX OS</span></a><div class="wh-tooltip"><p class="shortdesc"> The primary goal of the <span class="keyword">QNX OS</span> is to deliver the open systems POSIX API in a robust, scalable form suitable for a wide range of systems—from tiny, resource-constrained embedded systems to high-end distributed computing environments. The OS supports several processor families, including x86 and ARM.  </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="kernel-d114126e5974" class="topicref" data-id="kernel" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action kernel-d114126e5974-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel.html" id="kernel-d114126e5974-link">The <span class="keyword">QNX OS</span> Microkernel</a><div class="wh-tooltip"><p class="shortdesc"> The <span class="keyword">microkernel</span> implements the core POSIX features used in embedded realtime systems, along with the fundamental <span class="keyword">QNX OS</span> message-passing services. </p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="ipc-d114126e6434" class="topicref" data-id="ipc" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action ipc-d114126e6434-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ipc.html" id="ipc-d114126e6434-link">Interprocess Communication (IPC)</a><div class="wh-tooltip"><p class="shortdesc"> Interprocess Communication (IPC) plays a fundamental role in the transformation of the <span class="keyword">microkernel</span> from an embedded realtime kernel into a full-scale POSIX operating system. As various service-providing processes are added to the microkernel, IPC is the <q class="q">glue</q> that connects those components into a cohesive whole. </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="Sync_messaging-d114126e6451" class="topicref" data-id="Sync_messaging" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ipc_Sync_messaging.html" id="Sync_messaging-d114126e6451-link">Synchronous message passing</a><div class="wh-tooltip"><p class="shortdesc"> Synchronous messaging is the main form of IPC in the <span class="keyword">QNX OS</span>. </p></div></div></div></li><li role="treeitem"><div data-tocid="Message_copying-d114126e6465" class="topicref" data-id="Message_copying" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ipc_Message_copying.html" id="Message_copying-d114126e6465-link">Message copying</a><div class="wh-tooltip"><p class="shortdesc"> Since our messaging services copy a message directly from the address space of one thread to another without intermediate buffering, the message-delivery performance approaches the memory bandwidth of the underlying hardware. </p></div></div></div></li><li role="treeitem"><div data-tocid="Simple_messages-d114126e6476" class="topicref" data-id="Simple_messages" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ipc_Simple_messages.html" id="Simple_messages-d114126e6476-link">Simple messages</a><div class="wh-tooltip"><p class="shortdesc"> For simple single-part messages, the OS provides functions that take a pointer directly to a buffer without the need for an IOV (input/output vector). In this case, the number of parts is replaced by the size of the message directly pointed to. </p></div></div></div></li><li role="treeitem"><div data-tocid="Channels-d114126e6487" class="topicref" data-id="Channels" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ipc_Channels.html" id="Channels-d114126e6487-link">Channels and connections</a><div class="wh-tooltip"><p class="shortdesc"> In the <span class="keyword">QNX OS</span>, message passing is directed towards channels and connections, rather than targeted directly from thread to thread. A thread that wishes to receive messages first creates a channel; another thread that wishes to send a message to that thread must first make a connection by <q class="q">attaching</q> to that channel. </p></div></div></div></li><li role="treeitem"><div data-tocid="Pulses-d114126e6504" class="topicref" data-id="Pulses" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ipc_Pulses.html" id="Pulses-d114126e6504-link">Pulses</a><div class="wh-tooltip"><p class="shortdesc">In addition to the synchronous Send/Receive/Reply       services, the OS also supports fixed-size, nonblocking       messages. These are referred to as <em class="ph i">pulses</em> and carry       a small payload.    </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="Priority_inheritance_messages-d114126e6518" class="topicref" data-id="Priority_inheritance_messages" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action Priority_inheritance_messages-d114126e6518-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ipc_Priority_inheritance_messages.html" id="Priority_inheritance_messages-d114126e6518-link">Priority inheritance and messages</a><div class="wh-tooltip"><p class="shortdesc"> <span class="keyword">QNX OS</span> uses message-driven priority inheritance to avoid priority-inversion problems. </p></div></div></div></li><li role="treeitem"><div data-tocid="Message_API-d114126e6543" class="topicref" data-id="Message_API" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ipc_Message_API.html" id="Message_API-d114126e6543-link">Message-passing API</a><div class="wh-tooltip"><p class="shortdesc"> The message-passing API consists of the functions listed here. </p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="Robust-d114126e6554" class="topicref" data-id="Robust" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ipc_Robust.html" id="Robust-d114126e6554-link">Robust implementations with Send/Receive/Reply</a><div class="wh-tooltip"><p class="shortdesc"> Architecting a <span class="keyword">QNX OS</span> application as a team of cooperating threads and processes via Send/Receive/Reply results in a system that uses <em class="ph i">synchronous</em> notification. IPC thus occurs at specified transitions within the system, rather than asynchronously. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="Events-d114126e6571" class="topicref" data-id="Events" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action Events-d114126e6571-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ipc_Events.html" id="Events-d114126e6571-link">Events</a><div class="wh-tooltip"><p class="shortdesc"> A significant feature in the <span class="keyword">QNX OS</span> kernel is its subsystem for handling events. POSIX and its realtime extensions define a number of asynchronous notification methods (e.g., UNIX signals that don't queue or pass data, POSIX realtime signals that may queue and pass data, etc.).  </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="Signals-d114126e6599" class="topicref" data-id="Signals" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action Signals-d114126e6599-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ipc_Signals.html" id="Signals-d114126e6599-link">Signals</a><div class="wh-tooltip"><p class="shortdesc"> The OS supports the 32 standard POSIX signals (as in UNIX) as well as the POSIX realtime signals, both numbered from a kernel-implemented set of 64 signals with uniform functionality. </p></div></div></div></li><li role="treeitem"><div data-tocid="Message_queues-d114126e6639" class="topicref" data-id="Message_queues" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ipc_Message_queues.html" id="Message_queues-d114126e6639-link">POSIX message queues</a><div class="wh-tooltip"><p class="shortdesc"> POSIX defines a set of nonblocking message-passing facilities known as <em class="ph i">message queues</em>. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="Shared_memory-d114126e6653" class="topicref" data-id="Shared_memory" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action Shared_memory-d114126e6653-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ipc_Shared_memory.html" id="Shared_memory-d114126e6653-link">Shared memory</a><div class="wh-tooltip"><p class="shortdesc"> Shared memory offers the highest bandwidth of any IPC mechanism. </p></div></div></div></li><li role="treeitem"><div data-tocid="Typed_memory-d114126e6689" class="topicref" data-id="Typed_memory" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ipc_Typed_memory.html" id="Typed_memory-d114126e6689-link">Typed memory</a><div class="wh-tooltip"><p class="shortdesc"> POSIX typed memory provides an interface that lets you open named memory objects and perform mapping operations on them. </p></div></div></div></li><li role="treeitem"><div data-tocid="Pipes_FIFOs-d114126e6700" class="topicref" data-id="Pipes_FIFOs" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ipc_Pipes_FIFOs.html" id="Pipes_FIFOs-d114126e6700-link">Pipes and FIFOs</a><div class="wh-tooltip"><p class="shortdesc"> Pipes and FIFOs are both forms of queues that connect processes. </p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="trace-d114126e6711" class="topicref" data-id="trace" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action trace-d114126e6711-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/trace.html" id="trace-d114126e6711-link">The Microkernel Instrumentation</a><div class="wh-tooltip"><p class="shortdesc"> The <span class="keyword">microkernel</span> (<span class="keyword cmdname">procnto-smp-instr</span>) is equipped with a sophisticated tracing and profiling mechanism that lets you monitor your system's execution in real time. This instrumentation works on both single-CPU and SMP systems. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="proc-d114126e6806" class="topicref" data-id="proc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action proc-d114126e6806-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/proc.html" id="proc-d114126e6806-link">Process Manager</a><div class="wh-tooltip"><p class="shortdesc"> The Process Manager can create and manage multiple POSIX processes, each of which may contain multiple POSIX threads. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="dll-d114126e7141" class="topicref" data-id="dll" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action dll-d114126e7141-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/dll.html" id="dll-d114126e7141-link">Dynamic Linking</a><div class="wh-tooltip"><p class="shortdesc"> In a typical system, a number of programs will be running. Each program relies on a number of functions, some of which will be <q class="q">standard</q> C library functions, like <span class="keyword apiname">printf()</span>, <span class="keyword apiname">malloc()</span>, <span class="keyword apiname">write()</span>, etc. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="resource-d114126e7221" class="topicref" data-id="resource" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action resource-d114126e7221-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/resource.html" id="resource-d114126e7221-link">Resource Managers</a><div class="wh-tooltip"><p class="shortdesc"> To give the <span class="keyword">QNX OS</span> a great degree of flexibility, to minimize the runtime memory requirements of the final system, and to cope with the wide variety of devices that may be found in a custom embedded system, the OS allows user-written processes to act as <em class="ph i">resource managers</em> that can be started and stopped dynamically. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="fsys-d114126e7452" class="topicref" data-id="fsys" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action fsys-d114126e7452-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/fsys.html" id="fsys-d114126e7452-link">Filesystems</a><div class="wh-tooltip"><p class="shortdesc"> The <span class="keyword">QNX OS</span> provides a rich variety of filesystems. Like most service-providing processes in the OS, these filesystems execute outside the kernel; applications use them by communicating via messages generated by the shared-library implementation of the POSIX API. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="char-d114126e7802" class="topicref" data-id="char" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action char-d114126e7802-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/char.html" id="char-d114126e7802-link">Character I/O</a><div class="wh-tooltip"><p class="shortdesc"> A key requirement of any realtime operating system is high-performance character I/O. </p></div></div></div></li><li role="treeitem"><div data-tocid="net-d114126e7922" class="topicref" data-id="net" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/net.html" id="net-d114126e7922-link">Networking Architecture</a><div class="wh-tooltip"><p class="shortdesc"> As with other service-providing processes in the <span class="keyword">QNX OS</span>, the networking services execute outside the kernel. Developers are presented with a single unified interface, regardless of the configuration and number of networks involved. </p></div></div></div></li><li role="treeitem"><div data-tocid="tcpip-d114126e7936" class="topicref" data-id="tcpip" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/tcpip.html" id="tcpip-d114126e7936-link">TCP/IP Networking</a><div class="wh-tooltip"><p class="shortdesc">Our TCP/IP stack is included in the <span class="keyword cmdname">io-sock</span> networking stack and uses     the common FreeBSD API. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ham-d114126e7950" class="topicref" data-id="ham" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ham-d114126e7950-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ham.html" id="ham-d114126e7950-link">High Availability</a><div class="wh-tooltip"><p class="shortdesc"> The term <em class="ph i">High Availability</em> (HA) is commonly used in telecommunications and other industries to describe a system's ability to remain up and running without interruption for extended periods of time. </p></div></div></div></li><li role="treeitem"><div data-tocid="what_is_realtime-d114126e8173" class="topicref" data-id="what_is_realtime" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/what_is_realtime.html" id="what_is_realtime-d114126e8173-link">What is Real Time and Why Do I Need It?</a><div class="wh-tooltip"><p class="shortdesc"> Real time is an often misunderstood—and misapplied—property of operating systems. This appendix provides a summary of some of the critical elements of realtime computing and discusses a few design considerations and benefits. </p></div></div></div></li><li role="treeitem"><div data-tocid="glossary-d114126e8184" class="topicref" data-id="glossary" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/glossary.html" id="glossary-d114126e8184-link">Glossary</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e8504" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e8504-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/guides.html" id="about-d114126e8504-link">OS Components &amp; Operations</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="graphics-d114126e27311" class="topicref" data-id="graphics" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action graphics-d114126e27311-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/graphics.html" id="graphics-d114126e27311-link">Graphics</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e46364" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e46364-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/programming.html" id="about-d114126e46364-link">Programming</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e54473" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e54473-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.security.system/topic/manual/about.html" id="about-d114126e54473-link">System Security Guide</a><div class="wh-tooltip"><p class="shortdesc">The <em class="ph i">QNX System Security Guide</em> is intended for both system integrators who are         responsible for the security of a <span class="keyword">QNX OS</span> system and developers who want to create a <span class="keyword">QNX OS</span> resource manager free from vulnerabilities.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e57754" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e57754-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/references.html" id="about-d114126e57754-link">Utilities &amp; Libraries</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e110056" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e110056-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.migration/topic/about.html" id="about-d114126e110056-link">Migrating to QNX OS 8.0</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e111092" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e111092-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxcloud.nav/topic/bookset.html" id="about-d114126e111092-link">QNX Software in the Cloud</a><div class="wh-tooltip"><p class="shortdesc">QNX Software in the Cloud enables developers to use the QNX 	software in Amazon Web Services (AWS) and Microsoft Azure (Azure). </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="qcmgr-d114126e112165" class="topicref" data-id="qcmgr" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action qcmgr-d114126e112165-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.containers.user_guide/topic/about.html" id="qcmgr-d114126e112165-link">QNX Containers User's Guide</a><div class="wh-tooltip"><p class="shortdesc">This guide describes QNX Containers, its components, and its utilization.       It provides instructions on using QNX Containers on the host and target,       and then starting QNX Container processes.    </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about_this_guide-d114126e112727" class="topicref" data-id="about_this_guide" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about_this_guide-d114126e112727-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxtoolkit.user_guide/topic/about_this_guide.html" id="about_this_guide-d114126e112727-link">QNX Toolkit for Visual Studio Code</a><div class="wh-tooltip"><p class="shortdesc">         This User's Guide describes the QNX® Toolkit for VS Code.         The guide introduces you to the <span class="keyword">QNX Toolkit</span> by explaining the QNX development environment and how to build, run, and debug your QNX® Operating System (OS) applications and systems.     </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e113878" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e113878-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.hypervisor.nav/topic/bookset.html" id="about-d114126e113878-link">QNX Hypervisor and QNX Hypervisor for Safety</a><div class="wh-tooltip"><p class="shortdesc"> 		The <span class="keyword">QNX Hypervisor</span> and <span class="keyword">QNX Hypervisor for Safety</span> products allow you to run multiple OSs 		on a target system so you can separate critical and non-critical functions, support a wide variety of applications, 		and reduce hardware costs. 	</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="copyright_overview_concept-d114126e120349" class="topicref" data-id="copyright_overview_concept" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action copyright_overview_concept-d114126e120349-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.copyright/topic/coverpage.html" id="copyright_overview_concept-d114126e120349-link">Typographical Conventions, Support, and Licensing</a><div class="wh-tooltip"><p class="shortdesc"> This section describes the typographical conventions used throughout the documentation, explains how to obtain technical support, and provides some information about licensing. </p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+                        
+						<div id="pdf_link"></div>
+						
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic concept/concept topic concept" role="article" aria-labelledby="Robust">
+
+<h1 class="- topic/title title topictitle1" id="Robust">Robust implementations with Send/Receive/Reply</h1>
+
+
+<div style="padding: 5px 0;"><span class="label">QNX SDP</span><span class="label">8.0</span><span class="label">System Architecture</span><span class="label">Developer</span><span class="label">User</span></div>
+<div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc">
+Architecting a <span class="- topic/keyword keyword">QNX OS</span> application as a team of cooperating
+threads and processes via Send/Receive/Reply results in a
+system that uses <em class="+ topic/ph hi-d/i ph i">synchronous</em> notification. IPC thus occurs
+at specified transitions within the system, rather than asynchronously.
+</p>
+
+<p class="- topic/p p">
+A significant problem with asynchronous systems is that
+event notification requires signal handlers to be run.
+Asynchronous IPC can make it difficult to thoroughly test
+the operation of the system and make sure that no matter
+when the signal handler runs, processing will continue
+as intended. Applications often try to avoid this scenario
+by relying on a <q class="- topic/q q">window</q> explicitly opened and
+shut, during which signals will be tolerated.
+</p>
+
+<p class="- topic/p p">
+With a synchronous, nonqueued system architecture built
+around Send/Receive/Reply, robust application architectures
+can be very readily implemented and delivered.
+
+</p>
+
+<p class="- topic/p p">
+Avoiding deadlock situations is another difficult problem
+when constructing applications from various combinations of
+queued IPC, shared memory, and miscellaneous synchronization
+primitives. For example, suppose thread A doesn't release
+mutex 1 until thread B releases mutex 2. Unfortunately, if
+thread B is in the state of not releasing mutex 2 until
+thread A releases mutex 1, a standoff results. Simulation
+tools are often invoked in order to ensure that deadlock
+won't occur as the system runs.
+</p>
+
+<p class="- topic/p p">
+The Send/Receive/Reply IPC primitives allow the construction
+of deadlock-free systems with the observation of only these simple rules:
+
+</p>
+
+<ol class="- topic/ol ol">
+<li class="- topic/li li">Never have two threads send to each other.</li>
+<li class="- topic/li li">Always arrange your threads in a hierarchy, with sends going up the tree.</li>
+</ol>
+
+<div class="- topic/p p">
+The first rule is an obvious avoidance of the standoff situation, but
+the second rule requires further explanation. Suppose the team of cooperating
+threads and processes is arranged as follows:
+
+<figure class="- topic/fig fig fignone"><figcaption data-caption-side="top" class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure 1</span><span class="fig--title">Threads should always send up to higher-level threads.</span></figcaption>
+  
+  <br/><img class="- topic/image image" src="../images/thtree.svg" alt="Thread tree"/><br/>
+</figure>
+</div>
+
+<p class="- topic/p p">
+Here the threads at any given level in the hierarchy
+never send to each other, but send only upwards instead.
+</p>
+
+<p class="- topic/p p">
+One example of this might be a client application that sends
+to a database server process, which in turn sends to a
+filesystem process. Since the sending threads block and wait
+for the target thread to reply, and since the target thread
+isn't SEND-blocked on the sending thread, deadlock can't happen.
+</p>
+
+<p class="- topic/p p">
+But how does a higher-level thread notify a lower-level
+thread that it has the results of a previously requested
+operation? (Assume the lower-level thread didn't want to
+wait for the results when it last sent,
+and the higher-level thread sent a reply that just said
+it has started the operation.)
+</p>
+
+<div class="- topic/p p">
+The <span class="- topic/keyword keyword">QNX OS</span> provides a very flexible architecture with the
+<a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/m/msgdeliverevent.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">MsgDeliverEvent()</span></a>
+kernel call to deliver nonblocking events.
+All of the common asynchronous services can be implemented with this.
+For example, the server-side of the
+<a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/poll.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">poll()</span></a>
+call is an API function that an
+application can use to allow a thread to wait for an I/O
+event to complete on a set of file descriptors. In addition
+to an asynchronous notification mechanism being needed as a
+<q class="- topic/q q">back channel</q> for notifications from
+higher-level threads to lower-level threads, we can also
+build a reliable notification system for timers, hardware
+interrupts, and other event sources around this.
+
+<figure class="- topic/fig fig fignone"><figcaption data-caption-side="top" class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure 2</span><span class="fig--title">A higher-level thread can <q class="- topic/q q">send</q> a pulse event.</span></figcaption>
+  
+  <br/><img class="- topic/image image" src="../images/pulseven.svg" alt="Pulse event"/><br/>
+</figure>
+</div>
+
+<p class="- topic/p p">
+A related issue is the problem of how a higher-level thread
+can request work of a lower-level thread without sending to
+it, risking deadlock. The lower-level thread is present only
+to serve as a <q class="- topic/q q">worker thread</q> for the
+higher-level thread, doing work on request. The lower-level
+thread would send in order to <q class="- topic/q q">report for work,</q>
+but the higher-level thread wouldn't reply then. It would
+defer the reply until it had work to be done,
+and then reply (which is a nonblocking operation)
+with the data describing the work. In effect, the reply,
+not the send, is being used to initiate work, which neatly
+side-steps rule #1.
+</p>
+
+</div>
+<div style="text-align: right;"><span>Page updated: <time>November 05, 2026</time></span></div></article></main></div>
+                        
+                        
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist relinfo" xml:lang="en-us" lang="en-us"><strong>Related information</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.sys_arch/topic/ipc_Priority_inheritance_messages.html" title="QNX OS uses message-driven priority inheritance to avoid priority-inversion problems.">Priority inheritance and messages</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel_Scheduling_priority.html" title="Every thread is assigned a priority. The thread scheduler selects the next thread to run by comparing the priorities of READY threads (i.e., those capable of using a processor).">Scheduling priority</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.prog/topic/overview_PRIOR.html" title="Priorities and scheduling (QNX OS Programmer's Guide)">Priorities and scheduling (QNX OS Programmer's Guide)</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.getting_started/topic/s1_procs_Priorities.html" title="Priorities (Getting Started with the QNX OS)">Priorities (Getting Started with the QNX OS)</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.getting_started/topic/s1_procs_Kernel_as_arbiter.html" title="The kernel as arbiter (Getting Started with the QNX OS)">The kernel as arbiter (Getting Started with the QNX OS)</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/m/msgdeliverevent.html" title="MsgDeliverEvent(), MsgDeliverEvent_r()">MsgDeliverEvent(), MsgDeliverEvent_r()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/m/msgsend.html" title="MsgSend(), MsgSend_r()">MsgSend(), MsgSend_r()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/m/msgsendpulse.html" title="MsgSendPulse(), MsgSendPulse_r()">MsgSendPulse(), MsgSendPulse_r()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/s/select.html" title="select()">select()</a></li></ul></div></nav></div>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

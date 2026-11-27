@@ -1,0 +1,196 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us" data-whc_version="26.0">
+    <head><link rel="shortcut icon" href="../../oxygen-webhelp/template/images/favicon.png"/><link rel="icon" href="../../oxygen-webhelp/template/images/favicon.png"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="description" content="These guidelines will help you install the QNX Software Development Platform, quickly develop a program, and run it on a QNX OS target."/><meta name="keywords" content="Quickstart, QNX SDP, 8.0, Quickstart Guide, Developer, Setup"/><meta name="indexterms" content="Quickstart; "/>        
+      <title>Quickstart Guidelines to Developing a QNX OS Program</title><!--  Generated with Oxygen version 26.0, build number 2023100510.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="AboutThisGuide-d114126e4069"/><meta name="wh-source-relpath" content="com.qnx.doc.qnxsdp.quickstart/topic/about.xml"/><meta name="wh-out-relpath" content="com.qnx.doc.qnxsdp.quickstart/topic/about.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/commons.css?buildId=2023100510"/>
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic.css?buildId=2023100510"/>
+
+    <script src="../../oxygen-webhelp/app/options/properties.js?buildId=20261105112733"></script>
+    <script src="../../oxygen-webhelp/app/localization/strings.js?buildId=2023100510"></script>
+    <script src="../../oxygen-webhelp/app/search/index/keywords.js?buildId=20261105112733"></script>
+    <script defer="defer" src="../../oxygen-webhelp/app/commons.js?buildId=2023100510"></script>
+    <script defer="defer" src="../../oxygen-webhelp/app/topic.js?buildId=2023100510"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/css/qnx-webhelp.css?buildId=2023100510"/></head>
+
+    <body id="AboutThisGuide" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid" id="wh_header_container">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../../index.html" class=" wh_logo d-none d-sm-block "><img src="../../oxygen-webhelp/template/images/QNX-Logo-CORAL-RGB.png" alt=""/></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="title"></span></a></div>
+                    
+                </div>
+
+                
+            </div>
+
+            <div class="wh_nav_and_search">
+                <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                    
+                    
+                    <div class=" wh_indexterms_link "><a href="../../indexTerms.html" title="Index" aria-label="Go to index terms page"><span>Index</span></a></div>
+                    
+                </div>
+                <div class=" wh_search_input navbar-form wh_main_page_search search " role="form">
+                    
+                    
+
+                    
+                    <form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+
+                    <!-- Link to Advanced search page on qnx.com -->
+                    <div id="advanced_search" title="Search all Blackberry QNX product documentation">
+                        <a class="advanced_search" target="_blank" href="https://qnx.software/en/search#t=ProductDocumentation">
+                            <span>Advanced search</span>
+                        </a>
+                    </div>
+
+                    
+                    
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref" data-id="about"><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/bookset.html">QNX Software Development Platform</a><div class="wh-tooltip"><p class="shortdesc">     QNX SDP is a cross-compiling and debugging environment, including an IDE and command-line tools,     for building binary images and programs for target boards running the <span class="keyword">QNX OS</span> 8.0.   </p></div></div></div></li><li class="active"><div class="topicref" data-id="AboutThisGuide"><div class="title"><a href="../../com.qnx.doc.qnxsdp.quickstart/topic/about.html">Quickstart Guide</a><div class="wh-tooltip"><p class="shortdesc">These guidelines will help you install the QNX Software Development Platform, quickly develop a program,     and run it on a <span class="keyword">QNX OS</span> target.</p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+					
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+								<!--<whc:external_resourse_link 
+                            href="${param(webhelp.pdf.link.url)}"
+                            title="${param(webhelp.pdf.link.text)}"
+                            image="${param(webhelp.pdf.link.icon.path)}"
+                            type="pdf_link"                            
+							/>-->
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e10" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e10-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.ide.userguide/topic/about.html" id="about-d114126e10-link">QNX Momentics IDE User's Guide</a><div class="wh-tooltip"><p class="shortdesc">         This <em class="ph i">User's Guide</em> describes version 8.0 of the Integrated Development Environment (IDE) that's part of the         <span class="keyword">QNX Tool Suite</span>.     </p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="about-d114126e4055" class="topicref" data-id="about" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action about-d114126e4055-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/bookset.html" id="about-d114126e4055-link">QNX Software Development Platform</a><div class="wh-tooltip"><p class="shortdesc">     QNX SDP is a cross-compiling and debugging environment, including an IDE and command-line tools,     for building binary images and programs for target boards running the <span class="keyword">QNX OS</span> 8.0.   </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="true" class="active"><div data-tocid="AboutThisGuide-d114126e4069" class="topicref" data-id="AboutThisGuide" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action AboutThisGuide-d114126e4069-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.quickstart/topic/about.html" id="AboutThisGuide-d114126e4069-link">Quickstart Guide</a><div class="wh-tooltip"><p class="shortdesc">These guidelines will help you install the QNX Software Development Platform, quickly develop a program,     and run it on a <span class="keyword">QNX OS</span> target.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="Install_host-d114126e4113" class="topicref" data-id="Install_host" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.quickstart/topic/install_host.html" id="Install_host-d114126e4113-link">Installation</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="Your_program-d114126e4123" class="topicref" data-id="Your_program" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.quickstart/topic/your_program.html" id="Your_program-d114126e4123-link">Using the command line to develop your program</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="Starting-d114126e4133" class="topicref" data-id="Starting" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.quickstart/topic/starting.html" id="Starting-d114126e4133-link">Using the QNX Toolkit to develop your program</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e5772" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e5772-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/about.html" id="about-d114126e5772-link">System Architecture</a><div class="wh-tooltip"><p class="shortdesc"> The <em class="ph i">System Architecture</em> guide accompanies the <span class="keyword">QNX OS</span> and is intended for both application developers and end-users. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e8504" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e8504-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/guides.html" id="about-d114126e8504-link">OS Components &amp; Operations</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="graphics-d114126e27311" class="topicref" data-id="graphics" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action graphics-d114126e27311-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/graphics.html" id="graphics-d114126e27311-link">Graphics</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e46364" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e46364-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/programming.html" id="about-d114126e46364-link">Programming</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e54473" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e54473-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.security.system/topic/manual/about.html" id="about-d114126e54473-link">System Security Guide</a><div class="wh-tooltip"><p class="shortdesc">The <em class="ph i">QNX System Security Guide</em> is intended for both system integrators who are         responsible for the security of a <span class="keyword">QNX OS</span> system and developers who want to create a <span class="keyword">QNX OS</span> resource manager free from vulnerabilities.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e57754" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e57754-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/references.html" id="about-d114126e57754-link">Utilities &amp; Libraries</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e110056" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e110056-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.migration/topic/about.html" id="about-d114126e110056-link">Migrating to QNX OS 8.0</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e111092" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e111092-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxcloud.nav/topic/bookset.html" id="about-d114126e111092-link">QNX Software in the Cloud</a><div class="wh-tooltip"><p class="shortdesc">QNX Software in the Cloud enables developers to use the QNX 	software in Amazon Web Services (AWS) and Microsoft Azure (Azure). </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="qcmgr-d114126e112165" class="topicref" data-id="qcmgr" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action qcmgr-d114126e112165-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.containers.user_guide/topic/about.html" id="qcmgr-d114126e112165-link">QNX Containers User's Guide</a><div class="wh-tooltip"><p class="shortdesc">This guide describes QNX Containers, its components, and its utilization.       It provides instructions on using QNX Containers on the host and target,       and then starting QNX Container processes.    </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about_this_guide-d114126e112727" class="topicref" data-id="about_this_guide" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about_this_guide-d114126e112727-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxtoolkit.user_guide/topic/about_this_guide.html" id="about_this_guide-d114126e112727-link">QNX Toolkit for Visual Studio Code</a><div class="wh-tooltip"><p class="shortdesc">         This User's Guide describes the QNX® Toolkit for VS Code.         The guide introduces you to the <span class="keyword">QNX Toolkit</span> by explaining the QNX development environment and how to build, run, and debug your QNX® Operating System (OS) applications and systems.     </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e113878" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e113878-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.hypervisor.nav/topic/bookset.html" id="about-d114126e113878-link">QNX Hypervisor and QNX Hypervisor for Safety</a><div class="wh-tooltip"><p class="shortdesc"> 		The <span class="keyword">QNX Hypervisor</span> and <span class="keyword">QNX Hypervisor for Safety</span> products allow you to run multiple OSs 		on a target system so you can separate critical and non-critical functions, support a wide variety of applications, 		and reduce hardware costs. 	</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="copyright_overview_concept-d114126e120349" class="topicref" data-id="copyright_overview_concept" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action copyright_overview_concept-d114126e120349-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.copyright/topic/coverpage.html" id="copyright_overview_concept-d114126e120349-link">Typographical Conventions, Support, and Licensing</a><div class="wh-tooltip"><p class="shortdesc"> This section describes the typographical conventions used throughout the documentation, explains how to obtain technical support, and provides some information about licensing. </p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+                        
+						<div id="pdf_link"></div>
+						
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic concept/concept topic concept" role="article" aria-labelledby="AboutThisGuide">
+  <h1 class="- topic/title title topictitle1" id="AboutThisGuide">Quickstart Guidelines to Developing a <span class="- topic/keyword keyword">QNX OS</span> Program</h1>
+  
+<div style="padding: 5px 0;"><span class="label">QNX SDP</span><span class="label">8.0</span><span class="label">Quickstart Guide</span><span class="label">Developer</span><span class="label">Setup</span></div>
+<div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc">These guidelines will help you install the QNX Software Development Platform, quickly develop a program,
+    and run it on a <span class="- topic/keyword keyword">QNX OS</span> target.</p>
+
+
+ <p class="- topic/p p">For developing software on Linux and Windows, you can use the command line. Alternatively, you can use
+    the QNX Momentics IDE (Integrated Development Environment) or QNX Toolkit for VS Code.</p>
+
+  <p class="- topic/p p">Refer to the following table for more details on how to get started with QNX Software Development Platform:</p>
+<div class="- topic/p p"><div class="table-container"><table class="- topic/table table" data-cols="2"><caption></caption><colgroup><col style="width:54.337899543378995%"/><col style="width:45.662100456621005%"/></colgroup><thead class="- topic/thead thead">
+            <tr class="- topic/row">
+              <th class="- topic/entry entry colsep-1 rowsep-1" id="AboutThisGuide__entry__1">To find out about:</th>
+              <th class="- topic/entry entry colsep-0 rowsep-1" id="AboutThisGuide__entry__2">Go to:</th>
+            </tr>
+          </thead><tbody class="- topic/tbody tbody">
+            <tr class="- topic/row">
+              <td class="- topic/entry entry colsep-1 rowsep-1" headers="AboutThisGuide__entry__1">Prequisites and installation requirements</td>
+              <td class="- topic/entry entry colsep-0 rowsep-1" headers="AboutThisGuide__entry__2"><a class="- topic/xref xref" href="install_host.html">Installation</a></td>
+            </tr>
+            <tr class="- topic/row">
+              <td class="- topic/entry entry colsep-1 rowsep-1" headers="AboutThisGuide__entry__1">Command-line steps to building a program on the QNX SDP platform</td>
+              <td class="- topic/entry entry colsep-0 rowsep-1" headers="AboutThisGuide__entry__2"><a class="- topic/xref xref" href="your_program.html">Using the command line to develop your program</a></td>
+            </tr>
+            <tr class="- topic/row">
+              <td class="- topic/entry entry colsep-1 rowsep-0" headers="AboutThisGuide__entry__1">Building a program using the QNX Toolkit for VS Code (recommended
+                option)</td>
+              <td class="- topic/entry entry colsep-0 rowsep-0" headers="AboutThisGuide__entry__2"><a class="- topic/xref xref" href="starting.html">Using the QNX Toolkit to develop your program</a></td>
+            </tr>
+          </tbody></table></div> 
+    </div>
+<section class="- topic/section section copyright_link">
+<span class="- topic/lines lines"><br/><a class="- topic/xref xref" href="copyright.html" title="Copyright © 2005–, BlackBerry Limited. All rights reserved.">Copyright and patent notice</a><br/><span class="- topic/ph ph">Copyright © 2005–2026, <span class="- topic/keyword keyword">BlackBerry Limited. All rights reserved.</span></span><br/></span>
+</section>
+
+</div><div style="text-align: right;"><span>Page updated: <time>November 05, 2026</time></span></div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

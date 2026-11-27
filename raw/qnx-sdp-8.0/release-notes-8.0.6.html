@@ -1,0 +1,1202 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us" data-whc_version="26.0">
+    <head><link rel="shortcut icon" href="../../../oxygen-webhelp/template/images/favicon.png"/><link rel="icon" href="../../../oxygen-webhelp/template/images/favicon.png"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="description" content="QNX SDP is a cross-compiling and debugging environment, including an IDE and command-line tools, for building binary images and programs for target boards running the QNX OS 8.0.6. These release notes describe the key features of this new release and the notable improvements since the previous release, and provide installation instructions."/>        
+      <title>QNX SDP 8.0.6 Release Notes</title><!--  Generated with Oxygen version 26.0, build number 2023100510.  --><meta name="wh-path2root" content="../../../"/><meta name="wh-toc-id" content="sdp8_rn-d775e713"/><meta name="wh-source-relpath" content="com.qnx.doc.release_notes/topic/8.0.6_prod_release_notes/8.0.6_rn.xml"/><meta name="wh-out-relpath" content="com.qnx.doc.release_notes/topic/8.0.6_prod_release_notes/8.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/app/commons.css?buildId=2023100510"/>
+    <link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/app/topic.css?buildId=2023100510"/>
+
+    <script src="../../../oxygen-webhelp/app/options/properties.js?buildId=20261125133416"></script>
+    <script src="../../../oxygen-webhelp/app/localization/strings.js?buildId=2023100510"></script>
+    <script src="../../../oxygen-webhelp/app/search/index/keywords.js?buildId=20261125133416"></script>
+    <script defer="defer" src="../../../oxygen-webhelp/app/commons.js?buildId=2023100510"></script>
+    <script defer="defer" src="../../../oxygen-webhelp/app/topic.js?buildId=2023100510"></script>
+<link rel="stylesheet" type="text/css" href="../../../oxygen-webhelp/template/css/qnx-webhelp.css?buildId=2023100510"/></head>
+
+    <body id="sdp8_rn" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid" id="wh_header_container">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../../../index.html" class=" wh_logo d-none d-sm-block "><img src="../../../oxygen-webhelp/template/images/QNX-Logo-CORAL-RGB.png" alt="QNX® Software Development Platform 8.0 Release Notes"/></a>
+                    <div class=" wh_publication_title "><a href="../../../index.html"><span class="title">QNX<sup class="ph sup">®</sup> Software Development Platform 8.0 Release Notes</span></a></div>
+                    
+                </div>
+
+                
+            </div>
+
+            <div class="wh_nav_and_search">
+                <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                    
+                    
+                    <div class=" wh_indexterms_link "><a href="../../../indexTerms.html" title="Index" aria-label="Go to index terms page"><span>Index</span></a></div>
+                    
+                </div>
+                <div class=" wh_search_input navbar-form wh_main_page_search search " role="form">
+                    
+                    
+
+                    
+                    <form id="searchForm" method="get" role="search" action="../../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+
+                    <!-- Link to Advanced search page on qnx.com -->
+                    <div id="advanced_search" title="Search all Blackberry QNX product documentation">
+                        <a class="advanced_search" target="_blank" href="https://qnx.software/en/search#t=ProductDocumentation">
+                            <span>Advanced search</span>
+                        </a>
+                    </div>
+
+                    
+                    
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../../index.html"><span>Home</span></a></span></li><li><div class="topicref" data-id="about"><div class="title"><a href="../../../com.qnx.doc.release_notes/topic/about.html">QNX SDP 8.0.x Release Notes</a><div class="wh-tooltip"><p class="shortdesc">This page includes the General Availability and minor updates release notes related to QNX SDP 8.0 and higher releases.</p></div></div></div></li><li><div class="topicref" data-id="about"><div class="title"><a href="../../../com.qnx.doc.release_notes/topic/8.0.6_prod_release_notes/8.0.6_updates_list.html">QNX SDP 8.0.6 Product Updates Release Notes</a><div class="wh-tooltip"><p class="shortdesc"> Release notes for updates that can be applied to QNX SDP 8.0.6 installations.         </p></div></div></div></li><li class="active"><div class="topicref" data-id="sdp8_rn"><div class="title"><a href="../../../com.qnx.doc.release_notes/topic/8.0.6_prod_release_notes/8.0.6_rn.html">Product Release Notes</a><div class="wh-tooltip"><p class="shortdesc"> QNX SDP is a cross-compiling and debugging environment, including an IDE and     command-line tools, for building binary images and programs for target boards running the       <span class="keyword">QNX OS</span> 8.0.6. These release notes describe the key features of this     new release and the notable improvements since the previous release, and provide installation     instructions. </p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+					
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+								<!--<whc:external_resourse_link 
+                            href="${param(webhelp.pdf.link.url)}"
+                            title="${param(webhelp.pdf.link.text)}"
+                            image="${param(webhelp.pdf.link.icon.path)}"
+                            type="pdf_link"                            
+							/>-->
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="about-d775e14" class="topicref" data-id="about" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action about-d775e14-link" class="wh-expand-btn"></span><div class="title"><a href="../../../com.qnx.doc.release_notes/topic/about.html" id="about-d775e14-link">QNX SDP 8.0.x Release Notes</a><div class="wh-tooltip"><p class="shortdesc">This page includes the General Availability and minor updates release notes related to QNX SDP 8.0 and higher releases.</p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="about-d775e25" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d775e25-link" class="wh-expand-btn"></span><div class="title"><a href="../../../com.qnx.doc.release_notes/topic/8.0_prod_release_notes/8.0_updates_list.html" id="about-d775e25-link">General Availability (GA) Product Updates Release Notes</a><div class="wh-tooltip"><p class="shortdesc">Release notes for updates that can be applied to QNX SDP 8.0 installations.         </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d775e105" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d775e105-link" class="wh-expand-btn"></span><div class="title"><a href="../../../com.qnx.doc.release_notes/topic/8.0.1_prod_release_notes/8.0.1_updates_list.html" id="about-d775e105-link">QNX SDP 8.0.1 Product Updates Release Notes</a><div class="wh-tooltip"><p class="shortdesc"> Release notes for updates that can be applied to QNX SDP 8.0.1 installations.         </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d775e226" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d775e226-link" class="wh-expand-btn"></span><div class="title"><a href="../../../com.qnx.doc.release_notes/topic/8.0.2_prod_release_notes/8.0.2_updates_list.html" id="about-d775e226-link">QNX SDP 8.0.2 Product Updates Release Notes</a><div class="wh-tooltip"><p class="shortdesc"> Release notes for updates that can be applied to QNX SDP 8.0.2 installations.         </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d775e362" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d775e362-link" class="wh-expand-btn"></span><div class="title"><a href="../../../com.qnx.doc.release_notes/topic/8.0.3_prod_release_notes/8.0.3_updates_list.html" id="about-d775e362-link">QNX SDP 8.0.3 Product Updates Release Notes</a><div class="wh-tooltip"><p class="shortdesc"> Release notes for updates that can be applied to QNX SDP 8.0.3 installations.         </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d775e498" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d775e498-link" class="wh-expand-btn"></span><div class="title"><a href="../../../com.qnx.doc.release_notes/topic/8.0.4_prod_release_notes/8.0.4_updates_list.html" id="about-d775e498-link">QNX SDP 8.0.4 Product Updates Release Notes</a><div class="wh-tooltip"><p class="shortdesc"> Release notes for updates that can be applied to QNX SDP 8.0.4 installations.         </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d775e589" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d775e589-link" class="wh-expand-btn"></span><div class="title"><a href="../../../com.qnx.doc.release_notes/topic/8.0.5_prod_release_notes/8.0.5_updates_list.html" id="about-d775e589-link">QNX SDP 8.0.5 Product Updates Release Notes</a><div class="wh-tooltip"><p class="shortdesc"> Release notes for updates that can be applied to QNX SDP 8.0.5 installations.         </p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="about-d775e702" class="topicref" data-id="about" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action about-d775e702-link" class="wh-expand-btn"></span><div class="title"><a href="../../../com.qnx.doc.release_notes/topic/8.0.6_prod_release_notes/8.0.6_updates_list.html" id="about-d775e702-link">QNX SDP 8.0.6 Product Updates Release Notes</a><div class="wh-tooltip"><p class="shortdesc"> Release notes for updates that can be applied to QNX SDP 8.0.6 installations.         </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" class="active"><div data-tocid="sdp8_rn-d775e713" class="topicref" data-id="sdp8_rn" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../com.qnx.doc.release_notes/topic/8.0.6_prod_release_notes/8.0.6_rn.html" id="sdp8_rn-d775e713-link">Product Release Notes</a><div class="wh-tooltip"><p class="shortdesc"> QNX SDP is a cross-compiling and debugging environment, including an IDE and     command-line tools, for building binary images and programs for target boards running the       <span class="keyword">QNX OS</span> 8.0.6. These release notes describe the key features of this     new release and the notable improvements since the previous release, and provide installation     instructions. </p></div></div></div></li><li role="treeitem"><div data-tocid="documentaion_8.0.6-d775e727" class="topicref" data-id="documentaion_8.0.6" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../com.qnx.doc.release_notes/topic/8.0.6_prod_release_notes/8.0.6_doc_rn.html" id="documentaion_8.0.6-d775e727-link">Documentation Release Notes</a><div class="wh-tooltip"><p class="shortdesc">Release notes for documentation updates associated with the QNX SDP 8.0.6 release.         This document lists the reference numbers associated with particular issues, changes, etc.         When corresponding with our Technical Support staff about a given issue, quote the relevant         reference number.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="hypervisor_list-d775e738" class="topicref" data-id="hypervisor_list" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action hypervisor_list-d775e738-link" class="wh-expand-btn"></span><div class="title"><a href="../../../com.qnx.doc.release_notes/topic/hypervisor_list.html" id="hypervisor_list-d775e738-link">QNX Hypervisor 8.0.x Release Notes</a><div class="wh-tooltip"><p class="shortdesc">This chapter includes the release notes for the QNX Hypervisor 8.0 and higher releases     and for updates to these products.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about_cloud-d775e828" class="topicref" data-id="about_cloud" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about_cloud-d775e828-link" class="wh-expand-btn"></span><div class="title"><a href="../../../com.qnx.doc.release_notes/topic/qnxcloud_list.html" id="about_cloud-d775e828-link">QNX Software in the Cloud Release Notes</a><div class="wh-tooltip"><p class="shortdesc">Recent QNX Software in the Cloud releases and updates.         </p></div></div></div></li><li role="treeitem"><div data-tocid="sdp8_containers_rn-d775e927" class="topicref" data-id="sdp8_containers_rn" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../../com.qnx.doc.release_notes/topic/qnxcontainer_1.0_rn.html" id="sdp8_containers_rn-d775e927-link">QNX Containers 1.0 Release Notes</a><div class="wh-tooltip"><p class="shortdesc">QNX Containers 1.0 provides containerization support 	for QNX Software Development Platform (SDP) 8.0.5 that is compliant 	with the specification of the Open Container Initiative (OCI). </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="momentics_list-d775e939" class="topicref" data-id="momentics_list" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action momentics_list-d775e939-link" class="wh-expand-btn"></span><div class="title"><a href="../../../com.qnx.doc.release_notes/topic/momentics_list.html" id="momentics_list-d775e939-link">QNX Momentics IDE Release Notes</a><div class="wh-tooltip"><p class="shortdesc">Recent QNX Momentics IDE releases:</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d775e1300" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d775e1300-link" class="wh-expand-btn"></span><div class="title"><a href="../../../com.qnx.doc.discontinuation_notice/topic/about.html" id="about-d775e1300-link">QNX SDP 8.0: Component Discontinuation and Deprecation Notice</a><div class="wh-tooltip"><p class="shortdesc"> This notice documents all items that are being discontinued or deprecated in QNX SDP         8.0. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="copyright_overview_concept-d775e1700" class="topicref" data-id="copyright_overview_concept" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action copyright_overview_concept-d775e1700-link" class="wh-expand-btn"></span><div class="title"><a href="../../../com.qnx.doc.copyright/topic/coverpage.html#copyright_overview_concept" id="copyright_overview_concept-d775e1700-link">Typographical Conventions, Support, and Licensing</a><div class="wh-tooltip"><p class="shortdesc"> This section describes the typographical conventions used throughout the documentation, explains how to obtain technical support, and provides some information about licensing. </p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        <button id="wh_close_topic_toc_button" class="close-toc-button d-none" aria-label="Toggle topic table of content" aria-controls="wh_topic_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+						<div id="pdf_link"></div>
+						
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic concept/concept topic concept" role="article" aria-labelledby="sdp8_rn">
+
+<h1 class="- topic/title title topictitle1" id="sdp8_rn">QNX SDP 8.0.6 Release Notes</h1>
+
+
+
+
+<div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc"> QNX SDP is a cross-compiling and debugging environment, including an IDE and
+    command-line tools, for building binary images and programs for target boards running the
+      <span class="- topic/keyword keyword">QNX OS</span> 8.0.6. These release notes describe the key features of this
+    new release and the notable improvements since the previous release, and provide installation
+    instructions. </p>
+
+<span class="- topic/lines lines"><br/><strong class="+ topic/ph hi-d/b ph b">Date of this edition: November 12, 2026</strong><br/></span>
+
+<p class="- topic/p p" style="margin-top: 1.2em; font-size: 1.1em;"><strong class="+ topic/ph hi-d/b ph b">Target hardware</strong></p>
+  <p class="- topic/p p">This product can run on x86-64 hardware platforms and AArch64 platforms that support the ARM
+      64-bit (A64) Instruction Set.</p>
+
+<p class="- topic/p p" style="margin-top: 1.2em; font-size: 1.1em;"><strong class="+ topic/ph hi-d/b ph b">Development Host Operating Systems (OSs)</strong></p>
+<p class="- topic/p p">You must install QNX SDP 8.0.6 onto a development host with one of the following 64-bit operating
+      systems:</p>
+<ul class="- topic/ul ul">
+  <li class="- topic/li li">Microsoft Windows 11</li>
+  <li class="- topic/li li">Ubuntu Desktop 24.04 LTS, Ubuntu Desktop 22.04 LTS, or Red Hat Enterprise Linux 9</li>
+</ul>
+<div class="- topic/note note note note_note"><span class="note__title">Note:</span> <div class="note__body"> QNX SDP isn't supported on host systems that use ARM processors or macOS.</div></div>
+</div>
+<article class="- topic/topic concept/concept topic concept nested1" aria-labelledby="contents" id="contents">
+    <h2 class="- topic/title title topictitle2" id="contents">Contents</h2>
+    <div class="- topic/body concept/conbody body conbody">
+      <ul class="- topic/ul ul">
+        <li class="- topic/li li"><a class="- topic/xref xref" href="8.0.6_rn.html#Whats_new">What's new in QNX SDP?</a></li>
+        <li class="- topic/li li"><a class="- topic/xref xref" href="8.0.6_rn.html#Installation">Installing QNX SDP</a></li>
+        <li class="- topic/li li"><a class="- topic/xref xref" href="8.0.6_rn.html#Debug_info">Debug information for shipped binaries</a></li>
+        <li class="- topic/li li"><a class="- topic/xref xref" href="8.0.6_rn.html#Discontinued">Discontinued and deprecated items</a></li>
+        <li class="- topic/li li"><a class="- topic/xref xref" href="8.0.6_rn.html#Experimental">Experimental items</a></li>
+        <li class="- topic/li li"><a class="- topic/xref xref" href="8.0.6_rn.html#Known_issues">Known issues</a></li>
+        <li class="- topic/li li"><a class="- topic/xref xref" href="8.0.6_rn.html#Fixed_issues">Fixed issues</a></li>
+        <li class="- topic/li li"><a class="- topic/xref xref" href="8.0.6_rn.html#Licensing">Licensing information</a></li>
+        <li class="- topic/li li"><a class="- topic/xref xref" href="8.0.6_rn.html#Docs">Getting started with the documentation</a></li>
+        <li class="- topic/li li"><a class="- topic/xref xref" href="8.0.6_rn.html#Technical_support">Technical support</a></li>
+      </ul>
+    </div>
+    
+    <article class="- topic/topic concept/concept topic concept nested2" aria-labelledby="Whats_new__Whats_new" id="Whats_new">
+      <h3 class="- topic/title title topictitle3" id="Whats_new__Whats_new">What's new in QNX SDP?</h3>
+      <div class="- topic/body concept/conbody body conbody">
+        <div class="- topic/p p"><div class="table-container"><table class="- topic/table table" data-cols="3"><caption></caption><colgroup><col/><col/><col/></colgroup><thead class="- topic/thead thead">
+                <tr class="- topic/row">
+                  <th class="- topic/entry entry colsep-1 rowsep-1" id="Whats_new__entry__1">Component</th>
+                  <th class="- topic/entry entry colsep-1 rowsep-1" id="Whats_new__entry__2">Feature</th>
+                  <th class="- topic/entry entry colsep-0 rowsep-1" id="Whats_new__entry__3">Details</th>
+                </tr>
+              </thead><tbody class="- topic/tbody tbody">
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__1">Kernel</td>
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__2">In-kernel Pipes Creation Control.</td>
+                  <td class="- topic/entry entry colsep-0 rowsep-1" headers="Whats_new__entry__3">In-kernel pipe creation can now be restricted via the
+                      <code class="+ topic/ph pr-d/codeph ph codeph">PROCMGR_AID_KPIPE_CREATE</code> ability.</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__1">Kernel</td>
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__2">CPU On/Offlining Events.</td>
+                  <td class="- topic/entry entry colsep-0 rowsep-1" headers="Whats_new__entry__3">The <span class="+ topic/keyword sw-d/cmdname keyword cmdname">procmgr</span> events can now notify user programs of CPUs
+                    being offlined or onlined.</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__1">Kernel</td>
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__2">Generic Interrupt Controller (GIC) Kernel Module Multiple Redistributor
+                    Support.</td>
+                  <td class="- topic/entry entry colsep-0 rowsep-1" headers="Whats_new__entry__3">The GIC version 3 kernel module now supports systems with multiple
+                    contiguous redistributor regions.</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__1">Kernel</td>
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__2">Kernel Event Tracing Kernel Version Capture.</td>
+                  <td class="- topic/entry entry colsep-0 rowsep-1" headers="Whats_new__entry__3">Kernel event traces now log the version of the kernel they were captured
+                    on.</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__1">Kernel</td>
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__2"><code class="+ topic/ph pr-d/codeph ph codeph">SIGEV_PULSE</code> Inherited Priority Configuration
+                    Support.</td>
+                  <td class="- topic/entry entry colsep-0 rowsep-1" headers="Whats_new__entry__3">The <span class="+ topic/keyword pr-d/apiname keyword apiname">SchedSet()</span> kernel call can now be used to set the
+                    priority of <code class="+ topic/ph pr-d/codeph ph codeph">SIGEV_PULSE</code> events created with
+                      <code class="+ topic/ph pr-d/codeph ph codeph">SIGEV_PULSE_PRIO_INHERIT</code>.</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__1">Kernel</td>
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__2">Kernel Event Tracing CPU Offlining Support.</td>
+                  <td class="- topic/entry entry colsep-0 rowsep-1" headers="Whats_new__entry__3">Kernel event tracing now supports tracing while CPUs are being
+                    offlined/onlined.</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__1">Kernel</td>
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__2">Runtime Linker <code class="+ topic/ph pr-d/codeph ph codeph">RTLD_NOLOAD</code> Support.</td>
+                  <td class="- topic/entry entry colsep-0 rowsep-1" headers="Whats_new__entry__3">The <span class="+ topic/keyword pr-d/apiname keyword apiname">dlopen()</span> function now supports the
+                      <code class="+ topic/ph pr-d/codeph ph codeph">RTLD_NOLOAD</code> flag.</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__1">Kernel</td>
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__2">Straight-line Speculation Hardening.</td>
+                  <td class="- topic/entry entry colsep-0 rowsep-1" headers="Whats_new__entry__3">The kernel now mitigates straight-line speculation following the
+                      <code class="+ topic/ph pr-d/codeph ph codeph">ERET</code> instructions on AArch64 systems.</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__1">Networking</td>
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__2">Driver updates.</td>
+                  <td class="- topic/entry entry colsep-0 rowsep-1" headers="Whats_new__entry__3">The <span class="+ topic/ph sw-d/filepath ph filepath">devs-cgem.so</span> and <span class="+ topic/ph sw-d/filepath ph filepath">devs-clk-xilinx.so</span> drivers are updated to support the AMD Versal2 VEK385.</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__1">Networking</td>
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__2">Precision Time Protocol (PTP) Ethernet packet timestamping.</td>
+                  <td class="- topic/entry entry colsep-0 rowsep-1" headers="Whats_new__entry__3">The <span class="+ topic/keyword pr-d/apiname keyword apiname">ioctl()</span> entry now includes a new command,
+                    PTP_ADD_OFFSET, which allows adding a time offset to the current time.</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__1">Networking</td>
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__2">FreeBSD version update.</td>
+                  <td class="- topic/entry entry colsep-0 rowsep-1" headers="Whats_new__entry__3">The FreeBSD version that QNX OS networking is based on has been updated to 14.4-RELEASE-p9.</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__1">Networking</td>
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__2">Packet filtering (PF).</td>
+                  <td class="- topic/entry entry colsep-0 rowsep-1" headers="Whats_new__entry__3">The version of <span class="+ topic/keyword sw-d/cmdname keyword cmdname">pf</span> provided with QNX SDP now supports Ethernet filtering.</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__1">Networking</td>
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__2">Network File System (NFS).</td>
+                  <td class="- topic/entry entry colsep-0 rowsep-1" headers="Whats_new__entry__3">The <span class="+ topic/ph sw-d/filepath ph filepath">etc/exports</span> file that defines remote mountpoints
+                    for NFS, now has an <code class="+ topic/ph pr-d/codeph ph codeph">-all=</code><var class="+ topic/keyword sw-d/varname keyword varname">uid</var> option. This
+                    option allows you to map all client users and groups to a specified UID.</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__1">Networking</td>
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__2">Unbound version update.</td>
+                  <td class="- topic/entry entry colsep-0 rowsep-1" headers="Whats_new__entry__3">The Unbound DNS resolver has been updated to version 1.25.1.</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__1">Networking</td>
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__2">Updated <span class="+ topic/keyword sw-d/cmdname keyword cmdname">io-sock</span>module compatibility version.</td>
+                  <td class="- topic/entry entry colsep-0 rowsep-1" headers="Whats_new__entry__3">The current <span class="+ topic/keyword sw-d/cmdname keyword cmdname">io-sock</span> driver and module API version has
+                    been updated to reflect changes to Virtual Network (VNET) and Dynamic Per-CPU
+                    (DPCPU) support across modules. The minimum supported version is unchanged
+                    because most existing drivers and modules remain compatible. Modules that use
+                    VNET or DPCPU variables and were built with an older SDP might need to be
+                    rebuilt.</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__1">Filesystems</td>
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__2">Allowing mounts with more than 47 <span class="+ topic/keyword sw-d/cmdname keyword cmdname">devb</span>
+                    processes.</td>
+                  <td class="- topic/entry entry colsep-0 rowsep-1" headers="Whats_new__entry__3"><p class="- topic/p p">Block device driver <span class="+ topic/keyword sw-d/cmdname keyword cmdname">devb</span> processes now offer an alternative method of
+                      receiving mount requests. This new method bypasses a system limit for the
+                      maximum number of concurrent mount-handling resource managers.</p>
+                    <div class="- topic/p p">To enable this method, set the <var class="+ topic/keyword sw-d/varname keyword varname">BROADCAST_MOUNT_LISTENER=NO</var>
+                      variable in the <span class="+ topic/keyword sw-d/cmdname keyword cmdname">devb</span> process environment.<div class="- topic/note note note note_note"><span class="note__title">Note:</span> <div class="note__body">This
+                        functionality relies on a new version of <span class="+ topic/keyword sw-d/cmdname keyword cmdname">libc</span> (8.0.6).
+                        Specifying this environment variable with an older version of
+                          <span class="+ topic/keyword sw-d/cmdname keyword cmdname">libc</span> may prevent the <span class="+ topic/keyword sw-d/cmdname keyword cmdname">devb</span> process
+                        from receiving any mount requests.</div></div></div></td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__1">Filesystems</td>
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__2">New Device Command to reset the <span class="+ topic/keyword sw-d/cmdname keyword cmdname">io-blk</span> disk cache
+                    state.</td>
+                  <td class="- topic/entry entry colsep-0 rowsep-1" headers="Whats_new__entry__3"><p class="- topic/p p">A new <span class="+ topic/keyword sw-d/cmdname keyword cmdname">DCMD_FSYS_PGCACHE_CTL_OP_PAGESORT</span> sub-command has
+                      been added to the <span class="+ topic/keyword sw-d/cmdname keyword cmdname">DCMD_FSYS_PGCACHE_CTL</span> command.</p><p class="- topic/p p">This command can be sent to a file descriptor opened against the disk device (E.g.,
+                        <span class="+ topic/ph sw-d/filepath ph filepath">/dev/hd0</span>), helping substantially regain the lost
+                      sequential performance.</p><div class="- topic/note note note note_note"><span class="note__title">Note:</span> <div class="note__body">Some disk access patterns may result in gradual loss of file sequential read or write
+                      performance.</div></div></td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__1">Filesystems</td>
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__2">Access permissions update for <span class="+ topic/keyword sw-d/cmdname keyword cmdname">mkqnx6fs</span>.</td>
+                  <td class="- topic/entry entry colsep-0 rowsep-1" headers="Whats_new__entry__3">The <span class="+ topic/keyword pr-d/option keyword option">-R</span> command-line option of the
+                      <span class="+ topic/keyword sw-d/cmdname keyword cmdname">mkqnx6fs</span> utility now needs access permission, unlike
+                    before.</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__1">Security</td>
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__2">OpenSSL update.</td>
+                  <td class="- topic/entry entry colsep-0 rowsep-1" headers="Whats_new__entry__3">QNX OS ships with OpenSSL version 3.5 as well as version 3.0 (3.0 is the
+                    default).</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__1">Command Line Tools</td>
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__2">Rust repackaging.</td>
+                  <td class="- topic/entry entry colsep-0 rowsep-1" headers="Whats_new__entry__3">
+                    <p class="- topic/p p">A new Rust package containing the Ferrocene SDK from Ferrous Systems for QNX
+                      SDP 8.0.6 has been made available with this release.</p>
+                    <p class="- topic/p p">The Ferrocene SDK is available as a separate optional downloadable package
+                      with QNX SDP 8.0.6 for convenience for our customers and should not be
+                      considered part of the QNX roadmap supported products. Packaging and
+                      availability may change in future releases.</p>
+                    <p class="- topic/p p">For more details on the Ferrocene SDK version 26.08, refer to the Ferrous <a class="- topic/xref xref" href="https://public-docs.ferrocene.dev/main/targets/qnx8-manual/index.html" target="_blank" rel="external noopener"><cite class="- topic/cite cite">QNX8 Manual</cite></a> and the Ferrous <a class="- topic/xref xref" href="https://public-docs.ferrocene.dev/main/release-notes/26.08.0.html" target="_blank" rel="external noopener"><cite class="- topic/cite cite">Ferrocene 26.08 — Ferrocene Release Notes</cite></a>.</p></td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__1">Command Line Tools</td>
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__2">Bootstrap Configuration Files.</td>
+                  <td class="- topic/entry entry colsep-0 rowsep-1" headers="Whats_new__entry__3">The bootstrap programs' developers now have an option to have
+                      <span class="+ topic/keyword sw-d/cmdname keyword cmdname">mkifs</span> patch for their binary's parameters, based on a
+                    textual configuration next to the binary's file attributes. This is an
+                    alternative to parametrization via the command line, and this allows for more
+                    clarity and potential build-time detection of configuration errors.</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__1">Command Line Tools</td>
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__2">Bootloader.</td>
+                  <td class="- topic/entry entry colsep-0 rowsep-1" headers="Whats_new__entry__3">The developers who build their own QNX6 filesystem image are now able to
+                    override the second-stage bootloader program via a new <span class="+ topic/keyword sw-d/cmdname keyword cmdname">booter</span>
+                    attribute in the <span class="+ topic/keyword sw-d/cmdname keyword cmdname">mkqnx6fsimg</span> utility.</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__1">Graphics and Screen</td>
+                  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Whats_new__entry__2">Image codecs.</td>
+                  <td class="- topic/entry entry colsep-0 rowsep-1" headers="Whats_new__entry__3">The following libraries have been updated:<ul class="- topic/ul ul">
+                      <li class="- topic/li li"><span class="+ topic/keyword pr-d/apiname keyword apiname">libtiff</span> is now version 4.7.2</li>
+                      <li class="- topic/li li"><span class="+ topic/keyword pr-d/apiname keyword apiname">libgif</span> is now version 6.1.3</li>
+                      <li class="- topic/li li"><span class="+ topic/keyword pr-d/apiname keyword apiname">libfreetype</span> is now version 2.4.3</li>
+                    </ul></td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry colsep-1 rowsep-0" headers="Whats_new__entry__1">BSP and Drivers</td>
+                  <td class="- topic/entry entry colsep-1 rowsep-0" headers="Whats_new__entry__2">Support for the following Generic Interrupt Controllers (GICs):<ul class="- topic/ul ul">
+                      <li class="- topic/li li">GIC Distributor (GICD)</li>
+                      <li class="- topic/li li">GIC Redistributor (GICR)</li>
+                      <li class="- topic/li li">Interrupt Translation Service (ITS)</li>
+                    </ul></td>
+                  <td class="- topic/entry entry colsep-0 rowsep-0" headers="Whats_new__entry__3">The Startup library now supports retrieving GICD, GICR, and ITS base
+                    addresses from the Flattened Device Tree (FDT). The BSPs don't need to hard-code
+                    GIC base addresses. This feature also supports GIC version 3 configurations
+                    which include one or more ITS nodes.</td>
+                </tr>
+              </tbody></table></div></div>
+        </div>
+    </article>
+    
+    <article class="- topic/topic concept/concept topic concept nested2" aria-labelledby="Installation__Installation" id="Installation">
+      <h3 class="- topic/title title topictitle3" id="Installation__Installation">Installing QNX SDP</h3>
+      <div class="- topic/body concept/conbody body conbody">
+        <p class="- topic/p p">To use QNX SDP 8.0.6, you need to have QNX Software Center 2.0.4 or later. For
+          information about installing and opening this other product, refer to the <q class="- topic/q q"><a class="- topic/xref xref" href="https://www.qnx.com/developers/docs/qsc/com.qnx.doc.qsc.user_guide/topic/install_and_launch.html" target="_blank" rel="external noopener">Install and launch the QNX Software Center</a></q> chapter in the <cite class="- topic/cite cite">QNX
+            Software Center User's Guide</cite>.</p>
+        <div class="- topic/note note note note_note" id="Installation__note_vbj_tdc_43c" data-ofbid="Installation__note_vbj_tdc_43c"><span class="note__title">Note:</span> <div class="note__body">
+          <p class="- topic/p p">You install QNX SDP 8.0.6 as a new baseline product by installing QNX SDP 8.0.6 with
+            the conservative installation policy selected. Currently, you cannot update an existing
+            QNX SDP 8.0.x installation to QNX SDP 8.0.6 using a patch set.</p>
+        </div></div>
+        <p class="- topic/p p">To install the QNX SDP 8.0.6 product:</p>
+        <ol class="- topic/ol ol" id="Installation__ol_lwq_3tz_43c" data-ofbid="Installation__ol_lwq_3tz_43c">
+          <li class="- topic/li li">Open the QNX Software Center and click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Add Installation</span>.</li>
+          <li class="- topic/li li">In the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">New Installation Wizard</span>, expand <span class="+ topic/ph ui-d/uicontrol ph uicontrol">QNX Software
+              Development Platform 8.0</span>, select <span class="+ topic/ph ui-d/uicontrol ph uicontrol">QNX Software Development
+              Platform 8.0</span>, and then click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Next</span> as needed to
+            navigate to the Installation Properties page.</li>
+          <li class="- topic/li li">In the Installation Properties page, for <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Update Policy</span>, select
+              <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Conservative</span>, and then complete the rest of the installation
+            steps.</li>
+        </ol>
+        <p class="- topic/p p">For more information, go to the <q class="- topic/q q"><a class="- topic/xref xref" href="https://www.qnx.com/developers/docs/qsc/com.qnx.doc.qsc.user_guide/topic/install_qnx_sdp.html" target="_blank" rel="external noopener">Install the QNX Software Development Platform</a></q> chapter in the <em class="+ topic/ph hi-d/i ph i">QNX
+            Software Center User's Guide</em>.</p>
+        <p class="- topic/p p">To access the contents of the package, right-click QNX OS and QNX Tool Suite, choose
+            <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Properties</span>, then click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Package Contents</span>.
+          Some of the packages may contain no files but instead references to contained packages (or
+            <em class="+ topic/ph hi-d/i ph i">subpackages</em>), in which case the contents page display a note saying so. To access
+          the list of subpackages, right-click the package, choose
+          <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Properties</span>, then click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Package Dependencies</span>.
+          Because the baseline OS product has many inter-package dependencies, sometimes you have to
+          go through multiple levels of subpackages to access the included files.</p>
+        <div class="- topic/p p">
+          <div class="- topic/note note note note_note"><span class="note__title">Note:</span> <div class="note__body">For more information related to QNX SDP 8.0.6 updates, refer to the <a class="- topic/xref xref" href="https://www.qnx.com/developers/docs/relnotes8.0/com.qnx.doc.release_notes/topic/8.0.6_prod_release_notes/8.0.6_updates_list.html" target="_blank" rel="external noopener"><cite class="- topic/cite cite">QNX SDP 8.0.6 Product Updates Release Notes</cite></a> prior to installing
+            those updates.</div></div>
+        </div>
+        <div class="- topic/note note note note_note"><span class="note__title">Note:</span> <div class="note__body">Some packages in this release include experimental files. The maturity level of
+          individual files is displayed in the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Status</span> column in the package
+          contents table. The individual files in a package can have different maturity
+            levels.<p class="- topic/p p">You can also obtain the maturity statuses of files by generating a manifest
+            report. For more information, refer to the <q class="- topic/q q"><a class="- topic/xref xref" href="https://www.qnx.com/developers/docs/qsc/com.qnx.doc.qsc.user_guide/topic/manifest_reports_intro.html" target="_blank" rel="external noopener">Manifest Reports &amp; File Lookup</a></q> chapter of the <cite class="- topic/cite cite">QNX Software
+              Center User's Guide</cite>.</p><p class="- topic/p p">Each package has its maturity level. You can learn
+            this by right-clicking the package, choosing <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Properties</span>, then
+            clicking <span class="+ topic/ph ui-d/uicontrol ph uicontrol">General Information</span>. In the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Legal and
+              Regulatory Information</span> panel, there's a <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Status</span>
+            field. For details about the possible values of this field, refer to <q class="- topic/q q">Package
+              status</q> in the <q class="- topic/q q"><a class="- topic/xref xref" href="https://www.qnx.com/developers/docs/qsc/com.qnx.doc.qsc.user_guide/topic/assign_users.html" target="_blank" rel="external noopener">Deploy licenses to users</a></q> section in the <cite class="- topic/cite cite">QNX Software Center User's
+              Guide</cite>.</p></div></div>
+        
+        <div class="- topic/note note warning note_warning"><span class="note__title">Warning:</span> <div class="note__body"> QNX users must deploy the complete QNX 8.0.6 patch set, as several
+          features introduced in version 8.0.6 rely on tightly coupled OS dependencies. Partial
+          adoption of the patch set may result in incompatibilities or unsupported configurations.
+          Full patch integration is required to ensure proper functionality and system
+          stability.</div></div>
+        
+      </div>
+    </article>
+    
+    <article class="- topic/topic concept/concept topic concept nested2" aria-labelledby="Debug_info__Debug_info" id="Debug_info">
+      <h3 class="- topic/title title topictitle3" id="Debug_info__Debug_info">Debug information for shipped binaries</h3>
+      <div class="- topic/body concept/conbody body conbody">
+        <p class="- topic/p p">The QNX SDP target binaries are generated with debug information (<span class="+ topic/keyword pr-d/option keyword option">-g</span>),
+          with the debug form of the binary stored in a separate
+              <span class="+ topic/ph sw-d/filepath ph filepath"><var class="+ topic/keyword sw-d/varname keyword varname">binaryName</var>.sym</span> file. The
+            non-<span class="+ topic/ph sw-d/filepath ph filepath">sym</span> form is stripped of the debug and <span class="+ topic/ph hi-d/tt ph tt">.ident</span>
+          information (<span class="+ topic/keyword sw-d/cmdname keyword cmdname">use -s</span> works only on files containing the <span class="+ topic/ph hi-d/tt ph tt">.ident</span>
+          section).</p>
+        <p class="- topic/p p">Most target packages include debug information (<span class="+ topic/ph sw-d/filepath ph filepath">.sym</span> files). The
+          binaries and their <span class="+ topic/ph sw-d/filepath ph filepath">.sym</span> files are linked, so <span class="+ topic/keyword sw-d/cmdname keyword cmdname">gdb</span>
+          understands where to find the symbol data. There's no need to store
+            <span class="+ topic/ph sw-d/filepath ph filepath">.sym</span> files for the binaries on a target.</p>
+        <p class="- topic/p p">If the debug symbols are especially large, there might be a separate debug package in the
+          QNX Software Center. To install debug symbols in this case, select your installation from
+          the toolbar, then go to the Advanced tab. Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Edit Installation
+            Properties</span>. In the property dialog that opens, ensure that the
+            <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Install debug symbols</span> checkbox is selected (this box is selected
+          by default). Click <span class="+ topic/ph ui-d/uicontrol ph uicontrol">OK</span>.</p>
+        <p class="- topic/p p">If you decide to not install the debug information but later want it, you can right-click
+          a package and choose <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Install debug symbols</span>.</p>
+      </div>
+    </article>
+    
+    <article class="- topic/topic concept/concept topic concept nested2" aria-labelledby="Discontinued__Discontinued" id="Discontinued">
+      <h3 class="- topic/title title topictitle3" id="Discontinued__Discontinued">Discontinued and deprecated items</h3>
+      <div class="- topic/body concept/conbody body conbody">
+        <p class="- topic/p p">For documentation on all items that are no longer shipped in this release or will be
+          removed in a future release, refer to the <a class="- topic/xref xref" href="https://www.qnx.com/developers/docs/relnotes8.0/com.qnx.doc.discontinuation_notice/topic/about.html" target="_blank" rel="external noopener"><cite class="- topic/cite cite">QNX Software Development Platform 8.0: Discontinuation and Deprecation
+              Notice</cite></a>.</p>
+      </div>
+    </article>
+    
+    <article class="- topic/topic concept/concept topic concept nested2" aria-labelledby="Experimental__Experimental" id="Experimental">
+      <h3 class="- topic/title title topictitle3" id="Experimental__Experimental">Experimental items</h3>
+      <div class="- topic/body concept/conbody body conbody"><div class="- topic/note note note note_note"><span class="note__title">Note:</span> <div class="note__body"><p class="- topic/p p" style="margin-top: 1.2em; font-size: 1.1em;"><strong class="+ topic/ph hi-d/b ph b">Notice on Software Maturity and Quality</strong></p>
+          <p class="- topic/p p">The software included in this (delivery/repository/archive/release) is
+            classified under the QNX Software Maturity Standard as Experimental
+            Software.</p>
+          <p class="- topic/p p">As defined in the QNX Development License Agreement (<a class="- topic/xref xref" href="http://www.qnx.com/download/feature.html?programid=68651" target="_blank" rel="external noopener"><span class="+ topic/ph sw-d/filepath ph filepath">http://www.qnx.com/download/feature.html?programid=68651</span></a>),
+            Experimental Software represents early-stage deliverables intended for evaluation or proof-of-concept purposes.</p>
+          <div class="- topic/p p">Experimental software is provided without one or more of the following:
+            <ul class="- topic/ul ul"><li class="- topic/li li">Formal requirements</li>
+              <li class="- topic/li li">Formal design or architecture</li>
+              <li class="- topic/li li">Formal testing</li>
+              <li class="- topic/li li">Formal support</li>
+              <li class="- topic/li li">Formal documentation</li>
+              <li class="- topic/li li">Certifications of any type</li>
+              <li class="- topic/li li">End-of-Life or End-of-Support policy</li>
+            </ul></div>
+          <p class="- topic/p p">Additionally, this software is not monitored or scanned under our Cybersecurity Management Standard.</p>
+          <p class="- topic/p p">No warranties, guarantees, or claims are offered. Please refer to the QDL for more details about our support and
+            maintenance policy for Experimental Software.</p>
+        <p class="- topic/p p">For information about the use of experimental software, refer to the Commercial Software
+          License Agreement (CSLA) or Partner Software License Agreement (PSLA) in the Licensing
+          area of our website: <a class="- topic/xref xref" href="https://www.qnx.com/legal/licensing/" target="_blank" rel="external noopener"><span class="+ topic/ph sw-d/filepath ph filepath">https://www.qnx.com/legal/licensing/</span></a>.</p></div></div>
+        <p class="- topic/p p">The table that follows lists the experimental items by functional area and indicates
+          whether each one is contained in an additional package that must be installed
+          separately.</p>
+        <div class="table-container"><table class="- topic/table table" data-cols="3"><caption></caption><colgroup><col style="width:15%"/><col style="width:55%"/><col style="width:30%"/></colgroup><thead class="- topic/thead thead">
+              <tr class="- topic/row">
+                <th class="- topic/entry entry colsep-0 rowsep-0" id="Experimental__entry__1">Functional area</th>
+                <th class="- topic/entry entry colsep-0 rowsep-0" id="Experimental__entry__2">Item description</th>
+                <th class="- topic/entry entry colsep-0 rowsep-0" id="Experimental__entry__3">Additional package</th>
+              </tr>
+            </thead><tbody class="- topic/tbody tbody">
+              <tr class="- topic/row">
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__1">Networking</td>
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__2">Texas Instruments Jacinto 7 network drivers:<ul class="- topic/ul ul">
+                    <li class="- topic/li li"><span class="+ topic/ph sw-d/filepath ph filepath">devs-cpsw-j721e.so</span></li>
+                    <li class="- topic/li li"><span class="+ topic/ph sw-d/filepath ph filepath">devs-cpsw-j784s4.so</span></li>
+                    <li class="- topic/li li"><span class="+ topic/ph sw-d/filepath ph filepath">devs-cpsw-j721s2.so</span></li>
+                    <li class="- topic/li li"><span class="+ topic/ph sw-d/filepath ph filepath">devs-cpsw-j722s.so</span></li>
+                    <li class="- topic/li li"><span class="+ topic/ph sw-d/filepath ph filepath">devs-cpsw-j742s2.so</span></li>
+                </ul></td>
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__3">None</td>
+              </tr>
+              <tr class="- topic/row">
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__1">Networking</td>
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__2">Texas Instruments Sitara network drivers:<ul class="- topic/ul ul">
+                    <li class="- topic/li li"><span class="+ topic/ph sw-d/filepath ph filepath">devs-cpsw-am62x.so</span></li>
+                    <li class="- topic/li li"><span class="+ topic/ph sw-d/filepath ph filepath">devs-cpsw-am62a.so</span></li>
+                    <li class="- topic/li li"><span class="+ topic/ph sw-d/filepath ph filepath">devs-cpsw-am62p.so</span></li>
+                </ul></td>
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__3">None</td>
+              </tr>
+              <tr class="- topic/row">
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__1">Networking</td>
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__2">RT9010 network PHY driver (<span class="+ topic/ph sw-d/filepath ph filepath">devs-rt9010phy.so</span>)</td>
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__3">None</td>
+              </tr>
+              <tr class="- topic/row">
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__1">Networking</td>
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__2">DWC gmac network driver (<span class="+ topic/ph sw-d/filepath ph filepath">devs-dwc.so</span>)</td>
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__3">None</td>
+              </tr>
+              <tr class="- topic/row">
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__1">Networking</td>
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__2">RNDIS USB network driver (<span class="+ topic/ph sw-d/filepath ph filepath">devs-urndis.so</span>)</td>
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__3">None</td>
+              </tr>
+              <tr class="- topic/row">
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__1">Networking</td>
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__2">DPAA2 drivers for io-sock (<span class="+ topic/ph sw-d/filepath ph filepath">devs-dpaa2.so</span>)</td>
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__3">None</td>
+              </tr>
+              <tr class="- topic/row">
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__1">Filesystems</td>
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__2">QNX Filesystem for Safety Device Driver</td>
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__3">None</td>
+              </tr>
+              <tr class="- topic/row">
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__1">Command Line Tools</td>
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__2">This package contains GNU Project Debugger Server for QNX OS hosts.</td>
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__3">None</td>
+              </tr>
+              <tr class="- topic/row">
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__1">Graphics and Screen</td>
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__2">Support for the core Wayland communication library and the Weston compositor
+                  for Screen</td>
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__3"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">QNX SDP 8.0 Wayland/Weston</span></td>
+              </tr>
+              <tr class="- topic/row">
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__1">Graphics and Screen</td>
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__2">Tools for using Wayland on Linux 64-bit hosts</td>
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__3"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">QNX SDP 8.0 Wayland host tools (Linux 64-bit)</span></td>
+              </tr>
+              <tr class="- topic/row">
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__1">Graphics and Screen</td>
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__2">Tools for using Wayland on Windows 64-bit hosts</td>
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__3"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">QNX SDP 8.0 Wayland host tools (Windows
+                  64-bit)</span></td>
+              </tr>
+              <tr class="- topic/row">
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__1">Graphics and Screen</td>
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__2">OpenWF Display Server</td>
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__3"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">QNX SDP 8.0 Screen WFD Server</span></td>
+              </tr>
+              <tr class="- topic/row">
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__1">Graphics and Screen</td>
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__2">Base Graphics</td>
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__3"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">QNX SDP 8.0 Screen Base Graphics Source Code</span></td>
+              </tr>
+              <tr class="- topic/row">
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__1">Graphics and Screen</td>
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__2">Demos and Tutorials</td>
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__3"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">QNX SDP 8.0 Screen Demos and Tutorials Source
+                  Code</span></td>
+              </tr>
+              <tr class="- topic/row">
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__1">Graphics and Screen</td>
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__2">Demo and Sample applications</td>
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__3"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">QNX SDP 8.0 Screen Graphics Demo/Sample
+                  Applications</span></td>
+              </tr>
+              <tr class="- topic/row">
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__1">BSP and Drivers</td>
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__2">Added System Memory Management Unit (SMMU) support for the NXP i.MX95 EVK
+                  Board Support Package (BSP).</td>
+                <td class="- topic/entry entry colsep-0 rowsep-0" headers="Experimental__entry__3"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">QNX SDP 8.0 SMMUMAN Configuration Example for the NXP i.MX95
+                    SoC</span></td>
+              </tr>
+             
+            </tbody></table></div>
+      </div>
+    </article>
+    
+    <article class="- topic/topic concept/concept topic concept nested2" aria-labelledby="Fixed_issues__Fixed_issues" id="Fixed_issues">
+      <h3 class="- topic/title title topictitle3" id="Fixed_issues__Fixed_issues">Fixed issues</h3>
+      <div class="- topic/body concept/conbody body conbody">
+        <div class="- topic/p p">The following issues are fixed in this update. To find a specific issue, search for a
+          reference number on this page or use the search tool:<div class="table-container"><table class="- topic/table table" data-cols="5"><caption></caption><colgroup><col style="width:39.86710963455149%"/><col style="width:14.83942414174972%"/><col style="width:16.943521594684384%"/><col style="width:17.275747508305646%"/><col style="width:11.074197120708746%"/></colgroup><thead class="- topic/thead thead">
+                <tr class="- topic/row">
+                  <th class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" id="Fixed_issues__entry__1">Description</th>
+                  <th class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" id="Fixed_issues__entry__2">Applicable Architecture(s)</th>
+                  <th class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" id="Fixed_issues__entry__3">Application-Level Impact</th>
+                  <th class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" id="Fixed_issues__entry__4">System-Level Impact</th>
+                  <th class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" id="Fixed_issues__entry__5">Reference Number</th>
+                </tr>
+              </thead><tbody class="- topic/tbody tbody">
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">Fixed the issues encountered during the
+                    installation of the following packages:<ul class="- topic/ul ul">
+                      <li class="- topic/li li"><span class="+ topic/ph sw-d/filepath ph filepath">com.qnx.qnx800.target.screen.demos</span></li>
+                      <li class="- topic/li li"><span class="+ topic/ph sw-d/filepath ph filepath">com.qnx.qnx800.target.screen.base</span></li>
+                      <li class="- topic/li li"><span class="+ topic/ph sw-d/filepath ph filepath">com.qnx.qnx800.target.screen.screen_utils</span></li>
+                    </ul></td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">None.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">None.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3029138, 3029353</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">Fixed a link-state handling issue in the
+                    <span class="+ topic/ph sw-d/filepath ph filepath">devs-ure.so</span> driver that prevented ARP announcements and
+                    IPv6 neighbor solicitations from being sent when the link transitioned to
+                    UP.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">None.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">None.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3014828</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">The <span class="+ topic/keyword sw-d/cmdname keyword cmdname">io-sock</span> networking
+                    manager now properly handles multiple blocking operations on the same socket.
+                    This change prevents socket I/O from hanging indefinitely when all resource
+                    manager threads associated with a channel are consumed.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">None.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">None.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3021843</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">
+                    <p class="- topic/p p">For UNIX domain sockets, the <span class="+ topic/keyword pr-d/apiname keyword apiname">getsockname()</span> function now
+                      populates <code class="+ topic/ph pr-d/codeph ph codeph">sockaddr_un.sun_path</code> with a terminating null
+                      character, which prevents applications from reading uninitialized memory or
+                      producing unexpected path output.</p>
+                  </td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">None.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">None.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3014662</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">Dynamically loaded <span class="+ topic/keyword sw-d/cmdname keyword cmdname">io-sock</span>
+                    modules now correctly access VNET and DPCPU variables defined by
+                      <span class="+ topic/keyword sw-d/cmdname keyword cmdname">io-sock</span> and other modules. Previously, accessing these
+                    variables lead the  <span class="+ topic/keyword sw-d/cmdname keyword cmdname">io-sock</span> function to terminate
+                    unexpectedly.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">None.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">Custom <span class="+ topic/keyword sw-d/cmdname keyword cmdname">io-sock</span> modules that
+                    use VNET variables, DPCPU variables, or both, must be recompiled.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">2992461</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">To improve performance, we have eliminated the
+                    unnecessary NET epoch entry and exit operations around networking interrupt
+                    filters. The <span class="+ topic/keyword sw-d/cmdname keyword cmdname">io-sock</span> networking stack now enters the network
+                    epoch only when executing interrupt handlers, matching FreeBSD behavior.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">Drivers that access <span class="+ topic/keyword sw-d/cmdname keyword cmdname">io-sock</span>
+                    functionality in the interrupt filter may need to explicitly enter the network
+                    epoch.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">None.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">2997821</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">The <span class="+ topic/keyword sw-d/cmdname keyword cmdname">io-sock</span> networking
+                    stack now distributes UDP transmission workloads more efficiently across
+                    available system resources. This improves throughput and scalability for
+                    multi-stream UDP traffic.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">None.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">None.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">2994961</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">The <span class="+ topic/keyword sw-d/cmdname keyword cmdname">io-sock</span> networking
+                    stack has been updated to reduce external library dependencies, improving
+                    component isolation and maintainability.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">None.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">Interrupt Service Threads in
+                    <span class="+ topic/keyword sw-d/cmdname keyword cmdname">io-sock</span> are now bound to the CPU that handles the
+                    interrupt.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3025794</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">
+                    <p class="- topic/p p">The precision of Berkeley Packet Filter (BPF) receive timestamps for
+                      Precision Time Protocol (PTP) traffic has been improved. Previously, PTP
+                      receive timestamps obtained through BPF were rounded down by 1 ns because of
+                      internal timestamp conversions.</p>
+                  </td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">If you've accounted for the 1 ns loss in
+                    precision using BPF, this no longer needs to be corrected.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">None.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3027602</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">When <span class="+ topic/keyword sw-d/cmdname keyword cmdname">io-sock</span> is configured
+                    to use POSIX typed memory through the <code class="+ topic/ph pr-d/codeph ph codeph">qnx.typed_mem</code> tunable, it
+                    now derives its default memory limits from the size of the configured
+                    typed-memory region instead of the amount of system RAM. This change helps
+                    prevent memory-allocation failures in deployments that use typed memory.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">None.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">If your system relies on the previous sizing
+                    behavior, it might experience lower default networking memory limits. You may
+                    need to explicitly configure tunables such as <code class="+ topic/ph pr-d/codeph ph codeph">qnx.sysrunmem</code> to
+                    restore earlier limits.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3027816</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">Network drivers that request noncached DMA
+                    memory now transmit data as expected. Previously, <span class="+ topic/keyword sw-d/cmdname keyword cmdname">io-sock</span>
+                    could ignore the request, resulting in high network latency, transmission
+                    stalls, or complete loss of outbound traffic.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">None.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">None.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3028273</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">BPF listeners on the same network interface
+                    now receive timestamps in their requested formats, rather than the best across
+                    all interfaces. Previously, starting another listener, such as
+                      <span class="+ topic/keyword sw-d/cmdname keyword cmdname">tcpdump</span>, could cause an application not to receive a PTP
+                    timestamp.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">None.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">None.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3028275</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">
+                    <p class="- topic/p p">Corrected an issue that could rarely cause PTP timestamps to be reported one
+                      second earlier than the actual time. The issue could occur under specific
+                      timing conditions when the nanosecond counter wrapped to the next second.</p>
+                  </td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">None.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">None.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3035018</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">
+                    <p class="- topic/p p">Corrected an issue that could cause applications such as DHCP clients that
+                      use SO_RERROR to enter a continuous error loop after receiving an ENOBUFS
+                      condition, resulting in excessive CPU utilization and log flooding.</p>
+                  </td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">None.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">None.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3036470</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">
+                    <p class="- topic/p p">Corrected an issue where the <span class="+ topic/keyword sw-d/cmdname keyword cmdname">sysctl</span> variable
+                      <code class="+ topic/ph pr-d/codeph ph codeph">qnx.pool.chan_x.worker</code>   could report incorrect resource
+                      manager worker-thread counts. The issue affected thread-pool monitoring and
+                      diagnostics only and did not affect thread creation or scheduling.</p>
+                  </td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">None.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">None.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3037226</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">
+                    <p class="- topic/p p">Corrected an issue where file paths reported for memory-mapped files on NFS
+                      mounts could be truncated by one character when retrieved through process
+                      mapping information interfaces such as DCMD_PROC_MAPDEBUG.</p>
+                  </td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">None.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">None.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3038398</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">The <span class="+ topic/keyword sw-d/cmdname keyword cmdname">mkqnximage</span> utility now
+                    includes the <span class="+ topic/ph sw-d/filepath ph filepath">spi-dwc</span> driver when creating a Raspberry Pi 5
+                    image.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">Host-Linux</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">None.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">None.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3027505</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">The <span class="+ topic/keyword sw-d/cmdname keyword cmdname">secpolgenerate</span> utility
+                    now continues to operate when CPUs are taken offline.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">AArch64</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">None.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">None.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3007477</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">Fixed an issue that prevented
+                    <span class="+ topic/keyword sw-d/cmdname keyword cmdname">mkqnximage</span> from creating VirtualBox or VMware images on
+                    Windows 11 because the <span class="+ topic/keyword sw-d/cmdname keyword cmdname">numfmt</span> utility wasn't
+                    available.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">Windows</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">None.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">None.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3036093</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">The <span class="+ topic/keyword sw-d/cmdname keyword cmdname">mkqnximage</span> utility now
+                    correctly adjusts the amount of RAM to the value specified by the
+                    <span class="+ topic/keyword pr-d/option keyword option">--ram</span> option when it creates a VMware image.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">Linux, Windows</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">None.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">None.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">2953209</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">Fixed an issue that caused
+                    <span class="+ topic/keyword sw-d/cmdname keyword cmdname">secpolgenerate</span> to continuously report that
+                    <span class="+ topic/keyword sw-d/cmdname keyword cmdname">io-sock</span> couldn't access
+                    <span class="+ topic/ph sw-d/filepath ph filepath">/dev/usb/io-usb-otg</span> in images created by
+                    <span class="+ topic/keyword sw-d/cmdname keyword cmdname">mkqnximage</span> with a security policy enabled.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">x86-64</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">None.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">None.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3017444</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">Corrected the TLB invalidation routine during
+                    long message passing on AArch64 systems.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">AArch64</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">None.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">None.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3037636</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">Correct propagation of the
+                      <span class="+ topic/keyword sw-d/cmdname keyword cmdname">_NTO_COF_NOSHARE</span> flag during file descriptor
+                    duplication.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">File descriptors with an underlying connection
+                    that has the <span class="+ topic/keyword sw-d/cmdname keyword cmdname">_NTO_COF_NOSHARE</span> flag set, now propagates that
+                    flag when duplicated.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">2990888</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">Corrected a kernel crash that occurs when
+                    passing a synthetic interrupt vector to
+                    <span class="+ topic/keyword pr-d/apiname keyword apiname">InterruptQuery()</span>.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3038295</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">Corrected a kernel crash that could occur when
+                    write-locking a corrupted read-write lock.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3038292</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">Fixed an issue where the value of the
+                    GICD_CTLR register may be read incorrectly when using the GICv2 or GICv3 kernel
+                    modules.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">AArch64</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3036454</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">Fixed an issue where AArch64 systems may
+                    speculatively access non-sysram memory during memory zeroing.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3033024</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">Fixed an issue where a thread may remain ready
+                    when lower priority threads in its cluster are running.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3025487</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">Fixed an issue where memory allocations
+                    greater than SIZE_MAX - 8 would unexpectedly succeed.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3021285</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">Fixed an issue where the
+                      <span class="+ topic/keyword pr-d/apiname keyword apiname">iofdinfo()</span> function on a shared memory object's file
+                    descriptor may incorrectly report the file use count.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3001413</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">Corrected various timers within the kernel so
+                    that system time-of-day changes does not impact them.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">2958694</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">Fixed an issue where generated interrupt
+                    handler code can cause a kernel crash when handling the relevant
+                    interrupt.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">AArch64</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">2968080</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">Fixed an issue where a removed breakpoint may
+                    still be hit on AArch64 systems.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">AArch64</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3004428</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">Fixed an issue where destruction of robust,
+                    priority-ceiling, or priority-inheriting shared mutexes could cause interrupt
+                    latency to increase.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3032458</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">Fixed an issue where attempting to support
+                    extended PPIs when using the GIC version 3 kernel module on AArch64 systems
+                    could result in a kernel crash.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">AArch64</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">Startup must not attempt to setup extended
+                    PPIs on AArch64 systems.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3017624</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">Fixed an issue with the CPU flags being set in
+                    the upper 32 bits of the 64-bit CPU flags field to be cleared during system
+                    initialization.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3025106</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">Fixed an issue related to message passing
+                    where a high-priority client thread can be blocked while waiting for a
+                    low-priority server thread to run.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3030935</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">Fixed a scenario where sending a SIGKILL or
+                    SIGINT signal to a loading process could cause a kernel crash or priority
+                    inversion.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3028489</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">Fixed an issue that could cause a kernel crash
+                    if <span class="+ topic/keyword pr-d/apiname keyword apiname">ConnectServerInfo()</span> is called with a
+                      <var class="+ topic/keyword sw-d/varname keyword varname">coid</var> argument equal to <var class="+ topic/keyword sw-d/varname keyword varname">SYSMGR_COID</var> while
+                    a process is performing an <span class="+ topic/keyword pr-d/apiname keyword apiname">exec()</span> operation.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3027350</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">Fixed an issue where the spawning of a process
+                    with <span class="+ topic/keyword xml-d/const keyword const">POSIX_SPAWN_SETCWD</span> into a container with a root path of
+                        <q class="- topic/q q"><span class="+ topic/ph sw-d/filepath ph filepath">/</span></q> could unexpectedly fail.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3026493</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">Fixed an issue where allocating aligned memory
+                    from the <span class="+ topic/keyword sw-d/cmdname keyword cmdname">libc</span> heap allocator with an alignment greater than
+                    2^63 would result in the thread entering an infinite loop.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3024861</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">Fixed a race condition that could result in
+                    increased interrupt service thread scheduling latency.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3024611</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">Fixed an issue where modifying a CPU's
+                    hardware timer while it was offline could delay the reclamation of timers that
+                    had been delegated to that CPU.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3014189</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">Fixed an overflow in the ARM
+                      <span class="+ topic/keyword pr-d/apiname keyword apiname">SMMU</span> version 3 support library that would prevent
+                      <span class="+ topic/keyword pr-d/apiname keyword apiname">SMMU</span> driver initialization on systems with a
+                      <span class="+ topic/keyword xml-d/const keyword const">SMMU_IDR1.SIDSIZE</span> value greater than 32.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">AArch64</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3037060</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">Fixed an issue in the ARM
+                      <span class="+ topic/keyword pr-d/apiname keyword apiname">SMMU</span> version 3 support library that would cause translation
+                    failures when Stream IDs greater than 16 bits in width were used as Virtual
+                    Machine IDs.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">AArch64</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">The ARM <span class="+ topic/keyword pr-d/apiname keyword apiname">SMMU</span> version 3
+                    support library can now be configured to use a specific Virtual Machine ID
+                    rather than substituting the Stream ID.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3027707</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">Fixed an issue where all resource managers
+                    were required to attach to the <span class="+ topic/ph sw-d/filepath ph filepath">/</span> path with a
+                      <span class="+ topic/keyword xml-d/const keyword const">_FTYPE_MOUNT</span> file type to receive mount requests.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">Resource managers can now receive mount
+                    requests sent directly to their attached path.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">Not applicable.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">2755549</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">The fsevmgr may crash if a client makes use of
+                    poll() and closed the fd returned by inotify_init() while there are undelivered
+                    watch events.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">The fsevmgr may crash if a client makes use of
+                    poll() and closed the fd returned by inotify_init() while there are undelivered
+                    watch events.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">The fsevmgr may crash if a client makes use of
+                    poll() and closed the fd returned by inotify_init() while there are undelivered
+                    watch events.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3028959</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">If specifying the "trim-limit" option when
+                    mounting a Power Safe Filesystem, the filesystem will not honour the limit, and
+                    may trim as many as 12500 additional blocks belonging to the file. This only
+                    affects blocks which would have been trimmed had the limit been higher.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">If specifying the "trim-limit" option when
+                    mounting a Power Safe Filesystem, the filesystem will not honour the limit, and
+                    may trim as many as 12500 additional blocks belonging to the file. This only
+                    affects blocks which would have been trimmed had the limit been higher.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">The boot IFS will need to be regenerated with
+                    the fixed fs-qnx6.so.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3016294</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__1">in certain cases, renaming a file within the
+                    same directory may corrupt an ext2 filesystem</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__3">After multiple hour-long runs of a stress
+                    test, there is a chance that fs-ext2.so will corrupt the tested
+                    filesystem.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="Fixed_issues__entry__4">The IFS will need to be rebuilt with the fixed
+                    fs-ext2.so</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-1 valign-middle" headers="Fixed_issues__entry__5">3015912</td>
+                </tr>
+                <tr class="- topic/row">
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-0 valign-middle" headers="Fixed_issues__entry__1">The <span class="+ topic/keyword sw-d/cmdname keyword cmdname">mkqnximage</span> utility now
+                    automatically includes all the binaries that are needed to support SSH
+                    connections in images that use OpenSSH 10.3p1.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-0 valign-middle" headers="Fixed_issues__entry__2">General</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-0 valign-middle" headers="Fixed_issues__entry__3">None.</td>
+                  <td class="- topic/entry entry align-left colsep-1 rowsep-0 valign-middle" headers="Fixed_issues__entry__4">None.</td>
+                  <td class="- topic/entry entry align-left colsep-0 rowsep-0 valign-middle" headers="Fixed_issues__entry__5">3024720</td>
+                </tr>
+              </tbody></table></div></div>
+      </div>
+    </article>
+    
+    <article class="- topic/topic concept/concept topic concept nested2" aria-labelledby="Known_issues__Known_issues" id="Known_issues">
+      <h3 class="- topic/title title topictitle3" id="Known_issues__Known_issues">Known issues</h3>
+      <div class="- topic/body concept/conbody body conbody">
+        <p class="- topic/p p">The known issues for this release are described in the <cite class="- topic/cite cite">QNX Software Development
+            Platform 8.0: Known Issues</cite> document that's stored in the QNX Download Center at:
+            <a class="- topic/xref xref" href="http://www.qnx.com/download/group.html?programid=74127" target="_blank" rel="external noopener"><span class="+ topic/ph sw-d/filepath ph filepath">https://www.qnx.com/download/group.html?programid=74127</span></a></p>
+      </div>
+    </article>
+    
+    <article class="- topic/topic concept/concept topic concept nested2" aria-labelledby="Licensing__Licensing" id="Licensing">
+      <h3 class="- topic/title title topictitle3" id="Licensing__Licensing">Licensing information</h3>
+      <div class="- topic/body concept/conbody body conbody">
+        <p class="- topic/p p">The QNX SDP licensing, packaging, and fulfillment model from the previous release has
+          been carried forward to this release. That is, QNX SDP will be available in the QNX
+          Download Center and QNX Software Center as a new product baseline. Additionally, the
+          license agreements will include a few enhancements for clarifications but otherwise will
+          remain unchanged.</p>
+      </div>
+    </article>
+    
+    <article class="- topic/topic concept/concept topic concept nested2" aria-labelledby="Docs__Docs" id="Docs">
+      <h3 class="- topic/title title topictitle3" id="Docs__Docs">Getting started with the documentation</h3>
+      <div class="- topic/body concept/conbody body conbody">
+        <p class="- topic/p p">The QNX SDP 8.0 documentation is found on our public website at <a class="- topic/xref xref" href="https://www.qnx.com/developers/docs/8.0/com.qnx.doc.qnxsdp.nav/topic/bookset.html" target="_blank" rel="external noopener"><span class="+ topic/ph sw-d/filepath ph filepath">https://www.qnx.com/developers/docs/8.0/com.qnx.doc.qnxsdp.nav/topic/bookset.html</span></a>.</p>
+        <p class="- topic/p p">This <q class="- topic/q q">roadmap</q> page contains links to the various booksets that accompany the
+            <span class="- topic/keyword keyword">QNX OS</span>. For a short tutorial that will help you set up a
+            <span class="- topic/keyword keyword">QNX OS</span> target and run a simple program, refer to the
+            <cite class="- topic/cite cite">Quickstart Guide</cite>. Then you can access the other key documents
+              (<cite class="- topic/cite cite"><span class="- topic/keyword keyword">QNX OS</span> System Architecture</cite>, <cite class="- topic/cite cite">Programmer's
+            Guide</cite>, <cite class="- topic/cite cite">C Library Reference</cite>, and more) to learn about how the
+            <span class="- topic/keyword keyword">QNX OS</span> is designed and how to write programs that run on
+          it.</p>
+      </div>
+    </article>
+    
+    <article class="- topic/topic concept/concept topic concept nested2" aria-labelledby="Technical_support__Technical_support" id="Technical_support">
+      <h3 class="- topic/title title topictitle3" id="Technical_support__Technical_support">Technical support</h3>
+      <div class="- topic/body concept/conbody body conbody">
+        <p class="- topic/p p">To obtain technical support for any QNX product, visit the <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Support</span>
+          area on our website: <a class="- topic/xref xref" href="https://blackberry.qnx.com/en/support" target="_blank" rel="external noopener"><span class="+ topic/ph sw-d/filepath ph filepath">https://blackberry.qnx.com/en/support</span></a>. You'll find a
+          range of support options.</p>
+        <p class="- topic/p p">For product experience and roadmap information, please contact QNX Product
+          Management.</p>
+      </div>
+    </article>
+    
+    
+    
+  </article><div style="text-align: right;"><span>Page updated: <time>November 25, 2026</time></span></div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                        <nav role="navigation" id="wh_topic_toc" aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
+                            <div id="wh_topic_toc_content">
+		                        
+	                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="topic-item"><a href="#contents" data-tocid="contents">Contents</a><ul><li class="topic-item"><a href="#Whats_new" data-tocid="Whats_new">What's new in QNX SDP?</a></li><li class="topic-item"><a href="#Installation" data-tocid="Installation">Installing QNX SDP</a></li><li class="topic-item"><a href="#Debug_info" data-tocid="Debug_info">Debug information for shipped binaries</a></li><li class="topic-item"><a href="#Discontinued" data-tocid="Discontinued">Discontinued and deprecated items</a></li><li class="topic-item"><a href="#Experimental" data-tocid="Experimental">Experimental items</a></li><li class="topic-item"><a href="#Fixed_issues" data-tocid="Fixed_issues">Fixed issues</a></li><li class="topic-item"><a href="#Known_issues" data-tocid="Known_issues">Known issues</a></li><li class="topic-item"><a href="#Licensing" data-tocid="Licensing">Licensing information</a></li><li class="topic-item"><a href="#Docs" data-tocid="Docs">Getting started with the documentation</a></li><li class="topic-item"><a href="#Technical_support" data-tocid="Technical_support">Technical support</a></li></ul></li></ul></div>
+	                        	
+                        	</div>
+                        </nav>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us" data-whc_version="26.0">
+    <head><link rel="shortcut icon" href="../../oxygen-webhelp/template/images/favicon.png"/><link rel="icon" href="../../oxygen-webhelp/template/images/favicon.png"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="description" content="Mutual exclusion locks, or mutexes, are the simplest of the synchronization services. A mutex is used to ensure exclusive access to data shared between threads."/><meta name="keywords" content=", pthread_mutex_lock(), pthread_mutex_timedlock(), pthread_mutex_unlock(), mutexes, QNX SDP, 8.0, System Architecture, Developer, User"/><meta name="indexterms" content="pthread_mutex_lock(); pthread_mutex_timedlock(); pthread_mutex_unlock(); mutexes; "/>        
+      <title>Mutexes: mutual exclusion locks</title><!--  Generated with Oxygen version 26.0, build number 2023100510.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="Mutexes-d114126e6214"/><meta name="wh-source-relpath" content="com.qnx.doc.neutrino.sys_arch/topic/kernel_Mutexes.xml"/><meta name="wh-out-relpath" content="com.qnx.doc.neutrino.sys_arch/topic/kernel_Mutexes.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/commons.css?buildId=2023100510"/>
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic.css?buildId=2023100510"/>
+
+    <script src="../../oxygen-webhelp/app/options/properties.js?buildId=20261105112733"></script>
+    <script src="../../oxygen-webhelp/app/localization/strings.js?buildId=2023100510"></script>
+    <script src="../../oxygen-webhelp/app/search/index/keywords.js?buildId=20261105112733"></script>
+    <script defer="defer" src="../../oxygen-webhelp/app/commons.js?buildId=2023100510"></script>
+    <script defer="defer" src="../../oxygen-webhelp/app/topic.js?buildId=2023100510"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/css/qnx-webhelp.css?buildId=2023100510"/></head>
+
+    <body id="Mutexes" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid" id="wh_header_container">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../../index.html" class=" wh_logo d-none d-sm-block "><img src="../../oxygen-webhelp/template/images/QNX-Logo-CORAL-RGB.png" alt=""/></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="title"></span></a></div>
+                    
+                </div>
+
+                
+            </div>
+
+            <div class="wh_nav_and_search">
+                <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                    
+                    
+                    <div class=" wh_indexterms_link "><a href="../../indexTerms.html" title="Index" aria-label="Go to index terms page"><span>Index</span></a></div>
+                    
+                </div>
+                <div class=" wh_search_input navbar-form wh_main_page_search search " role="form">
+                    
+                    
+
+                    
+                    <form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+
+                    <!-- Link to Advanced search page on qnx.com -->
+                    <div id="advanced_search" title="Search all Blackberry QNX product documentation">
+                        <a class="advanced_search" target="_blank" href="https://qnx.software/en/search#t=ProductDocumentation">
+                            <span>Advanced search</span>
+                        </a>
+                    </div>
+
+                    
+                    
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref" data-id="about"><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/bookset.html">QNX Software Development Platform</a><div class="wh-tooltip"><p class="shortdesc">     QNX SDP is a cross-compiling and debugging environment, including an IDE and command-line tools,     for building binary images and programs for target boards running the <span class="keyword">QNX OS</span> 8.0.   </p></div></div></div></li><li><div class="topicref" data-id="about"><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/about.html">System Architecture</a><div class="wh-tooltip"><p class="shortdesc"> The <em class="ph i">System Architecture</em> guide accompanies the <span class="keyword">QNX OS</span> and is intended for both application developers and end-users. </p></div></div></div></li><li><div class="topicref" data-id="kernel"><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel.html">The <span class="keyword">QNX OS</span> Microkernel</a><div class="wh-tooltip"><p class="shortdesc"> The <span class="keyword">microkernel</span> implements the core POSIX features used in embedded realtime systems, along with the fundamental <span class="keyword">QNX OS</span> message-passing services. </p></div></div></div></li><li><div class="topicref" data-id="SYNCHRO"><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel_SYNCHRO.html">Synchronization services</a><div class="wh-tooltip"><p class="shortdesc"> The <span class="keyword">QNX OS</span> provides the POSIX-standard thread-level synchronization primitives, all of which can be used between threads in different processes. </p></div></div></div></li><li class="active"><div class="topicref" data-id="Mutexes"><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel_Mutexes.html">Mutexes: mutual exclusion locks</a><div class="wh-tooltip"><p class="shortdesc"> Mutual exclusion locks, or <em class="ph i">mutexes</em>, are the simplest of the synchronization services. A mutex is used to ensure exclusive access to data shared between threads. </p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+					
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+								<!--<whc:external_resourse_link 
+                            href="${param(webhelp.pdf.link.url)}"
+                            title="${param(webhelp.pdf.link.text)}"
+                            image="${param(webhelp.pdf.link.icon.path)}"
+                            type="pdf_link"                            
+							/>-->
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e10" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e10-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.ide.userguide/topic/about.html" id="about-d114126e10-link">QNX Momentics IDE User's Guide</a><div class="wh-tooltip"><p class="shortdesc">         This <em class="ph i">User's Guide</em> describes version 8.0 of the Integrated Development Environment (IDE) that's part of the         <span class="keyword">QNX Tool Suite</span>.     </p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="about-d114126e4055" class="topicref" data-id="about" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action about-d114126e4055-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/bookset.html" id="about-d114126e4055-link">QNX Software Development Platform</a><div class="wh-tooltip"><p class="shortdesc">     QNX SDP is a cross-compiling and debugging environment, including an IDE and command-line tools,     for building binary images and programs for target boards running the <span class="keyword">QNX OS</span> 8.0.   </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="AboutThisGuide-d114126e4069" class="topicref" data-id="AboutThisGuide" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action AboutThisGuide-d114126e4069-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.quickstart/topic/about.html" id="AboutThisGuide-d114126e4069-link">Quickstart Guide</a><div class="wh-tooltip"><p class="shortdesc">These guidelines will help you install the QNX Software Development Platform, quickly develop a program,     and run it on a <span class="keyword">QNX OS</span> target.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="about-d114126e5772" class="topicref" data-id="about" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action about-d114126e5772-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/about.html" id="about-d114126e5772-link">System Architecture</a><div class="wh-tooltip"><p class="shortdesc"> The <em class="ph i">System Architecture</em> guide accompanies the <span class="keyword">QNX OS</span> and is intended for both application developers and end-users. </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="intro-d114126e5822" class="topicref" data-id="intro" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action intro-d114126e5822-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/intro.html" id="intro-d114126e5822-link">The Philosophy of the <span class="keyword">QNX OS</span></a><div class="wh-tooltip"><p class="shortdesc"> The primary goal of the <span class="keyword">QNX OS</span> is to deliver the open systems POSIX API in a robust, scalable form suitable for a wide range of systems—from tiny, resource-constrained embedded systems to high-end distributed computing environments. The OS supports several processor families, including x86 and ARM.  </p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="kernel-d114126e5974" class="topicref" data-id="kernel" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action kernel-d114126e5974-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel.html" id="kernel-d114126e5974-link">The <span class="keyword">QNX OS</span> Microkernel</a><div class="wh-tooltip"><p class="shortdesc"> The <span class="keyword">microkernel</span> implements the core POSIX features used in embedded realtime systems, along with the fundamental <span class="keyword">QNX OS</span> message-passing services. </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="IMPLEMENT-d114126e5994" class="topicref" data-id="IMPLEMENT" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel_IMPLEMENT.html" id="IMPLEMENT-d114126e5994-link">Design goals of the <span class="keyword">QNX OS</span></a><div class="wh-tooltip"><p class="shortdesc"> Historically, the <q class="q">application pressure</q> on <span class="keyword">QNX</span>'s operating systems has been from both ends of the computing spectrum—from memory-limited embedded systems all the way up to high-end SMP (symmetrical multiprocessing) machines with gigabytes of physical memory. </p></div></div></div></li><li role="treeitem"><div data-tocid="SERVICES-d114126e6013" class="topicref" data-id="SERVICES" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel_SERVICES.html" id="SERVICES-d114126e6013-link">System services</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="THREADSANDPRO-d114126e6023" class="topicref" data-id="THREADSANDPRO" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action THREADSANDPRO-d114126e6023-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel_THREADSANDPRO.html" id="THREADSANDPRO-d114126e6023-link">Threads and processes</a><div class="wh-tooltip"><p class="shortdesc"> When building an application (realtime, graphical, or otherwise), the developer may want several algorithms within the application to execute concurrently. This concurrency is achieved by using the POSIX thread model, which defines a process as containing one or more threads of execution. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="SCHEDULING-d114126e6084" class="topicref" data-id="SCHEDULING" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action SCHEDULING-d114126e6084-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel_SCHEDULING.html" id="SCHEDULING-d114126e6084-link">Thread scheduling</a><div class="wh-tooltip"><p class="shortdesc"> When and how are scheduling decisions made? </p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="SYNCHRO-d114126e6200" class="topicref" data-id="SYNCHRO" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action SYNCHRO-d114126e6200-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel_SYNCHRO.html" id="SYNCHRO-d114126e6200-link">Synchronization services</a><div class="wh-tooltip"><p class="shortdesc"> The <span class="keyword">QNX OS</span> provides the POSIX-standard thread-level synchronization primitives, all of which can be used between threads in different processes. </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" class="active"><div data-tocid="Mutexes-d114126e6214" class="topicref" data-id="Mutexes" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel_Mutexes.html" id="Mutexes-d114126e6214-link">Mutexes: mutual exclusion locks</a><div class="wh-tooltip"><p class="shortdesc"> Mutual exclusion locks, or <em class="ph i">mutexes</em>, are the simplest of the synchronization services. A mutex is used to ensure exclusive access to data shared between threads. </p></div></div></div></li><li role="treeitem"><div data-tocid="Condvars-d114126e6228" class="topicref" data-id="Condvars" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel_Condvars.html" id="Condvars-d114126e6228-link">Condvars: condition variables</a><div class="wh-tooltip"><p class="shortdesc"> A condition variable, or <dfn class="term">condvar</dfn>, is used to block a thread within a critical section until some condition is satisfied. The condition can be arbitrarily complex and is independent of the condvar. However, the condvar must always be used with a mutex lock in order to implement a monitor. </p></div></div></div></li><li role="treeitem"><div data-tocid="Barriers-d114126e6242" class="topicref" data-id="Barriers" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel_Barriers.html" id="Barriers-d114126e6242-link">Barriers</a><div class="wh-tooltip"><p class="shortdesc"> A barrier is a synchronization mechanism that lets you collect several cooperating threads (e.g., in a matrix computation), forcing them to wait at a specific point until all have finished before any one thread can continue. </p></div></div></div></li><li role="treeitem"><div data-tocid="Reader_writer_locks-d114126e6253" class="topicref" data-id="Reader_writer_locks" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel_Reader_writer_locks.html" id="Reader_writer_locks-d114126e6253-link">Reader/writer locks</a><div class="wh-tooltip"><p class="shortdesc"> More formally known as <q class="q">Multiple readers, single writer locks,</q> these locks are used when the access pattern for a data structure consists of many threads reading the data and (at most) one thread writing the data at a particular point in time. Although these locks do not support any form of priority inheritance or priority inversion avoidance, they are useful for this data access pattern. </p></div></div></div></li><li role="treeitem"><div data-tocid="Semaphores-d114126e6267" class="topicref" data-id="Semaphores" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel_Semaphores.html" id="Semaphores-d114126e6267-link">Semaphores</a><div class="wh-tooltip"><p class="shortdesc"> Semaphores are a common form of synchronization that allows threads to <q class="q">post</q> and <q class="q">wait</q> on an object to control when threads wake or sleep. </p></div></div></div></li><li role="treeitem"><div data-tocid="kernel_Sharing_sync-d114126e6284" class="topicref" data-id="kernel_Sharing_sync" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel_Sharing_sync.html" id="kernel_Sharing_sync-d114126e6284-link">Sharing synchronization objects between processes</a><div class="wh-tooltip"><p class="shortdesc"> You can share synchronization objects between threads in different processes, but most objects require extra configuration to work across processes. </p></div></div></div></li><li role="treeitem"><div data-tocid="Sync_message_passing-d114126e6295" class="topicref" data-id="Sync_message_passing" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel_Sync_message_passing.html" id="Sync_message_passing-d114126e6295-link">Synchronization via message passing</a><div class="wh-tooltip"><p class="shortdesc">Our Send/Receive/Reply message-passing IPC services implement an implicit synchronization by their blocking nature. These IPC services can, in many instances, render other synchronization services unnecessary.</p></div></div></div></li><li role="treeitem"><div data-tocid="Sync_atomic-d114126e6306" class="topicref" data-id="Sync_atomic" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel_Sync_atomic.html" id="Sync_atomic-d114126e6306-link">Synchronization via atomic operations</a><div class="wh-tooltip"><p class="shortdesc"> In some cases, you may want to perform a short operation (such as incrementing a variable) with the guarantee that the operation will perform <dfn class="term">atomically</dfn>—that is, the   operation won't be preempted by another thread or parallel execution on different cores in SMP. </p></div></div></div></li><li role="treeitem"><div data-tocid="Synchronization_services-d114126e6320" class="topicref" data-id="Synchronization_services" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel_Synchronization_services.html" id="Synchronization_services-d114126e6320-link">Synchronization services implementation</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="CLOCKANDTIMER-d114126e6330" class="topicref" data-id="CLOCKANDTIMER" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action CLOCKANDTIMER-d114126e6330-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel_CLOCKANDTIMER.html" id="CLOCKANDTIMER-d114126e6330-link">Clock and timer services</a><div class="wh-tooltip"><p class="shortdesc"> Clock services are used to maintain the time of day, which is in turn used by the kernel timer calls to implement interval timers. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="INTERRUPTHANDLING-d114126e6365" class="topicref" data-id="INTERRUPTHANDLING" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action INTERRUPTHANDLING-d114126e6365-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel_INTERRUPTHANDLING.html" id="INTERRUPTHANDLING-d114126e6365-link">Interrupt handling</a><div class="wh-tooltip"><p class="shortdesc">   No matter how much we wish it were so, computers are not infinitely fast.   In a realtime system, it's absolutely crucial that CPU cycles aren't unnecessarily spent.   But, it is important to balance this with safety, predictable behaviour, and an avoidance of runtime allocation or queueing.   <span class="keyword">QNX OS</span> implements a low-latency path to schedule user threads to handle hardware interrupts. </p></div></div></div></li><li role="treeitem"><div data-tocid="offlining-d114126e6409" class="topicref" data-id="offlining" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel_CPU_offlining.html" id="offlining-d114126e6409-link">CPU offlining</a><div class="wh-tooltip"><p class="shortdesc">The CPU offlining feature allows a privileged application to stop             <span class="keyword cmdname">procnto</span> from using a CPU for scheduling threads.</p></div></div></div></li><li role="treeitem"><div data-tocid="errata_module-d114126e6423" class="topicref" data-id="errata_module" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel_Errata_module.html" id="errata_module-d114126e6423-link">Errata kernel module</a><div class="wh-tooltip"><p class="shortdesc">The errata kernel module allows you to choose hardware-specific mitigations to apply         to your system, rather than having to apply all mitigations at once, which is inefficient         and can affect runtime performance.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="ipc-d114126e6434" class="topicref" data-id="ipc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ipc-d114126e6434-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ipc.html" id="ipc-d114126e6434-link">Interprocess Communication (IPC)</a><div class="wh-tooltip"><p class="shortdesc"> Interprocess Communication (IPC) plays a fundamental role in the transformation of the <span class="keyword">microkernel</span> from an embedded realtime kernel into a full-scale POSIX operating system. As various service-providing processes are added to the microkernel, IPC is the <q class="q">glue</q> that connects those components into a cohesive whole. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="trace-d114126e6711" class="topicref" data-id="trace" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action trace-d114126e6711-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/trace.html" id="trace-d114126e6711-link">The Microkernel Instrumentation</a><div class="wh-tooltip"><p class="shortdesc"> The <span class="keyword">microkernel</span> (<span class="keyword cmdname">procnto-smp-instr</span>) is equipped with a sophisticated tracing and profiling mechanism that lets you monitor your system's execution in real time. This instrumentation works on both single-CPU and SMP systems. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="proc-d114126e6806" class="topicref" data-id="proc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action proc-d114126e6806-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/proc.html" id="proc-d114126e6806-link">Process Manager</a><div class="wh-tooltip"><p class="shortdesc"> The Process Manager can create and manage multiple POSIX processes, each of which may contain multiple POSIX threads. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="dll-d114126e7141" class="topicref" data-id="dll" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action dll-d114126e7141-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/dll.html" id="dll-d114126e7141-link">Dynamic Linking</a><div class="wh-tooltip"><p class="shortdesc"> In a typical system, a number of programs will be running. Each program relies on a number of functions, some of which will be <q class="q">standard</q> C library functions, like <span class="keyword apiname">printf()</span>, <span class="keyword apiname">malloc()</span>, <span class="keyword apiname">write()</span>, etc. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="resource-d114126e7221" class="topicref" data-id="resource" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action resource-d114126e7221-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/resource.html" id="resource-d114126e7221-link">Resource Managers</a><div class="wh-tooltip"><p class="shortdesc"> To give the <span class="keyword">QNX OS</span> a great degree of flexibility, to minimize the runtime memory requirements of the final system, and to cope with the wide variety of devices that may be found in a custom embedded system, the OS allows user-written processes to act as <em class="ph i">resource managers</em> that can be started and stopped dynamically. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="fsys-d114126e7452" class="topicref" data-id="fsys" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action fsys-d114126e7452-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/fsys.html" id="fsys-d114126e7452-link">Filesystems</a><div class="wh-tooltip"><p class="shortdesc"> The <span class="keyword">QNX OS</span> provides a rich variety of filesystems. Like most service-providing processes in the OS, these filesystems execute outside the kernel; applications use them by communicating via messages generated by the shared-library implementation of the POSIX API. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="char-d114126e7802" class="topicref" data-id="char" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action char-d114126e7802-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/char.html" id="char-d114126e7802-link">Character I/O</a><div class="wh-tooltip"><p class="shortdesc"> A key requirement of any realtime operating system is high-performance character I/O. </p></div></div></div></li><li role="treeitem"><div data-tocid="net-d114126e7922" class="topicref" data-id="net" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/net.html" id="net-d114126e7922-link">Networking Architecture</a><div class="wh-tooltip"><p class="shortdesc"> As with other service-providing processes in the <span class="keyword">QNX OS</span>, the networking services execute outside the kernel. Developers are presented with a single unified interface, regardless of the configuration and number of networks involved. </p></div></div></div></li><li role="treeitem"><div data-tocid="tcpip-d114126e7936" class="topicref" data-id="tcpip" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/tcpip.html" id="tcpip-d114126e7936-link">TCP/IP Networking</a><div class="wh-tooltip"><p class="shortdesc">Our TCP/IP stack is included in the <span class="keyword cmdname">io-sock</span> networking stack and uses     the common FreeBSD API. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ham-d114126e7950" class="topicref" data-id="ham" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ham-d114126e7950-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ham.html" id="ham-d114126e7950-link">High Availability</a><div class="wh-tooltip"><p class="shortdesc"> The term <em class="ph i">High Availability</em> (HA) is commonly used in telecommunications and other industries to describe a system's ability to remain up and running without interruption for extended periods of time. </p></div></div></div></li><li role="treeitem"><div data-tocid="what_is_realtime-d114126e8173" class="topicref" data-id="what_is_realtime" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/what_is_realtime.html" id="what_is_realtime-d114126e8173-link">What is Real Time and Why Do I Need It?</a><div class="wh-tooltip"><p class="shortdesc"> Real time is an often misunderstood—and misapplied—property of operating systems. This appendix provides a summary of some of the critical elements of realtime computing and discusses a few design considerations and benefits. </p></div></div></div></li><li role="treeitem"><div data-tocid="glossary-d114126e8184" class="topicref" data-id="glossary" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/glossary.html" id="glossary-d114126e8184-link">Glossary</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e8504" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e8504-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/guides.html" id="about-d114126e8504-link">OS Components &amp; Operations</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="graphics-d114126e27311" class="topicref" data-id="graphics" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action graphics-d114126e27311-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/graphics.html" id="graphics-d114126e27311-link">Graphics</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e46364" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e46364-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/programming.html" id="about-d114126e46364-link">Programming</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e54473" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e54473-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.security.system/topic/manual/about.html" id="about-d114126e54473-link">System Security Guide</a><div class="wh-tooltip"><p class="shortdesc">The <em class="ph i">QNX System Security Guide</em> is intended for both system integrators who are         responsible for the security of a <span class="keyword">QNX OS</span> system and developers who want to create a <span class="keyword">QNX OS</span> resource manager free from vulnerabilities.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e57754" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e57754-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/references.html" id="about-d114126e57754-link">Utilities &amp; Libraries</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e110056" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e110056-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.migration/topic/about.html" id="about-d114126e110056-link">Migrating to QNX OS 8.0</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e111092" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e111092-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxcloud.nav/topic/bookset.html" id="about-d114126e111092-link">QNX Software in the Cloud</a><div class="wh-tooltip"><p class="shortdesc">QNX Software in the Cloud enables developers to use the QNX 	software in Amazon Web Services (AWS) and Microsoft Azure (Azure). </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="qcmgr-d114126e112165" class="topicref" data-id="qcmgr" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action qcmgr-d114126e112165-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.containers.user_guide/topic/about.html" id="qcmgr-d114126e112165-link">QNX Containers User's Guide</a><div class="wh-tooltip"><p class="shortdesc">This guide describes QNX Containers, its components, and its utilization.       It provides instructions on using QNX Containers on the host and target,       and then starting QNX Container processes.    </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about_this_guide-d114126e112727" class="topicref" data-id="about_this_guide" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about_this_guide-d114126e112727-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxtoolkit.user_guide/topic/about_this_guide.html" id="about_this_guide-d114126e112727-link">QNX Toolkit for Visual Studio Code</a><div class="wh-tooltip"><p class="shortdesc">         This User's Guide describes the QNX® Toolkit for VS Code.         The guide introduces you to the <span class="keyword">QNX Toolkit</span> by explaining the QNX development environment and how to build, run, and debug your QNX® Operating System (OS) applications and systems.     </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e113878" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e113878-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.hypervisor.nav/topic/bookset.html" id="about-d114126e113878-link">QNX Hypervisor and QNX Hypervisor for Safety</a><div class="wh-tooltip"><p class="shortdesc"> 		The <span class="keyword">QNX Hypervisor</span> and <span class="keyword">QNX Hypervisor for Safety</span> products allow you to run multiple OSs 		on a target system so you can separate critical and non-critical functions, support a wide variety of applications, 		and reduce hardware costs. 	</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="copyright_overview_concept-d114126e120349" class="topicref" data-id="copyright_overview_concept" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action copyright_overview_concept-d114126e120349-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.copyright/topic/coverpage.html" id="copyright_overview_concept-d114126e120349-link">Typographical Conventions, Support, and Licensing</a><div class="wh-tooltip"><p class="shortdesc"> This section describes the typographical conventions used throughout the documentation, explains how to obtain technical support, and provides some information about licensing. </p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        <button id="wh_close_topic_toc_button" class="close-toc-button d-none" aria-label="Toggle topic table of content" aria-controls="wh_topic_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+						<div id="pdf_link"></div>
+						
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic concept/concept topic concept" role="article" aria-labelledby="Mutexes">
+
+<h1 class="- topic/title title topictitle1" id="Mutexes">Mutexes: mutual exclusion locks</h1>
+
+
+
+<div style="padding: 5px 0;"><span class="label">QNX SDP</span><span class="label">8.0</span><span class="label">System Architecture</span><span class="label">Developer</span><span class="label">User</span></div>
+
+<div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc">
+Mutual exclusion locks, or <em class="+ topic/ph hi-d/i ph i">mutexes</em>, are the simplest of
+the synchronization services. A mutex is used to
+ensure exclusive access to data shared between threads.
+</p>
+
+<p class="- topic/p p">
+A mutex is typically acquired
+(<a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_mutex_lock.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">pthread_mutex_lock()</span></a> or
+<a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_mutex_timedlock.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">pthread_mutex_timedlock()</span></a>)
+and released
+(<a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_mutex_unlock.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">pthread_mutex_unlock()</span></a>)
+around the code that accesses the shared data (usually a critical section).
+</p>
+
+<p class="- topic/p p">
+Only one thread may have the mutex locked at any given time.
+Threads attempting to lock an already locked mutex will
+block until the thread that owns the mutex unlocks it.
+When the thread
+unlocks the mutex, the highest-priority thread waiting to
+lock the mutex will unblock and become the new owner of the
+mutex. In this way, threads will sequence through a critical
+section in priority-order.
+
+</p>
+
+<p class="- topic/p p">
+In most situations, acquisition of a mutex doesn't require
+entry to the kernel for a free mutex. What allows this is
+the use of the compare-and-swap opcode on x86 processors and
+the load/store conditional opcodes on most ARM processors.
+</p>
+
+<p class="- topic/p p">
+Entry to the kernel is necessary at acquisition time if the
+mutex is already held, so that the thread can go on a blocked
+list; kernel entry is done on exit if other threads are waiting to
+be unblocked on that mutex. This allows normal acquisition and
+release of an uncontested critical section or resource to be
+very quick, incurring work by the OS only to resolve
+contention.
+</p>
+
+<p class="- topic/p p">
+
+A nonblocking lock function
+(<a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_mutex_trylock.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">pthread_mutex_trylock()</span></a>)
+can be used to test
+whether the mutex is currently locked or not. For best
+performance, the execution time of the critical section
+should be small and of bounded duration. A condvar 
+(see <q class="- topic/q q"><a class="- topic/xref xref" href="kernel_Condvars.html" title="A condition variable, or condvar, is used to block a thread within a critical section until some condition is satisfied. The condition can be arbitrarily complex and is independent of the condvar. However, the condvar must always be used with a mutex lock in order to implement a monitor.">Condvars: condition variables</a></q>)
+should be used if the thread may block within the critical section.
+</p>
+
+<section class="- topic/section section" id="Mutexes__Priority_inheritance" data-ofbid="Mutexes__Priority_inheritance"><h2 class="- topic/title title sectiontitle">Priority inheritance and mutexes</h2>
+
+
+<p class="- topic/p p">
+
+
+
+
+By default, if a thread with a higher priority than the mutex owner
+attempts to lock a mutex, then the effective priority of the
+owner is increased to that of the blocked higher-priority thread (but see below).
+The owner's effective priority is again adjusted when it unlocks the mutex;
+its new priority is the maximum of its own priority and the priorities of
+those threads it still blocks, either directly or indirectly.
+</p>
+
+<p class="- topic/p p">
+This scheme not only ensures that the higher-priority
+thread will be blocked waiting for the mutex for the
+shortest possible time, but also solves the classic priority-inversion problem.
+</p>
+
+<p class="- topic/p p">
+
+
+
+The
+<a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_mutexattr_init.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">pthread_mutexattr_init()</span></a>
+function sets the protocol to <span class="+ topic/keyword xml-d/const keyword const">PTHREAD_PRIO_INHERIT</span> to allow
+this behavior; you can call
+<a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_mutexattr_setprotocol.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">pthread_mutexattr_setprotocol()</span></a>
+to override this setting.
+The
+<a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_mutex_trylock.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">pthread_mutex_trylock()</span></a>
+function doesn't change the thread priorities because it doesn't block.
+</p>
+
+<p class="- topic/p p">
+
+
+What happens if the thread that's waiting for the mutex is running at a privileged priority,
+and the mutex owner's process doesn't have the <span class="+ topic/keyword xml-d/const keyword const">PROCMGR_AID_PRIORITY</span> ability enabled?
+In this case, the thread that owns the mutex is boosted to the highest unprivileged priority.
+For more information, see
+<q class="- topic/q q"><a class="- topic/xref xref" href="kernel_Scheduling_priority.html" title="Every thread is assigned a priority. The thread scheduler selects the next thread to run by comparing the priorities of READY threads (i.e., those capable of using a processor).">Scheduling priority</a></q>
+earlier in this chapter and
+<a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/procmgr_ability.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">procmgr_ability()</span></a>
+in the <cite class="- topic/cite cite">C Library Reference</cite>.
+</p>
+
+</section>
+
+<section class="- topic/section section" id="Mutexes__Attributes" data-ofbid="Mutexes__Attributes"><h2 class="- topic/title title sectiontitle">Other attributes</h2>
+
+
+<p class="- topic/p p">
+You can also modify other mutex attributes before initializing a mutex:
+</p>
+
+<ul class="- topic/ul ul">
+<li class="- topic/li li">Use
+  <a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_mutexattr_settype.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">pthread_mutexattr_settype()</span></a>
+  to allow a mutex to be recursively locked by the same thread.
+  This can be useful to allow a thread to call a routine that might attempt to
+  lock a mutex that the thread already happens to have locked.
+  
+  
+</li>
+
+<li class="- topic/li li">Use
+  <a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_mutexattr_setrobust.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">pthread_mutexattr_setrobust()</span></a>
+  to set the mutex's robustness, which helps you recover the mutex if its owner terminates while holding it.
+  
+  
+</li>
+
+<li class="- topic/li li">Use
+  <a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_mutexattr_setprioceiling.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">pthread_mutexattr_setprioceiling()</span></a>
+  to set the priority ceiling. 
+  <p class="- topic/p p">After you set a mutex's priority ceiling, 
+    you should not try to lock that mutex from any process that has a priority that's greater than the mutex's priority ceiling.
+    If you attempt this, the mutex locking will fail.</p>
+  
+  
+</li>
+
+</ul>
+
+<p class="- topic/p p">
+Note that robust mutexes and mutexes with priority ceilings
+use more system resources than other mutexes.
+</p>
+
+</section>
+
+</div>
+<div style="text-align: right;"><span>Page updated: <time>November 05, 2026</time></span></div></article></main></div>
+                        
+                        
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist relinfo" xml:lang="en-us" lang="en-us"><strong>Related information</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel_Sharing_sync.html" title="You can share synchronization objects between threads in different processes, but most objects require extra configuration to work across processes.">Sharing synchronization objects between processes</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.getting_started/topic/s1_procs_mutex.html" title="Mutual exclusion (Getting Started with the QNX OS)">Mutual exclusion (Getting Started with the QNX OS)</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.getting_started/topic/s1_procs_semaphore.html" title="Semaphores (Getting Started with the QNX OS)">Semaphores (Getting Started with the QNX OS)</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_mutex_destroy.html" title="pthread_mutex_destroy()">pthread_mutex_destroy()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_mutex_getprioceiling.html" title="pthread_mutex_getprioceiling()">pthread_mutex_getprioceiling()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_mutex_init.html" title="pthread_mutex_init()">pthread_mutex_init()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_mutex_lock.html" title="pthread_mutex_lock()">pthread_mutex_lock()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_mutex_setprioceiling.html" title="pthread_mutex_setprioceiling()">pthread_mutex_setprioceiling()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_mutex_timedlock.html" title="pthread_mutex_timedlock()">pthread_mutex_timedlock()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_mutex_trylock.html" title="pthread_mutex_trylock()">pthread_mutex_trylock()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_mutex_unlock.html" title="pthread_mutex_unlock()">pthread_mutex_unlock()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_mutex_wakeup_np.html" title="pthread_mutex_wakeup_np()">pthread_mutex_wakeup_np()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_mutexattr_destroy.html" title="pthread_mutexattr_destroy()">pthread_mutexattr_destroy()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_mutexattr_getprioceiling.html" title="pthread_mutexattr_getprioceiling()">pthread_mutexattr_getprioceiling()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_mutexattr_getprotocol.html" title="pthread_mutexattr_getprotocol()">pthread_mutexattr_getprotocol()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_mutexattr_getpshared.html" title="pthread_mutexattr_getpshared()">pthread_mutexattr_getpshared()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_mutexattr_getrecursive.html" title="pthread_mutexattr_getrecursive()">pthread_mutexattr_getrecursive()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_mutexattr_gettype.html" title="pthread_mutexattr_gettype()">pthread_mutexattr_gettype()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_mutexattr_getwakeup_np.html" title="pthread_mutexattr_getwakeup_np()">pthread_mutexattr_getwakeup_np()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_mutexattr_init.html" title="pthread_mutexattr_init()">pthread_mutexattr_init()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_mutexattr_setprioceiling.html" title="pthread_mutexattr_setprioceiling()">pthread_mutexattr_setprioceiling()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_mutexattr_setprotocol.html" title="pthread_mutexattr_setprotocol()">pthread_mutexattr_setprotocol()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_mutexattr_setpshared.html" title="pthread_mutexattr_setpshared()">pthread_mutexattr_setpshared()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_mutexattr_setrecursive.html" title="pthread_mutexattr_setrecursive()">pthread_mutexattr_setrecursive()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_mutexattr_settype.html" title="pthread_mutexattr_settype()">pthread_mutexattr_settype()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_mutexattr_setwakeup_np.html" title="pthread_mutexattr_setwakeup_np()">pthread_mutexattr_setwakeup_np()</a></li></ul></div></nav></div>
+                        
+                        
+                        
+                    </div>
+                    
+                        <nav role="navigation" id="wh_topic_toc" aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
+                            <div id="wh_topic_toc_content">
+		                        
+	                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a href="#Mutexes__Priority_inheritance" data-tocid="Mutexes__Priority_inheritance">Priority inheritance and mutexes</a></div></li><li class="section-item"><div class="section-title"><a href="#Mutexes__Attributes" data-tocid="Mutexes__Attributes">Other attributes</a></div></li></ul></div>
+	                        	
+                        	</div>
+                        </nav>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

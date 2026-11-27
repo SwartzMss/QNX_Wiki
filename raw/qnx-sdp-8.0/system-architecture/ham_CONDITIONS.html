@@ -1,0 +1,280 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us" data-whc_version="26.0">
+    <head><link rel="shortcut icon" href="../../oxygen-webhelp/template/images/favicon.png"/><link rel="icon" href="../../oxygen-webhelp/template/images/favicon.png"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="description" content="Conditions are associated with entities; a condition represents the entity's state."/><meta name="keywords" content="QNX SDP, 8.0, System Architecture, Developer, User"/>        
+      <title>Conditions</title><!--  Generated with Oxygen version 26.0, build number 2023100510.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="CONDITIONS-d114126e8063"/><meta name="wh-source-relpath" content="com.qnx.doc.neutrino.sys_arch/topic/ham_CONDITIONS.xml"/><meta name="wh-out-relpath" content="com.qnx.doc.neutrino.sys_arch/topic/ham_CONDITIONS.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/commons.css?buildId=2023100510"/>
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic.css?buildId=2023100510"/>
+
+    <script src="../../oxygen-webhelp/app/options/properties.js?buildId=20261105112733"></script>
+    <script src="../../oxygen-webhelp/app/localization/strings.js?buildId=2023100510"></script>
+    <script src="../../oxygen-webhelp/app/search/index/keywords.js?buildId=20261105112733"></script>
+    <script defer="defer" src="../../oxygen-webhelp/app/commons.js?buildId=2023100510"></script>
+    <script defer="defer" src="../../oxygen-webhelp/app/topic.js?buildId=2023100510"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/css/qnx-webhelp.css?buildId=2023100510"/></head>
+
+    <body id="CONDITIONS" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid" id="wh_header_container">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../../index.html" class=" wh_logo d-none d-sm-block "><img src="../../oxygen-webhelp/template/images/QNX-Logo-CORAL-RGB.png" alt=""/></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="title"></span></a></div>
+                    
+                </div>
+
+                
+            </div>
+
+            <div class="wh_nav_and_search">
+                <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                    
+                    
+                    <div class=" wh_indexterms_link "><a href="../../indexTerms.html" title="Index" aria-label="Go to index terms page"><span>Index</span></a></div>
+                    
+                </div>
+                <div class=" wh_search_input navbar-form wh_main_page_search search " role="form">
+                    
+                    
+
+                    
+                    <form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+
+                    <!-- Link to Advanced search page on qnx.com -->
+                    <div id="advanced_search" title="Search all Blackberry QNX product documentation">
+                        <a class="advanced_search" target="_blank" href="https://qnx.software/en/search#t=ProductDocumentation">
+                            <span>Advanced search</span>
+                        </a>
+                    </div>
+
+                    
+                    
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref" data-id="about"><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/bookset.html">QNX Software Development Platform</a><div class="wh-tooltip"><p class="shortdesc">     QNX SDP is a cross-compiling and debugging environment, including an IDE and command-line tools,     for building binary images and programs for target boards running the <span class="keyword">QNX OS</span> 8.0.   </p></div></div></div></li><li><div class="topicref" data-id="about"><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/about.html">System Architecture</a><div class="wh-tooltip"><p class="shortdesc"> The <em class="ph i">System Architecture</em> guide accompanies the <span class="keyword">QNX OS</span> and is intended for both application developers and end-users. </p></div></div></div></li><li><div class="topicref" data-id="ham"><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ham.html">High Availability</a><div class="wh-tooltip"><p class="shortdesc"> The term <em class="ph i">High Availability</em> (HA) is commonly used in telecommunications and other industries to describe a system's ability to remain up and running without interruption for extended periods of time. </p></div></div></div></li><li><div class="topicref" data-id="HAM"><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ham_HAM.html">High Availability Manager</a><div class="wh-tooltip"><p class="shortdesc"> The High Availability Manager (HAM) provides a mechanism for monitoring processes and services on your system. </p></div></div></div></li><li><div class="topicref" data-id="HAMHIER"><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ham_HAMHIER.html">HAM hierarchy</a><div class="wh-tooltip"><p class="shortdesc"> The High Availability Manager consists of three main components. </p></div></div></div></li><li class="active"><div class="topicref" data-id="CONDITIONS"><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ham_CONDITIONS.html">Conditions</a><div class="wh-tooltip"><p class="shortdesc"> <em class="ph i">Conditions</em> are associated with entities; a condition represents the entity's state. </p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+					
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+								<!--<whc:external_resourse_link 
+                            href="${param(webhelp.pdf.link.url)}"
+                            title="${param(webhelp.pdf.link.text)}"
+                            image="${param(webhelp.pdf.link.icon.path)}"
+                            type="pdf_link"                            
+							/>-->
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e10" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e10-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.ide.userguide/topic/about.html" id="about-d114126e10-link">QNX Momentics IDE User's Guide</a><div class="wh-tooltip"><p class="shortdesc">         This <em class="ph i">User's Guide</em> describes version 8.0 of the Integrated Development Environment (IDE) that's part of the         <span class="keyword">QNX Tool Suite</span>.     </p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="about-d114126e4055" class="topicref" data-id="about" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action about-d114126e4055-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/bookset.html" id="about-d114126e4055-link">QNX Software Development Platform</a><div class="wh-tooltip"><p class="shortdesc">     QNX SDP is a cross-compiling and debugging environment, including an IDE and command-line tools,     for building binary images and programs for target boards running the <span class="keyword">QNX OS</span> 8.0.   </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="AboutThisGuide-d114126e4069" class="topicref" data-id="AboutThisGuide" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action AboutThisGuide-d114126e4069-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.quickstart/topic/about.html" id="AboutThisGuide-d114126e4069-link">Quickstart Guide</a><div class="wh-tooltip"><p class="shortdesc">These guidelines will help you install the QNX Software Development Platform, quickly develop a program,     and run it on a <span class="keyword">QNX OS</span> target.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="about-d114126e5772" class="topicref" data-id="about" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action about-d114126e5772-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/about.html" id="about-d114126e5772-link">System Architecture</a><div class="wh-tooltip"><p class="shortdesc"> The <em class="ph i">System Architecture</em> guide accompanies the <span class="keyword">QNX OS</span> and is intended for both application developers and end-users. </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="intro-d114126e5822" class="topicref" data-id="intro" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action intro-d114126e5822-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/intro.html" id="intro-d114126e5822-link">The Philosophy of the <span class="keyword">QNX OS</span></a><div class="wh-tooltip"><p class="shortdesc"> The primary goal of the <span class="keyword">QNX OS</span> is to deliver the open systems POSIX API in a robust, scalable form suitable for a wide range of systems—from tiny, resource-constrained embedded systems to high-end distributed computing environments. The OS supports several processor families, including x86 and ARM.  </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="kernel-d114126e5974" class="topicref" data-id="kernel" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action kernel-d114126e5974-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel.html" id="kernel-d114126e5974-link">The <span class="keyword">QNX OS</span> Microkernel</a><div class="wh-tooltip"><p class="shortdesc"> The <span class="keyword">microkernel</span> implements the core POSIX features used in embedded realtime systems, along with the fundamental <span class="keyword">QNX OS</span> message-passing services. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ipc-d114126e6434" class="topicref" data-id="ipc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ipc-d114126e6434-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ipc.html" id="ipc-d114126e6434-link">Interprocess Communication (IPC)</a><div class="wh-tooltip"><p class="shortdesc"> Interprocess Communication (IPC) plays a fundamental role in the transformation of the <span class="keyword">microkernel</span> from an embedded realtime kernel into a full-scale POSIX operating system. As various service-providing processes are added to the microkernel, IPC is the <q class="q">glue</q> that connects those components into a cohesive whole. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="trace-d114126e6711" class="topicref" data-id="trace" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action trace-d114126e6711-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/trace.html" id="trace-d114126e6711-link">The Microkernel Instrumentation</a><div class="wh-tooltip"><p class="shortdesc"> The <span class="keyword">microkernel</span> (<span class="keyword cmdname">procnto-smp-instr</span>) is equipped with a sophisticated tracing and profiling mechanism that lets you monitor your system's execution in real time. This instrumentation works on both single-CPU and SMP systems. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="proc-d114126e6806" class="topicref" data-id="proc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action proc-d114126e6806-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/proc.html" id="proc-d114126e6806-link">Process Manager</a><div class="wh-tooltip"><p class="shortdesc"> The Process Manager can create and manage multiple POSIX processes, each of which may contain multiple POSIX threads. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="dll-d114126e7141" class="topicref" data-id="dll" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action dll-d114126e7141-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/dll.html" id="dll-d114126e7141-link">Dynamic Linking</a><div class="wh-tooltip"><p class="shortdesc"> In a typical system, a number of programs will be running. Each program relies on a number of functions, some of which will be <q class="q">standard</q> C library functions, like <span class="keyword apiname">printf()</span>, <span class="keyword apiname">malloc()</span>, <span class="keyword apiname">write()</span>, etc. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="resource-d114126e7221" class="topicref" data-id="resource" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action resource-d114126e7221-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/resource.html" id="resource-d114126e7221-link">Resource Managers</a><div class="wh-tooltip"><p class="shortdesc"> To give the <span class="keyword">QNX OS</span> a great degree of flexibility, to minimize the runtime memory requirements of the final system, and to cope with the wide variety of devices that may be found in a custom embedded system, the OS allows user-written processes to act as <em class="ph i">resource managers</em> that can be started and stopped dynamically. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="fsys-d114126e7452" class="topicref" data-id="fsys" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action fsys-d114126e7452-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/fsys.html" id="fsys-d114126e7452-link">Filesystems</a><div class="wh-tooltip"><p class="shortdesc"> The <span class="keyword">QNX OS</span> provides a rich variety of filesystems. Like most service-providing processes in the OS, these filesystems execute outside the kernel; applications use them by communicating via messages generated by the shared-library implementation of the POSIX API. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="char-d114126e7802" class="topicref" data-id="char" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action char-d114126e7802-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/char.html" id="char-d114126e7802-link">Character I/O</a><div class="wh-tooltip"><p class="shortdesc"> A key requirement of any realtime operating system is high-performance character I/O. </p></div></div></div></li><li role="treeitem"><div data-tocid="net-d114126e7922" class="topicref" data-id="net" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/net.html" id="net-d114126e7922-link">Networking Architecture</a><div class="wh-tooltip"><p class="shortdesc"> As with other service-providing processes in the <span class="keyword">QNX OS</span>, the networking services execute outside the kernel. Developers are presented with a single unified interface, regardless of the configuration and number of networks involved. </p></div></div></div></li><li role="treeitem"><div data-tocid="tcpip-d114126e7936" class="topicref" data-id="tcpip" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/tcpip.html" id="tcpip-d114126e7936-link">TCP/IP Networking</a><div class="wh-tooltip"><p class="shortdesc">Our TCP/IP stack is included in the <span class="keyword cmdname">io-sock</span> networking stack and uses     the common FreeBSD API. </p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="ham-d114126e7950" class="topicref" data-id="ham" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action ham-d114126e7950-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ham.html" id="ham-d114126e7950-link">High Availability</a><div class="wh-tooltip"><p class="shortdesc"> The term <em class="ph i">High Availability</em> (HA) is commonly used in telecommunications and other industries to describe a system's ability to remain up and running without interruption for extended periods of time. </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="QNXWAY-d114126e7964" class="topicref" data-id="QNXWAY" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action QNXWAY-d114126e7964-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ham_QNXWAY.html" id="QNXWAY-d114126e7964-link">An OS for HA</a><div class="wh-tooltip"><p class="shortdesc">If you had to design an HA-capable OS from the ground up, would you start with a single executable environment? In this simple, high-performance design, all OS components, device drivers, applications, the works, would all run without memory protection in kernel mode.</p></div></div></div></li><li role="treeitem"><div data-tocid="CUSTOM-d114126e7996" class="topicref" data-id="CUSTOM" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ham_CUSTOM.html" id="CUSTOM-d114126e7996-link">Custom hardware support</a><div class="wh-tooltip"><p class="shortdesc"> While many operating systems provide HA support in a hardware-specific way (e.g., via PCI Hot Plug), <span class="keyword">QNX OS</span> isn't tied to PCI. Your particular HA system may be built on a custom chassis, in which case an OS that offers a PCI-based HA <q class="q">solution</q> may not address your needs at all. </p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="HAM-d114126e8013" class="topicref" data-id="HAM" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action HAM-d114126e8013-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ham_HAM.html" id="HAM-d114126e8013-link">High Availability Manager</a><div class="wh-tooltip"><p class="shortdesc"> The High Availability Manager (HAM) provides a mechanism for monitoring processes and services on your system. </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="SELFMONITOR-d114126e8024" class="topicref" data-id="SELFMONITOR" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ham_SELFMONITOR.html" id="SELFMONITOR-d114126e8024-link">The HAM and the Guardian</a><div class="wh-tooltip"><p class="shortdesc"> As a self-monitoring manager, the HAM is resilient to  internal failures. If, for whatever reason, the HAM itself  is stopped abnormally, it can immediately and completely  reconstruct its own state. A mirror process called the  <em class="ph i">Guardian</em> perpetually stands ready and waiting to take  over the HAM's role. Since all state information is  maintained in shared memory, the Guardian can assume the  exact same state that the original HAM was in before the failure.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="HAMHIER-d114126e8038" class="topicref" data-id="HAMHIER" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action HAMHIER-d114126e8038-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ham_HAMHIER.html" id="HAMHIER-d114126e8038-link">HAM hierarchy</a><div class="wh-tooltip"><p class="shortdesc"> The High Availability Manager consists of three main components. </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="ENTITIES-d114126e8049" class="topicref" data-id="ENTITIES" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ham_ENTITIES.html" id="ENTITIES-d114126e8049-link">Entities</a><div class="wh-tooltip"><p class="shortdesc"> <em class="ph i">Entities</em> are the fundamental units of observation/monitoring in the system. </p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="CONDITIONS-d114126e8063" class="topicref" data-id="CONDITIONS" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ham_CONDITIONS.html" id="CONDITIONS-d114126e8063-link">Conditions</a><div class="wh-tooltip"><p class="shortdesc"> <em class="ph i">Conditions</em> are associated with entities; a condition represents the entity's state. </p></div></div></div></li><li role="treeitem"><div data-tocid="ACTIONS-d114126e8077" class="topicref" data-id="ACTIONS" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ham_ACTIONS.html" id="ACTIONS-d114126e8077-link">Actions</a><div class="wh-tooltip"><p class="shortdesc"> <em class="ph i">Actions</em> are associated with conditions. Actions are executed when the appropriate conditions are true with respect to a specific entity. </p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="PUBLISHING-d114126e8091" class="topicref" data-id="PUBLISHING" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action PUBLISHING-d114126e8091-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ham_PUBLISHING.html" id="PUBLISHING-d114126e8091-link">Publishing autonomously detected conditions</a><div class="wh-tooltip"><p class="shortdesc">Entities or other components in the system can inform the HAM about conditions (events) that they deem interesting, and the HAM in turn can deliver these conditions (events) to other components in the system that have expressed interest in (subscribed to) them.</p></div></div></div></li><li role="treeitem"><div data-tocid="SUBSCRIBING-d114126e8121" class="topicref" data-id="SUBSCRIBING" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ham_SUBSCRIBING.html" id="SUBSCRIBING-d114126e8121-link">Subscribing to autonomously published conditions</a><div class="wh-tooltip"><p class="shortdesc"> To express their interest in events published by other components, subscribers can use the <span class="keyword apiname">ham_condition_state()</span> and <span class="keyword apiname">ham_condition_raise()</span> API calls. </p></div></div></div></li><li role="treeitem"><div data-tocid="HAMFS-d114126e8138" class="topicref" data-id="HAMFS" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ham_HAMFS.html" id="HAMFS-d114126e8138-link">The HAM as a <q class="q">filesystem</q></a><div class="wh-tooltip"><p class="shortdesc"> Effectively, the HAM's internal state is like a hierarchical filesystem, where entities are like directories, conditions associated with those entities are like subdirectories, and actions inside those conditions are like leaf nodes of this tree structure.  </p></div></div></div></li><li role="treeitem"><div data-tocid="MULTISTAGE-d114126e8151" class="topicref" data-id="MULTISTAGE" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ham_MULTISTAGE.html" id="MULTISTAGE-d114126e8151-link">Multistage recovery</a><div class="wh-tooltip"><p class="shortdesc"> The HAM can perform a multistage recovery, executing several actions in a certain order. This technique is useful whenever strict dependencies exist between various actions in a sequence. In most cases, recovery requires more than a single restart mechanism in order to properly restore the system's state to what it was before a failure.</p></div></div></div></li><li role="treeitem"><div data-tocid="API-d114126e8162" class="topicref" data-id="API" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ham_API.html" id="API-d114126e8162-link">HAM API</a><div class="wh-tooltip"><p class="shortdesc"> The basic mechanism to talk to the HAM is to use its API. This API is implemented as a library that you can link against. The library is thread-safe and cancellation-safe.  </p></div></div></div></li></ul></li></ul></li><li role="treeitem"><div data-tocid="what_is_realtime-d114126e8173" class="topicref" data-id="what_is_realtime" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/what_is_realtime.html" id="what_is_realtime-d114126e8173-link">What is Real Time and Why Do I Need It?</a><div class="wh-tooltip"><p class="shortdesc"> Real time is an often misunderstood—and misapplied—property of operating systems. This appendix provides a summary of some of the critical elements of realtime computing and discusses a few design considerations and benefits. </p></div></div></div></li><li role="treeitem"><div data-tocid="glossary-d114126e8184" class="topicref" data-id="glossary" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/glossary.html" id="glossary-d114126e8184-link">Glossary</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e8504" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e8504-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/guides.html" id="about-d114126e8504-link">OS Components &amp; Operations</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="graphics-d114126e27311" class="topicref" data-id="graphics" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action graphics-d114126e27311-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/graphics.html" id="graphics-d114126e27311-link">Graphics</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e46364" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e46364-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/programming.html" id="about-d114126e46364-link">Programming</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e54473" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e54473-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.security.system/topic/manual/about.html" id="about-d114126e54473-link">System Security Guide</a><div class="wh-tooltip"><p class="shortdesc">The <em class="ph i">QNX System Security Guide</em> is intended for both system integrators who are         responsible for the security of a <span class="keyword">QNX OS</span> system and developers who want to create a <span class="keyword">QNX OS</span> resource manager free from vulnerabilities.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e57754" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e57754-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/references.html" id="about-d114126e57754-link">Utilities &amp; Libraries</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e110056" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e110056-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.migration/topic/about.html" id="about-d114126e110056-link">Migrating to QNX OS 8.0</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e111092" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e111092-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxcloud.nav/topic/bookset.html" id="about-d114126e111092-link">QNX Software in the Cloud</a><div class="wh-tooltip"><p class="shortdesc">QNX Software in the Cloud enables developers to use the QNX 	software in Amazon Web Services (AWS) and Microsoft Azure (Azure). </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="qcmgr-d114126e112165" class="topicref" data-id="qcmgr" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action qcmgr-d114126e112165-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.containers.user_guide/topic/about.html" id="qcmgr-d114126e112165-link">QNX Containers User's Guide</a><div class="wh-tooltip"><p class="shortdesc">This guide describes QNX Containers, its components, and its utilization.       It provides instructions on using QNX Containers on the host and target,       and then starting QNX Container processes.    </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about_this_guide-d114126e112727" class="topicref" data-id="about_this_guide" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about_this_guide-d114126e112727-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxtoolkit.user_guide/topic/about_this_guide.html" id="about_this_guide-d114126e112727-link">QNX Toolkit for Visual Studio Code</a><div class="wh-tooltip"><p class="shortdesc">         This User's Guide describes the QNX® Toolkit for VS Code.         The guide introduces you to the <span class="keyword">QNX Toolkit</span> by explaining the QNX development environment and how to build, run, and debug your QNX® Operating System (OS) applications and systems.     </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e113878" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e113878-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.hypervisor.nav/topic/bookset.html" id="about-d114126e113878-link">QNX Hypervisor and QNX Hypervisor for Safety</a><div class="wh-tooltip"><p class="shortdesc"> 		The <span class="keyword">QNX Hypervisor</span> and <span class="keyword">QNX Hypervisor for Safety</span> products allow you to run multiple OSs 		on a target system so you can separate critical and non-critical functions, support a wide variety of applications, 		and reduce hardware costs. 	</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="copyright_overview_concept-d114126e120349" class="topicref" data-id="copyright_overview_concept" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action copyright_overview_concept-d114126e120349-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.copyright/topic/coverpage.html" id="copyright_overview_concept-d114126e120349-link">Typographical Conventions, Support, and Licensing</a><div class="wh-tooltip"><p class="shortdesc"> This section describes the typographical conventions used throughout the documentation, explains how to obtain technical support, and provides some information about licensing. </p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+                        
+						<div id="pdf_link"></div>
+						
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic concept/concept topic concept" role="article" aria-labelledby="CONDITIONS">
+
+<h1 class="- topic/title title topictitle1" id="CONDITIONS">Conditions</h1>
+
+
+<div style="padding: 5px 0;"><span class="label">QNX SDP</span><span class="label">8.0</span><span class="label">System Architecture</span><span class="label">Developer</span><span class="label">User</span></div>
+<div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc">
+<em class="+ topic/ph hi-d/i ph i">Conditions</em> are associated with entities; a condition represents the entity's state.
+</p>
+
+<p class="- topic/p p">
+
+</p>
+
+<div class="table-container"><table class="- topic/table table" data-cols="2"><caption></caption><colgroup><col style="width:33.33333333333333%"/><col style="width:66.66666666666666%"/></colgroup><thead class="- topic/thead thead">
+<tr class="- topic/row">
+  <th class="- topic/entry entry colsep-1 rowsep-1" id="CONDITIONS__entry__1">Condition</th>
+  <th class="- topic/entry entry colsep-0 rowsep-1" id="CONDITIONS__entry__2">Description</th>
+</tr>
+</thead><tbody class="- topic/tbody tbody">
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="CONDITIONS__entry__1"><span class="+ topic/keyword xml-d/const keyword const">CONDDEATH</span></td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="CONDITIONS__entry__2">The entity has died.</td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="CONDITIONS__entry__1"><span class="+ topic/keyword xml-d/const keyword const">CONDABNORMALDEATH</span></td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="CONDITIONS__entry__2">The entity has died an abnormal death. Whenever an
+         entity dies, this condition is triggered by a mechanism that
+         results in the generation of a core dump file.
+  </td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="CONDITIONS__entry__1"><span class="+ topic/keyword xml-d/const keyword const">CONDDETACH</span></td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="CONDITIONS__entry__2">The entity that was being monitored is detaching. This
+         ends the HAM's monitoring of that entity.
+  </td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="CONDITIONS__entry__1"><span class="+ topic/keyword xml-d/const keyword const">CONDATTACH</span></td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="CONDITIONS__entry__2">An entity for whom a placeholder was previously 
+         created (i.e., some process has subscribed to events relating
+         to this entity) has joined the system. This is also the
+         start of the HAM's monitoring of the entity.
+  </td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="CONDITIONS__entry__1"><span class="+ topic/keyword xml-d/const keyword const">CONDHBEATMISSEDHIGH</span></td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="CONDITIONS__entry__2">The entity missed sending a <q class="- topic/q q">heartbeat</q>
+         message specified for a condition of <q class="- topic/q q">high</q> severity.
+  </td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="CONDITIONS__entry__1"><span class="+ topic/keyword xml-d/const keyword const">CONDHBEATMISSEDLOW</span></td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="CONDITIONS__entry__2">The entity missed sending a <q class="- topic/q q">heartbeat</q>
+         message specified for a condition of <q class="- topic/q q">low</q>.
+  </td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="CONDITIONS__entry__1"><span class="+ topic/keyword xml-d/const keyword const">CONDRESTART</span></td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="CONDITIONS__entry__2">The entity was restarted. This condition is true
+         <em class="+ topic/ph hi-d/i ph i">after</em> the entity is successfully restarted.
+  </td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="CONDITIONS__entry__1"><span class="+ topic/keyword xml-d/const keyword const">CONDRAISE</span></td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="CONDITIONS__entry__2">An externally detected condition is reported to the HAM.
+         Subscribers can associate actions with these externally detected conditions.
+  </td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="CONDITIONS__entry__1"><span class="+ topic/keyword xml-d/const keyword const">CONDSTATE</span></td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="CONDITIONS__entry__2">An entity reports a state transition to the HAM.  
+         Subscribers can associate actions with specific state transitions.
+  </td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-0" headers="CONDITIONS__entry__1"><span class="+ topic/keyword xml-d/const keyword const">CONDANY</span></td>
+  <td class="- topic/entry entry colsep-0 rowsep-0" headers="CONDITIONS__entry__2">This condition type matches <em class="+ topic/ph hi-d/i ph i">any</em> condition type.
+         It can be used to associate the same actions with one of many conditions.
+  </td>
+</tr>
+
+</tbody></table></div>
+
+<p class="- topic/p p">
+For the conditions listed above (except
+<span class="+ topic/keyword xml-d/const keyword const">CONDSTATE</span>, <span class="+ topic/keyword xml-d/const keyword const">CONDRAISE</span>, and
+<span class="+ topic/keyword xml-d/const keyword const">CONDANY</span>), the HAM is the publisher—it
+automatically detects and/or triggers the conditions. For
+the <span class="+ topic/keyword xml-d/const keyword const">CONDSTATE</span> and <span class="+ topic/keyword xml-d/const keyword const">CONDRAISE</span>
+conditions, external detectors publish the conditions to the
+HAM.
+</p>
+
+<p class="- topic/p p">
+For all conditions, subscribers can associate with lists of
+actions that will be performed in sequence when the
+condition is triggered. Both the <span class="+ topic/keyword xml-d/const keyword const">CONDSTATE</span>
+and <span class="+ topic/keyword xml-d/const keyword const">CONDRAISE</span> conditions provide filtering
+capabilities, so subscribers can selectively associate
+actions with individual conditions based on the information
+published.
+</p>
+
+<p class="- topic/p p">
+Any condition can be associated as a wildcard with any
+entity, so a process can associate actions with <em class="+ topic/ph hi-d/i ph i">any</em>
+condition in a specific entity, or even in any entity. Note
+that conditions are also associated with symbolic names,
+which also need to be unique within an entity.
+</p>
+
+</div>
+<div style="text-align: right;"><span>Page updated: <time>November 05, 2026</time></span></div></article></main></div>
+                        
+                        
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist relinfo" xml:lang="en-us" lang="en-us"><strong>Related information</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.ham/topic/about.html" title="High Availability Framework Developer's Guide">High Availability Framework Developer's Guide</a></li></ul></div></nav></div>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

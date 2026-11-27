@@ -1,0 +1,462 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us" data-whc_version="26.0">
+    <head><link rel="shortcut icon" href="../../oxygen-webhelp/template/images/favicon.png"/><link rel="icon" href="../../oxygen-webhelp/template/images/favicon.png"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="description" content="The attributes structure is a per-resource (e.g., device) data structure. You saw that the standard iofunc_ocb_t OCB had a member called attr that's a pointer to the attribute structure. This was done so the OCB has access to information about the device."/><meta name="keywords" content="QNX SDP, 8.0, Getting Started with the QNX OS, Developer, User"/>        
+      <title>The iofunc_attr_t attributes structure</title><!--  Generated with Oxygen version 26.0, build number 2023100510.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="iofunc_attr-d114126e48622"/><meta name="wh-source-relpath" content="com.qnx.doc.neutrino.getting_started/topic/s1_resmgr_iofunc_attr.xml"/><meta name="wh-out-relpath" content="com.qnx.doc.neutrino.getting_started/topic/s1_resmgr_iofunc_attr.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/commons.css?buildId=2023100510"/>
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic.css?buildId=2023100510"/>
+
+    <script src="../../oxygen-webhelp/app/options/properties.js?buildId=20261105112733"></script>
+    <script src="../../oxygen-webhelp/app/localization/strings.js?buildId=2023100510"></script>
+    <script src="../../oxygen-webhelp/app/search/index/keywords.js?buildId=20261105112733"></script>
+    <script defer="defer" src="../../oxygen-webhelp/app/commons.js?buildId=2023100510"></script>
+    <script defer="defer" src="../../oxygen-webhelp/app/topic.js?buildId=2023100510"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/css/qnx-webhelp.css?buildId=2023100510"/></head>
+
+    <body id="iofunc_attr" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid" id="wh_header_container">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../../index.html" class=" wh_logo d-none d-sm-block "><img src="../../oxygen-webhelp/template/images/QNX-Logo-CORAL-RGB.png" alt=""/></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="title"></span></a></div>
+                    
+                </div>
+
+                
+            </div>
+
+            <div class="wh_nav_and_search">
+                <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                    
+                    
+                    <div class=" wh_indexterms_link "><a href="../../indexTerms.html" title="Index" aria-label="Go to index terms page"><span>Index</span></a></div>
+                    
+                </div>
+                <div class=" wh_search_input navbar-form wh_main_page_search search " role="form">
+                    
+                    
+
+                    
+                    <form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+
+                    <!-- Link to Advanced search page on qnx.com -->
+                    <div id="advanced_search" title="Search all Blackberry QNX product documentation">
+                        <a class="advanced_search" target="_blank" href="https://qnx.software/en/search#t=ProductDocumentation">
+                            <span>Advanced search</span>
+                        </a>
+                    </div>
+
+                    
+                    
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref" data-id="about"><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/bookset.html">QNX Software Development Platform</a><div class="wh-tooltip"><p class="shortdesc">     QNX SDP is a cross-compiling and debugging environment, including an IDE and command-line tools,     for building binary images and programs for target boards running the <span class="keyword">QNX OS</span> 8.0.   </p></div></div></div></li><li><div class="topicref" data-id="about"><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/programming.html">Programming</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li><div class="topicref" data-id="about"><div class="title"><a href="../../com.qnx.doc.neutrino.getting_started/topic/about.html">Getting Started with the QNX OS</a><div class="wh-tooltip"><p class="shortdesc"> <em class="ph i">Getting Started with the <span class="keyword">QNX OS</span>: A Guide for Realtime Programmers</em> is intended to introduce you to the <span class="keyword">QNX OS</span> and help you develop applications and resource managers for it. </p></div></div></div></li><li><div class="topicref" data-id="s1_resmgr"><div class="title"><a href="../../com.qnx.doc.neutrino.getting_started/topic/s1_resmgr.html">Resource Managers</a><div class="wh-tooltip"><p class="shortdesc"> In this chapter, we'll take a look at what you need to understand in order to write a <em class="ph i">resource manager</em>. Resource managers are another distinctive feature of <span class="keyword">QNX OS</span> that allow you to access services through standard POSIX calls. </p></div></div></div></li><li><div class="topicref" data-id="Writing"><div class="title"><a href="../../com.qnx.doc.neutrino.getting_started/topic/s1_resmgr_Writing.html">Writing a resource manager</a><div class="wh-tooltip"><p class="shortdesc"> Now that we've introduced the basics—how the client looks at the world, how the resource manager looks at the world, and an overview of the two cooperating layers in the library, it's time to focus on the details. </p></div></div></div></li><li><div class="topicref" data-id="posixdata"><div class="title"><a href="../../com.qnx.doc.neutrino.getting_started/topic/s1_resmgr_posixdata.html">POSIX-layer data structures</a><div class="wh-tooltip"><p class="shortdesc"> There are three data structures that relate to the POSIX-layer support routines. As far as the <em class="ph i">base layer</em> is concerned, you can use any data structures you want; it's the POSIX layer that requires you to conform to a certain content and layout. The benefits delivered by the POSIX layer are well worth this tiny constraint. As we'll see later, you can add your own content to the structures as well. </p></div></div></div></li><li class="active"><div class="topicref" data-id="iofunc_attr"><div class="title"><a href="../../com.qnx.doc.neutrino.getting_started/topic/s1_resmgr_iofunc_attr.html">The <span class="keyword dtype">iofunc_attr_t</span> attributes structure</a><div class="wh-tooltip"><p class="shortdesc"> The attributes structure is a per-resource (e.g., device) data structure. You saw that the standard <span class="keyword dtype">iofunc_ocb_t</span> OCB had a member called <var class="keyword varname">attr</var> that's a pointer to the attribute structure. This was done so the OCB has access to information about the device. </p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+					
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+								<!--<whc:external_resourse_link 
+                            href="${param(webhelp.pdf.link.url)}"
+                            title="${param(webhelp.pdf.link.text)}"
+                            image="${param(webhelp.pdf.link.icon.path)}"
+                            type="pdf_link"                            
+							/>-->
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e10" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e10-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.ide.userguide/topic/about.html" id="about-d114126e10-link">QNX Momentics IDE User's Guide</a><div class="wh-tooltip"><p class="shortdesc">         This <em class="ph i">User's Guide</em> describes version 8.0 of the Integrated Development Environment (IDE) that's part of the         <span class="keyword">QNX Tool Suite</span>.     </p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="about-d114126e4055" class="topicref" data-id="about" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action about-d114126e4055-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/bookset.html" id="about-d114126e4055-link">QNX Software Development Platform</a><div class="wh-tooltip"><p class="shortdesc">     QNX SDP is a cross-compiling and debugging environment, including an IDE and command-line tools,     for building binary images and programs for target boards running the <span class="keyword">QNX OS</span> 8.0.   </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="AboutThisGuide-d114126e4069" class="topicref" data-id="AboutThisGuide" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action AboutThisGuide-d114126e4069-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.quickstart/topic/about.html" id="AboutThisGuide-d114126e4069-link">Quickstart Guide</a><div class="wh-tooltip"><p class="shortdesc">These guidelines will help you install the QNX Software Development Platform, quickly develop a program,     and run it on a <span class="keyword">QNX OS</span> target.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e5772" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e5772-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/about.html" id="about-d114126e5772-link">System Architecture</a><div class="wh-tooltip"><p class="shortdesc"> The <em class="ph i">System Architecture</em> guide accompanies the <span class="keyword">QNX OS</span> and is intended for both application developers and end-users. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e8504" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e8504-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/guides.html" id="about-d114126e8504-link">OS Components &amp; Operations</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="graphics-d114126e27311" class="topicref" data-id="graphics" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action graphics-d114126e27311-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/graphics.html" id="graphics-d114126e27311-link">Graphics</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="about-d114126e46364" class="topicref" data-id="about" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action about-d114126e46364-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/programming.html" id="about-d114126e46364-link">Programming</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="true"><div data-tocid="about-d114126e46374" class="topicref" data-id="about" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action about-d114126e46374-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.getting_started/topic/about.html" id="about-d114126e46374-link">Getting Started with the QNX OS</a><div class="wh-tooltip"><p class="shortdesc"> <em class="ph i">Getting Started with the <span class="keyword">QNX OS</span>: A Guide for Realtime Programmers</em> is intended to introduce you to the <span class="keyword">QNX OS</span> and help you develop applications and resource managers for it. </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="s1_procs-d114126e46430" class="topicref" data-id="s1_procs" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action s1_procs-d114126e46430-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.getting_started/topic/s1_procs.html" id="s1_procs-d114126e46430-link">Processes and Threads</a><div class="wh-tooltip"><p class="shortdesc"> This chapter explains the concepts behind processes and threads, and the challenges of synchronization and scheduling. A thread is a flow of execution, and a process is a collection of threads. In the <span class="keyword">QNX OS</span>, the schedulable entity is a thread, not a process. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="s1_msg-d114126e47325" class="topicref" data-id="s1_msg" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action s1_msg-d114126e47325-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.getting_started/topic/s1_msg.html" id="s1_msg-d114126e47325-link">Message Passing</a><div class="wh-tooltip"><p class="shortdesc"> In this chapter, we'll look at the most distinctive feature of <span class="keyword">QNX OS</span>, <em class="ph i">message passing</em>. Message passing lies at the heart of the operating system's microkernel architecture, giving the OS its modularity. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="s1_inter-d114126e47977" class="topicref" data-id="s1_inter" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action s1_inter-d114126e47977-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.getting_started/topic/s1_inter.html" id="s1_inter-d114126e47977-link">Interrupts</a><div class="wh-tooltip"><p class="shortdesc"> In this chapter, we'll take a look at interrupts, how we deal with them under <span class="keyword">QNX OS</span>, their impact on scheduling and realtime, and some interrupt-management strategies. </p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="s1_resmgr-d114126e48032" class="topicref" data-id="s1_resmgr" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action s1_resmgr-d114126e48032-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.getting_started/topic/s1_resmgr.html" id="s1_resmgr-d114126e48032-link">Resource Managers</a><div class="wh-tooltip"><p class="shortdesc"> In this chapter, we'll take a look at what you need to understand in order to write a <em class="ph i">resource manager</em>. Resource managers are another distinctive feature of <span class="keyword">QNX OS</span> that allow you to access services through standard POSIX calls. </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="What_is-d114126e48049" class="topicref" data-id="What_is" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action What_is-d114126e48049-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.getting_started/topic/s1_resmgr_What_is.html" id="What_is-d114126e48049-link">What is a resource manager?</a><div class="wh-tooltip"><p class="shortdesc"> A resource manager is simply a program with some well-defined characteristics. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="Client_view-d114126e48100" class="topicref" data-id="Client_view" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action Client_view-d114126e48100-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.getting_started/topic/s1_resmgr_Client_view.html" id="Client_view-d114126e48100-link">The client's view</a><div class="wh-tooltip"><p class="shortdesc"> We've already seen a hint of what the client expects. It expects a file-descriptor-based interface, using standard POSIX functions. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="Resmgr_view-d114126e48192" class="topicref" data-id="Resmgr_view" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action Resmgr_view-d114126e48192-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.getting_started/topic/s1_resmgr_Resmgr_view.html" id="Resmgr_view-d114126e48192-link">The resource manager's view</a><div class="wh-tooltip"><p class="shortdesc"> Let's look at things from the resource manager's perspective. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="the_resource_manager_library-d114126e48281" class="topicref" data-id="the_resource_manager_library" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action the_resource_manager_library-d114126e48281-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.getting_started/topic/s1_resmgr_the_resource_manager_library.html" id="the_resource_manager_library-d114126e48281-link">The resource manager library</a><div class="wh-tooltip"><p class="shortdesc"> Before we get too far into all the issues surrounding resource managers, we have to get acquainted with the <span class="keyword">QNX OS</span> resource manager library. </p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="Writing-d114126e48351" class="topicref" data-id="Writing" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action Writing-d114126e48351-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.getting_started/topic/s1_resmgr_Writing.html" id="Writing-d114126e48351-link">Writing a resource manager</a><div class="wh-tooltip"><p class="shortdesc"> Now that we've introduced the basics—how the client looks at the world, how the resource manager looks at the world, and an overview of the two cooperating layers in the library, it's time to focus on the details. </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="datastruct-d114126e48362" class="topicref" data-id="datastruct" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action datastruct-d114126e48362-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.getting_started/topic/s1_resmgr_datastruct.html" id="datastruct-d114126e48362-link">Data structures</a><div class="wh-tooltip"><p class="shortdesc"> The first thing we need to understand is the data structures used to control the operation of the library. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="structure-d114126e48489" class="topicref" data-id="structure" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action structure-d114126e48489-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.getting_started/topic/s1_resmgr_structure.html" id="structure-d114126e48489-link">Resource manager structure</a><div class="wh-tooltip"><p class="shortdesc"> Now that we've seen the data structures, we can discuss interactions between the parts that you'd supply to actually make your resource manager <em class="ph i">do</em> something. </p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="posixdata-d114126e48591" class="topicref" data-id="posixdata" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action posixdata-d114126e48591-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.getting_started/topic/s1_resmgr_posixdata.html" id="posixdata-d114126e48591-link">POSIX-layer data structures</a><div class="wh-tooltip"><p class="shortdesc"> There are three data structures that relate to the POSIX-layer support routines. As far as the <em class="ph i">base layer</em> is concerned, you can use any data structures you want; it's the POSIX layer that requires you to conform to a certain content and layout. The benefits delivered by the POSIX layer are well worth this tiny constraint. As we'll see later, you can add your own content to the structures as well. </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="iofunc_ocb-d114126e48605" class="topicref" data-id="iofunc_ocb" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.getting_started/topic/s1_resmgr_iofunc_ocb.html" id="iofunc_ocb-d114126e48605-link">The <span class="keyword dtype">iofunc_ocb_t</span> OCB structure</a><div class="wh-tooltip"><p class="shortdesc"> The OCB structure contains information used to track client access to a particular service offered by a resource manager, on a per-open or per-file-descriptor basis. What this means is that when a client performs an <span class="keyword apiname">open()</span> call and gets back a file descriptor (as opposed to an error indication), the resource manager will have created an OCB and associated it with the client. This OCB will be around for as long as the client has the file descriptor open. </p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="iofunc_attr-d114126e48622" class="topicref" data-id="iofunc_attr" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.getting_started/topic/s1_resmgr_iofunc_attr.html" id="iofunc_attr-d114126e48622-link">The <span class="keyword dtype">iofunc_attr_t</span> attributes structure</a><div class="wh-tooltip"><p class="shortdesc"> The attributes structure is a per-resource (e.g., device) data structure. You saw that the standard <span class="keyword dtype">iofunc_ocb_t</span> OCB had a member called <var class="keyword varname">attr</var> that's a pointer to the attribute structure. This was done so the OCB has access to information about the device. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="iofunc_mount-d114126e48642" class="topicref" data-id="iofunc_mount" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action iofunc_mount-d114126e48642-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.getting_started/topic/s1_resmgr_iofunc_mount.html" id="iofunc_mount-d114126e48642-link">The <span class="keyword dtype">iofunc_mount_t</span> mount structure</a><div class="wh-tooltip"><p class="shortdesc"> The mount structure contains information that's common across multiple attributes structures. </p></div></div></div></li></ul></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="routines-d114126e48678" class="topicref" data-id="routines" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action routines-d114126e48678-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.getting_started/topic/s1_resmgr_routines.html" id="routines-d114126e48678-link">Handler routines</a><div class="wh-tooltip"><p class="shortdesc"> Not all outcalls correspond to client messages—some are synthesized by the kernel, and some by the library. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="alphalist-d114126e48777" class="topicref" data-id="alphalist" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action alphalist-d114126e48777-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.getting_started/topic/s1_resmgr_alphalist.html" id="alphalist-d114126e48777-link">Alphabetical listing of connect and I/O functions</a><div class="wh-tooltip"><p class="shortdesc"> This section gives an alphabetical listing of the connect and I/O function entry points that you can define in the two tables passed to <span class="keyword apiname">resmgr_attach()</span>. Remember that if you simply call <span class="keyword apiname">iofunc_func_init()</span>, all these entries will be filled in with the appropriate defaults; you want to modify a particular entry only if you wish to handle that particular message. In the <q class="q">Examples</q> section later in this chapter, you'll see some examples of the common functions. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="examples-d114126e49138" class="topicref" data-id="examples" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action examples-d114126e49138-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.getting_started/topic/s1_resmgr_examples.html" id="examples-d114126e49138-link">Examples</a><div class="wh-tooltip"><p class="shortdesc"> I'm now going to show you a number of <q class="q">cookbook</q> examples you can cut and paste into your code, to use as a basis for your projects. These aren't complete resource managers—you'll need to add the thread pool and dispatch <q class="q">skeleton</q> shown immediately below, and ensure that your versions of the I/O functions are placed into the I/O functions table <em class="ph i">after</em> you've done the <span class="keyword apiname">iofunc_func_init()</span>, in order to override the defaults! </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="Advanced-d114126e49238" class="topicref" data-id="Advanced" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action Advanced-d114126e49238-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.getting_started/topic/s1_resmgr_Advanced.html" id="Advanced-d114126e49238-link">Advanced topics</a><div class="wh-tooltip"><p class="shortdesc"> Now that we've covered the <q class="q">basics</q> of resource managers, it's time to look at some more complicated aspects. </p></div></div></div></li><li role="treeitem"><div data-tocid="Summary-d114126e49595" class="topicref" data-id="Summary" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.getting_started/topic/s1_resmgr_Summary.html" id="Summary-d114126e49595-link">Summary</a><div class="wh-tooltip"><p class="shortdesc"> Writing a resource manager is by far the most complicated task that we've discussed in this book. </p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="examples-d114126e49606" class="topicref" data-id="examples" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action examples-d114126e49606-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.getting_started/topic/examples.html" id="examples-d114126e49606-link">Sample Programs</a><div class="wh-tooltip"><p class="shortdesc"> This appendix contains the complete versions of some of the sample programs discussed in this book. </p></div></div></div></li><li role="treeitem"><div data-tocid="s3_glossary-d114126e49651" class="topicref" data-id="s3_glossary" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.getting_started/topic/s3_glossary.html" id="s3_glossary-d114126e49651-link">Glossary</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e49974" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e49974-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.prog/topic/about.html" id="about-d114126e49974-link">Programmer's Guide</a><div class="wh-tooltip"><p class="shortdesc"> The <span class="keyword">QNX OS</span> <em class="ph i">Programmer's Guide</em> covers a variety of topics of interest to developers who are building applications that will run under the <span class="keyword">QNX OS</span>. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e53193" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e53193-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.resmgr/topic/about.html" id="about-d114126e53193-link">Writing a Resource Manager</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e54473" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e54473-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.security.system/topic/manual/about.html" id="about-d114126e54473-link">System Security Guide</a><div class="wh-tooltip"><p class="shortdesc">The <em class="ph i">QNX System Security Guide</em> is intended for both system integrators who are         responsible for the security of a <span class="keyword">QNX OS</span> system and developers who want to create a <span class="keyword">QNX OS</span> resource manager free from vulnerabilities.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e57754" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e57754-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/references.html" id="about-d114126e57754-link">Utilities &amp; Libraries</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e110056" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e110056-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.migration/topic/about.html" id="about-d114126e110056-link">Migrating to QNX OS 8.0</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e111092" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e111092-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxcloud.nav/topic/bookset.html" id="about-d114126e111092-link">QNX Software in the Cloud</a><div class="wh-tooltip"><p class="shortdesc">QNX Software in the Cloud enables developers to use the QNX 	software in Amazon Web Services (AWS) and Microsoft Azure (Azure). </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="qcmgr-d114126e112165" class="topicref" data-id="qcmgr" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action qcmgr-d114126e112165-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.containers.user_guide/topic/about.html" id="qcmgr-d114126e112165-link">QNX Containers User's Guide</a><div class="wh-tooltip"><p class="shortdesc">This guide describes QNX Containers, its components, and its utilization.       It provides instructions on using QNX Containers on the host and target,       and then starting QNX Container processes.    </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about_this_guide-d114126e112727" class="topicref" data-id="about_this_guide" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about_this_guide-d114126e112727-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxtoolkit.user_guide/topic/about_this_guide.html" id="about_this_guide-d114126e112727-link">QNX Toolkit for Visual Studio Code</a><div class="wh-tooltip"><p class="shortdesc">         This User's Guide describes the QNX® Toolkit for VS Code.         The guide introduces you to the <span class="keyword">QNX Toolkit</span> by explaining the QNX development environment and how to build, run, and debug your QNX® Operating System (OS) applications and systems.     </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e113878" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e113878-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.hypervisor.nav/topic/bookset.html" id="about-d114126e113878-link">QNX Hypervisor and QNX Hypervisor for Safety</a><div class="wh-tooltip"><p class="shortdesc"> 		The <span class="keyword">QNX Hypervisor</span> and <span class="keyword">QNX Hypervisor for Safety</span> products allow you to run multiple OSs 		on a target system so you can separate critical and non-critical functions, support a wide variety of applications, 		and reduce hardware costs. 	</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="copyright_overview_concept-d114126e120349" class="topicref" data-id="copyright_overview_concept" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action copyright_overview_concept-d114126e120349-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.copyright/topic/coverpage.html" id="copyright_overview_concept-d114126e120349-link">Typographical Conventions, Support, and Licensing</a><div class="wh-tooltip"><p class="shortdesc"> This section describes the typographical conventions used throughout the documentation, explains how to obtain technical support, and provides some information about licensing. </p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+                        
+						<div id="pdf_link"></div>
+						
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic concept/concept topic concept" role="article" aria-labelledby="iofunc_attr">
+
+<h1 class="- topic/title title topictitle1" id="iofunc_attr">The <span class="+ topic/keyword xml-d/dtype keyword dtype">iofunc_attr_t</span> attributes structure</h1>
+
+
+<div style="padding: 5px 0;"><span class="label">QNX SDP</span><span class="label">8.0</span><span class="label">Getting Started with the QNX OS</span><span class="label">Developer</span><span class="label">User</span></div>
+<div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc">
+The attributes structure is a per-resource (e.g., device) data structure.
+You saw that the standard <span class="+ topic/keyword xml-d/dtype keyword dtype">iofunc_ocb_t</span> OCB had a member called
+<var class="+ topic/keyword sw-d/varname keyword varname">attr</var> that's a pointer to the attribute structure.
+This was done so the OCB has access to information about the device.
+</p>
+<div class="- topic/p p">
+
+
+
+Let's take a look at the attributes structure (from 
+<span class="+ topic/ph sw-d/filepath ph filepath">&lt;sys/iofunc.h&gt;</span>):
+
+<pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>typedef struct _iofunc_attr {
+  IOFUNC_MOUNT_T           *<var class="+ topic/keyword sw-d/varname keyword varname">mount</var>;
+  struct _iofunc_mmap_list *<var class="+ topic/keyword sw-d/varname keyword varname">mmap_list</var>;
+  struct _iofunc_lock_list *<var class="+ topic/keyword sw-d/varname keyword varname">lock_list</var>;
+  void                     *<var class="+ topic/keyword sw-d/varname keyword varname">acl</var>;
+    union {
+        void               *<var class="+ topic/keyword sw-d/varname keyword varname">lockobj</var>;
+        pthread_mutex_t    <var class="+ topic/keyword sw-d/varname keyword varname">lock</var>;
+    };
+  uint32_t                 <var class="+ topic/keyword sw-d/varname keyword varname">flags</var>;
+  uint16_t                 <var class="+ topic/keyword sw-d/varname keyword varname">count</var>;
+  uint16_t                 <var class="+ topic/keyword sw-d/varname keyword varname">rcount</var>;
+  uint16_t                 <var class="+ topic/keyword sw-d/varname keyword varname">wcount</var>;
+  uint16_t                 <var class="+ topic/keyword sw-d/varname keyword varname">rlocks</var>;
+  uint16_t                 <var class="+ topic/keyword sw-d/varname keyword varname">wlocks</var>;
+  SEE_BELOW!!!             <var class="+ topic/keyword sw-d/varname keyword varname">nbytes</var>;
+  SEE_BELOW!!!             <var class="+ topic/keyword sw-d/varname keyword varname">inode</var>;
+  uid_t                    <var class="+ topic/keyword sw-d/varname keyword varname">uid</var>;
+  gid_t                    <var class="+ topic/keyword sw-d/varname keyword varname">gid</var>;
+  time_t                   <var class="+ topic/keyword sw-d/varname keyword varname">mtime</var>;
+  time_t                   <var class="+ topic/keyword sw-d/varname keyword varname">atime</var>;
+  time_t                   <var class="+ topic/keyword sw-d/varname keyword varname">ctime</var>;
+  mode_t                   <var class="+ topic/keyword sw-d/varname keyword varname">mode</var>;
+  nlink_t                  <var class="+ topic/keyword sw-d/varname keyword varname">nlink</var>;
+  dev_t                    <var class="+ topic/keyword sw-d/varname keyword varname">rdev</var>;
+  unsigned                 <var class="+ topic/keyword sw-d/varname keyword varname">mtime_ns</var>;
+  unsigned                 <var class="+ topic/keyword sw-d/varname keyword varname">atime_ns</var>;
+  unsigned                 <var class="+ topic/keyword sw-d/varname keyword varname">ctime_ns</var>;
+} iofunc_attr_t;
+</code></pre>
+</div>
+
+<p class="- topic/p p">
+The <var class="+ topic/keyword sw-d/varname keyword varname">nbytes</var> and <var class="+ topic/keyword sw-d/varname keyword varname">inode</var> members have the same set of
+<code class="+ topic/ph pr-d/codeph ph codeph">#ifdef</code> conditionals as the <var class="+ topic/keyword sw-d/varname keyword varname">offset</var> member
+of the OCB (see <q class="- topic/q q"><a class="- topic/xref xref" href="s1_resmgr_iofunc_ocb.html#iofunc_ocb__offset">The <var class="+ topic/keyword sw-d/varname keyword varname">offset</var> member</a></q> above).
+</p>
+
+<p class="- topic/p p">
+Note that some of the fields of the attributes structure are
+useful only to the POSIX helper routines.
+</p>
+
+<p class="- topic/p p">
+Let's look at the fields individually:
+</p>
+
+<dl class="- topic/dl dl compact">
+
+<dt class="- topic/dt dt dlterm"><var class="+ topic/keyword sw-d/varname keyword varname">mount</var></dt>
+<dd class="- topic/dd dd">A pointer to the optional <span class="+ topic/keyword xml-d/dtype keyword dtype">iofunc_mount_t</span> mount
+  structure.  This is used in the same way that the pointer from
+  the OCB to the attribute structure was used, except that this
+  value can be <span class="+ topic/keyword xml-d/const keyword const">NULL</span> in which case the mount structure
+  defaults are used (see <q class="- topic/q q"><a class="- topic/xref xref" href="s1_resmgr_iofunc_mount.html" title="The mount structure contains information that's common across multiple attributes structures.">The <span class="+ topic/keyword xml-d/dtype keyword dtype">iofunc_mount_t</span> mount structure</a></q> below).
+  <p class="- topic/p p">As mentioned, the mount structure is generally bound <q class="- topic/q q">by hand</q>
+  into the attributes structure in code that you supply for
+  your resource manager initialization.</p>
+  
+    
+  
+</dd>
+
+
+
+<dt class="- topic/dt dt dlterm"><var class="+ topic/keyword sw-d/varname keyword varname">mmap_list</var></dt>
+<dd class="- topic/dd dd">Used internally by POSIX
+  <a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/i/iofunc_mmap_default.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">iofunc_mmap_default()</span></a>
+  and
+  <a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/i/iofunc_mmap_default.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">iofunc_mmap_default_ext()</span></a>.
+  
+  
+  
+  
+  
+  
+</dd>
+
+
+
+<dt class="- topic/dt dt dlterm"><var class="+ topic/keyword sw-d/varname keyword varname">lock_list</var></dt>
+<dd class="- topic/dd dd">Used internally by POSIX
+  <a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/i/iofunc_lock_default.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">iofunc_lock_default()</span></a>.
+  
+  
+  
+</dd>
+
+
+
+<dt class="- topic/dt dt dlterm"><var class="+ topic/keyword sw-d/varname keyword varname">acl</var></dt>
+<dd class="- topic/dd dd">Access control lists.</dd>
+
+
+
+<dt class="- topic/dt dt dlterm"><var class="+ topic/keyword sw-d/varname keyword varname">lockobj</var> and <var class="+ topic/keyword sw-d/varname keyword varname">lock</var></dt>
+<dd class="- topic/dd dd">Members of a <span class="+ topic/keyword xml-d/dtype keyword dtype">union</span> that provide a way to lock the attribute structure.
+  To support multiple threads in your resource manager,
+  you'll need to lock the attribute structure so that only one
+  thread at a time is allowed to change it. 
+  The attribute structure can be locked recursively.
+  
+  
+
+  <ul class="- topic/ul ul">
+  <li class="- topic/li li">The default behavior is to use the <var class="+ topic/keyword sw-d/varname keyword varname">lock</var> member, which is a built-in lock mutex.
+  If you use
+  <a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/i/iofunc_attr_init.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">iofunc_attr_init()</span></a>
+  to initialize the structure, it initializes the built-in lock mutex (<var class="+ topic/keyword sw-d/varname keyword varname">lock</var>)
+  using a static lock initializer.
+  
+  
+  
+
+  <p class="- topic/p p">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  The resource manager layer automatically locks the attribute structure (using
+  <a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/i/iofunc_attr_lock.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">iofunc_attr_lock()</span></a>)
+  for you when certain handler functions are called (i.e., <span class="+ topic/keyword xml-d/const keyword const">IO_*</span>).
+  You can lock the attribute structure by calling
+  <a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/i/iofunc_attr_lock.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">iofunc_attr_lock()</span></a>
+  or
+  <a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/i/iofunc_attr_trylock.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">iofunc_attr_trylock()</span></a>;
+  you can unlock it by calling
+  <a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/i/iofunc_attr_unlock.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">iofunc_attr_unlock()</span></a>.
+  </p>
+  </li>
+
+  <li class="- topic/li li">If you want to use an external lock object, override the built-in lock by pointing the
+    <var class="+ topic/keyword sw-d/varname keyword varname">lockobj</var> member to the external lock object.
+    You also need to provide your own functions to lock and unlock the attribute structure and set the
+    appropriate members of the <var class="+ topic/keyword sw-d/varname keyword varname">funcs</var> structure in the <span class="+ topic/keyword xml-d/dtype keyword dtype">iofunc_mount_t</span> structure.
+    For more information, see
+    <q class="- topic/q q"><a class="- topic/xref xref" href="s1_resmgr_iofunc_mount.html" title="The mount structure contains information that's common across multiple attributes structures.">The <span class="+ topic/keyword xml-d/dtype keyword dtype">iofunc_mount_t</span> mount structure</a></q>
+    in this chapter.
+  </li>
+
+  </ul>
+</dd>
+
+
+
+<dt class="- topic/dt dt dlterm"><var class="+ topic/keyword sw-d/varname keyword varname">flags</var></dt>
+<dd class="- topic/dd dd">Contains flags that describe the state of other attributes
+  structure fields.  We'll discuss these shortly.
+</dd>
+
+
+
+<dt class="- topic/dt dt dlterm"><var class="+ topic/keyword sw-d/varname keyword varname">count</var></dt>
+<dd class="- topic/dd dd">Indicates the number of OCBs that have this attributes structure
+  open for any reason.  For example, if one client has an OCB
+  open for read, another client has another OCB open for read/write,
+  and both OCBs point to this attribute structure, then the value of
+  <var class="+ topic/keyword sw-d/varname keyword varname">count</var> would be 2, to indicate that two clients have
+  this resource open.
+</dd>
+
+
+
+<dt class="- topic/dt dt dlterm"><var class="+ topic/keyword sw-d/varname keyword varname">rcount</var></dt>
+<dd class="- topic/dd dd">Count of readers.
+  In the example given for <var class="+ topic/keyword sw-d/varname keyword varname">count</var>, <var class="+ topic/keyword sw-d/varname keyword varname">rcount</var> would
+  also have the value 2, because two clients have the resource open for reading.
+</dd>
+
+
+
+<dt class="- topic/dt dt dlterm"><var class="+ topic/keyword sw-d/varname keyword varname">wcount</var></dt>
+<dd class="- topic/dd dd">Count of writers. In the example
+  given for <var class="+ topic/keyword sw-d/varname keyword varname">count</var>, <var class="+ topic/keyword sw-d/varname keyword varname">wcount</var> would have the value 1,
+  because only one of the clients has this resource open for writing.
+</dd>
+
+
+
+<dt class="- topic/dt dt dlterm"><var class="+ topic/keyword sw-d/varname keyword varname">rlocks</var></dt>
+<dd class="- topic/dd dd">Indicates the number of OCBs that have read locks on the particular resource.
+  If zero, it means there are no read locks, but there may be write locks.
+</dd>
+
+
+
+<dt class="- topic/dt dt dlterm"><var class="+ topic/keyword sw-d/varname keyword varname">wlocks</var></dt>
+<dd class="- topic/dd dd">Same as <var class="+ topic/keyword sw-d/varname keyword varname">rlocks</var> but for write locks.</dd>
+
+
+
+<dt class="- topic/dt dt dlterm"><var class="+ topic/keyword sw-d/varname keyword varname">nbytes</var></dt>
+<dd class="- topic/dd dd">Size of the resource, in bytes.  For example, if this resource
+  described a particular file, and that file was 7756 bytes in size,
+  then the <var class="+ topic/keyword sw-d/varname keyword varname">nbytes</var> member would contain the number 7756.
+</dd>
+
+
+
+<dt class="- topic/dt dt dlterm"><var class="+ topic/keyword sw-d/varname keyword varname">inode</var></dt>
+<dd class="- topic/dd dd">Contains a file or resource serial number that must be unique
+  per mountpoint.  The <var class="+ topic/keyword sw-d/varname keyword varname">inode</var> should never be zero,
+  because zero traditionally indicates a file that's not in use.
+</dd>
+
+
+
+<dt class="- topic/dt dt dlterm"><var class="+ topic/keyword sw-d/varname keyword varname">uid</var></dt>
+<dd class="- topic/dd dd">User ID of the owner of this resource.</dd>
+
+
+
+<dt class="- topic/dt dt dlterm"><var class="+ topic/keyword sw-d/varname keyword varname">gid</var></dt>
+<dd class="- topic/dd dd">Group ID of the owner of this resource.</dd>
+
+
+
+<dt class="- topic/dt dt dlterm"><var class="+ topic/keyword sw-d/varname keyword varname">mtime</var></dt>
+<dd class="- topic/dd dd">File modification time, updated or at least invalidated whenever a
+  client <span class="+ topic/keyword pr-d/apiname keyword apiname">write()</span> is processed.
+</dd>
+
+
+
+<dt class="- topic/dt dt dlterm"><var class="+ topic/keyword sw-d/varname keyword varname">atime</var></dt>
+<dd class="- topic/dd dd">File access time, updated or at least invalidated whenever a client
+  <span class="+ topic/keyword pr-d/apiname keyword apiname">read()</span> that returns more than zero bytes is processed.
+</dd>
+
+
+
+<dt class="- topic/dt dt dlterm"><var class="+ topic/keyword sw-d/varname keyword varname">ctime</var></dt>
+<dd class="- topic/dd dd">File change time, updated or at least invalidated whenever a client
+  <span class="+ topic/keyword pr-d/apiname keyword apiname">write()</span>, <span class="+ topic/keyword pr-d/apiname keyword apiname">chown()</span>, or <span class="+ topic/keyword pr-d/apiname keyword apiname">chmod()</span>
+  is processed.
+</dd>
+
+
+
+<dt class="- topic/dt dt dlterm"><var class="+ topic/keyword sw-d/varname keyword varname">mode</var></dt>
+<dd class="- topic/dd dd">File's mode.  These are the standard <span class="+ topic/keyword xml-d/const keyword const">S_*</span> values from
+  <span class="+ topic/ph sw-d/filepath ph filepath">&lt;sys/stat.h&gt;</span>, such as <span class="+ topic/keyword xml-d/const keyword const">S_IFCHR</span>, or an octal
+  representation, such as 0664 to indicate read/write permission for
+  owner and group and read-only permission for other.
+</dd>
+
+
+
+<dt class="- topic/dt dt dlterm"><var class="+ topic/keyword sw-d/varname keyword varname">nlink</var></dt>
+<dd class="- topic/dd dd">Number of links to the file, returned by the client's <span class="+ topic/keyword pr-d/apiname keyword apiname">stat()</span>
+  function call.
+</dd>
+
+
+
+<dt class="- topic/dt dt dlterm"><var class="+ topic/keyword sw-d/varname keyword varname">rdev</var></dt>
+<dd class="- topic/dd dd">For a character special device, this field consists of a major and
+  minor device code (10 bits minor in the least-significant positions;
+  next 6 bits are the major device number).
+  For other types of devices, it contains the device number.
+  (See below in <q class="- topic/q q"><a class="- topic/xref xref" href="s1_resmgr_dev_inode_rdev.html" title="The mount structure contains a member called dev. The attributes structure contains two members: inode and rdev. Let's look at their relationships by examining a traditional disk-based filesystem.">Of device numbers, inodes, and our friend <var class="+ topic/keyword sw-d/varname keyword varname">rdev</var>,</a></q>
+  for more discussion.)
+</dd>
+
+
+
+<dt class="- topic/dt dt dlterm"><var class="+ topic/keyword sw-d/varname keyword varname">mtime_ns</var>, <var class="+ topic/keyword sw-d/varname keyword varname">atime_ns</var>, and <var class="+ topic/keyword sw-d/varname keyword varname">ctime_ns</var></dt>
+<dd class="- topic/dd dd">The nanosecond values for the POSIX time members,
+  <var class="+ topic/keyword sw-d/varname keyword varname">mtime</var>, <var class="+ topic/keyword sw-d/varname keyword varname">atime</var>, and <var class="+ topic/keyword sw-d/varname keyword varname">ctime</var>.
+</dd>
+
+
+</dl>
+
+<p class="- topic/p p">
+As with the OCB, you can extend the <q class="- topic/q q">normal</q> attributes structure with your own data;
+see the <q class="- topic/q q"><a class="- topic/xref xref" href="s1_resmgr_extattr.html" title="You may wish to extend the attribute structure in cases where you need to store additional information about the resource. Since the attribute structure is associated on a per-resource basis, any extra information you store there will be accessible to all OCBs that reference the resource (since the OCB contains a pointer to the structure). Often things like serial baud rate are stored in extended attribute structures.">Extending the attributes structure section.</a></q>
+</p>
+
+</div>
+<div style="text-align: right;"><span>Page updated: <time>November 05, 2026</time></span></div></article></main></div>
+                        
+                        
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist relinfo" xml:lang="en-us" lang="en-us"><strong>Related information</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.sys_arch/topic/resource.html" title="Resource Managers (System Architecture)">Resource Managers (System Architecture)</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.resmgr/topic/about.html" title="Writing a Resource Manager">Writing a Resource Manager</a></li></ul></div></nav></div>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

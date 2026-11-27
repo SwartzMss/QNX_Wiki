@@ -1,0 +1,255 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us" data-whc_version="26.0">
+    <head><link rel="shortcut icon" href="../../oxygen-webhelp/template/images/favicon.png"/><link rel="icon" href="../../oxygen-webhelp/template/images/favicon.png"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="description" content="This idea of using a set of cooperating processes isn't limited to the OS “system processes.” Your applications should be written in exactly the same way. You might have some driver process that gathers data from some hardware and then needs to pass that data on to other processes, which then act on that data."/><meta name="keywords" content="QNX SDP, 8.0, Programmer's Guide, Developer"/>        
+      <title>An application as a set of processes</title><!--  Generated with Oxygen version 26.0, build number 2023100510.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="Application_as_processes-d114126e50402"/><meta name="wh-source-relpath" content="com.qnx.doc.neutrino.prog/topic/overview_Application_as_processes.xml"/><meta name="wh-out-relpath" content="com.qnx.doc.neutrino.prog/topic/overview_Application_as_processes.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/commons.css?buildId=2023100510"/>
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic.css?buildId=2023100510"/>
+
+    <script src="../../oxygen-webhelp/app/options/properties.js?buildId=20261105112733"></script>
+    <script src="../../oxygen-webhelp/app/localization/strings.js?buildId=2023100510"></script>
+    <script src="../../oxygen-webhelp/app/search/index/keywords.js?buildId=20261105112733"></script>
+    <script defer="defer" src="../../oxygen-webhelp/app/commons.js?buildId=2023100510"></script>
+    <script defer="defer" src="../../oxygen-webhelp/app/topic.js?buildId=2023100510"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/css/qnx-webhelp.css?buildId=2023100510"/></head>
+
+    <body id="Application_as_processes" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid" id="wh_header_container">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../../index.html" class=" wh_logo d-none d-sm-block "><img src="../../oxygen-webhelp/template/images/QNX-Logo-CORAL-RGB.png" alt=""/></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="title"></span></a></div>
+                    
+                </div>
+
+                
+            </div>
+
+            <div class="wh_nav_and_search">
+                <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                    
+                    
+                    <div class=" wh_indexterms_link "><a href="../../indexTerms.html" title="Index" aria-label="Go to index terms page"><span>Index</span></a></div>
+                    
+                </div>
+                <div class=" wh_search_input navbar-form wh_main_page_search search " role="form">
+                    
+                    
+
+                    
+                    <form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+
+                    <!-- Link to Advanced search page on qnx.com -->
+                    <div id="advanced_search" title="Search all Blackberry QNX product documentation">
+                        <a class="advanced_search" target="_blank" href="https://qnx.software/en/search#t=ProductDocumentation">
+                            <span>Advanced search</span>
+                        </a>
+                    </div>
+
+                    
+                    
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref" data-id="about"><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/bookset.html">QNX Software Development Platform</a><div class="wh-tooltip"><p class="shortdesc">     QNX SDP is a cross-compiling and debugging environment, including an IDE and command-line tools,     for building binary images and programs for target boards running the <span class="keyword">QNX OS</span> 8.0.   </p></div></div></div></li><li><div class="topicref" data-id="about"><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/programming.html">Programming</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li><div class="topicref" data-id="about"><div class="title"><a href="../../com.qnx.doc.neutrino.prog/topic/about.html">Programmer's Guide</a><div class="wh-tooltip"><p class="shortdesc"> The <span class="keyword">QNX OS</span> <em class="ph i">Programmer's Guide</em> covers a variety of topics of interest to developers who are building applications that will run under the <span class="keyword">QNX OS</span>. </p></div></div></div></li><li><div class="topicref" data-id="overview"><div class="title"><a href="../../com.qnx.doc.neutrino.prog/topic/overview.html"><span class="keyword">QNX OS</span> Architecture and Concepts</a><div class="wh-tooltip"><p class="shortdesc"> The <span class="keyword">QNX OS</span> architecture consists of the <span class="keyword">microkernel</span> and several cooperating processes. These processes communicate with each other via various forms of interprocess communication (IPC). Message passing is the primary form of IPC in <span class="keyword">QNX OS</span>. </p></div></div></div></li><li class="active"><div class="topicref" data-id="Application_as_processes"><div class="title"><a href="../../com.qnx.doc.neutrino.prog/topic/overview_Application_as_processes.html">An application as a set of processes</a><div class="wh-tooltip"><p class="shortdesc"> This idea of using a set of cooperating processes isn't limited to the OS <q class="q">system processes.</q> Your applications should be written in exactly the same way. You might have some driver process that gathers data from some hardware and then needs to pass that data on to other processes, which then act on that data. </p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+					
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+								<!--<whc:external_resourse_link 
+                            href="${param(webhelp.pdf.link.url)}"
+                            title="${param(webhelp.pdf.link.text)}"
+                            image="${param(webhelp.pdf.link.icon.path)}"
+                            type="pdf_link"                            
+							/>-->
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e10" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e10-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.ide.userguide/topic/about.html" id="about-d114126e10-link">QNX Momentics IDE User's Guide</a><div class="wh-tooltip"><p class="shortdesc">         This <em class="ph i">User's Guide</em> describes version 8.0 of the Integrated Development Environment (IDE) that's part of the         <span class="keyword">QNX Tool Suite</span>.     </p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="about-d114126e4055" class="topicref" data-id="about" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action about-d114126e4055-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/bookset.html" id="about-d114126e4055-link">QNX Software Development Platform</a><div class="wh-tooltip"><p class="shortdesc">     QNX SDP is a cross-compiling and debugging environment, including an IDE and command-line tools,     for building binary images and programs for target boards running the <span class="keyword">QNX OS</span> 8.0.   </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="AboutThisGuide-d114126e4069" class="topicref" data-id="AboutThisGuide" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action AboutThisGuide-d114126e4069-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.quickstart/topic/about.html" id="AboutThisGuide-d114126e4069-link">Quickstart Guide</a><div class="wh-tooltip"><p class="shortdesc">These guidelines will help you install the QNX Software Development Platform, quickly develop a program,     and run it on a <span class="keyword">QNX OS</span> target.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e5772" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e5772-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/about.html" id="about-d114126e5772-link">System Architecture</a><div class="wh-tooltip"><p class="shortdesc"> The <em class="ph i">System Architecture</em> guide accompanies the <span class="keyword">QNX OS</span> and is intended for both application developers and end-users. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e8504" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e8504-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/guides.html" id="about-d114126e8504-link">OS Components &amp; Operations</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="graphics-d114126e27311" class="topicref" data-id="graphics" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action graphics-d114126e27311-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/graphics.html" id="graphics-d114126e27311-link">Graphics</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="about-d114126e46364" class="topicref" data-id="about" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action about-d114126e46364-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/programming.html" id="about-d114126e46364-link">Programming</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e46374" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e46374-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.getting_started/topic/about.html" id="about-d114126e46374-link">Getting Started with the QNX OS</a><div class="wh-tooltip"><p class="shortdesc"> <em class="ph i">Getting Started with the <span class="keyword">QNX OS</span>: A Guide for Realtime Programmers</em> is intended to introduce you to the <span class="keyword">QNX OS</span> and help you develop applications and resource managers for it. </p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="about-d114126e49974" class="topicref" data-id="about" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action about-d114126e49974-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.prog/topic/about.html" id="about-d114126e49974-link">Programmer's Guide</a><div class="wh-tooltip"><p class="shortdesc"> The <span class="keyword">QNX OS</span> <em class="ph i">Programmer's Guide</em> covers a variety of topics of interest to developers who are building applications that will run under the <span class="keyword">QNX OS</span>. </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="devel-d114126e50030" class="topicref" data-id="devel" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action devel-d114126e50030-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.prog/topic/devel.html" id="devel-d114126e50030-link">Compiling and Debugging</a><div class="wh-tooltip"><p class="shortdesc"> Let's start by looking at some things you should consider when you start to write a program for the <span class="keyword">QNX OS</span>. </p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="overview-d114126e50380" class="topicref" data-id="overview" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action overview-d114126e50380-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.prog/topic/overview.html" id="overview-d114126e50380-link"><span class="keyword">QNX OS</span> Architecture and Concepts</a><div class="wh-tooltip"><p class="shortdesc"> The <span class="keyword">QNX OS</span> architecture consists of the <span class="keyword">microkernel</span> and several cooperating processes. These processes communicate with each other via various forms of interprocess communication (IPC). Message passing is the primary form of IPC in <span class="keyword">QNX OS</span>. </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" class="active"><div data-tocid="Application_as_processes-d114126e50402" class="topicref" data-id="Application_as_processes" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.prog/topic/overview_Application_as_processes.html" id="Application_as_processes-d114126e50402-link">An application as a set of processes</a><div class="wh-tooltip"><p class="shortdesc"> This idea of using a set of cooperating processes isn't limited to the OS <q class="q">system processes.</q> Your applications should be written in exactly the same way. You might have some driver process that gathers data from some hardware and then needs to pass that data on to other processes, which then act on that data. </p></div></div></div></li><li role="treeitem"><div data-tocid="Definitions-d114126e50416" class="topicref" data-id="Definitions" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.prog/topic/overview_Definitions.html" id="Definitions-d114126e50416-link">Some definitions</a><div class="wh-tooltip"><p class="shortdesc"> Different operating systems often have different meanings for terms such as <q class="q">process,</q> <q class="q">thread,</q> <q class="q">task,</q> <q class="q">program,</q> and so on. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="PRIOR-d114126e50439" class="topicref" data-id="PRIOR" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action PRIOR-d114126e50439-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.prog/topic/overview_PRIOR.html" id="PRIOR-d114126e50439-link">Priorities and scheduling</a><div class="wh-tooltip"><p class="shortdesc"> Although there's a good discussion of priorities and scheduling policies in the <em class="ph i">System Architecture</em> manual, it will help to go over that topic here in the context of a programmer's guide. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="SCHEDS-d114126e50500" class="topicref" data-id="SCHEDS" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action SCHEDS-d114126e50500-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.prog/topic/overview_SCHEDS.html" id="SCHEDS-d114126e50500-link">Scheduling policies</a><div class="wh-tooltip"><p class="shortdesc"> To meet the needs of various applications, <span class="keyword">QNX OS</span> provides multiple scheduling policies (or algorithms). </p></div></div></div></li><li role="treeitem"><div data-tocid="WHYTHREADS-d114126e50551" class="topicref" data-id="WHYTHREADS" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.prog/topic/overview_WHYTHREADS.html" id="WHYTHREADS-d114126e50551-link">Why threads?</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="overview_Hardware-d114126e50561" class="topicref" data-id="overview_Hardware" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.prog/topic/overview_Hardware.html" id="overview_Hardware-d114126e50561-link">Talking to device-level hardware</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="SUMMARY-d114126e50571" class="topicref" data-id="SUMMARY" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.prog/topic/overview_SUMMARY.html" id="SUMMARY-d114126e50571-link">Summary</a><div class="wh-tooltip"><p class="shortdesc"> The modular architecture is apparent throughout the entire system: the <span class="keyword">QNX OS</span> itself consists of a set of cooperating processes, as does an application. </p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="process-d114126e50585" class="topicref" data-id="process" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action process-d114126e50585-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.prog/topic/process.html" id="process-d114126e50585-link">Processes</a><div class="wh-tooltip"><p class="shortdesc"> Your applications should be written in a way that reflects the architecture of the <span class="keyword">QNX OS</span>—as a set of cooperating processes. In this chapter, we see how to start processes (also known as <em class="ph i">creating</em> processes) from code, how to terminate them, and how to detect their termination. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="overview-d114126e51388" class="topicref" data-id="overview" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action overview-d114126e51388-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.prog/topic/multicore.html" id="overview-d114126e51388-link">Multicore Processing</a><div class="wh-tooltip"><p class="shortdesc"> <span class="keyword">QNX OS</span> supports multicore processing, which entails concurrently running multiple threads in a multicore system. A multicore system consists of two or more processors (i.e., CPUs or <q class="q">cores</q>) that share the same memory and I/O devices, have the same instruction set architecture, and are managed by the same OS instance. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="files_acls-d114126e51451" class="topicref" data-id="files_acls" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action files_acls-d114126e51451-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.prog/topic/acl.html" id="files_acls-d114126e51451-link">Working with Access Control Lists (ACLs)</a><div class="wh-tooltip"><p class="shortdesc"> Some filesystems, such as the Power-Safe (<span class="keyword cmdname">fs-qnx6.so</span>) and QNX compressed filesystems, extend file permissions with <dfn class="term">Access Control Lists</dfn>, which are based on the withdrawn IEEE POSIX 1003.1e and 1003.2c draft standards. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="timing-d114126e51548" class="topicref" data-id="timing" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action timing-d114126e51548-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.prog/topic/timing.html" id="timing-d114126e51548-link">Understanding the Microkernel's Concept of Time</a><div class="wh-tooltip"><p class="shortdesc"> Whether you're working with timers or simply getting the time of day, it's important that you understand how the OS works with time. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="inthandler-d114126e51628" class="topicref" data-id="inthandler" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action inthandler-d114126e51628-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.prog/topic/inthandler.html" id="inthandler-d114126e51628-link">Handling Hardware Interrupts</a><div class="wh-tooltip"><p class="shortdesc"> This chapter explains the <span class="keyword">QNX OS</span> mechanisms for quickly reacting to hardware events. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="memory-d114126e51703" class="topicref" data-id="memory" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action memory-d114126e51703-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.prog/topic/memory.html" id="memory-d114126e51703-link">Working with Memory</a><div class="wh-tooltip"><p class="shortdesc">(or <em class="ph i">The Persistence of Memory</em>, with a nod to Salvador Dali)  In the <q class="q">Process Manager</q> chapter of the <em class="ph i">System Architecture</em> guide, we looked at how the OS manages memory. This chapter describes how you can work with memory. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="freedom-d114126e52060" class="topicref" data-id="freedom" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action freedom-d114126e52060-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.prog/topic/freedom.html" id="freedom-d114126e52060-link">Freedom from Hardware and Platform Dependencies</a><div class="wh-tooltip"><p class="shortdesc">      The <span class="keyword">QNX OS</span> can run on many different hardware platforms.      The way in which applications can access peripheral devices and how data is stored varies between platforms.      This chapter explains our solutions for minimizing the impact of such platform dependencies.    </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="make_convent-d114126e52234" class="topicref" data-id="make_convent" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action make_convent-d114126e52234-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.prog/topic/make_convent.html" id="make_convent-d114126e52234-link">Conventions for Recursive Makefiles and Directories</a><div class="wh-tooltip"><p class="shortdesc"> In this chapter, we'll look at the supplementary files used in the <span class="keyword">QNX OS</span> development environment. Although we use the standard <span class="keyword cmdname">make</span> command to create libraries and executables, we also use some of our own conventions in the <span class="ph filepath">Makefile</span> syntax. </p></div></div></div></li><li role="treeitem"><div data-tocid="glossary-d114126e52873" class="topicref" data-id="glossary" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.prog/topic/glossary.html" id="glossary-d114126e52873-link">Glossary</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e53193" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e53193-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.resmgr/topic/about.html" id="about-d114126e53193-link">Writing a Resource Manager</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e54473" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e54473-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.security.system/topic/manual/about.html" id="about-d114126e54473-link">System Security Guide</a><div class="wh-tooltip"><p class="shortdesc">The <em class="ph i">QNX System Security Guide</em> is intended for both system integrators who are         responsible for the security of a <span class="keyword">QNX OS</span> system and developers who want to create a <span class="keyword">QNX OS</span> resource manager free from vulnerabilities.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e57754" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e57754-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/references.html" id="about-d114126e57754-link">Utilities &amp; Libraries</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e110056" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e110056-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.migration/topic/about.html" id="about-d114126e110056-link">Migrating to QNX OS 8.0</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e111092" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e111092-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxcloud.nav/topic/bookset.html" id="about-d114126e111092-link">QNX Software in the Cloud</a><div class="wh-tooltip"><p class="shortdesc">QNX Software in the Cloud enables developers to use the QNX 	software in Amazon Web Services (AWS) and Microsoft Azure (Azure). </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="qcmgr-d114126e112165" class="topicref" data-id="qcmgr" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action qcmgr-d114126e112165-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.containers.user_guide/topic/about.html" id="qcmgr-d114126e112165-link">QNX Containers User's Guide</a><div class="wh-tooltip"><p class="shortdesc">This guide describes QNX Containers, its components, and its utilization.       It provides instructions on using QNX Containers on the host and target,       and then starting QNX Container processes.    </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about_this_guide-d114126e112727" class="topicref" data-id="about_this_guide" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about_this_guide-d114126e112727-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxtoolkit.user_guide/topic/about_this_guide.html" id="about_this_guide-d114126e112727-link">QNX Toolkit for Visual Studio Code</a><div class="wh-tooltip"><p class="shortdesc">         This User's Guide describes the QNX® Toolkit for VS Code.         The guide introduces you to the <span class="keyword">QNX Toolkit</span> by explaining the QNX development environment and how to build, run, and debug your QNX® Operating System (OS) applications and systems.     </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e113878" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e113878-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.hypervisor.nav/topic/bookset.html" id="about-d114126e113878-link">QNX Hypervisor and QNX Hypervisor for Safety</a><div class="wh-tooltip"><p class="shortdesc"> 		The <span class="keyword">QNX Hypervisor</span> and <span class="keyword">QNX Hypervisor for Safety</span> products allow you to run multiple OSs 		on a target system so you can separate critical and non-critical functions, support a wide variety of applications, 		and reduce hardware costs. 	</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="copyright_overview_concept-d114126e120349" class="topicref" data-id="copyright_overview_concept" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action copyright_overview_concept-d114126e120349-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.copyright/topic/coverpage.html" id="copyright_overview_concept-d114126e120349-link">Typographical Conventions, Support, and Licensing</a><div class="wh-tooltip"><p class="shortdesc"> This section describes the typographical conventions used throughout the documentation, explains how to obtain technical support, and provides some information about licensing. </p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+                        
+						<div id="pdf_link"></div>
+						
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic concept/concept topic concept" role="article" aria-labelledby="Application_as_processes">
+
+<h1 class="- topic/title title topictitle1" id="Application_as_processes">An application as a set of processes</h1>
+
+
+<div style="padding: 5px 0;"><span class="label">QNX SDP</span><span class="label">8.0</span><span class="label">Programmer's Guide</span><span class="label">Developer</span></div>
+<div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc">
+This idea of using a set of cooperating processes isn't
+limited to the OS <q class="- topic/q q">system processes.</q> Your
+applications should be written in exactly the same way. You
+might have some driver process that gathers data from some
+hardware and then needs to pass that data on to other
+processes, which then act on that data.
+</p>
+
+<p class="- topic/p p">
+Let's use the example of an application that's monitoring the
+level of water in a reservoir. Should the water level rise
+too high, then you'll want to alert an operator as well as
+open some flow-control valve. 
+</p>
+
+<p class="- topic/p p">
+In terms of hardware, you'll have some water-level sensor
+tied to an I/O board in a computer. If the sensor detects
+some water, it will cause the I/O board to generate an
+interrupt.
+</p>
+
+<p class="- topic/p p">
+The software consists of a driver process that talks to the
+I/O board and contains an interrupt service thread (IST) to
+deal with the board's interrupt. You'll also have a GUI
+process that will display an alarm window when told to do so
+by the driver, and finally, another driver process that will
+open/close the flow-control valve.
+
+</p>
+
+<p class="- topic/p p">
+Why break this application into multiple processes? Why not
+have everything done in one process? There are several
+reasons:
+
+</p>
+
+<ol class="- topic/ol ol">
+<li class="- topic/li li">Each process lives in its own <em class="+ topic/ph hi-d/i ph i">protected memory space</em>.
+   If there's a bug such that a pointer has a value
+  that isn't valid for the process, then when the pointer is
+  next used, the hardware will generate a fault, which the
+  kernel handles (the kernel will set the <span class="+ topic/keyword xml-d/const keyword const">SIGSEGV</span> signal on the process).
+
+  <p class="- topic/p p">
+  This approach has two benefits. The first is that a stray
+  pointer won't cause one process to overwrite the memory of
+  another process. The implications are that one process can
+  go bad <em class="+ topic/ph hi-d/i ph i">while other processes keep running</em>.
+  </p>
+ 
+  <p class="- topic/p p">
+  The second benefit is that the fault will occur precisely
+  when the pointer is used, not when it's overwriting some
+  other process's memory. If a pointer were allowed to
+  overwrite another process's memory, then the problem
+  wouldn't manifest itself until later and would therefore be
+  much harder to debug.  
+  </p>
+</li>
+
+<li class="- topic/li li">It's very easy to add or remove processes from an 
+  application as need be. This implies that applications can be
+  made scalable—adding new features is simply a matter
+  of adding processes.
+</li>
+
+<li class="- topic/li li">Processes can be started and stopped <em class="+ topic/ph hi-d/i ph i">on the fly</em>,
+  which comes in handy for dynamic upgrading or simply for
+  stopping an offending process.
+  
+</li>
+
+<li class="- topic/li li">Processing can be easily distributed across multiple processors in a networked environment.</li>
+
+<li class="- topic/li li">The code for a process is much simpler if it concentrates on
+  doing a single job. For example, a single process that acts
+  as a driver, a GUI front-end, and a data logger would be
+  fairly complex to build and maintain. This complexity would
+  increase the chances of a bug, and any such bug would likely
+  affect all the activities being done by the process.
+</li>
+
+<li class="- topic/li li">Different programmers can work on different processes without fear of overwriting each other's work.</li>
+
+</ol>
+
+</div>
+<div style="text-align: right;"><span>Page updated: <time>November 05, 2026</time></span></div></article></main></div>
+                        
+                        
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist relinfo" xml:lang="en-us" lang="en-us"><strong>Related information</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel.html" title="The QNX OS Microkernel (System Architecture)">The QNX OS Microkernel (System Architecture)</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.getting_started/topic/s1_procs.html" title="Processes and Threads (Getting Started with the QNX OS)">Processes and Threads (Getting Started with the QNX OS)</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.utilities/topic/p/procnto.html" title="procnto">procnto</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_setschedparam.html" title="pthread_setschedparam()">pthread_setschedparam()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_setschedprio.html" title="pthread_setschedprio()">pthread_setschedprio()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/s/sched_setparam.html" title="sched_setparam()">sched_setparam()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/s/sched_setscheduler.html" title="sched_setscheduler()">sched_setscheduler()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/s/sched_yield.html" title="sched_yield()">sched_yield()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/s/schedset.html" title="SchedSet(), SchedSet_r()">SchedSet(), SchedSet_r()</a></li></ul></div></nav></div>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

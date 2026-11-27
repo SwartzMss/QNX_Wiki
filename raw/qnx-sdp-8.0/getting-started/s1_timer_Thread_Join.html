@@ -1,0 +1,258 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us" data-whc_version="26.0">
+    <head><link rel="shortcut icon" href="../../oxygen-webhelp/template/images/favicon.png"/><link rel="icon" href="../../oxygen-webhelp/template/images/favicon.png"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="description" content="The simplest case to consider is a kernel timeout used with the pthread_join() call."/><meta name="keywords" content="QNX SDP, 8.0, Getting Started with the QNX OS, Developer, User"/>        
+      <title>Kernel timeouts with pthread_join()</title><!--  Generated with Oxygen version 26.0, build number 2023100510.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content=""/><meta name="wh-source-relpath" content="com.qnx.doc.neutrino.getting_started/topic/s1_timer_Thread_Join.xml"/><meta name="wh-out-relpath" content="com.qnx.doc.neutrino.getting_started/topic/s1_timer_Thread_Join.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/commons.css?buildId=2023100510"/>
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic.css?buildId=2023100510"/>
+
+    <script src="../../oxygen-webhelp/app/options/properties.js?buildId=20261105112733"></script>
+    <script src="../../oxygen-webhelp/app/localization/strings.js?buildId=2023100510"></script>
+    <script src="../../oxygen-webhelp/app/search/index/keywords.js?buildId=20261105112733"></script>
+    <script defer="defer" src="../../oxygen-webhelp/app/commons.js?buildId=2023100510"></script>
+    <script defer="defer" src="../../oxygen-webhelp/app/topic.js?buildId=2023100510"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/css/qnx-webhelp.css?buildId=2023100510"/></head>
+
+    <body id="Thread_Join" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid" id="wh_header_container">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../../index.html" class=" wh_logo d-none d-sm-block "><img src="../../oxygen-webhelp/template/images/QNX-Logo-CORAL-RGB.png" alt=""/></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="title"></span></a></div>
+                    
+                </div>
+
+                
+            </div>
+
+            <div class="wh_nav_and_search">
+                <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                    
+                    
+                    <div class=" wh_indexterms_link "><a href="../../indexTerms.html" title="Index" aria-label="Go to index terms page"><span>Index</span></a></div>
+                    
+                </div>
+                <div class=" wh_search_input navbar-form wh_main_page_search search " role="form">
+                    
+                    
+
+                    
+                    <form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+
+                    <!-- Link to Advanced search page on qnx.com -->
+                    <div id="advanced_search" title="Search all Blackberry QNX product documentation">
+                        <a class="advanced_search" target="_blank" href="https://qnx.software/en/search#t=ProductDocumentation">
+                            <span>Advanced search</span>
+                        </a>
+                    </div>
+
+                    
+                    
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        
+                    </div>
+                    
+					
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                    
+                    <div class="col-12" id="wh_topic_body">
+                        
+                        
+                        
+						<div id="pdf_link"></div>
+						
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic concept/concept topic concept" role="article" aria-labelledby="Thread_Join">
+
+<h1 class="- topic/title title topictitle1" id="Thread_Join">Kernel timeouts with <span class="+ topic/keyword pr-d/apiname keyword apiname">pthread_join()</span></h1>
+
+
+<div style="padding: 5px 0;"><span class="label">QNX SDP</span><span class="label">8.0</span><span class="label">Getting Started with the QNX OS</span><span class="label">Developer</span><span class="label">User</span></div>
+<div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc">
+The simplest case to consider is a kernel timeout used with the
+<span class="+ topic/keyword pr-d/apiname keyword apiname">pthread_join()</span> call.
+</p>
+
+<div class="- topic/p p">
+
+
+
+
+
+
+
+
+
+
+Here's how you'd set it up:
+
+<pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>/*
+ * part of tt1.c
+ */
+#include &lt;sys/neutrino.h&gt;
+
+// 1 billion nanoseconds in a second
+#define SEC_NSEC 1000000000LL 
+
+int main (void) // ignore arguments
+{
+    uint64_t        timeout;
+    struct sigevent event;
+    int             rval;
+    …
+    // set up the event -- this can be done once
+    // this or event.sigev_notify = SIGEV_UNBLOCK:
+    SIGEV_UNBLOCK_INIT (&amp;event);
+
+    // set up for 10 second timeout
+    timeout = 10LL * SEC_NSEC;
+
+    TimerTimeout (CLOCK_MONOTONIC, _NTO_TIMEOUT_JOIN,
+                  &amp;event, &amp;timeout, NULL);
+
+    rval = pthread_join (thread_id, NULL);
+    if (rval == ETIMEDOUT) {
+        printf ("Thread %d still running after 10 seconds!\n", 
+                thread_id);
+    }
+    …
+</code></pre>
+</div>
+
+<p class="- topic/p p">
+(You'll find the complete version of
+<a class="- topic/xref xref" href="examples_tt1.c.html"><span class="+ topic/ph sw-d/filepath ph filepath">tt1.c</span></a>
+in the Sample Programs appendix.)
+</p>
+
+<p class="- topic/p p">
+We used the
+<a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/s/sigevent.html#sigevent__SIGEV_UNBLOCK"><span class="+ topic/keyword pr-d/apiname keyword apiname">SIGEV_UNBLOCK_INIT()</span></a> macro to initialize
+the event structure, but we could have set the <var class="+ topic/keyword sw-d/varname keyword varname">sigev_notify</var> member
+to <span class="+ topic/keyword xml-d/const keyword const">SIGEV_UNBLOCK</span> ourselves.  Even more elegantly, we could pass
+<span class="+ topic/keyword xml-d/const keyword const">NULL</span> as the <span class="+ topic/keyword xml-d/dtype keyword dtype">struct sigevent</span>—<span class="+ topic/keyword pr-d/apiname keyword apiname">TimerTimeout()</span>
+understands this to mean that it should use a <span class="+ topic/keyword xml-d/const keyword const">SIGEV_UNBLOCK</span>.
+
+
+
+
+
+
+</p>
+
+<p class="- topic/p p">
+If the thread (specified in <var class="+ topic/keyword sw-d/varname keyword varname">thread_id</var>) is still running after 10 seconds,
+then the kernel call will be timed out—<span class="+ topic/keyword pr-d/apiname keyword apiname">pthread_join()</span> will return
+with an <var class="+ topic/keyword sw-d/varname keyword varname">errno</var> of <span class="+ topic/keyword xml-d/const keyword const">ETIMEDOUT</span>.
+
+
+
+
+</p>
+
+<p class="- topic/p p">
+You can use another shortcut—by specifying a <span class="+ topic/keyword xml-d/const keyword const">NULL</span> for the
+timeout value (<var class="+ topic/keyword sw-d/varname keyword varname">ntime</var> in the declaration above), this tells the
+kernel not to block in the given state.
+This can be used for polling.
+(While polling is generally discouraged, you could use it quite effectively in the
+<span class="+ topic/keyword pr-d/apiname keyword apiname">pthread_join()</span> case—you'd periodically poll
+to see if the thread of interest was finished yet. If not, you could perform other work.)
+
+
+
+</p>
+
+<div class="- topic/p p">
+Here's a code sample showing a non-blocking <span class="+ topic/keyword pr-d/apiname keyword apiname">pthread_join()</span>:
+
+
+
+
+
+
+
+
+<pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>int pthread_join_nb (int tid, void **rval)
+{
+    TimerTimeout (CLOCK_MONOTONIC, _NTO_TIMEOUT_JOIN, NULL, NULL, NULL);
+    return (pthread_join (tid, rval));
+}
+</code></pre>
+</div>
+
+</div>
+<div style="text-align: right;"><span>Page updated: <time>November 05, 2026</time></span></div></article></main></div>
+                        
+                        
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist relinfo" xml:lang="en-us" lang="en-us"><strong>Related information</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.getting_started/topic/examples_tt1.c.html" title="tt1.c">tt1.c</a></li></ul></div></nav></div>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

@@ -1,0 +1,683 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us" data-whc_version="26.0">
+    <head><link rel="shortcut icon" href="../../oxygen-webhelp/template/images/favicon.png"/><link rel="icon" href="../../oxygen-webhelp/template/images/favicon.png"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="description" content="The Power-Safe filesystem can provide data at rest encryption to all or part of its content."/><meta name="keywords" content="Power-Safe (, fs-qnx6.so, encryption, filesystems, data at rest encryption, QNX SDP, 8.0, System Architecture, Developer, User"/><meta name="indexterms" content="Power-Safe (fs-qnx6.so) filesystem encryption; filesystems Power-Safe ( fs-qnx6.so ) encryption; data at rest encryption; encryption; "/>        
+      <title>Encryption</title><!--  Generated with Oxygen version 26.0, build number 2023100510.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="fsys_encryption-d114126e7639"/><meta name="wh-source-relpath" content="com.qnx.doc.neutrino.sys_arch/topic/fsys_encryption.xml"/><meta name="wh-out-relpath" content="com.qnx.doc.neutrino.sys_arch/topic/fsys_encryption.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/commons.css?buildId=2023100510"/>
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic.css?buildId=2023100510"/>
+
+    <script src="../../oxygen-webhelp/app/options/properties.js?buildId=20261105112733"></script>
+    <script src="../../oxygen-webhelp/app/localization/strings.js?buildId=2023100510"></script>
+    <script src="../../oxygen-webhelp/app/search/index/keywords.js?buildId=20261105112733"></script>
+    <script defer="defer" src="../../oxygen-webhelp/app/commons.js?buildId=2023100510"></script>
+    <script defer="defer" src="../../oxygen-webhelp/app/topic.js?buildId=2023100510"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/css/qnx-webhelp.css?buildId=2023100510"/></head>
+
+    <body id="fsys_encryption" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid" id="wh_header_container">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../../index.html" class=" wh_logo d-none d-sm-block "><img src="../../oxygen-webhelp/template/images/QNX-Logo-CORAL-RGB.png" alt=""/></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="title"></span></a></div>
+                    
+                </div>
+
+                
+            </div>
+
+            <div class="wh_nav_and_search">
+                <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                    
+                    
+                    <div class=" wh_indexterms_link "><a href="../../indexTerms.html" title="Index" aria-label="Go to index terms page"><span>Index</span></a></div>
+                    
+                </div>
+                <div class=" wh_search_input navbar-form wh_main_page_search search " role="form">
+                    
+                    
+
+                    
+                    <form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+
+                    <!-- Link to Advanced search page on qnx.com -->
+                    <div id="advanced_search" title="Search all Blackberry QNX product documentation">
+                        <a class="advanced_search" target="_blank" href="https://qnx.software/en/search#t=ProductDocumentation">
+                            <span>Advanced search</span>
+                        </a>
+                    </div>
+
+                    
+                    
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref" data-id="about"><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/bookset.html">QNX Software Development Platform</a><div class="wh-tooltip"><p class="shortdesc">     QNX SDP is a cross-compiling and debugging environment, including an IDE and command-line tools,     for building binary images and programs for target boards running the <span class="keyword">QNX OS</span> 8.0.   </p></div></div></div></li><li><div class="topicref" data-id="about"><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/about.html">System Architecture</a><div class="wh-tooltip"><p class="shortdesc"> The <em class="ph i">System Architecture</em> guide accompanies the <span class="keyword">QNX OS</span> and is intended for both application developers and end-users. </p></div></div></div></li><li><div class="topicref" data-id="fsys"><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/fsys.html">Filesystems</a><div class="wh-tooltip"><p class="shortdesc"> The <span class="keyword">QNX OS</span> provides a rich variety of filesystems. Like most service-providing processes in the OS, these filesystems execute outside the kernel; applications use them by communicating via messages generated by the shared-library implementation of the POSIX API. </p></div></div></div></li><li><div class="topicref" data-id="QNX6_filesystem"><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/fsys_QNX6_filesystem.html">Power-Safe filesystem</a><div class="wh-tooltip"><p class="shortdesc"> The Power-Safe filesystem is a reliable disk filesystem that can withstand power     failures without corruption. </p></div></div></div></li><li class="active"><div class="topicref" data-id="fsys_encryption"><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/fsys_encryption.html">Encryption</a><div class="wh-tooltip"><p class="shortdesc"> The Power-Safe filesystem can provide <dfn class="term">data at rest</dfn> encryption to all or part of its content. </p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+					
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+								<!--<whc:external_resourse_link 
+                            href="${param(webhelp.pdf.link.url)}"
+                            title="${param(webhelp.pdf.link.text)}"
+                            image="${param(webhelp.pdf.link.icon.path)}"
+                            type="pdf_link"                            
+							/>-->
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e10" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e10-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.ide.userguide/topic/about.html" id="about-d114126e10-link">QNX Momentics IDE User's Guide</a><div class="wh-tooltip"><p class="shortdesc">         This <em class="ph i">User's Guide</em> describes version 8.0 of the Integrated Development Environment (IDE) that's part of the         <span class="keyword">QNX Tool Suite</span>.     </p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="about-d114126e4055" class="topicref" data-id="about" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action about-d114126e4055-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/bookset.html" id="about-d114126e4055-link">QNX Software Development Platform</a><div class="wh-tooltip"><p class="shortdesc">     QNX SDP is a cross-compiling and debugging environment, including an IDE and command-line tools,     for building binary images and programs for target boards running the <span class="keyword">QNX OS</span> 8.0.   </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="AboutThisGuide-d114126e4069" class="topicref" data-id="AboutThisGuide" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action AboutThisGuide-d114126e4069-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.quickstart/topic/about.html" id="AboutThisGuide-d114126e4069-link">Quickstart Guide</a><div class="wh-tooltip"><p class="shortdesc">These guidelines will help you install the QNX Software Development Platform, quickly develop a program,     and run it on a <span class="keyword">QNX OS</span> target.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="about-d114126e5772" class="topicref" data-id="about" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action about-d114126e5772-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/about.html" id="about-d114126e5772-link">System Architecture</a><div class="wh-tooltip"><p class="shortdesc"> The <em class="ph i">System Architecture</em> guide accompanies the <span class="keyword">QNX OS</span> and is intended for both application developers and end-users. </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="intro-d114126e5822" class="topicref" data-id="intro" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action intro-d114126e5822-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/intro.html" id="intro-d114126e5822-link">The Philosophy of the <span class="keyword">QNX OS</span></a><div class="wh-tooltip"><p class="shortdesc"> The primary goal of the <span class="keyword">QNX OS</span> is to deliver the open systems POSIX API in a robust, scalable form suitable for a wide range of systems—from tiny, resource-constrained embedded systems to high-end distributed computing environments. The OS supports several processor families, including x86 and ARM.  </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="kernel-d114126e5974" class="topicref" data-id="kernel" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action kernel-d114126e5974-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel.html" id="kernel-d114126e5974-link">The <span class="keyword">QNX OS</span> Microkernel</a><div class="wh-tooltip"><p class="shortdesc"> The <span class="keyword">microkernel</span> implements the core POSIX features used in embedded realtime systems, along with the fundamental <span class="keyword">QNX OS</span> message-passing services. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ipc-d114126e6434" class="topicref" data-id="ipc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ipc-d114126e6434-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ipc.html" id="ipc-d114126e6434-link">Interprocess Communication (IPC)</a><div class="wh-tooltip"><p class="shortdesc"> Interprocess Communication (IPC) plays a fundamental role in the transformation of the <span class="keyword">microkernel</span> from an embedded realtime kernel into a full-scale POSIX operating system. As various service-providing processes are added to the microkernel, IPC is the <q class="q">glue</q> that connects those components into a cohesive whole. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="trace-d114126e6711" class="topicref" data-id="trace" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action trace-d114126e6711-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/trace.html" id="trace-d114126e6711-link">The Microkernel Instrumentation</a><div class="wh-tooltip"><p class="shortdesc"> The <span class="keyword">microkernel</span> (<span class="keyword cmdname">procnto-smp-instr</span>) is equipped with a sophisticated tracing and profiling mechanism that lets you monitor your system's execution in real time. This instrumentation works on both single-CPU and SMP systems. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="proc-d114126e6806" class="topicref" data-id="proc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action proc-d114126e6806-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/proc.html" id="proc-d114126e6806-link">Process Manager</a><div class="wh-tooltip"><p class="shortdesc"> The Process Manager can create and manage multiple POSIX processes, each of which may contain multiple POSIX threads. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="dll-d114126e7141" class="topicref" data-id="dll" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action dll-d114126e7141-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/dll.html" id="dll-d114126e7141-link">Dynamic Linking</a><div class="wh-tooltip"><p class="shortdesc"> In a typical system, a number of programs will be running. Each program relies on a number of functions, some of which will be <q class="q">standard</q> C library functions, like <span class="keyword apiname">printf()</span>, <span class="keyword apiname">malloc()</span>, <span class="keyword apiname">write()</span>, etc. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="resource-d114126e7221" class="topicref" data-id="resource" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action resource-d114126e7221-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/resource.html" id="resource-d114126e7221-link">Resource Managers</a><div class="wh-tooltip"><p class="shortdesc"> To give the <span class="keyword">QNX OS</span> a great degree of flexibility, to minimize the runtime memory requirements of the final system, and to cope with the wide variety of devices that may be found in a custom embedded system, the OS allows user-written processes to act as <em class="ph i">resource managers</em> that can be started and stopped dynamically. </p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="fsys-d114126e7452" class="topicref" data-id="fsys" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action fsys-d114126e7452-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/fsys.html" id="fsys-d114126e7452-link">Filesystems</a><div class="wh-tooltip"><p class="shortdesc"> The <span class="keyword">QNX OS</span> provides a rich variety of filesystems. Like most service-providing processes in the OS, these filesystems execute outside the kernel; applications use them by communicating via messages generated by the shared-library implementation of the POSIX API. </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="Pathname_resolution-d114126e7466" class="topicref" data-id="Pathname_resolution" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/fsys_Pathname_resolution.html" id="Pathname_resolution-d114126e7466-link">Filesystems and pathname resolution</a><div class="wh-tooltip"><p class="shortdesc"> You can seamlessly locate and connect to any filesystem that's been registered with the process manager. When a filesystem resource manager registers a mountpoint, the process manager creates an entry in the internal mount table for that mountpoint and its corresponding server ID (i.e., <var class="keyword varname">pid</var>, <var class="keyword varname">chid</var> identifiers). </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="FSYSCLASSES-d114126e7483" class="topicref" data-id="FSYSCLASSES" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action FSYSCLASSES-d114126e7483-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/fsys_FSYSCLASSES.html" id="FSYSCLASSES-d114126e7483-link">Filesystem classes</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="QNX6_filesystem-d114126e7590" class="topicref" data-id="QNX6_filesystem" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action QNX6_filesystem-d114126e7590-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/fsys_QNX6_filesystem.html" id="QNX6_filesystem-d114126e7590-link">Power-Safe filesystem</a><div class="wh-tooltip"><p class="shortdesc"> The Power-Safe filesystem is a reliable disk filesystem that can withstand power     failures without corruption. </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="Existing_systems-d114126e7601" class="topicref" data-id="Existing_systems" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/fsys_Existing_systems.html" id="Existing_systems-d114126e7601-link">Problems with existing disk filesystems</a><div class="wh-tooltip"><p class="shortdesc"> Although existing disk filesystems are designed to be robust and reliable, there's still the possibility of losing data, depending on what the filesystem is doing when a catastrophic failure (such as a power failure) occurs. </p></div></div></div></li><li role="treeitem"><div data-tocid="COW_filesystem-d114126e7612" class="topicref" data-id="COW_filesystem" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/fsys_COW_filesystem.html" id="COW_filesystem-d114126e7612-link">Copy-on-write filesystem</a><div class="wh-tooltip"><p class="shortdesc"> To address the problems associated with existing disk filesystems, the Power-Safe filesystem never overwrites live data; it does all updates using copy-on-write (COW), assembling a new view of the filesystem in unused blocks on the disk. The new view of the filesystem becomes <q class="q">live</q> only when all the updates are safely written on the disk. <em class="ph i">Everything</em> is COW: both metadata and user data are protected. </p></div></div></div></li><li role="treeitem"><div data-tocid="QNX6_performance-d114126e7629" class="topicref" data-id="QNX6_performance" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/fsys_QNX6_performance.html" id="QNX6_performance-d114126e7629-link">Performance</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="fsys_encryption-d114126e7639" class="topicref" data-id="fsys_encryption" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/fsys_encryption.html" id="fsys_encryption-d114126e7639-link">Encryption</a><div class="wh-tooltip"><p class="shortdesc"> The Power-Safe filesystem can provide <dfn class="term">data at rest</dfn> encryption to all or part of its content. </p></div></div></div></li></ul></li><li role="treeitem"><div data-tocid="QCFS-d114126e7653" class="topicref" data-id="QCFS" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/fsys_qcfs.html" id="QCFS-d114126e7653-link">QNX compressed filesystem</a><div class="wh-tooltip"><p class="shortdesc"> 	The QNX compressed filesystem (QCFS) provides a read-only 	filesystem that supports the compression of files 	and metadata so that they take up less space. </p></div></div></div></li><li role="treeitem"><div data-tocid="FFS3-d114126e7664" class="topicref" data-id="FFS3" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/fsys_qtd.html" id="FFS3-d114126e7664-link">QNX Trusted Disk</a><div class="wh-tooltip"><p class="shortdesc">   QNX Trusted Disk (QTD) devices provide integrity protection of the underlying disk data   in secure boot environments. They can extend the secure boot chain up to the core operating   system filesystem that stores the critical binaries and configuration files. </p></div></div></div></li><li role="treeitem"><div data-tocid="IMAGE-d114126e7675" class="topicref" data-id="IMAGE" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/fsys_IMAGE.html" id="IMAGE-d114126e7675-link">Image filesystem</a><div class="wh-tooltip"><p class="shortdesc"> Every <span class="keyword">QNX OS</span> system image provides a simple <em class="ph i">read-only</em> filesystem that presents the set of files built into the OS image. </p></div></div></div></li><li role="treeitem"><div data-tocid="DOSFSYS-d114126e7692" class="topicref" data-id="DOSFSYS" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/fsys_DOSFSYS.html" id="DOSFSYS-d114126e7692-link">DOS filesystem</a><div class="wh-tooltip"><p class="shortdesc"> The DOS filesystem, <span class="ph filepath">fs-dos.so</span>, provides transparent access to DOS disks, so you can treat DOS filesystems as though they were POSIX filesystems. This transparency allows processes to operate on DOS files without any special knowledge or work on their part. </p></div></div></div></li><li role="treeitem"><div data-tocid="EXT2-d114126e7706" class="topicref" data-id="EXT2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/fsys_EXT2.html" id="EXT2-d114126e7706-link">Linux Ext2 filesystem</a><div class="wh-tooltip"><p class="shortdesc"> The Linux Ext2 filesystem provides transparent access to Linux disk partitions. </p></div></div></div></li><li role="treeitem"><div data-tocid="UDF-d114126e7717" class="topicref" data-id="UDF" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/fsys_UDF.html" id="UDF-d114126e7717-link">UDF filesystem</a></div></div></li><li role="treeitem"><div data-tocid="FFS3-d114126e7725" class="topicref" data-id="FFS3" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/fsys_FFS3.html" id="FFS3-d114126e7725-link">FFS3 filesystem</a><div class="wh-tooltip"><p class="shortdesc"> The Flash FileSystem version 3 (FFS3) drivers implement a POSIX-like filesystem on NOR flash memory devices. This filesystem is unique to <span class="keyword">QNX OS</span>. </p></div></div></div></li><li role="treeitem"><div data-tocid="NFS-d114126e7740" class="topicref" data-id="NFS" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/fsys_NFS.html" id="NFS-d114126e7740-link">NFS filesystem</a><div class="wh-tooltip"><p class="shortdesc"> The Network File System (NFS) allows a client workstation to transparently access files over a network. The client workstation can operate on files that reside on a server across a variety of operating systems. Client file access calls are converted to NFS protocol requests, which are sent to the server over the network. The server receives the request, performs the actual filesystem operation, and sends a response back to the client. </p></div></div></div></li><li role="treeitem"><div data-tocid="Squash-d114126e7751" class="topicref" data-id="Squash" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/fsys_Squash.html" id="Squash-d114126e7751-link">Linux Squash filesystem</a><div class="wh-tooltip"><p class="shortdesc"> The Linux Squash filesystem (<span class="keyword cmdname">squashfs</span>) is a compressed read-only filesystem that allows you to compress data, inodes, and directories. </p></div></div></div></li><li role="treeitem"><div data-tocid="DEVSHMEM-d114126e7765" class="topicref" data-id="DEVSHMEM" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/fsys_DEVSHMEM.html" id="DEVSHMEM-d114126e7765-link">Shared Memory Object filesystem</a><div class="wh-tooltip"><p class="shortdesc"> Every <span class="keyword">QNX OS</span> system provides a simple Shared Memory Object filesystem that allows read/write files to be placed under <span class="ph filepath">/dev/shmem</span>. </p></div></div></div></li><li role="treeitem"><div data-tocid="fsys_events-d114126e7782" class="topicref" data-id="fsys_events" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/fsys_events.html" id="fsys_events-d114126e7782-link">Filesystem events</a><div class="wh-tooltip"><p class="shortdesc"> 	Keeping up with a very active filesystem that changes 	often and quickly is a challenge for the programs that work with it. 	To help with this challenge, the <span class="keyword cmdname">io-blk.so</span> library 	and thus, all <span class="keyword cmdname">devb-*</span> drivers, 	support <span class="keyword apiname">inotify_*()</span> functions and data types. </p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="char-d114126e7802" class="topicref" data-id="char" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action char-d114126e7802-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/char.html" id="char-d114126e7802-link">Character I/O</a><div class="wh-tooltip"><p class="shortdesc"> A key requirement of any realtime operating system is high-performance character I/O. </p></div></div></div></li><li role="treeitem"><div data-tocid="net-d114126e7922" class="topicref" data-id="net" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/net.html" id="net-d114126e7922-link">Networking Architecture</a><div class="wh-tooltip"><p class="shortdesc"> As with other service-providing processes in the <span class="keyword">QNX OS</span>, the networking services execute outside the kernel. Developers are presented with a single unified interface, regardless of the configuration and number of networks involved. </p></div></div></div></li><li role="treeitem"><div data-tocid="tcpip-d114126e7936" class="topicref" data-id="tcpip" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/tcpip.html" id="tcpip-d114126e7936-link">TCP/IP Networking</a><div class="wh-tooltip"><p class="shortdesc">Our TCP/IP stack is included in the <span class="keyword cmdname">io-sock</span> networking stack and uses     the common FreeBSD API. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ham-d114126e7950" class="topicref" data-id="ham" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ham-d114126e7950-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ham.html" id="ham-d114126e7950-link">High Availability</a><div class="wh-tooltip"><p class="shortdesc"> The term <em class="ph i">High Availability</em> (HA) is commonly used in telecommunications and other industries to describe a system's ability to remain up and running without interruption for extended periods of time. </p></div></div></div></li><li role="treeitem"><div data-tocid="what_is_realtime-d114126e8173" class="topicref" data-id="what_is_realtime" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/what_is_realtime.html" id="what_is_realtime-d114126e8173-link">What is Real Time and Why Do I Need It?</a><div class="wh-tooltip"><p class="shortdesc"> Real time is an often misunderstood—and misapplied—property of operating systems. This appendix provides a summary of some of the critical elements of realtime computing and discusses a few design considerations and benefits. </p></div></div></div></li><li role="treeitem"><div data-tocid="glossary-d114126e8184" class="topicref" data-id="glossary" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/glossary.html" id="glossary-d114126e8184-link">Glossary</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e8504" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e8504-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/guides.html" id="about-d114126e8504-link">OS Components &amp; Operations</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="graphics-d114126e27311" class="topicref" data-id="graphics" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action graphics-d114126e27311-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/graphics.html" id="graphics-d114126e27311-link">Graphics</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e46364" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e46364-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/programming.html" id="about-d114126e46364-link">Programming</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e54473" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e54473-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.security.system/topic/manual/about.html" id="about-d114126e54473-link">System Security Guide</a><div class="wh-tooltip"><p class="shortdesc">The <em class="ph i">QNX System Security Guide</em> is intended for both system integrators who are         responsible for the security of a <span class="keyword">QNX OS</span> system and developers who want to create a <span class="keyword">QNX OS</span> resource manager free from vulnerabilities.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e57754" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e57754-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/references.html" id="about-d114126e57754-link">Utilities &amp; Libraries</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e110056" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e110056-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.migration/topic/about.html" id="about-d114126e110056-link">Migrating to QNX OS 8.0</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e111092" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e111092-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxcloud.nav/topic/bookset.html" id="about-d114126e111092-link">QNX Software in the Cloud</a><div class="wh-tooltip"><p class="shortdesc">QNX Software in the Cloud enables developers to use the QNX 	software in Amazon Web Services (AWS) and Microsoft Azure (Azure). </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="qcmgr-d114126e112165" class="topicref" data-id="qcmgr" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action qcmgr-d114126e112165-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.containers.user_guide/topic/about.html" id="qcmgr-d114126e112165-link">QNX Containers User's Guide</a><div class="wh-tooltip"><p class="shortdesc">This guide describes QNX Containers, its components, and its utilization.       It provides instructions on using QNX Containers on the host and target,       and then starting QNX Container processes.    </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about_this_guide-d114126e112727" class="topicref" data-id="about_this_guide" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about_this_guide-d114126e112727-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxtoolkit.user_guide/topic/about_this_guide.html" id="about_this_guide-d114126e112727-link">QNX Toolkit for Visual Studio Code</a><div class="wh-tooltip"><p class="shortdesc">         This User's Guide describes the QNX® Toolkit for VS Code.         The guide introduces you to the <span class="keyword">QNX Toolkit</span> by explaining the QNX development environment and how to build, run, and debug your QNX® Operating System (OS) applications and systems.     </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e113878" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e113878-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.hypervisor.nav/topic/bookset.html" id="about-d114126e113878-link">QNX Hypervisor and QNX Hypervisor for Safety</a><div class="wh-tooltip"><p class="shortdesc"> 		The <span class="keyword">QNX Hypervisor</span> and <span class="keyword">QNX Hypervisor for Safety</span> products allow you to run multiple OSs 		on a target system so you can separate critical and non-critical functions, support a wide variety of applications, 		and reduce hardware costs. 	</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="copyright_overview_concept-d114126e120349" class="topicref" data-id="copyright_overview_concept" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action copyright_overview_concept-d114126e120349-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.copyright/topic/coverpage.html" id="copyright_overview_concept-d114126e120349-link">Typographical Conventions, Support, and Licensing</a><div class="wh-tooltip"><p class="shortdesc"> This section describes the typographical conventions used throughout the documentation, explains how to obtain technical support, and provides some information about licensing. </p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+                        
+						<div id="pdf_link"></div>
+						
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic concept/concept topic concept" role="article" aria-labelledby="fsys_encryption">
+
+<h1 class="- topic/title title topictitle1" id="fsys_encryption">Encryption</h1>
+
+
+<div style="padding: 5px 0;"><span class="label">QNX SDP</span><span class="label">8.0</span><span class="label">System Architecture</span><span class="label">Developer</span><span class="label">User</span></div>
+<div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc">
+The Power-Safe filesystem can provide <dfn class="- topic/term term">data at rest</dfn> encryption to all or part of its content.
+</p>
+
+<div class="- topic/note note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+<ul class="- topic/ul ul">
+<li class="- topic/li li">When you use an encrypted filesystem, read/write throughput rates and performance are lower
+  and CPU usage is higher than when you use a nonencrypted filesystem.
+</li>
+<li class="- topic/li li">You can't mount a partition that contains encrypted files unless
+    <span class="+ topic/ph sw-d/filepath ph filepath">/dev/random</span> is running. If <span class="+ topic/keyword sw-d/cmdname keyword cmdname">random</span> is using an
+  entropy file that is stored on an encrypted filesystem, make sure that you start
+    <span class="+ topic/keyword sw-d/cmdname keyword cmdname">random</span> with <span class="+ topic/keyword pr-d/option keyword option">-S</span>.</li>
+</ul>
+</div></div>
+
+<p class="- topic/p p">
+
+You might need to encrypt different parts of the filesystem with different keys, and you might not need to
+encrypt some parts, so the Power-Safe filesystem lets you create multiple <em class="+ topic/ph hi-d/i ph i">encryption domains</em>, which
+you can lock or unlock as needed.
+</p>
+
+<p class="- topic/p p">
+A domain can contain any number of files or directories, but a file or directory can belong to at most one domain.
+If you assign a domain to a directory, all files subsequently created in that directory are encrypted
+and inherit that domain.
+Assigning a domain to a directory doesn't introduce encryption to any files or directories that are already in it.
+</p>
+
+<p class="- topic/p p">
+You can simply assign a domain to a directory or an empty file; the filesystem treats them in the same way because
+they don't have any content to encrypt.
+If you want to encrypt a file that isn't empty, you must <dfn class="- topic/term term">migrate</dfn> it to a domain
+because the filesystem needs to decrypt the file, assign the new domain to it, and then encrypt the file again.
+</p>
+
+<p class="- topic/p p">
+Files that are assigned to a domain are encrypted on disk, and their contents are available only
+when the associated domain is unlocked.
+When a domain is unlocked, all its files and directories—regardless of their locations in
+the volume—are unlocked as well, and are therefore accessible (as per basic file permissions).
+When a domain is locked, any access to file content belonging to that domain is denied.
+This design offers <dfn class="- topic/term term">data at rest</dfn> encryption, meaning that file content is always
+encrypted before being written to disk.
+</p>
+
+<div class="- topic/note note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+Locking and unlocking operations apply to an entire domain, not to specific files or directories.
+</div></div>
+
+<p class="- topic/p p">
+Domain 0 (<span class="+ topic/keyword xml-d/const keyword const">FS_CRYPTO_UNASSIGNED_DOMAIN</span>) is always unlocked, and its contents are unencrypted;
+you can design your system to use any other domains.
+Valid domain numbers are 0–119.
+</p>
+
+<p class="- topic/p p">
+
+
+
+To use encryption, you must set the <span class="+ topic/keyword pr-d/option keyword option">crypto=</span> option for
+<a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.utilities/topic/f/fs-qnx6.so.html"><span class="+ topic/ph sw-d/filepath ph filepath">fs-qnx6.so</span></a>.
+You can then use
+<a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.utilities/topic/f/fsencrypt.html"><span class="+ topic/keyword sw-d/cmdname keyword cmdname">fsencrypt</span></a>
+to manage the encryption.
+The <a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.utilities/topic/c/chkqnx6fs.html"><span class="+ topic/keyword sw-d/cmdname keyword cmdname">chkqnx6fs</span></a>
+utility automatically identifies the encryption format and verifies the integrity of the
+encryption data. 
+It's also possible for you to use <span class="+ topic/keyword sw-d/cmdname keyword cmdname">fsencrypt</span> to enable encryption after you've formatted
+the volume and added content, but you must have set the <span class="+ topic/keyword pr-d/option keyword option">crypto=</span> option when you started
+<span class="+ topic/ph sw-d/filepath ph filepath">fs-qnx6.so</span>.
+</p>
+
+<p class="- topic/p p" style="margin-top: 1.2em; font-size: 1.1em;"><strong class="+ topic/ph hi-d/b ph b">Key types</strong></p>
+
+<div class="table-container"><table class="- topic/table table" data-cols="2"><caption></caption><colgroup><col style="width:25%"/><col style="width:75%"/></colgroup><thead class="- topic/thead thead">
+<tr class="- topic/row">
+  <th class="- topic/entry entry colsep-1 rowsep-1" id="fsys_encryption__entry__1">Key type</th>
+  <th class="- topic/entry entry colsep-0 rowsep-1" id="fsys_encryption__entry__2">Description</th>
+</tr>
+</thead><tbody class="- topic/tbody tbody">
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__1">File key</td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="fsys_encryption__entry__2">Private and randomly generated at the time the file is created (if the file is assigned to a domain).
+    Holds some information about the file to ensure integrity between a file and its key.
+    Used to encrypt file data, and is encrypted by a domain key.
+    Keys are managed by the filesystem and are hidden from the user.
+  </td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__1">Domain key</td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="fsys_encryption__entry__2">Private and randomly generated at the time the domain is created.
+     Used to encrypt all the file keys that belong to its domain, and is encrypted by a domain master key.
+     Keys are managed by the filesystem and are hidden from the user.
+</td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-0" headers="fsys_encryption__entry__1">Master key</td>
+  <td class="- topic/entry entry colsep-0 rowsep-0" headers="fsys_encryption__entry__2">Optionally public, as it is supplied and managed by a third party (not the filesystem).
+    Used to encrypt the domain key, required on domain creation and subsequent unlock requests.
+    
+</td>
+</tr>
+
+</tbody></table></div>
+
+
+
+<p class="- topic/p p" style="margin-top: 1.2em; font-size: 1.1em;"><strong class="+ topic/ph hi-d/b ph b">Encryption types</strong></p>
+
+<p class="- topic/p p">
+
+The Power-Safe filesystem supports the following types of encryption:
+</p>
+
+<div class="table-container"><table class="- topic/table table" data-cols="4"><caption></caption><colgroup><col/><col/><col/><col/></colgroup><thead class="- topic/thead thead">
+<tr class="- topic/row">
+  <th class="- topic/entry entry colsep-1 rowsep-1" id="fsys_encryption__entry__9">Domain-encryption type</th>
+  <th class="- topic/entry entry colsep-1 rowsep-1" id="fsys_encryption__entry__10">Constant</th>
+  <th class="- topic/entry entry colsep-1 rowsep-1" id="fsys_encryption__entry__11">Description</th>
+  <th class="- topic/entry entry colsep-0 rowsep-1" id="fsys_encryption__entry__12">Key length</th>
+</tr>
+</thead><tbody class="- topic/tbody tbody">
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__9">0</td>
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__10"><span class="+ topic/keyword xml-d/const keyword const">FS_CRYPTO_TYPE_NONE</span>
+    
+  </td>
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__11">No encryption</td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="fsys_encryption__entry__12">—</td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__9">1</td>
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__10"><span class="+ topic/keyword xml-d/const keyword const">FS_CRYPTO_TYPE_XTS</span>
+    
+  </td>
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__11">AES-256, in XTS mode.  The two keys are randomly generated.</td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="fsys_encryption__entry__12">512 bits</td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__9">2</td>
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__10"><span class="+ topic/keyword xml-d/const keyword const">FS_CRYPTO_TYPE_CBC</span>
+    
+  </td>
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__11">AES-256, in CBC mode</td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="fsys_encryption__entry__12">256 bits</td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-0" headers="fsys_encryption__entry__9">3–99</td>
+  <td class="- topic/entry entry colsep-1 rowsep-0" headers="fsys_encryption__entry__10">—</td>
+  <td class="- topic/entry entry colsep-1 rowsep-0" headers="fsys_encryption__entry__11">Reserved for future use</td>
+  <td class="- topic/entry entry colsep-0 rowsep-0" headers="fsys_encryption__entry__12">—</td>
+</tr>
+
+
+
+</tbody></table></div>
+
+<p class="- topic/p p" style="margin-top: 1.2em; font-size: 1.1em;"><strong class="+ topic/ph hi-d/b ph b">Interface usage</strong></p>
+
+<p class="- topic/p p">
+
+To manage encryption from the command line, use
+<a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.utilities/topic/f/fsencrypt.html"><span class="+ topic/keyword sw-d/cmdname keyword cmdname">fsencrypt</span></a>;
+its <span class="+ topic/keyword pr-d/option keyword option">-c</span> option lets you specify the command to run.
+From your code, use the <span class="+ topic/ph sw-d/filepath ph filepath">fscrypto</span> library. 
+You need to include both the <span class="+ topic/ph sw-d/filepath ph filepath">&lt;fs_crypto_api.h&gt;</span> and
+<span class="+ topic/ph sw-d/filepath ph filepath">&lt;sys/fs_crypto.h&gt;</span> header files.
+
+Many of the APIs return <span class="+ topic/keyword xml-d/const keyword const">EOK</span> on success and have a reply argument that provides more information.
+</p>
+
+
+
+<div class="table-container"><table class="- topic/table table table--pgwide-1" data-cols="3"><caption></caption><colgroup><col style="width:28.57142857142857%"/><col style="width:14.285714285714285%"/><col style="width:57.14285714285714%"/></colgroup><thead class="- topic/thead thead">
+<tr class="- topic/row">
+  <th class="- topic/entry entry colsep-1 rowsep-1" id="fsys_encryption__entry__29">API</th>
+
+  <th class="- topic/entry entry colsep-1 rowsep-1" id="fsys_encryption__entry__30"><span class="+ topic/keyword sw-d/cmdname keyword cmdname">fsencrypt</span> command</th>
+  <th class="- topic/entry entry colsep-0 rowsep-1" id="fsys_encryption__entry__31">Description</th>
+</tr>
+</thead><tbody class="- topic/tbody tbody">
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__29"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_check.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">fs_crypto_check()</span></a>
+    
+  </td>
+
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__30"><span class="+ topic/keyword sw-d/cmdname keyword cmdname">check</span></td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="fsys_encryption__entry__31">Determine if the underlying filesystem supports encryption</td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__29"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_domain_add.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">fs_crypto_domain_add()</span></a>
+    
+  </td>
+
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__30"><span class="+ topic/keyword sw-d/cmdname keyword cmdname">create</span></td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="fsys_encryption__entry__31">Create the given domain/type if it doesn't already exist.
+     You need to provide a 64-bit encryption key.
+     From a program, you can create a locked or unlocked domain; <span class="+ topic/keyword sw-d/cmdname keyword cmdname">fsencrypt</span> always creates
+     an unlocked domain.
+  </td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__29"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_domain_add_flags.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">fs_crypto_domain_add_flags()</span></a>
+    
+  </td>
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__30"><span class="+ topic/keyword sw-d/cmdname keyword cmdname">create</span></td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="fsys_encryption__entry__31">Create the given domain/type if it doesn't already exist, with the given locked state and flags for new file and domain keys.
+     You need to provide a 64-bit encryption key.
+  </td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__29"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_domain_hard_lock.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">fs_crypto_domain_hard_lock()</span></a>
+    
+  </td>
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__30"><span class="+ topic/keyword sw-d/cmdname keyword cmdname">lock</span></td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="fsys_encryption__entry__31">Lock a domain, preventing access to the original contents of any file belonging to it.
+    With this function, the lock behavior is controlled by the <span class="+ topic/keyword xml-d/const keyword const">FS_CRYPTO_HARD_LOCK_ACTION_ENFORCE</span> flag.
+    If this flag is <em class="+ topic/ph hi-d/i ph i">not</em> set, access is limited to clients that appear on a whitelist. If this flag is set, no clients have access.
+  </td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__29"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_domain_key_change.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">fs_crypto_domain_key_change()</span></a>
+    
+  </td>
+
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__30"><span class="+ topic/keyword sw-d/cmdname keyword cmdname">change-key</span></td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="fsys_encryption__entry__31">Change the master domain key used to encrypt the domain key</td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__29"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_domain_key_check.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">fs_crypto_domain_key_check()</span></a>
+    
+  </td>
+
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__30"><span class="+ topic/keyword sw-d/cmdname keyword cmdname">check-key</span></td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="fsys_encryption__entry__31">Determine if a given domain key is valid</td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__29"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_domain_key_size.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">fs_crypto_domain_key_size()</span></a>
+    
+  </td>
+
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__30">—</td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="fsys_encryption__entry__31">Return the size of keys needed for filesystem encryption</td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__29"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_domain_lock.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">fs_crypto_domain_lock()</span></a>
+    
+  </td>
+
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__30"><span class="+ topic/keyword sw-d/cmdname keyword cmdname">lock</span></td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="fsys_encryption__entry__31">Lock a domain, preventing access to the original contents of any file belonging to it.
+    You must be in the group that owns the filesystem's mountpoint to lock a domain.
+  </td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__29"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_domain_query.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">fs_crypto_domain_query()</span></a>
+    
+  </td>
+
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__30"><span class="+ topic/keyword sw-d/cmdname keyword cmdname">query</span>, <span class="+ topic/keyword sw-d/cmdname keyword cmdname">query-all</span></td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="fsys_encryption__entry__31">Get status information for a domain</td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__29"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_domain_remove.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">fs_crypto_domain_remove()</span></a>
+    
+  </td>
+
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__30"><span class="+ topic/keyword sw-d/cmdname keyword cmdname">destroy</span></td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="fsys_encryption__entry__31">Destroy a domain.
+    You must be in the group that owns the filesystem's mountpoint.
+    It isn't possible to retrieve any files in the domain after it's been destroyed.
+  </td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__29"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_domain_unlock.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">fs_crypto_domain_unlock()</span></a>
+    
+  </td>
+
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__30"><span class="+ topic/keyword sw-d/cmdname keyword cmdname">unlock</span></td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="fsys_encryption__entry__31">Unlock a domain, given the appropriate key data</td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__29"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_domain_whitelist_configure.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">fs_crypto_domain_whitelist_configure()</span></a>
+    
+  </td>
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__30">—</td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="fsys_encryption__entry__31">Perform whitelist configuration for a domain whitelist</td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__29"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_domain_whitelist_ctrl.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">fs_crypto_domain_whitelist_ctrl()</span></a>
+    
+  </td>
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__30">—</td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="fsys_encryption__entry__31">Perform a control action for a domain whitelist</td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__29"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_domain_whitelist_ctrl_access_grant.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">fs_crypto_domain_whitelist_ctrl_access_grant()</span></a>
+    
+  </td>
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__30">—</td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="fsys_encryption__entry__31">Grant a client access to a domain</td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__29"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_domain_whitelist_ctrl_access_revoke.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">fs_crypto_domain_whitelist_ctrl_access_revoke()</span></a>
+    
+  </td>
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__30">—</td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="fsys_encryption__entry__31">Revoke a client's access to a domain</td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__29"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_domain_whitelist_get_flags.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">fs_crypto_domain_whitelist_get_flags()</span></a>
+    
+  </td>
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__30">—</td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="fsys_encryption__entry__31">Get the flags for a domain whitelist</td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__29"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_domain_whitelist_set_flags.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">fs_crypto_domain_whitelist_set_flags()</span></a>
+    
+  </td>
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__30">—</td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="fsys_encryption__entry__31">Set the flags for a domain whitelist.
+    Whitelists are effective only when you're using a hard lock and you've not set the <span class="+ topic/keyword xml-d/const keyword const">FS_CRYPTO_HARD_LOCK_ACTION_ENFORCE</span>
+    flag; for more details, see <span class="+ topic/keyword pr-d/apiname keyword apiname">fs_crypto_domain_hard_lock()</span> above.
+  </td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__29"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_enable.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">fs_crypto_enable()</span></a>,
+    <a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_enable_option.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">fs_crypto_enable_option()</span></a>
+    
+    
+  </td>
+
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__30"><span class="+ topic/keyword sw-d/cmdname keyword cmdname">enable</span></td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="fsys_encryption__entry__31">Enable encryption support on a volume that wasn't set up for it at formatting time</td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__29"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_file_get_domain.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">fs_crypto_file_get_domain()</span></a>
+    
+  </td>
+
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__30"><span class="+ topic/keyword sw-d/cmdname keyword cmdname">get</span></td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="fsys_encryption__entry__31">Return the domain of a file or directory, if assigned</td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__29"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_file_set_domain.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">fs_crypto_file_set_domain()</span></a>
+    
+  </td>
+
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__30"><span class="+ topic/keyword sw-d/cmdname keyword cmdname">set</span></td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="fsys_encryption__entry__31">Assign a given domain to the path (a regular file or a directory).
+    Regular files must have a length of zero.
+    The domain replaces any domain previously assigned to the path.
+  </td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__29"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_key_gen.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">fs_crypto_key_gen()</span></a>
+    
+  </td>
+
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__30"><span class="+ topic/keyword pr-d/option keyword option">-K</span> or <span class="+ topic/keyword pr-d/option keyword option">-k</span> option</td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="fsys_encryption__entry__31">Generate an encryption key from a password</td>
+</tr>
+
+
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-0" headers="fsys_encryption__entry__29"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_set_logging.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">fs_crypto_set_logging()</span></a>
+    
+  </td>
+
+  <td class="- topic/entry entry colsep-1 rowsep-0" headers="fsys_encryption__entry__30"><span class="+ topic/keyword pr-d/option keyword option">-l</span> and <span class="+ topic/keyword pr-d/option keyword option">-v</span> options</td>
+  <td class="- topic/entry entry colsep-0 rowsep-0" headers="fsys_encryption__entry__31">Set the logging destination and verbosity</td>
+</tr>
+
+</tbody></table></div>
+
+<p class="- topic/p p">
+The library also includes some functions that you can use to move existing files and directories into
+an encryption domain.
+To do this, you unlock the source and destination domains, tag the files and directories that you want to move,
+and then start the migration, which the
+filesystem does in the background.
+These functions include:
+</p>
+
+<div class="table-container"><table class="- topic/table table" data-cols="3"><caption></caption><colgroup><col style="width:25%"/><col style="width:25%"/><col style="width:50%"/></colgroup><thead class="- topic/thead thead">
+<tr class="- topic/row">
+  <th class="- topic/entry entry colsep-1 rowsep-1" id="fsys_encryption__entry__98">API</th>
+
+  <th class="- topic/entry entry colsep-1 rowsep-1" id="fsys_encryption__entry__99"><span class="+ topic/keyword sw-d/cmdname keyword cmdname">fsencrypt</span> commands</th>
+  <th class="- topic/entry entry colsep-0 rowsep-1" id="fsys_encryption__entry__100">Description</th>
+</tr>
+</thead><tbody class="- topic/tbody tbody">
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__98"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_migrate_control.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">fs_crypto_migrate_control()</span></a>
+    
+  </td>
+
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__99"><span class="+ topic/keyword sw-d/cmdname keyword cmdname">migrate-start</span>, <span class="+ topic/keyword sw-d/cmdname keyword cmdname">migrate-stop</span>, <span class="+ topic/keyword sw-d/cmdname keyword cmdname">migrate-delay</span>,
+    <span class="+ topic/keyword sw-d/cmdname keyword cmdname">migrate-units</span>
+  </td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="fsys_encryption__entry__100">Control encryption migration within the filesystem</td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__98"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_migrate_path.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">fs_crypto_migrate_path()</span></a>
+    
+  </td>
+
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__99"><span class="+ topic/keyword sw-d/cmdname keyword cmdname">migrate-path</span></td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="fsys_encryption__entry__100">Mark an entire directory for migration into an encryption domain</td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__98"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_migrate_status.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">fs_crypto_migrate_status()</span></a>
+    
+  </td>
+
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="fsys_encryption__entry__99"><span class="+ topic/keyword sw-d/cmdname keyword cmdname">migrate-status</span></td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="fsys_encryption__entry__100">Get the status of migration in the filesystem</td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-0" headers="fsys_encryption__entry__98"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_migrate_tag.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">fs_crypto_migrate_tag()</span></a>
+    
+  </td>
+
+  <td class="- topic/entry entry colsep-1 rowsep-0" headers="fsys_encryption__entry__99"><span class="+ topic/keyword sw-d/cmdname keyword cmdname">migrate-tag</span>, <span class="+ topic/keyword sw-d/cmdname keyword cmdname">tag</span></td>
+  <td class="- topic/entry entry colsep-0 rowsep-0" headers="fsys_encryption__entry__100">Mark a file for migration into an encryption domain</td>
+</tr>
+
+</tbody></table></div>
+
+
+
+<p class="- topic/p p" style="margin-top: 1.2em; font-size: 1.1em;"><strong class="+ topic/ph hi-d/b ph b">Examples</strong></p>
+
+<p class="- topic/p p">
+Here are some examples of the way you can use <span class="+ topic/keyword sw-d/cmdname keyword cmdname">fsencrypt</span> to manage filesystem encryption:
+</p>
+
+<ul class="- topic/ul ul">
+<li class="- topic/li li"><div class="- topic/p p">Determine if encryption is supported or enabled:
+
+<pre class="+ topic/pre pr-d/codeblock pre codeblock scale-90"><code>$ fsencrypt -vc check -p /
+ENCRYPTION_CHECK(Path:'/') FAILED: (18) - 'No support'
+</code></pre></div>
+</li>
+
+<li class="- topic/li li"><div class="- topic/p p">Enable encryption on an existing filesystem:
+
+<pre class="+ topic/pre pr-d/codeblock pre codeblock scale-90"><code>$ fsencrypt -vc enable -p / 
+ENCRYPTION_CHECK(Path:'/') SUCCESS
+$ fsencrypt -vc check -p /
+ENCRYPTION_CHECK(Path:'/') NOTICE: Encryption is SUPPORTED)
+</code></pre></div>
+
+  <div class="- topic/note note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+  This change is irreversible and forces two consecutive disk transactions to rewrite some data
+  in the superblocks.
+  </div></div>
+</li>
+
+<li class="- topic/li li"><div class="- topic/p p">Determine if a file is encrypted.
+  Files with the domain number of 0 aren't encrypted.
+  A nonzero value means the file is assigned to a domain.
+  Access to the file's original contents is determined by the status of the domain.
+  The example below shows that the named file is assigned to domain 10:
+
+<pre class="+ topic/pre pr-d/codeblock pre codeblock scale-90"><code>$ fsencrypt -vcget -p /accounts/1000/secure/testfile
+GET_DOMAIN(Path:'/accounts/1000/secure/testfile') = 10 SUCCESS
+</code></pre></div>
+</li>
+
+<li class="- topic/li li"><div class="- topic/p p">Determine if a domain is locked.
+  If a domain is locked, reading the files within that domain yields encrypted data;
+  unlocked domains yield the original file contents.
+  <q class="- topic/q q">Unused</q> domains are ones that haven't yet been created.
+  In the example below, domain 11 hasn't yet been created, and domain 10 is currently unlocked:
+
+<pre class="+ topic/pre pr-d/codeblock pre codeblock scale-90"><code>$ fsencrypt -vc query -p/ -d11
+QUERY_DOMAIN(Path:'/', Domain:11) NOTICE: Domain is UNUSED
+$ fsencrypt -vc query -p/ -d10
+QUERY_DOMAIN(Path:'/', Domain:10) NOTICE: Domain is UNLOCKED
+</code></pre></div>
+</li>
+
+</ul>
+
+</div>
+<div style="text-align: right;"><span>Page updated: <time>November 05, 2026</time></span></div></article></main></div>
+                        
+                        
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist relinfo" xml:lang="en-us" lang="en-us"><strong>Related information</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.user_guide/topic/fsystems.html" title="Working with Filesystems (QNX OS User's Guide)">Working with Filesystems (QNX OS User's Guide)</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.utilities/topic/f/fs-qnx6.so.html" title="fs-qnx6.so">fs-qnx6.so</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.utilities/topic/f/fsencrypt.html" title="fsencrypt">fsencrypt</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.utilities/topic/m/mkqnx6fs.html" title="mkqnx6fs">mkqnx6fs</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_check.html" title="fs_crypto_check()">fs_crypto_check()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_domain_add.html" title="fs_crypto_domain_add()">fs_crypto_domain_add()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_domain_key_change.html" title="fs_crypto_domain_key_change()">fs_crypto_domain_key_change()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_domain_key_check.html" title="fs_crypto_domain_key_check()">fs_crypto_domain_key_check()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_domain_key_size.html" title="fs_crypto_domain_key_size()">fs_crypto_domain_key_size()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_domain_lock.html" title="fs_crypto_domain_lock()">fs_crypto_domain_lock()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_domain_query.html" title="fs_crypto_domain_query()">fs_crypto_domain_query()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_domain_remove.html" title="fs_crypto_domain_remove()">fs_crypto_domain_remove()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_domain_unlock.html" title="fs_crypto_domain_unlock()">fs_crypto_domain_unlock()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_enable_option.html" title="fs_crypto_enable_option()">fs_crypto_enable_option()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_enable.html" title="fs_crypto_enable()">fs_crypto_enable()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_file_get_domain.html" title="fs_crypto_file_get_domain()">fs_crypto_file_get_domain()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_file_set_domain.html" title="fs_crypto_file_set_domain()">fs_crypto_file_set_domain()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_key_gen.html" title="fs_crypto_key_gen()">fs_crypto_key_gen()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_migrate_control.html" title="fs_crypto_migrate_control()">fs_crypto_migrate_control()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_migrate_path.html" title="fs_crypto_migrate_path()">fs_crypto_migrate_path()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_migrate_status.html" title="fs_crypto_migrate_status()">fs_crypto_migrate_status()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_migrate_tag.html" title="fs_crypto_migrate_tag()">fs_crypto_migrate_tag()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fs_crypto_set_logging.html" title="fs_crypto_set_logging()">fs_crypto_set_logging()</a></li></ul></div></nav></div>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

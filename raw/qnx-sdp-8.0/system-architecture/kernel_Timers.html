@@ -1,0 +1,417 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us" data-whc_version="26.0">
+    <head><link rel="shortcut icon" href="../../oxygen-webhelp/template/images/favicon.png"/><link rel="icon" href="../../oxygen-webhelp/template/images/favicon.png"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="description" content="The QNX OS directly provides the full set of POSIX timer functionality. Since these timers are quick to create and manipulate, they're an inexpensive resource in the kernel."/><meta name="keywords" content="QNX SDP, 8.0, System Architecture, Developer, User"/>        
+      <title>Timers</title><!--  Generated with Oxygen version 26.0, build number 2023100510.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="Timers-d114126e6351"/><meta name="wh-source-relpath" content="com.qnx.doc.neutrino.sys_arch/topic/kernel_Timers.xml"/><meta name="wh-out-relpath" content="com.qnx.doc.neutrino.sys_arch/topic/kernel_Timers.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/commons.css?buildId=2023100510"/>
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic.css?buildId=2023100510"/>
+
+    <script src="../../oxygen-webhelp/app/options/properties.js?buildId=20261105112733"></script>
+    <script src="../../oxygen-webhelp/app/localization/strings.js?buildId=2023100510"></script>
+    <script src="../../oxygen-webhelp/app/search/index/keywords.js?buildId=20261105112733"></script>
+    <script defer="defer" src="../../oxygen-webhelp/app/commons.js?buildId=2023100510"></script>
+    <script defer="defer" src="../../oxygen-webhelp/app/topic.js?buildId=2023100510"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/css/qnx-webhelp.css?buildId=2023100510"/></head>
+
+    <body id="Timers" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid" id="wh_header_container">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../../index.html" class=" wh_logo d-none d-sm-block "><img src="../../oxygen-webhelp/template/images/QNX-Logo-CORAL-RGB.png" alt=""/></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="title"></span></a></div>
+                    
+                </div>
+
+                
+            </div>
+
+            <div class="wh_nav_and_search">
+                <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                    
+                    
+                    <div class=" wh_indexterms_link "><a href="../../indexTerms.html" title="Index" aria-label="Go to index terms page"><span>Index</span></a></div>
+                    
+                </div>
+                <div class=" wh_search_input navbar-form wh_main_page_search search " role="form">
+                    
+                    
+
+                    
+                    <form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+
+                    <!-- Link to Advanced search page on qnx.com -->
+                    <div id="advanced_search" title="Search all Blackberry QNX product documentation">
+                        <a class="advanced_search" target="_blank" href="https://qnx.software/en/search#t=ProductDocumentation">
+                            <span>Advanced search</span>
+                        </a>
+                    </div>
+
+                    
+                    
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref" data-id="about"><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/bookset.html">QNX Software Development Platform</a><div class="wh-tooltip"><p class="shortdesc">     QNX SDP is a cross-compiling and debugging environment, including an IDE and command-line tools,     for building binary images and programs for target boards running the <span class="keyword">QNX OS</span> 8.0.   </p></div></div></div></li><li><div class="topicref" data-id="about"><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/about.html">System Architecture</a><div class="wh-tooltip"><p class="shortdesc"> The <em class="ph i">System Architecture</em> guide accompanies the <span class="keyword">QNX OS</span> and is intended for both application developers and end-users. </p></div></div></div></li><li><div class="topicref" data-id="kernel"><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel.html">The <span class="keyword">QNX OS</span> Microkernel</a><div class="wh-tooltip"><p class="shortdesc"> The <span class="keyword">microkernel</span> implements the core POSIX features used in embedded realtime systems, along with the fundamental <span class="keyword">QNX OS</span> message-passing services. </p></div></div></div></li><li><div class="topicref" data-id="CLOCKANDTIMER"><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel_CLOCKANDTIMER.html">Clock and timer services</a><div class="wh-tooltip"><p class="shortdesc"> Clock services are used to maintain the time of day, which is in turn used by the kernel timer calls to implement interval timers. </p></div></div></div></li><li class="active"><div class="topicref" data-id="Timers"><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel_Timers.html">Timers</a><div class="wh-tooltip"><p class="shortdesc"> The <span class="keyword">QNX OS</span> directly provides the full set of POSIX timer functionality. Since these timers are quick to create and manipulate, they're an inexpensive resource in the kernel. </p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+					
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+								<!--<whc:external_resourse_link 
+                            href="${param(webhelp.pdf.link.url)}"
+                            title="${param(webhelp.pdf.link.text)}"
+                            image="${param(webhelp.pdf.link.icon.path)}"
+                            type="pdf_link"                            
+							/>-->
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e10" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e10-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.ide.userguide/topic/about.html" id="about-d114126e10-link">QNX Momentics IDE User's Guide</a><div class="wh-tooltip"><p class="shortdesc">         This <em class="ph i">User's Guide</em> describes version 8.0 of the Integrated Development Environment (IDE) that's part of the         <span class="keyword">QNX Tool Suite</span>.     </p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="about-d114126e4055" class="topicref" data-id="about" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action about-d114126e4055-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/bookset.html" id="about-d114126e4055-link">QNX Software Development Platform</a><div class="wh-tooltip"><p class="shortdesc">     QNX SDP is a cross-compiling and debugging environment, including an IDE and command-line tools,     for building binary images and programs for target boards running the <span class="keyword">QNX OS</span> 8.0.   </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="AboutThisGuide-d114126e4069" class="topicref" data-id="AboutThisGuide" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action AboutThisGuide-d114126e4069-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.quickstart/topic/about.html" id="AboutThisGuide-d114126e4069-link">Quickstart Guide</a><div class="wh-tooltip"><p class="shortdesc">These guidelines will help you install the QNX Software Development Platform, quickly develop a program,     and run it on a <span class="keyword">QNX OS</span> target.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="about-d114126e5772" class="topicref" data-id="about" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action about-d114126e5772-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/about.html" id="about-d114126e5772-link">System Architecture</a><div class="wh-tooltip"><p class="shortdesc"> The <em class="ph i">System Architecture</em> guide accompanies the <span class="keyword">QNX OS</span> and is intended for both application developers and end-users. </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="intro-d114126e5822" class="topicref" data-id="intro" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action intro-d114126e5822-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/intro.html" id="intro-d114126e5822-link">The Philosophy of the <span class="keyword">QNX OS</span></a><div class="wh-tooltip"><p class="shortdesc"> The primary goal of the <span class="keyword">QNX OS</span> is to deliver the open systems POSIX API in a robust, scalable form suitable for a wide range of systems—from tiny, resource-constrained embedded systems to high-end distributed computing environments. The OS supports several processor families, including x86 and ARM.  </p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="kernel-d114126e5974" class="topicref" data-id="kernel" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action kernel-d114126e5974-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel.html" id="kernel-d114126e5974-link">The <span class="keyword">QNX OS</span> Microkernel</a><div class="wh-tooltip"><p class="shortdesc"> The <span class="keyword">microkernel</span> implements the core POSIX features used in embedded realtime systems, along with the fundamental <span class="keyword">QNX OS</span> message-passing services. </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="IMPLEMENT-d114126e5994" class="topicref" data-id="IMPLEMENT" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel_IMPLEMENT.html" id="IMPLEMENT-d114126e5994-link">Design goals of the <span class="keyword">QNX OS</span></a><div class="wh-tooltip"><p class="shortdesc"> Historically, the <q class="q">application pressure</q> on <span class="keyword">QNX</span>'s operating systems has been from both ends of the computing spectrum—from memory-limited embedded systems all the way up to high-end SMP (symmetrical multiprocessing) machines with gigabytes of physical memory. </p></div></div></div></li><li role="treeitem"><div data-tocid="SERVICES-d114126e6013" class="topicref" data-id="SERVICES" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel_SERVICES.html" id="SERVICES-d114126e6013-link">System services</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="THREADSANDPRO-d114126e6023" class="topicref" data-id="THREADSANDPRO" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action THREADSANDPRO-d114126e6023-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel_THREADSANDPRO.html" id="THREADSANDPRO-d114126e6023-link">Threads and processes</a><div class="wh-tooltip"><p class="shortdesc"> When building an application (realtime, graphical, or otherwise), the developer may want several algorithms within the application to execute concurrently. This concurrency is achieved by using the POSIX thread model, which defines a process as containing one or more threads of execution. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="SCHEDULING-d114126e6084" class="topicref" data-id="SCHEDULING" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action SCHEDULING-d114126e6084-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel_SCHEDULING.html" id="SCHEDULING-d114126e6084-link">Thread scheduling</a><div class="wh-tooltip"><p class="shortdesc"> When and how are scheduling decisions made? </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="SYNCHRO-d114126e6200" class="topicref" data-id="SYNCHRO" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action SYNCHRO-d114126e6200-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel_SYNCHRO.html" id="SYNCHRO-d114126e6200-link">Synchronization services</a><div class="wh-tooltip"><p class="shortdesc"> The <span class="keyword">QNX OS</span> provides the POSIX-standard thread-level synchronization primitives, all of which can be used between threads in different processes. </p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="CLOCKANDTIMER-d114126e6330" class="topicref" data-id="CLOCKANDTIMER" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action CLOCKANDTIMER-d114126e6330-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel_CLOCKANDTIMER.html" id="CLOCKANDTIMER-d114126e6330-link">Clock and timer services</a><div class="wh-tooltip"><p class="shortdesc"> Clock services are used to maintain the time of day, which is in turn used by the kernel timer calls to implement interval timers. </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="Time_correction-d114126e6341" class="topicref" data-id="Time_correction" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel_Time_correction.html" id="Time_correction-d114126e6341-link">Tracking time</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="Timers-d114126e6351" class="topicref" data-id="Timers" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel_Timers.html" id="Timers-d114126e6351-link">Timers</a><div class="wh-tooltip"><p class="shortdesc"> The <span class="keyword">QNX OS</span> directly provides the full set of POSIX timer functionality. Since these timers are quick to create and manipulate, they're an inexpensive resource in the kernel. </p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="INTERRUPTHANDLING-d114126e6365" class="topicref" data-id="INTERRUPTHANDLING" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action INTERRUPTHANDLING-d114126e6365-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel_INTERRUPTHANDLING.html" id="INTERRUPTHANDLING-d114126e6365-link">Interrupt handling</a><div class="wh-tooltip"><p class="shortdesc">   No matter how much we wish it were so, computers are not infinitely fast.   In a realtime system, it's absolutely crucial that CPU cycles aren't unnecessarily spent.   But, it is important to balance this with safety, predictable behaviour, and an avoidance of runtime allocation or queueing.   <span class="keyword">QNX OS</span> implements a low-latency path to schedule user threads to handle hardware interrupts. </p></div></div></div></li><li role="treeitem"><div data-tocid="offlining-d114126e6409" class="topicref" data-id="offlining" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel_CPU_offlining.html" id="offlining-d114126e6409-link">CPU offlining</a><div class="wh-tooltip"><p class="shortdesc">The CPU offlining feature allows a privileged application to stop             <span class="keyword cmdname">procnto</span> from using a CPU for scheduling threads.</p></div></div></div></li><li role="treeitem"><div data-tocid="errata_module-d114126e6423" class="topicref" data-id="errata_module" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel_Errata_module.html" id="errata_module-d114126e6423-link">Errata kernel module</a><div class="wh-tooltip"><p class="shortdesc">The errata kernel module allows you to choose hardware-specific mitigations to apply         to your system, rather than having to apply all mitigations at once, which is inefficient         and can affect runtime performance.</p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="ipc-d114126e6434" class="topicref" data-id="ipc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ipc-d114126e6434-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ipc.html" id="ipc-d114126e6434-link">Interprocess Communication (IPC)</a><div class="wh-tooltip"><p class="shortdesc"> Interprocess Communication (IPC) plays a fundamental role in the transformation of the <span class="keyword">microkernel</span> from an embedded realtime kernel into a full-scale POSIX operating system. As various service-providing processes are added to the microkernel, IPC is the <q class="q">glue</q> that connects those components into a cohesive whole. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="trace-d114126e6711" class="topicref" data-id="trace" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action trace-d114126e6711-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/trace.html" id="trace-d114126e6711-link">The Microkernel Instrumentation</a><div class="wh-tooltip"><p class="shortdesc"> The <span class="keyword">microkernel</span> (<span class="keyword cmdname">procnto-smp-instr</span>) is equipped with a sophisticated tracing and profiling mechanism that lets you monitor your system's execution in real time. This instrumentation works on both single-CPU and SMP systems. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="proc-d114126e6806" class="topicref" data-id="proc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action proc-d114126e6806-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/proc.html" id="proc-d114126e6806-link">Process Manager</a><div class="wh-tooltip"><p class="shortdesc"> The Process Manager can create and manage multiple POSIX processes, each of which may contain multiple POSIX threads. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="dll-d114126e7141" class="topicref" data-id="dll" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action dll-d114126e7141-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/dll.html" id="dll-d114126e7141-link">Dynamic Linking</a><div class="wh-tooltip"><p class="shortdesc"> In a typical system, a number of programs will be running. Each program relies on a number of functions, some of which will be <q class="q">standard</q> C library functions, like <span class="keyword apiname">printf()</span>, <span class="keyword apiname">malloc()</span>, <span class="keyword apiname">write()</span>, etc. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="resource-d114126e7221" class="topicref" data-id="resource" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action resource-d114126e7221-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/resource.html" id="resource-d114126e7221-link">Resource Managers</a><div class="wh-tooltip"><p class="shortdesc"> To give the <span class="keyword">QNX OS</span> a great degree of flexibility, to minimize the runtime memory requirements of the final system, and to cope with the wide variety of devices that may be found in a custom embedded system, the OS allows user-written processes to act as <em class="ph i">resource managers</em> that can be started and stopped dynamically. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="fsys-d114126e7452" class="topicref" data-id="fsys" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action fsys-d114126e7452-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/fsys.html" id="fsys-d114126e7452-link">Filesystems</a><div class="wh-tooltip"><p class="shortdesc"> The <span class="keyword">QNX OS</span> provides a rich variety of filesystems. Like most service-providing processes in the OS, these filesystems execute outside the kernel; applications use them by communicating via messages generated by the shared-library implementation of the POSIX API. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="char-d114126e7802" class="topicref" data-id="char" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action char-d114126e7802-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/char.html" id="char-d114126e7802-link">Character I/O</a><div class="wh-tooltip"><p class="shortdesc"> A key requirement of any realtime operating system is high-performance character I/O. </p></div></div></div></li><li role="treeitem"><div data-tocid="net-d114126e7922" class="topicref" data-id="net" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/net.html" id="net-d114126e7922-link">Networking Architecture</a><div class="wh-tooltip"><p class="shortdesc"> As with other service-providing processes in the <span class="keyword">QNX OS</span>, the networking services execute outside the kernel. Developers are presented with a single unified interface, regardless of the configuration and number of networks involved. </p></div></div></div></li><li role="treeitem"><div data-tocid="tcpip-d114126e7936" class="topicref" data-id="tcpip" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/tcpip.html" id="tcpip-d114126e7936-link">TCP/IP Networking</a><div class="wh-tooltip"><p class="shortdesc">Our TCP/IP stack is included in the <span class="keyword cmdname">io-sock</span> networking stack and uses     the common FreeBSD API. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ham-d114126e7950" class="topicref" data-id="ham" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ham-d114126e7950-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ham.html" id="ham-d114126e7950-link">High Availability</a><div class="wh-tooltip"><p class="shortdesc"> The term <em class="ph i">High Availability</em> (HA) is commonly used in telecommunications and other industries to describe a system's ability to remain up and running without interruption for extended periods of time. </p></div></div></div></li><li role="treeitem"><div data-tocid="what_is_realtime-d114126e8173" class="topicref" data-id="what_is_realtime" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/what_is_realtime.html" id="what_is_realtime-d114126e8173-link">What is Real Time and Why Do I Need It?</a><div class="wh-tooltip"><p class="shortdesc"> Real time is an often misunderstood—and misapplied—property of operating systems. This appendix provides a summary of some of the critical elements of realtime computing and discusses a few design considerations and benefits. </p></div></div></div></li><li role="treeitem"><div data-tocid="glossary-d114126e8184" class="topicref" data-id="glossary" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/glossary.html" id="glossary-d114126e8184-link">Glossary</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e8504" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e8504-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/guides.html" id="about-d114126e8504-link">OS Components &amp; Operations</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="graphics-d114126e27311" class="topicref" data-id="graphics" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action graphics-d114126e27311-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/graphics.html" id="graphics-d114126e27311-link">Graphics</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e46364" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e46364-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/programming.html" id="about-d114126e46364-link">Programming</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e54473" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e54473-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.security.system/topic/manual/about.html" id="about-d114126e54473-link">System Security Guide</a><div class="wh-tooltip"><p class="shortdesc">The <em class="ph i">QNX System Security Guide</em> is intended for both system integrators who are         responsible for the security of a <span class="keyword">QNX OS</span> system and developers who want to create a <span class="keyword">QNX OS</span> resource manager free from vulnerabilities.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e57754" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e57754-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/references.html" id="about-d114126e57754-link">Utilities &amp; Libraries</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e110056" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e110056-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.migration/topic/about.html" id="about-d114126e110056-link">Migrating to QNX OS 8.0</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e111092" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e111092-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxcloud.nav/topic/bookset.html" id="about-d114126e111092-link">QNX Software in the Cloud</a><div class="wh-tooltip"><p class="shortdesc">QNX Software in the Cloud enables developers to use the QNX 	software in Amazon Web Services (AWS) and Microsoft Azure (Azure). </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="qcmgr-d114126e112165" class="topicref" data-id="qcmgr" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action qcmgr-d114126e112165-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.containers.user_guide/topic/about.html" id="qcmgr-d114126e112165-link">QNX Containers User's Guide</a><div class="wh-tooltip"><p class="shortdesc">This guide describes QNX Containers, its components, and its utilization.       It provides instructions on using QNX Containers on the host and target,       and then starting QNX Container processes.    </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about_this_guide-d114126e112727" class="topicref" data-id="about_this_guide" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about_this_guide-d114126e112727-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxtoolkit.user_guide/topic/about_this_guide.html" id="about_this_guide-d114126e112727-link">QNX Toolkit for Visual Studio Code</a><div class="wh-tooltip"><p class="shortdesc">         This User's Guide describes the QNX® Toolkit for VS Code.         The guide introduces you to the <span class="keyword">QNX Toolkit</span> by explaining the QNX development environment and how to build, run, and debug your QNX® Operating System (OS) applications and systems.     </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e113878" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e113878-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.hypervisor.nav/topic/bookset.html" id="about-d114126e113878-link">QNX Hypervisor and QNX Hypervisor for Safety</a><div class="wh-tooltip"><p class="shortdesc"> 		The <span class="keyword">QNX Hypervisor</span> and <span class="keyword">QNX Hypervisor for Safety</span> products allow you to run multiple OSs 		on a target system so you can separate critical and non-critical functions, support a wide variety of applications, 		and reduce hardware costs. 	</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="copyright_overview_concept-d114126e120349" class="topicref" data-id="copyright_overview_concept" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action copyright_overview_concept-d114126e120349-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.copyright/topic/coverpage.html" id="copyright_overview_concept-d114126e120349-link">Typographical Conventions, Support, and Licensing</a><div class="wh-tooltip"><p class="shortdesc"> This section describes the typographical conventions used throughout the documentation, explains how to obtain technical support, and provides some information about licensing. </p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+                        
+						<div id="pdf_link"></div>
+						
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic concept/concept topic concept" role="article" aria-labelledby="Timers">
+
+<h1 class="- topic/title title topictitle1 boost" id="Timers">Timers</h1>
+
+
+<div style="padding: 5px 0;"><span class="label">QNX SDP</span><span class="label">8.0</span><span class="label">System Architecture</span><span class="label">Developer</span><span class="label">User</span></div>
+<div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc">
+The <span class="- topic/keyword keyword">QNX OS</span> directly provides the full set of POSIX timer
+functionality. Since these timers are quick to create and
+manipulate, they're an inexpensive resource in the kernel.
+</p>
+
+<p class="- topic/p p">
+
+
+The POSIX timer model is quite rich, providing the ability
+to have the timer expire:
+</p>
+
+<ul class="- topic/ul ul">
+<li class="- topic/li li">at an absolute time (i.e., when a clock reaches a specific time)</li>
+<li class="- topic/li li">at a relative time (i.e., <var class="+ topic/keyword sw-d/varname keyword varname">n</var> nanoseconds from now)</li>
+<li class="- topic/li li">as a single firing or a periodic firing (e.g., every <var class="+ topic/keyword sw-d/varname keyword varname">n</var>
+    nanoseconds)</li>
+</ul>
+
+<div class="- topic/note note note note_note"><span class="note__title">Note:</span> <div class="note__body">Absolute timers will be impacted by a change to the corresponding clock time whereas
+    relative and cyclical timers won't.</div></div>
+
+<p class="- topic/p p">
+The periodic firing (or <dfn class="- topic/term term">cyclical mode</dfn>) is very important,
+because the most common use of timers tends to be as a periodic source of
+events to <q class="- topic/q q">kick</q> a thread into life to do some
+processing and then go back to sleep until the next event.
+If the thread had to reprogram the timer for every event,
+there would be the danger that time would slip unless the
+thread was programming an absolute time. Worse, if the
+thread doesn't get to run on the timer event because a
+higher-priority thread is running, the time next programmed
+into the timer could be one that has already elapsed!
+
+</p>
+
+<p class="- topic/p p">
+The cyclical mode circumvents these problems by requiring
+that the thread set the timer once and then simply respond
+to the resulting periodic source of events.
+</p>
+
+<p class="- topic/p p">
+Since timers are another source of events in the OS,
+they also make use of its event-delivery system.  As a
+result, the application can request that any of the
+<span class="- topic/keyword keyword">QNX OS</span>-supported events be delivered to the application
+upon occurrence of a timeout.
+
+</p>
+
+<p class="- topic/p p">
+An often-needed timeout service provided by the OS is the
+ability to specify the maximum time the application is
+prepared to wait for any given kernel call or request to
+complete. A problem with using generic OS timer services in
+a preemptive realtime OS is that in the interval between a
+given thread's specification of the timeout and its
+request for the service, a higher-priority thread might have run
+and preempted the original thread long enough that the
+timeout will have expired before the service is even requested.
+The application will then end up requesting the service with an
+already lapsed timeout in effect (i.e., no timeout). This
+timing window can result in <q class="- topic/q q">hung</q> processes,
+inexplicable delays in data transmission protocols, and
+other problems.
+</p>
+
+<pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>alarm(...);
+   ...
+   ...    ← Alarm fires here
+   ...
+blocking_call();
+</code></pre>
+
+<p class="- topic/p p">
+Our solution is a form of timeout request atomic to
+the service request itself. One approach might have been to
+provide an optional timeout parameter on every available
+service request, but this would overly complicate service
+requests with a passed parameter that would often go unused.
+
+</p>
+
+<p class="- topic/p p">
+<span class="- topic/keyword keyword">QNX OS</span> provides a
+<a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/t/timertimeout.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">TimerTimeout()</span></a> kernel call
+that allows an application to specify a list of blocking
+states for which to start a specified timeout. Later, when
+the application makes a request of the kernel, the kernel
+will atomically enable the previously configured timeout if
+the application is about to block on one of the specified
+states.
+</p>
+
+<p class="- topic/p p">
+The OS has many blocking states, but
+this mechanism works very concisely. At the conclusion of
+either the service request or the timeout, the timer will be
+disabled and control will be given back to the application.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</p>
+
+<pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>TimerTimeout(...);
+   ...
+   ...
+   ...
+blocking_call();
+   ...    ← Timer atomically armed within kernel
+</code></pre>
+
+<div class="table-container"><table class="- topic/table table table--pgwide-1" data-cols="3"><caption></caption><colgroup><col style="width:20%"/><col style="width:40%"/><col style="width:40%"/></colgroup><thead class="- topic/thead thead">
+<tr class="- topic/row">
+  <th class="- topic/entry entry colsep-1 rowsep-1" id="Timers__entry__1">Microkernel call</th>
+  <th class="- topic/entry entry colsep-1 rowsep-1" id="Timers__entry__2">POSIX call(s)</th>
+  <th class="- topic/entry entry colsep-0 rowsep-1" id="Timers__entry__3">Description</th>
+</tr>
+</thead><tbody class="- topic/tbody tbody">
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Timers__entry__1"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/t/timeralarm.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">TimerAlarm()</span></a></td>
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Timers__entry__2"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/a/alarm.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">alarm()</span></a></td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="Timers__entry__3">Set a process alarm</td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Timers__entry__1"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/t/timercreate.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">TimerCreate()</span></a></td>
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Timers__entry__2"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/t/timer_create.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">timer_create()</span></a></td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="Timers__entry__3">Create an interval timer</td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Timers__entry__1"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/t/timerdestroy.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">TimerDestroy()</span></a></td>
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Timers__entry__2"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/t/timer_delete.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">timer_delete()</span></a></td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="Timers__entry__3">Destroy an interval timer</td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Timers__entry__1"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/t/timerinfo.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">TimerInfo()</span></a></td>
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Timers__entry__2"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/t/timer_gettime.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">timer_gettime()</span></a></td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="Timers__entry__3">Get the time remaining on an interval timer</td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Timers__entry__1"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/t/timerinfo.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">TimerInfo()</span></a></td>
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Timers__entry__2"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/t/timer_getoverrun.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">timer_getoverrun()</span></a></td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="Timers__entry__3">Get the number of overruns on an interval timer</td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Timers__entry__1"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/t/timersettime.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">TimerSettime()</span></a></td>
+  <td class="- topic/entry entry colsep-1 rowsep-1" headers="Timers__entry__2"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/t/timer_settime.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">timer_settime()</span></a></td>
+  <td class="- topic/entry entry colsep-0 rowsep-1" headers="Timers__entry__3">Start an interval timer</td>
+</tr>
+
+<tr class="- topic/row">
+  <td class="- topic/entry entry colsep-1 rowsep-0" headers="Timers__entry__1"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/t/timertimeout.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">TimerTimeout()</span></a></td>
+  <td class="- topic/entry entry colsep-1 rowsep-0" headers="Timers__entry__2"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/s/sleep.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">sleep()</span></a>,
+         <a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/n/nanosleep.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">nanosleep()</span></a>,
+         <a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/s/sigtimedwait.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">sigtimedwait()</span></a>,
+         <a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_cond_timedwait.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">pthread_cond_timedwait()</span></a>,
+         <a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_mutex_trylock.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">pthread_mutex_trylock()</span></a>
+  </td>
+  <td class="- topic/entry entry colsep-0 rowsep-0" headers="Timers__entry__3">Arm a kernel timeout for any blocking state</td>
+</tr>
+
+</tbody></table></div>
+
+<section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Timer queues</h2>
+
+
+
+<p class="- topic/p p">
+
+To limit the consumption of system resources, at most 50 timer events are generated per clock tick.
+If the system has a large number of timers set to expire in the same clock period,
+then at most 50 of the timer events will actually trigger on time; the rest will be handled on the
+next clock tick (subject to the same limitation of at most 50 timer events).
+This is not incorrect behavior because POSIX requires only that timers shall not expire
+<em class="+ topic/ph hi-d/i ph i">before</em> their scheduled time.
+</p>
+
+<p class="- topic/p p">
+Within <span class="- topic/keyword keyword">QNX OS</span>, a timer is kept in either of two queues:
+the monotonic ("MON") queue, or the time-of-day ("TOD") queue.
+</p>
+
+<div class="- topic/note note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+In the context of timer queues, <span class="+ topic/keyword xml-d/const keyword const">CLOCK_SOFTTIME</span> behaves like
+<span class="+ topic/keyword xml-d/const keyword const">CLOCK_REALTIME</span>.
+</div></div>
+
+<p class="- topic/p p">
+The MON queue is for timers that were created using the <span class="+ topic/keyword xml-d/const keyword const">CLOCK_MONOTONIC</span> clock
+and for timers that were activated to fire at a relative time against <em class="+ topic/ph hi-d/i ph i">any</em> clock,
+meaning they are unaffected by a change to the <span class="+ topic/keyword xml-d/const keyword const">CLOCK_REALTIME</span> clock.
+</p>
+
+<p class="- topic/p p">
+The TOD queue is for timers that were created using <span class="+ topic/keyword xml-d/const keyword const">CLOCK_REALTIME</span> and activated to
+fire at an absolute time.
+</p>
+
+<div class="- topic/p p">
+At each clock tick, the OS starts with a budget of 50 timer events and uses them up according to
+these rules:
+<ol class="- topic/ol ol">
+  <li class="- topic/li li">Fire the minimum of a) 25, or b) the number of expired MON timers.
+    Subtract the number actually fired from the initial budget.</li>
+  <li class="- topic/li li">Fire the minimum of a) the number of expired TOD timers, or b) the maximum of i) 25, or
+    ii) the number of TOD timers that fit within the remaining budget.
+    Subtract the number actually fired from the budget.</li>
+  <li class="- topic/li li">If the budget still has room, fire the minimum of a) the number of timers left in the budget,
+    or b) the number of remaining expired MON timers.</li>
+</ol>
+This design makes the firing of MON and TOD timers somewhat fair while still giving preference to
+MON timers, which tend to be more timing sensitive.
+</div>
+
+<p class="- topic/p p">
+Suppose there are 10 timers in the MON queue that have expired (and hence, are ready to be fired),
+and 55 in the TOD queue. The OS would fire all 10 monotonic ones (leaving a remaining budget of 40
+timers), then fire 25 realtime ones, and then fire 15 more of the realtime timers (because this is
+what remains in the budget at this point). With a total of 40 realtime timers having been fired,
+there would be 15 timers remaining in the TOD queue and they would be deferred to the next tick.
+</p>
+
+<p class="- topic/p p">
+For an explanation of the differences between <span class="+ topic/keyword xml-d/const keyword const">CLOCK_MONOTONIC</span> and
+<span class="+ topic/keyword xml-d/const keyword const">CLOCK_REALTIME</span>, see the <q class="- topic/q q"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.prog/topic/timing_Time_functions.html">What time is it?</a></q>
+section in the <span class="- topic/keyword keyword">QNX OS</span> <cite class="- topic/cite cite">Programmer's Guide</cite>.
+</p>
+
+</section>
+
+</div>
+<div style="text-align: right;"><span>Page updated: <time>November 05, 2026</time></span></div></article></main></div>
+                        
+                        
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist relinfo" xml:lang="en-us" lang="en-us"><strong>Related information</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.prog/topic/timing.html" title="Understanding the Microkernel's Concept of Time (QNX OS Programmer's Guide)">Understanding the Microkernel's Concept of Time (QNX OS Programmer's Guide)</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/c/clockcycles.html" title="ClockCycles()">ClockCycles()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/c/clock_getcpuclockid.html" title="clock_getcpuclockid()">clock_getcpuclockid()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/c/clock_gettime.html" title="clock_gettime()">clock_gettime()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/c/clockid.html" title="ClockId()">ClockId()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/c/clock_nanosleep.html" title="clock_nanosleep()">clock_nanosleep()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/c/clock_settime.html" title="clock_settime()">clock_settime()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/c/clocktime.html" title="ClockTime()">ClockTime()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pthread_getcpuclockid.html" title="pthread_getcpuclockid()">pthread_getcpuclockid()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.building/topic/syspage/qtime.html" title="qtime">qtime</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/t/time.html" title="time()">time()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/t/timer_create.html" title="timer_create()">timer_create()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/t/timer_settime.html" title="timer_settime()">timer_settime()</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.lib_ref/topic/t/timertimeout.html" title="TimerTimeout()">TimerTimeout()</a></li></ul></div></nav></div>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

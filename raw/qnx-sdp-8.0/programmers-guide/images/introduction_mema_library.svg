@@ -1,0 +1,1188 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Layer_1"
+   data-name="Layer 1"
+   viewBox="0 0 529.24735 298.66971"
+   version="1.1"
+   sodipodi:docname="introduction_mema_library.svg"
+   width="529.24738"
+   height="298.66971"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs52" />
+  <sodipodi:namedview
+     id="namedview52"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="2.2900444"
+     inkscape:cx="260.4753"
+     inkscape:cy="150.6521"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Layer_1" />
+  <image
+     id="image3708"
+     width="65.995003"
+     height="169.42"
+     xlink:href="data:image/png;base64,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"
+     style="isolation:isolate"
+     x="451.75"
+     y="29.660673" />
+  <line
+     id="line3710"
+     x1="451.88199"
+     y1="153.44968"
+     x2="516.97498"
+     y2="153.44968"
+     style="fill:none;stroke:#000000" />
+  <line
+     id="line3712"
+     x1="451.88199"
+     y1="37.555672"
+     x2="516.97498"
+     y2="37.555672"
+     style="fill:none;stroke:#000000" />
+  <line
+     id="line3714"
+     x1="451.88199"
+     y1="75.501678"
+     x2="516.97498"
+     y2="75.501678"
+     style="fill:none;stroke:#000000" />
+  <line
+     id="line3716"
+     x1="451.88199"
+     y1="184.83467"
+     x2="516.97498"
+     y2="184.83467"
+     style="fill:none;stroke:#000000" />
+  <g
+     id="g3724"
+     transform="translate(0,0.43667276)">
+    <g
+       id="text3718"
+       style="isolation:isolate">
+      <text
+         transform="translate(441.791,20.635)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text1"><tspan
+           x="0"
+           y="0"
+           id="tspan1">P</tspan></text>
+    </g>
+    <g
+       id="text3720"
+       style="isolation:isolate">
+      <text
+         transform="translate(447.821,20.635)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text2"><tspan
+           x="0"
+           y="0"
+           id="tspan2">h</tspan></text>
+    </g>
+    <g
+       id="text3722"
+       style="isolation:isolate">
+      <text
+         transform="translate(454.052,20.635)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text3"><tspan
+           x="0"
+           y="0"
+           id="tspan3">ysical memory</tspan></text>
+    </g>
+  </g>
+  <g
+     id="g3728"
+     transform="translate(0,0.43667276)">
+    <g
+       id="text3726"
+       style="isolation:isolate">
+      <text
+         transform="translate(359.75,20.635)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text4"><tspan
+           x="0"
+           y="0"
+           id="tspan4">Mapping</tspan></text>
+    </g>
+  </g>
+  <line
+     id="line3730"
+     x1="451.88199"
+     y1="102.50168"
+     x2="516.97498"
+     y2="102.50168"
+     style="fill:none;stroke:#000000" />
+  <line
+     id="line3732"
+     x1="451.88199"
+     y1="134.44968"
+     x2="516.97498"
+     y2="134.44968"
+     style="fill:none;stroke:#000000" />
+  <line
+     id="line3734"
+     x1="451.88199"
+     y1="147.98068"
+     x2="451.88199"
+     y2="198.91467"
+     style="fill:none;stroke:#000000" />
+  <g
+     id="g3740"
+     transform="translate(0,0.43667276)">
+    <path
+       id="path3736"
+       d="m 457.308,138.608 c -0.385,-2.949 -4.436,-3.234 -5.207,-0.365"
+       style="fill:none;stroke:#000000" />
+    <path
+       id="path3738"
+       d="m 446.917,137.403 c 0.377,2.756 4.154,3.252 5.232,0.688"
+       style="fill:none;stroke:#000000" />
+  </g>
+  <line
+     id="line3742"
+     x1="451.88199"
+     y1="92.759674"
+     x2="451.88199"
+     y2="139.06868"
+     style="fill:none;stroke:#000000" />
+  <line
+     id="line3744"
+     x1="451.88199"
+     y1="29.660673"
+     x2="451.88199"
+     y2="84.472679"
+     style="fill:none;stroke:#000000" />
+  <g
+     id="g3750"
+     transform="translate(0,0.43667276)">
+    <path
+       id="path3746"
+       d="m 457.308,147.831 c -0.385,-2.949 -4.436,-3.234 -5.207,-0.365"
+       style="fill:none;stroke:#000000" />
+    <path
+       id="path3748"
+       d="m 446.917,146.626 c 0.377,2.756 4.154,3.252 5.232,0.688"
+       style="fill:none;stroke:#000000" />
+  </g>
+  <g
+     id="g3756"
+     transform="translate(0,0.43667276)">
+    <path
+       id="path3752"
+       d="m 457.308,92.823 c -0.385,-2.949 -4.436,-3.234 -5.207,-0.365"
+       style="fill:none;stroke:#000000" />
+    <path
+       id="path3754"
+       d="m 446.917,91.618 c 0.377,2.756 4.154,3.252 5.232,0.688"
+       style="fill:none;stroke:#000000" />
+  </g>
+  <g
+     id="g3762"
+     transform="translate(0,0.43667276)">
+    <path
+       id="path3758"
+       d="m 457.308,83.561 c -0.385,-2.949 -4.436,-3.234 -5.207,-0.365"
+       style="fill:none;stroke:#000000" />
+    <path
+       id="path3760"
+       d="m 446.917,82.356 c 0.377,2.756 4.154,3.252 5.232,0.688"
+       style="fill:none;stroke:#000000" />
+  </g>
+  <line
+     id="line3764"
+     x1="516.88202"
+     y1="147.98068"
+     x2="516.88202"
+     y2="198.91467"
+     style="fill:none;stroke:#000000" />
+  <g
+     id="g3770"
+     transform="translate(0,0.43667276)">
+    <path
+       id="path3766"
+       d="m 522.308,138.608 c -0.385,-2.949 -4.436,-3.234 -5.207,-0.365"
+       style="fill:none;stroke:#000000" />
+    <path
+       id="path3768"
+       d="m 511.917,137.403 c 0.377,2.756 4.154,3.252 5.232,0.688"
+       style="fill:none;stroke:#000000" />
+  </g>
+  <line
+     id="line3772"
+     x1="516.88202"
+     y1="92.759674"
+     x2="516.88202"
+     y2="139.06868"
+     style="fill:none;stroke:#000000" />
+  <line
+     id="line3774"
+     x1="516.88202"
+     y1="29.660673"
+     x2="516.88202"
+     y2="84.472679"
+     style="fill:none;stroke:#000000" />
+  <g
+     id="g3780"
+     transform="translate(0,0.43667276)">
+    <path
+       id="path3776"
+       d="m 522.308,147.831 c -0.385,-2.949 -4.436,-3.234 -5.207,-0.365"
+       style="fill:none;stroke:#000000" />
+    <path
+       id="path3778"
+       d="m 511.917,146.626 c 0.377,2.756 4.154,3.252 5.232,0.688"
+       style="fill:none;stroke:#000000" />
+  </g>
+  <g
+     id="g3786"
+     transform="translate(0,0.43667276)">
+    <path
+       id="path3782"
+       d="m 522.308,92.823 c -0.385,-2.949 -4.436,-3.234 -5.207,-0.365"
+       style="fill:none;stroke:#000000" />
+    <path
+       id="path3784"
+       d="m 511.917,91.618 c 0.377,2.756 4.154,3.252 5.232,0.688"
+       style="fill:none;stroke:#000000" />
+  </g>
+  <g
+     id="g3792"
+     transform="translate(0,0.43667276)">
+    <path
+       id="path3788"
+       d="m 522.308,83.561 c -0.385,-2.949 -4.436,-3.234 -5.207,-0.365"
+       style="fill:none;stroke:#000000" />
+    <path
+       id="path3790"
+       d="m 511.917,82.356 c 0.377,2.756 4.154,3.252 5.232,0.688"
+       style="fill:none;stroke:#000000" />
+  </g>
+  <rect
+     id="rect3794"
+     x="0.50000006"
+     y="105.52467"
+     width="158"
+     height="100.622"
+     style="fill:#fffddc;stroke:#000000" />
+  <g
+     id="g3798"
+     transform="translate(0,0.43667276)">
+    <g
+       id="text3796">
+      <g
+         id="g5"
+         style="isolation:isolate">
+        <text
+           transform="translate(27.191,99.634)"
+           style="font-weight:700;font-size:11px;font-family:CourierNewPS-BoldMT, 'Courier New';isolation:isolate"
+           id="text5"><tspan
+             x="0"
+             y="0"
+             id="tspan5">CommonLibrary.so</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g
+     id="g3812"
+     transform="translate(0,0.43667276)">
+    <g
+       id="text3800">
+      <g
+         id="g6"
+         style="isolation:isolate">
+        <text
+           transform="translate(8.252,119.634)"
+           style="font-weight:700;font-size:12px;font-family:CourierNewPS-BoldMT, 'Courier New';isolation:isolate"
+           id="text6"><tspan
+             x="0"
+             y="0"
+             id="tspan6">int loops = 0;</tspan></text>
+      </g>
+    </g>
+    <g
+       id="text3802">
+      <g
+         id="g7"
+         style="isolation:isolate">
+        <text
+           transform="translate(8.252,146.034)"
+           style="font-weight:700;font-size:12px;font-family:CourierNewPS-BoldMT, 'Courier New';isolation:isolate"
+           id="text7"><tspan
+             x="0"
+             y="0"
+             id="tspan7">Counterfunction() {</tspan></text>
+      </g>
+    </g>
+    <g
+       id="text3804">
+      <g
+         id="g9"
+         style="isolation:isolate">
+        <text
+           transform="translate(8.252,159.233)"
+           style="font-size:12px;font-family:Courier, Courier;isolation:isolate"
+           id="text8"><tspan
+             x="0"
+             y="0"
+             xml:space="preserve"
+             id="tspan8">  </tspan></text>
+        <text
+           transform="translate(21.752,159.233)"
+           style="font-weight:700;font-size:12px;font-family:CourierNewPS-BoldMT, 'Courier New';isolation:isolate"
+           id="text9"><tspan
+             x="0"
+             y="0"
+             id="tspan9">for (loops= ; ;) {</tspan></text>
+      </g>
+    </g>
+    <g
+       id="text3806"
+       style="isolation:isolate">
+      <text
+         transform="translate(24.252,172.434)"
+         style="font-size:12px;font-family:CourierNewPSMT, 'Courier New';isolation:isolate"
+         id="text10"><tspan
+           x="0"
+           y="0"
+           xml:space="preserve"
+           id="tspan10">   ...</tspan></text>
+    </g>
+    <g
+       id="text3808">
+      <g
+         id="g11"
+         style="isolation:isolate">
+        <text
+           transform="translate(8.252,185.634)"
+           style="font-weight:700;font-size:12px;font-family:CourierNewPS-BoldMT, 'Courier New';isolation:isolate"
+           id="text11"><tspan
+             x="0"
+             y="0"
+             xml:space="preserve"
+             id="tspan11">  }</tspan></text>
+      </g>
+    </g>
+    <g
+       id="text3810">
+      <g
+         id="g12"
+         style="isolation:isolate">
+        <text
+           transform="translate(8.252,198.834)"
+           style="font-weight:700;font-size:12px;font-family:CourierNewPS-BoldMT, 'Courier New';isolation:isolate"
+           id="text12"><tspan
+             x="0"
+             y="0"
+             id="tspan12">}</tspan></text>
+      </g>
+    </g>
+  </g>
+  <image
+     id="image3814"
+     width="65.995003"
+     height="116.348"
+     xlink:href="data:image/png;base64,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"
+     style="isolation:isolate"
+     x="245.75"
+     y="29.524672" />
+  <line
+     id="line3816"
+     x1="245.759"
+     y1="29.524672"
+     x2="245.759"
+     y2="80.640678"
+     style="fill:none;stroke:#000000" />
+  <line
+     id="line3818"
+     x1="245.759"
+     y1="37.555672"
+     x2="310.85199"
+     y2="37.555672"
+     style="fill:none;stroke:#000000" />
+  <line
+     id="line3820"
+     x1="245.759"
+     y1="103.39468"
+     x2="310.85199"
+     y2="103.39468"
+     style="fill:none;stroke:#000000" />
+  <g
+     id="g3830"
+     transform="translate(0,0.43667276)">
+    <g
+       id="text3822"
+       style="isolation:isolate">
+      <text
+         transform="translate(247.186,8.635)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text13"><tspan
+           x="0"
+           y="0"
+           id="tspan13">Prog</tspan></text>
+    </g>
+    <g
+       id="text3824"
+       style="isolation:isolate">
+      <text
+         transform="translate(269.784,8.635)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text14"><tspan
+           x="0"
+           y="0"
+           id="tspan14">r</tspan></text>
+    </g>
+    <g
+       id="text3826"
+       style="isolation:isolate">
+      <text
+         transform="translate(273.875,8.635)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text15"><tspan
+           x="0"
+           y="0"
+           id="tspan15">am 1's</tspan></text>
+    </g>
+    <g
+       id="text3828"
+       style="isolation:isolate">
+      <text
+         transform="translate(238.717,20.635)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text16"><tspan
+           x="0"
+           y="0"
+           id="tspan16">virtual memory</tspan></text>
+    </g>
+  </g>
+  <g
+     id="g3844"
+     transform="translate(0,0.43667276)">
+    <g
+       id="text3832"
+       style="isolation:isolate">
+      <text
+         transform="translate(252.791,56.634)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text17"><tspan
+           x="0"
+           y="0"
+           id="tspan17">Prog</tspan></text>
+    </g>
+    <g
+       id="text3834"
+       style="isolation:isolate">
+      <text
+         transform="translate(275.389,56.634)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text18"><tspan
+           x="0"
+           y="0"
+           id="tspan18">r</tspan></text>
+    </g>
+    <g
+       id="text3836"
+       style="isolation:isolate">
+      <text
+         transform="translate(279.481,56.634)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text19"><tspan
+           x="0"
+           y="0"
+           id="tspan19">am 1</tspan></text>
+    </g>
+    <g
+       id="text3838"
+       style="isolation:isolate">
+      <text
+         transform="translate(249.446,68.634)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text20"><tspan
+           x="0"
+           y="0"
+           id="tspan20">lib</tspan></text>
+    </g>
+    <g
+       id="text3840"
+       style="isolation:isolate">
+      <text
+         transform="translate(261.165,68.634)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text21"><tspan
+           x="0"
+           y="0"
+           id="tspan21">r</tspan></text>
+    </g>
+    <g
+       id="text3842"
+       style="isolation:isolate">
+      <text
+         transform="translate(265.257,68.634)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text22"><tspan
+           x="0"
+           y="0"
+           id="tspan22">ary code</tspan></text>
+    </g>
+  </g>
+  <line
+     id="line3846"
+     x1="245.759"
+     y1="134.76967"
+     x2="310.85199"
+     y2="134.76967"
+     style="fill:none;stroke:#000000" />
+  <g
+     id="g3860"
+     transform="translate(0,0.43667276)">
+    <g
+       id="text3848"
+       style="isolation:isolate">
+      <text
+         transform="translate(252.791,117.634)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text23"><tspan
+           x="0"
+           y="0"
+           id="tspan23">Prog</tspan></text>
+    </g>
+    <g
+       id="text3850"
+       style="isolation:isolate">
+      <text
+         transform="translate(275.389,117.634)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text24"><tspan
+           x="0"
+           y="0"
+           id="tspan24">r</tspan></text>
+    </g>
+    <g
+       id="text3852"
+       style="isolation:isolate">
+      <text
+         transform="translate(279.481,117.634)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text25"><tspan
+           x="0"
+           y="0"
+           id="tspan25">am 1</tspan></text>
+    </g>
+    <g
+       id="text3854"
+       style="isolation:isolate">
+      <text
+         transform="translate(250.088,129.634)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text26"><tspan
+           x="0"
+           y="0"
+           id="tspan26">lib</tspan></text>
+    </g>
+    <g
+       id="text3856"
+       style="isolation:isolate">
+      <text
+         transform="translate(261.807,129.634)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text27"><tspan
+           x="0"
+           y="0"
+           id="tspan27">r</tspan></text>
+    </g>
+    <g
+       id="text3858"
+       style="isolation:isolate">
+      <text
+         transform="translate(265.899,129.634)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text28"><tspan
+           x="0"
+           y="0"
+           id="tspan28">ary data</tspan></text>
+    </g>
+  </g>
+  <g
+     id="g3864"
+     transform="translate(0,0.43667276)">
+    <g
+       id="text3862">
+      <g
+         id="g29"
+         style="isolation:isolate">
+        <text
+           transform="translate(180.66,115.117)"
+           style="font-weight:700;font-size:11px;font-family:CourierNewPS-BoldMT, 'Courier New';isolation:isolate"
+           id="text29"><tspan
+             x="0"
+             y="0"
+             id="tspan29">&amp;loops</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g
+     id="g3870"
+     transform="translate(0,0.43667276)">
+    <line
+       id="line3866"
+       x1="221.524"
+       y1="112.15"
+       x2="235.524"
+       y2="112.15"
+       style="fill:none;stroke:#000000" />
+    <polygon
+       id="polygon3868"
+       points="232.635,108.086 242.585,112.15 232.635,116.215 234.997,112.15 "
+       style="stroke-width:0px" />
+  </g>
+  <line
+     id="line3872"
+     x1="245.759"
+     y1="75.394676"
+     x2="310.85199"
+     y2="75.394676"
+     style="fill:none;stroke:#000000" />
+  <g
+     id="g3878"
+     transform="translate(0,0.43667276)">
+    <path
+       id="path3874"
+       d="m 250.917,88.916 c -0.385,-2.949 -4.436,-3.234 -5.207,-0.365"
+       style="fill:none;stroke:#000000" />
+    <path
+       id="path3876"
+       d="m 240.526,87.711 c 0.377,2.756 4.154,3.252 5.232,0.688"
+       style="fill:none;stroke:#000000" />
+  </g>
+  <g
+     id="g3884"
+     transform="translate(0,0.43667276)">
+    <path
+       id="path3880"
+       d="m 250.917,80.654 c -0.385,-2.949 -4.436,-3.234 -5.207,-0.365"
+       style="fill:none;stroke:#000000" />
+    <path
+       id="path3882"
+       d="m 240.526,79.449 c 0.377,2.756 4.154,3.252 5.232,0.688"
+       style="fill:none;stroke:#000000" />
+  </g>
+  <line
+     id="line3886"
+     x1="245.759"
+     y1="88.726677"
+     x2="245.759"
+     y2="144.70268"
+     style="fill:none;stroke:#000000" />
+  <line
+     id="line3888"
+     x1="310.93301"
+     y1="29.524672"
+     x2="310.93301"
+     y2="80.640678"
+     style="fill:none;stroke:#000000" />
+  <g
+     id="g3894"
+     transform="translate(0,0.43667276)">
+    <path
+       id="path3890"
+       d="m 316.091,88.916 c -0.385,-2.949 -4.436,-3.234 -5.207,-0.365"
+       style="fill:none;stroke:#000000" />
+    <path
+       id="path3892"
+       d="m 305.7,87.711 c 0.377,2.756 4.154,3.252 5.232,0.688"
+       style="fill:none;stroke:#000000" />
+  </g>
+  <g
+     id="g3900"
+     transform="translate(0,0.43667276)">
+    <path
+       id="path3896"
+       d="m 316.091,80.654 c -0.385,-2.949 -4.436,-3.234 -5.207,-0.365"
+       style="fill:none;stroke:#000000" />
+    <path
+       id="path3898"
+       d="m 305.7,79.449 c 0.377,2.756 4.154,3.252 5.232,0.688"
+       style="fill:none;stroke:#000000" />
+  </g>
+  <line
+     id="line3902"
+     x1="310.93301"
+     y1="88.710678"
+     x2="310.93301"
+     y2="144.70268"
+     style="fill:none;stroke:#000000" />
+  <image
+     id="image3904"
+     width="65.995003"
+     height="116.116"
+     xlink:href="data:image/png;base64,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"
+     style="isolation:isolate"
+     x="245.75"
+     y="181.24768" />
+  <line
+     id="line3906"
+     x1="245.759"
+     y1="181.24768"
+     x2="245.759"
+     y2="232.36368"
+     style="fill:none;stroke:#000000" />
+  <line
+     id="line3908"
+     x1="245.759"
+     y1="189.27867"
+     x2="310.85199"
+     y2="189.27867"
+     style="fill:none;stroke:#000000" />
+  <line
+     id="line3910"
+     x1="245.759"
+     y1="255.11769"
+     x2="310.85199"
+     y2="255.11769"
+     style="fill:none;stroke:#000000" />
+  <g
+     id="g3920"
+     transform="translate(0,0.43667276)">
+    <g
+       id="text3912"
+       style="isolation:isolate">
+      <text
+         transform="translate(247.186,163.356)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text30"><tspan
+           x="0"
+           y="0"
+           id="tspan30">Prog</tspan></text>
+    </g>
+    <g
+       id="text3914"
+       style="isolation:isolate">
+      <text
+         transform="translate(269.784,163.356)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text31"><tspan
+           x="0"
+           y="0"
+           id="tspan31">r</tspan></text>
+    </g>
+    <g
+       id="text3916"
+       style="isolation:isolate">
+      <text
+         transform="translate(273.875,163.356)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text32"><tspan
+           x="0"
+           y="0"
+           id="tspan32">am 2's</tspan></text>
+    </g>
+    <g
+       id="text3918"
+       style="isolation:isolate">
+      <text
+         transform="translate(238.717,175.356)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text33"><tspan
+           x="0"
+           y="0"
+           id="tspan33">virtual memory</tspan></text>
+    </g>
+  </g>
+  <g
+     id="g3934"
+     transform="translate(0,0.43667276)">
+    <g
+       id="text3922"
+       style="isolation:isolate">
+      <text
+         transform="translate(252.791,208.356)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text34"><tspan
+           x="0"
+           y="0"
+           id="tspan34">Prog</tspan></text>
+    </g>
+    <g
+       id="text3924"
+       style="isolation:isolate">
+      <text
+         transform="translate(275.389,208.356)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text35"><tspan
+           x="0"
+           y="0"
+           id="tspan35">r</tspan></text>
+    </g>
+    <g
+       id="text3926"
+       style="isolation:isolate">
+      <text
+         transform="translate(279.481,208.356)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text36"><tspan
+           x="0"
+           y="0"
+           id="tspan36">am 2</tspan></text>
+    </g>
+    <g
+       id="text3928"
+       style="isolation:isolate">
+      <text
+         transform="translate(249.446,220.356)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text37"><tspan
+           x="0"
+           y="0"
+           id="tspan37">lib</tspan></text>
+    </g>
+    <g
+       id="text3930"
+       style="isolation:isolate">
+      <text
+         transform="translate(261.165,220.356)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text38"><tspan
+           x="0"
+           y="0"
+           id="tspan38">r</tspan></text>
+    </g>
+    <g
+       id="text3932"
+       style="isolation:isolate">
+      <text
+         transform="translate(265.257,220.356)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text39"><tspan
+           x="0"
+           y="0"
+           id="tspan39">ary code</tspan></text>
+    </g>
+  </g>
+  <line
+     id="line3936"
+     x1="245.759"
+     y1="287.11768"
+     x2="310.85199"
+     y2="287.11768"
+     style="fill:none;stroke:#000000" />
+  <g
+     id="g3950"
+     transform="translate(0,0.43667276)">
+    <g
+       id="text3938"
+       style="isolation:isolate">
+      <text
+         transform="translate(252.791,269.356)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text40"><tspan
+           x="0"
+           y="0"
+           id="tspan40">Prog</tspan></text>
+    </g>
+    <g
+       id="text3940"
+       style="isolation:isolate">
+      <text
+         transform="translate(275.389,269.356)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text41"><tspan
+           x="0"
+           y="0"
+           id="tspan41">r</tspan></text>
+    </g>
+    <g
+       id="text3942"
+       style="isolation:isolate">
+      <text
+         transform="translate(279.481,269.356)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text42"><tspan
+           x="0"
+           y="0"
+           id="tspan42">am 2</tspan></text>
+    </g>
+    <g
+       id="text3944"
+       style="isolation:isolate">
+      <text
+         transform="translate(250.088,281.356)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text43"><tspan
+           x="0"
+           y="0"
+           id="tspan43">lib</tspan></text>
+    </g>
+    <g
+       id="text3946"
+       style="isolation:isolate">
+      <text
+         transform="translate(261.807,281.356)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text44"><tspan
+           x="0"
+           y="0"
+           id="tspan44">r</tspan></text>
+    </g>
+    <g
+       id="text3948"
+       style="isolation:isolate">
+      <text
+         transform="translate(265.899,281.356)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text45"><tspan
+           x="0"
+           y="0"
+           id="tspan45">ary data</tspan></text>
+    </g>
+  </g>
+  <g
+     id="g3954"
+     transform="translate(0,0.43667276)">
+    <g
+       id="text3952">
+      <g
+         id="g46"
+         style="isolation:isolate">
+        <text
+           transform="translate(180.66,266.84)"
+           style="font-weight:700;font-size:11px;font-family:CourierNewPS-BoldMT, 'Courier New';isolation:isolate"
+           id="text46"><tspan
+             x="0"
+             y="0"
+             id="tspan46">&amp;loops</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g
+     id="g3960"
+     transform="translate(0,0.43667276)">
+    <line
+       id="line3956"
+       x1="221.524"
+       y1="263.87299"
+       x2="235.524"
+       y2="263.87299"
+       style="fill:none;stroke:#000000" />
+    <polygon
+       id="polygon3958"
+       points="232.635,259.809 242.585,263.873 232.635,267.937 234.996,263.873 "
+       style="stroke-width:0px" />
+  </g>
+  <line
+     id="line3962"
+     x1="245.759"
+     y1="227.11768"
+     x2="310.85199"
+     y2="227.11768"
+     style="fill:none;stroke:#000000" />
+  <g
+     id="g3968"
+     transform="translate(0,0.43667276)">
+    <path
+       id="path3964"
+       d="m 250.917,240.639 c -0.385,-2.949 -4.436,-3.234 -5.207,-0.365"
+       style="fill:none;stroke:#000000" />
+    <path
+       id="path3966"
+       d="m 240.526,239.434 c 0.377,2.756 4.154,3.252 5.232,0.688"
+       style="fill:none;stroke:#000000" />
+  </g>
+  <g
+     id="g3974"
+     transform="translate(0,0.43667276)">
+    <path
+       id="path3970"
+       d="m 250.917,232.377 c -0.385,-2.949 -4.436,-3.234 -5.207,-0.365"
+       style="fill:none;stroke:#000000" />
+    <path
+       id="path3972"
+       d="m 240.526,231.172 c 0.377,2.756 4.154,3.252 5.232,0.688"
+       style="fill:none;stroke:#000000" />
+  </g>
+  <line
+     id="line3976"
+     x1="245.759"
+     y1="240.55768"
+     x2="245.759"
+     y2="296.42468"
+     style="fill:none;stroke:#000000" />
+  <line
+     id="line3978"
+     x1="310.93301"
+     y1="181.24768"
+     x2="310.93301"
+     y2="232.36368"
+     style="fill:none;stroke:#000000" />
+  <g
+     id="g3984"
+     transform="translate(0,0.43667276)">
+    <path
+       id="path3980"
+       d="m 316.091,240.639 c -0.385,-2.949 -4.436,-3.234 -5.207,-0.365"
+       style="fill:none;stroke:#000000" />
+    <path
+       id="path3982"
+       d="m 305.7,239.434 c 0.377,2.756 4.154,3.252 5.232,0.688"
+       style="fill:none;stroke:#000000" />
+  </g>
+  <g
+     id="g3990"
+     transform="translate(0,0.43667276)">
+    <path
+       id="path3986"
+       d="m 316.091,232.377 c -0.385,-2.949 -4.436,-3.234 -5.207,-0.365"
+       style="fill:none;stroke:#000000" />
+    <path
+       id="path3988"
+       d="m 305.7,231.172 c 0.377,2.756 4.154,3.252 5.232,0.688"
+       style="fill:none;stroke:#000000" />
+  </g>
+  <line
+     id="line3992"
+     x1="310.93301"
+     y1="240.55768"
+     x2="310.93301"
+     y2="296.42468"
+     style="fill:none;stroke:#000000" />
+  <g
+     id="g4002"
+     transform="translate(0,0.43667276)">
+    <g
+       id="text3994"
+       style="isolation:isolate">
+      <text
+         transform="translate(467.261,54.096)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text47"><tspan
+           x="0"
+           y="0"
+           id="tspan47">Lib</tspan></text>
+    </g>
+    <g
+       id="text3996"
+       style="isolation:isolate">
+      <text
+         transform="translate(481.802,54.096)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text48"><tspan
+           x="0"
+           y="0"
+           id="tspan48">r</tspan></text>
+    </g>
+    <g
+       id="text3998"
+       style="isolation:isolate">
+      <text
+         transform="translate(485.894,54.096)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text49"><tspan
+           x="0"
+           y="0"
+           id="tspan49">ary</tspan></text>
+    </g>
+    <g
+       id="text4000"
+       style="isolation:isolate">
+      <text
+         transform="translate(472.94,66.096)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text50"><tspan
+           x="0"
+           y="0"
+           id="tspan50">code</tspan></text>
+    </g>
+  </g>
+  <g
+     id="g4006"
+     transform="translate(0,0.43667276)">
+    <g
+       id="text4004"
+       style="isolation:isolate">
+      <text
+         transform="translate(472.845,121.318)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text51"><tspan
+           x="0"
+           y="0"
+           id="tspan51">Data</tspan></text>
+    </g>
+  </g>
+  <g
+     id="g4010"
+     transform="translate(0,0.43667276)">
+    <g
+       id="text4008"
+       style="isolation:isolate">
+      <text
+         transform="translate(472.845,171.803)"
+         style="font-size:10px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text52"><tspan
+           x="0"
+           y="0"
+           id="tspan52">Data</tspan></text>
+    </g>
+  </g>
+  <polyline
+     id="polyline4012"
+     points="242.75 36.793 160.75 102.587 242.75 188.404"
+     style="fill:none;stroke:#000000;stroke-dasharray:0, 0, 0, 0, 0, 0, 4, 8"
+     transform="translate(0,0.43667276)" />
+  <polyline
+     id="polyline4016"
+     points="242.75 74.553 160.75 204.995 242.75 226.164"
+     style="fill:none;stroke:#000000;stroke-dasharray:0, 0, 0, 0, 0, 0, 4, 8"
+     transform="translate(0,0.43667276)" />
+  <polyline
+     id="polyline4018"
+     points="314.054 188.404 448.501 36.793 314.054 36.793"
+     style="fill:none;stroke:#000000;stroke-dasharray:0, 0, 0, 0, 0, 0, 4, 8"
+     transform="translate(0,0.43667276)" />
+  <polyline
+     id="polyline4020"
+     points="314.054 226.164 448.501 74.553 314.054 74.553"
+     style="fill:none;stroke:#000000;stroke-dasharray:0, 0, 0, 0, 0, 0, 4, 8"
+     transform="translate(0,0.43667276)" />
+  <line
+     id="line4022"
+     x1="314.05399"
+     y1="103.02367"
+     x2="448.50101"
+     y2="103.02367"
+     style="fill:none;stroke:#000000;stroke-dasharray:0, 0, 0, 0, 0, 0, 4, 8" />
+  <line
+     id="line4024"
+     x1="314.05399"
+     y1="134.48967"
+     x2="448.50101"
+     y2="134.48967"
+     style="fill:none;stroke:#000000;stroke-dasharray:0, 0, 0, 0, 0, 0, 4, 8" />
+  <line
+     id="line4026"
+     x1="314.05399"
+     y1="254.63368"
+     x2="448.50101"
+     y2="152.79668"
+     style="fill:none;stroke:#000000;stroke-dasharray:0, 0, 0, 0, 0, 0, 4, 8" />
+  <line
+     id="line4028"
+     x1="314.05399"
+     y1="286.67166"
+     x2="448.50101"
+     y2="184.83467"
+     style="fill:none;stroke:#000000;stroke-dasharray:0, 0, 0, 0, 0, 0, 4, 8" />
+</svg>

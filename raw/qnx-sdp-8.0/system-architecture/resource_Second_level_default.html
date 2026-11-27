@@ -1,0 +1,327 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us" data-whc_version="26.0">
+    <head><link rel="shortcut icon" href="../../oxygen-webhelp/template/images/favicon.png"/><link rel="icon" href="../../oxygen-webhelp/template/images/favicon.png"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="description" content="Since a large number of the messages received by a resource manager deal with a common set of attributes, the OS provides another level of default handling."/><meta name="keywords" content="QNX SDP, 8.0, System Architecture, Developer, User"/>        
+      <title>Second-level default message handling</title><!--  Generated with Oxygen version 26.0, build number 2023100510.  --><meta name="wh-path2root" content="../../"/><meta name="wh-toc-id" content="Second_level_default-d114126e7424"/><meta name="wh-source-relpath" content="com.qnx.doc.neutrino.sys_arch/topic/resource_Second_level_default.xml"/><meta name="wh-out-relpath" content="com.qnx.doc.neutrino.sys_arch/topic/resource_Second_level_default.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/commons.css?buildId=2023100510"/>
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic.css?buildId=2023100510"/>
+
+    <script src="../../oxygen-webhelp/app/options/properties.js?buildId=20261105112733"></script>
+    <script src="../../oxygen-webhelp/app/localization/strings.js?buildId=2023100510"></script>
+    <script src="../../oxygen-webhelp/app/search/index/keywords.js?buildId=20261105112733"></script>
+    <script defer="defer" src="../../oxygen-webhelp/app/commons.js?buildId=2023100510"></script>
+    <script defer="defer" src="../../oxygen-webhelp/app/topic.js?buildId=2023100510"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/css/qnx-webhelp.css?buildId=2023100510"/></head>
+
+    <body id="Second_level_default" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid" id="wh_header_container">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="../../index.html" class=" wh_logo d-none d-sm-block "><img src="../../oxygen-webhelp/template/images/QNX-Logo-CORAL-RGB.png" alt=""/></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="title"></span></a></div>
+                    
+                </div>
+
+                
+            </div>
+
+            <div class="wh_nav_and_search">
+                <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                    
+                    
+                    <div class=" wh_indexterms_link "><a href="../../indexTerms.html" title="Index" aria-label="Go to index terms page"><span>Index</span></a></div>
+                    
+                </div>
+                <div class=" wh_search_input navbar-form wh_main_page_search search " role="form">
+                    
+                    
+
+                    
+                    <form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+
+                    <!-- Link to Advanced search page on qnx.com -->
+                    <div id="advanced_search" title="Search all Blackberry QNX product documentation">
+                        <a class="advanced_search" target="_blank" href="https://qnx.software/en/search#t=ProductDocumentation">
+                            <span>Advanced search</span>
+                        </a>
+                    </div>
+
+                    
+                    
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><div class="topicref" data-id="about"><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/bookset.html">QNX Software Development Platform</a><div class="wh-tooltip"><p class="shortdesc">     QNX SDP is a cross-compiling and debugging environment, including an IDE and command-line tools,     for building binary images and programs for target boards running the <span class="keyword">QNX OS</span> 8.0.   </p></div></div></div></li><li><div class="topicref" data-id="about"><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/about.html">System Architecture</a><div class="wh-tooltip"><p class="shortdesc"> The <em class="ph i">System Architecture</em> guide accompanies the <span class="keyword">QNX OS</span> and is intended for both application developers and end-users. </p></div></div></div></li><li><div class="topicref" data-id="resource"><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/resource.html">Resource Managers</a><div class="wh-tooltip"><p class="shortdesc"> To give the <span class="keyword">QNX OS</span> a great degree of flexibility, to minimize the runtime memory requirements of the final system, and to cope with the wide variety of devices that may be found in a custom embedded system, the OS allows user-written processes to act as <em class="ph i">resource managers</em> that can be started and stopped dynamically. </p></div></div></div></li><li><div class="topicref" data-id="RESMGRARCH"><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/resource_RESMGRARCH.html">Resource manager architecture</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li><div class="topicref" data-id="Resmgr_library"><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/resource_Resmgr_library.html">The resource manager shared library</a><div class="wh-tooltip"><p class="shortdesc"> In a custom embedded system, part of the design effort may be spent writing a resource manager, because there may not be an off-the-shelf driver available for the custom hardware component in the system. </p></div></div></div></li><li class="active"><div class="topicref" data-id="Second_level_default"><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/resource_Second_level_default.html">Second-level default message handling</a><div class="wh-tooltip"><p class="shortdesc"> Since a large number of the messages received by a resource manager deal with a common set of attributes, the OS provides another level of default handling. </p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+					
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+								<!--<whc:external_resourse_link 
+                            href="${param(webhelp.pdf.link.url)}"
+                            title="${param(webhelp.pdf.link.text)}"
+                            image="${param(webhelp.pdf.link.icon.path)}"
+                            type="pdf_link"                            
+							/>-->
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e10" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e10-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.ide.userguide/topic/about.html" id="about-d114126e10-link">QNX Momentics IDE User's Guide</a><div class="wh-tooltip"><p class="shortdesc">         This <em class="ph i">User's Guide</em> describes version 8.0 of the Integrated Development Environment (IDE) that's part of the         <span class="keyword">QNX Tool Suite</span>.     </p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="about-d114126e4055" class="topicref" data-id="about" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action about-d114126e4055-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/bookset.html" id="about-d114126e4055-link">QNX Software Development Platform</a><div class="wh-tooltip"><p class="shortdesc">     QNX SDP is a cross-compiling and debugging environment, including an IDE and command-line tools,     for building binary images and programs for target boards running the <span class="keyword">QNX OS</span> 8.0.   </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="AboutThisGuide-d114126e4069" class="topicref" data-id="AboutThisGuide" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action AboutThisGuide-d114126e4069-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.quickstart/topic/about.html" id="AboutThisGuide-d114126e4069-link">Quickstart Guide</a><div class="wh-tooltip"><p class="shortdesc">These guidelines will help you install the QNX Software Development Platform, quickly develop a program,     and run it on a <span class="keyword">QNX OS</span> target.</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="about-d114126e5772" class="topicref" data-id="about" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action about-d114126e5772-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/about.html" id="about-d114126e5772-link">System Architecture</a><div class="wh-tooltip"><p class="shortdesc"> The <em class="ph i">System Architecture</em> guide accompanies the <span class="keyword">QNX OS</span> and is intended for both application developers and end-users. </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="intro-d114126e5822" class="topicref" data-id="intro" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action intro-d114126e5822-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/intro.html" id="intro-d114126e5822-link">The Philosophy of the <span class="keyword">QNX OS</span></a><div class="wh-tooltip"><p class="shortdesc"> The primary goal of the <span class="keyword">QNX OS</span> is to deliver the open systems POSIX API in a robust, scalable form suitable for a wide range of systems—from tiny, resource-constrained embedded systems to high-end distributed computing environments. The OS supports several processor families, including x86 and ARM.  </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="kernel-d114126e5974" class="topicref" data-id="kernel" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action kernel-d114126e5974-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/kernel.html" id="kernel-d114126e5974-link">The <span class="keyword">QNX OS</span> Microkernel</a><div class="wh-tooltip"><p class="shortdesc"> The <span class="keyword">microkernel</span> implements the core POSIX features used in embedded realtime systems, along with the fundamental <span class="keyword">QNX OS</span> message-passing services. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ipc-d114126e6434" class="topicref" data-id="ipc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ipc-d114126e6434-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ipc.html" id="ipc-d114126e6434-link">Interprocess Communication (IPC)</a><div class="wh-tooltip"><p class="shortdesc"> Interprocess Communication (IPC) plays a fundamental role in the transformation of the <span class="keyword">microkernel</span> from an embedded realtime kernel into a full-scale POSIX operating system. As various service-providing processes are added to the microkernel, IPC is the <q class="q">glue</q> that connects those components into a cohesive whole. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="trace-d114126e6711" class="topicref" data-id="trace" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action trace-d114126e6711-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/trace.html" id="trace-d114126e6711-link">The Microkernel Instrumentation</a><div class="wh-tooltip"><p class="shortdesc"> The <span class="keyword">microkernel</span> (<span class="keyword cmdname">procnto-smp-instr</span>) is equipped with a sophisticated tracing and profiling mechanism that lets you monitor your system's execution in real time. This instrumentation works on both single-CPU and SMP systems. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="proc-d114126e6806" class="topicref" data-id="proc" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action proc-d114126e6806-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/proc.html" id="proc-d114126e6806-link">Process Manager</a><div class="wh-tooltip"><p class="shortdesc"> The Process Manager can create and manage multiple POSIX processes, each of which may contain multiple POSIX threads. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="dll-d114126e7141" class="topicref" data-id="dll" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action dll-d114126e7141-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/dll.html" id="dll-d114126e7141-link">Dynamic Linking</a><div class="wh-tooltip"><p class="shortdesc"> In a typical system, a number of programs will be running. Each program relies on a number of functions, some of which will be <q class="q">standard</q> C library functions, like <span class="keyword apiname">printf()</span>, <span class="keyword apiname">malloc()</span>, <span class="keyword apiname">write()</span>, etc. </p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="resource-d114126e7221" class="topicref" data-id="resource" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action resource-d114126e7221-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/resource.html" id="resource-d114126e7221-link">Resource Managers</a><div class="wh-tooltip"><p class="shortdesc"> To give the <span class="keyword">QNX OS</span> a great degree of flexibility, to minimize the runtime memory requirements of the final system, and to cope with the wide variety of devices that may be found in a custom embedded system, the OS allows user-written processes to act as <em class="ph i">resource managers</em> that can be started and stopped dynamically. </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="WHATISRESMGR-d114126e7238" class="topicref" data-id="WHATISRESMGR" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action WHATISRESMGR-d114126e7238-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/resource_WHATISRESMGR.html" id="WHATISRESMGR-d114126e7238-link">How do client programs talk to resource managers?</a><div class="wh-tooltip"><p class="shortdesc"> Since the <span class="keyword">QNX OS</span> is a distributed, microkernel OS with virtually all nonkernel functionality provided by user-installable programs, a clean and well-defined interface is required between client programs and resource managers. </p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="RESMGRARCH-d114126e7317" class="topicref" data-id="RESMGRARCH" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action RESMGRARCH-d114126e7317-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/resource_RESMGRARCH.html" id="RESMGRARCH-d114126e7317-link">Resource manager architecture</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="MESTYPES-d114126e7327" class="topicref" data-id="MESTYPES" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/resource_MESTYPES.html" id="MESTYPES-d114126e7327-link">Message types</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="Resmgr_library-d114126e7337" class="topicref" data-id="Resmgr_library" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action Resmgr_library-d114126e7337-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/resource_Resmgr_library.html" id="Resmgr_library-d114126e7337-link">The resource manager shared library</a><div class="wh-tooltip"><p class="shortdesc"> In a custom embedded system, part of the design effort may be spent writing a resource manager, because there may not be an off-the-shelf driver available for the custom hardware component in the system. </p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="Default_handling-d114126e7348" class="topicref" data-id="Default_handling" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/resource_Default_handling.html" id="Default_handling-d114126e7348-link">Automatic default message handling</a><div class="wh-tooltip"><p class="shortdesc"> If there are functions that the resource manager doesn't want to handle for some reason (e.g., a digital-to-analog converter doesn't support a function such as <span class="keyword apiname">lseek()</span>, or the software doesn't require it), the shared library will conveniently supply default actions. </p></div></div></div></li><li role="treeitem"><div data-tocid="open_dup_close-d114126e7362" class="topicref" data-id="open_dup_close" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/resource_open_dup_close.html" id="open_dup_close-d114126e7362-link"><span class="keyword apiname">open()</span>, <span class="keyword apiname">dup()</span>, and <span class="keyword apiname">close()</span></a><div class="wh-tooltip"><p class="shortdesc"> Another convenient service that the resource manager shared library provides is the automatic handling of <span class="keyword apiname">dup()</span> messages. </p></div></div></div></li><li role="treeitem"><div data-tocid="Multiuple_threads-d114126e7383" class="topicref" data-id="Multiuple_threads" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/resource_Multiuple_threads.html" id="Multiuple_threads-d114126e7383-link">Multiple thread handling</a><div class="wh-tooltip"><p class="shortdesc"> One of the salient features of the <span class="keyword">QNX OS</span> is the ability to use <em class="ph i">threads</em>. By using multiple threads, a resource manager can be structured so that several threads are waiting for messages and then simultaneously handling them. </p></div></div></div></li><li role="treeitem"><div data-tocid="Dispatch_functions-d114126e7400" class="topicref" data-id="Dispatch_functions" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/resource_Dispatch_functions.html" id="Dispatch_functions-d114126e7400-link">Dispatch functions</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="Combine_messages-d114126e7410" class="topicref" data-id="Combine_messages" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/resource_Combine_messages.html" id="Combine_messages-d114126e7410-link">Combine messages</a><div class="wh-tooltip"><p class="shortdesc"> In order to provide support for atomic operations, the OS supports <em class="ph i">combine       messages</em>. A combine message is constructed by the client's C library and consists of a     number of I/O and/or connect messages packaged together into one.</p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="Second_level_default-d114126e7424" class="topicref" data-id="Second_level_default" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/resource_Second_level_default.html" id="Second_level_default-d114126e7424-link">Second-level default message handling</a><div class="wh-tooltip"><p class="shortdesc"> Since a large number of the messages received by a resource manager deal with a common set of attributes, the OS provides another level of default handling. </p></div></div></div></li></ul></li></ul></li><li role="treeitem"><div data-tocid="SUMMARY-d114126e7435" class="topicref" data-id="SUMMARY" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/resource_SUMMARY.html" id="SUMMARY-d114126e7435-link">Summary</a><div class="wh-tooltip"><p class="shortdesc"> By supporting pathname space mapping, by having a well-defined interface to resource managers, and by providing a set of libraries for common resource manager functions, the <span class="keyword">QNX OS</span> offers the developer unprecedented flexibility and simplicity in developing <q class="q">drivers</q> for new hardware—a critical feature for many embedded systems. </p></div></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="fsys-d114126e7452" class="topicref" data-id="fsys" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action fsys-d114126e7452-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/fsys.html" id="fsys-d114126e7452-link">Filesystems</a><div class="wh-tooltip"><p class="shortdesc"> The <span class="keyword">QNX OS</span> provides a rich variety of filesystems. Like most service-providing processes in the OS, these filesystems execute outside the kernel; applications use them by communicating via messages generated by the shared-library implementation of the POSIX API. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="char-d114126e7802" class="topicref" data-id="char" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action char-d114126e7802-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/char.html" id="char-d114126e7802-link">Character I/O</a><div class="wh-tooltip"><p class="shortdesc"> A key requirement of any realtime operating system is high-performance character I/O. </p></div></div></div></li><li role="treeitem"><div data-tocid="net-d114126e7922" class="topicref" data-id="net" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/net.html" id="net-d114126e7922-link">Networking Architecture</a><div class="wh-tooltip"><p class="shortdesc"> As with other service-providing processes in the <span class="keyword">QNX OS</span>, the networking services execute outside the kernel. Developers are presented with a single unified interface, regardless of the configuration and number of networks involved. </p></div></div></div></li><li role="treeitem"><div data-tocid="tcpip-d114126e7936" class="topicref" data-id="tcpip" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/tcpip.html" id="tcpip-d114126e7936-link">TCP/IP Networking</a><div class="wh-tooltip"><p class="shortdesc">Our TCP/IP stack is included in the <span class="keyword cmdname">io-sock</span> networking stack and uses     the common FreeBSD API. </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="ham-d114126e7950" class="topicref" data-id="ham" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ham-d114126e7950-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/ham.html" id="ham-d114126e7950-link">High Availability</a><div class="wh-tooltip"><p class="shortdesc"> The term <em class="ph i">High Availability</em> (HA) is commonly used in telecommunications and other industries to describe a system's ability to remain up and running without interruption for extended periods of time. </p></div></div></div></li><li role="treeitem"><div data-tocid="what_is_realtime-d114126e8173" class="topicref" data-id="what_is_realtime" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/what_is_realtime.html" id="what_is_realtime-d114126e8173-link">What is Real Time and Why Do I Need It?</a><div class="wh-tooltip"><p class="shortdesc"> Real time is an often misunderstood—and misapplied—property of operating systems. This appendix provides a summary of some of the critical elements of realtime computing and discusses a few design considerations and benefits. </p></div></div></div></li><li role="treeitem"><div data-tocid="glossary-d114126e8184" class="topicref" data-id="glossary" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.neutrino.sys_arch/topic/glossary.html" id="glossary-d114126e8184-link">Glossary</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e8504" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e8504-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/guides.html" id="about-d114126e8504-link">OS Components &amp; Operations</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="graphics-d114126e27311" class="topicref" data-id="graphics" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action graphics-d114126e27311-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/graphics.html" id="graphics-d114126e27311-link">Graphics</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e46364" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e46364-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/programming.html" id="about-d114126e46364-link">Programming</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e54473" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e54473-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.security.system/topic/manual/about.html" id="about-d114126e54473-link">System Security Guide</a><div class="wh-tooltip"><p class="shortdesc">The <em class="ph i">QNX System Security Guide</em> is intended for both system integrators who are         responsible for the security of a <span class="keyword">QNX OS</span> system and developers who want to create a <span class="keyword">QNX OS</span> resource manager free from vulnerabilities.</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e57754" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e57754-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.nav/topic/references.html" id="about-d114126e57754-link">Utilities &amp; Libraries</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e110056" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e110056-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxsdp.migration/topic/about.html" id="about-d114126e110056-link">Migrating to QNX OS 8.0</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e111092" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e111092-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxcloud.nav/topic/bookset.html" id="about-d114126e111092-link">QNX Software in the Cloud</a><div class="wh-tooltip"><p class="shortdesc">QNX Software in the Cloud enables developers to use the QNX 	software in Amazon Web Services (AWS) and Microsoft Azure (Azure). </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="qcmgr-d114126e112165" class="topicref" data-id="qcmgr" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action qcmgr-d114126e112165-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.containers.user_guide/topic/about.html" id="qcmgr-d114126e112165-link">QNX Containers User's Guide</a><div class="wh-tooltip"><p class="shortdesc">This guide describes QNX Containers, its components, and its utilization.       It provides instructions on using QNX Containers on the host and target,       and then starting QNX Container processes.    </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about_this_guide-d114126e112727" class="topicref" data-id="about_this_guide" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about_this_guide-d114126e112727-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.qnxtoolkit.user_guide/topic/about_this_guide.html" id="about_this_guide-d114126e112727-link">QNX Toolkit for Visual Studio Code</a><div class="wh-tooltip"><p class="shortdesc">         This User's Guide describes the QNX® Toolkit for VS Code.         The guide introduces you to the <span class="keyword">QNX Toolkit</span> by explaining the QNX development environment and how to build, run, and debug your QNX® Operating System (OS) applications and systems.     </p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="about-d114126e113878" class="topicref" data-id="about" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action about-d114126e113878-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.hypervisor.nav/topic/bookset.html" id="about-d114126e113878-link">QNX Hypervisor and QNX Hypervisor for Safety</a><div class="wh-tooltip"><p class="shortdesc"> 		The <span class="keyword">QNX Hypervisor</span> and <span class="keyword">QNX Hypervisor for Safety</span> products allow you to run multiple OSs 		on a target system so you can separate critical and non-critical functions, support a wide variety of applications, 		and reduce hardware costs. 	</p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="copyright_overview_concept-d114126e120349" class="topicref" data-id="copyright_overview_concept" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action copyright_overview_concept-d114126e120349-link" class="wh-expand-btn"></span><div class="title"><a href="../../com.qnx.doc.copyright/topic/coverpage.html" id="copyright_overview_concept-d114126e120349-link">Typographical Conventions, Support, and Licensing</a><div class="wh-tooltip"><p class="shortdesc"> This section describes the typographical conventions used throughout the documentation, explains how to obtain technical support, and provides some information about licensing. </p></div></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+                        
+						<div id="pdf_link"></div>
+						
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic concept/concept topic concept" role="article" aria-labelledby="Second_level_default">
+
+<h1 class="- topic/title title topictitle1" id="Second_level_default">Second-level default message handling</h1>
+
+
+<div style="padding: 5px 0;"><span class="label">QNX SDP</span><span class="label">8.0</span><span class="label">System Architecture</span><span class="label">Developer</span><span class="label">User</span></div>
+<div class="- topic/body concept/conbody body conbody"><p class="- topic/shortdesc shortdesc">
+Since a large number of the messages received by a
+resource manager deal with a common set of attributes,
+the OS provides another level of default handling.
+</p>
+
+<p class="- topic/p p">
+
+
+This second level, called the <span class="+ topic/keyword pr-d/apiname keyword apiname">iofunc_*()</span> shared
+library, allows a resource manager to handle functions like
+<span class="+ topic/keyword pr-d/apiname keyword apiname">stat()</span>,
+<a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/c/chmod.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">chmod()</span></a>,
+<a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/c/chown.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">chown()</span></a>,
+and
+<span class="+ topic/keyword pr-d/apiname keyword apiname">lseek()</span> <em class="+ topic/ph hi-d/i ph i">automatically</em>, without the
+programmer having to write additional code. As an added
+benefit, these <span class="+ topic/keyword pr-d/apiname keyword apiname">iofunc_*()</span> default handlers
+implement the POSIX semantics for the messages, again
+offloading work from the programmer.
+</p>
+
+<div class="- topic/p p">
+Three main structures need to be considered:
+
+<ul class="- topic/ul ul">
+<li class="- topic/li li">context structure</li>
+<li class="- topic/li li">attribute structure</li>
+<li class="- topic/li li">mount structure</li>
+</ul>
+</div>
+
+<figure class="- topic/fig fig fignone"><figcaption data-caption-side="top" class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure 1</span><span class="fig--title">A resource manager is responsible for three data structures.</span></figcaption>
+  
+  <br/><img class="- topic/image image" src="../images/3struct.svg" width="384" alt="Three data structures of a resource manager"/><br/>
+</figure>
+
+<p class="- topic/p p">
+The first data structure, the context, has already been
+discussed (see the section on
+<q class="- topic/q q"><a class="- topic/xref xref" href="resource_MESTYPES.html">Message types</a></q>).
+It holds data used on a per-open basis, such
+as the current position into a file (the <span class="+ topic/keyword pr-d/apiname keyword apiname">lseek()</span> offset).
+
+
+
+
+</p>
+
+<p class="- topic/p p">
+Since a resource manager may be responsible for more than
+one resource (e.g., <span class="+ topic/keyword sw-d/cmdname keyword cmdname">devc-ser*</span> may be responsible for
+<span class="+ topic/ph sw-d/filepath ph filepath">/dev/ser1</span>, <span class="+ topic/ph sw-d/filepath ph filepath">/dev/ser2</span>,
+<span class="+ topic/ph sw-d/filepath ph filepath">/dev/ser3</span>, etc.), the <em class="+ topic/ph hi-d/i ph i">attribute</em>
+structure holds data on a per-resource basis. The attribute
+structure contains such items as the user and group ID of
+the owner of the resource, the last modification time, etc.
+</p>
+
+<p class="- topic/p p">
+For filesystem (block I/O device) managers, one more structure is used. This is
+the <em class="+ topic/ph hi-d/i ph i">mount</em> structure, which contains data items
+that are global to the entire mount device.
+</p>
+
+<div class="- topic/p p">
+When a number of client programs have opened various devices
+on a particular resource, the data structures may look like this:
+
+
+
+  <figure class="- topic/fig fig fignone"><figcaption data-caption-side="top" class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure 2</span><span class="fig--title">Multiple clients opening various devices.</span></figcaption>
+    
+    <br/><img class="- topic/image image" src="../images/clidevs.svg" width="624" alt="Context blocks, attribute structures, and a mount structure"/><br/>
+  </figure>
+</div>
+
+
+
+<p class="- topic/p p">
+The <span class="+ topic/keyword pr-d/apiname keyword apiname">iofunc_*()</span> default functions operate on the assumption
+that the programmer has used the default definitions for
+the context block and the attribute structures.
+This is a safe assumption for two reasons:
+</p>
+
+<ol class="- topic/ol ol">
+<li class="- topic/li li">The default context and attribute structures
+  contain sufficient information for most applications.
+</li>
+
+<li class="- topic/li li">If the default structures don't hold enough
+information, they can be encapsulated within the
+structures that you've defined.</li>
+
+</ol>
+
+<div class="- topic/p p">
+By definition, the default structures must be the first
+members of their respective superstructures, allowing clean
+and simple access to the requisite base members by the
+<span class="+ topic/keyword pr-d/apiname keyword apiname">iofunc_*()</span> default functions:
+
+  <figure class="- topic/fig fig fignone"><figcaption data-caption-side="top" class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure 3</span><span class="fig--title">Encapsulating the default data structures used by resource managers.</span></figcaption>
+    
+    <br/><img class="- topic/image image" src="../images/defaults.svg" width="384" alt="Encapsulated and encapsulating structures"/><br/>
+  </figure>
+</div>
+
+
+
+<p class="- topic/p p">
+The library contains <span class="+ topic/keyword pr-d/apiname keyword apiname">iofunc_*()</span> default handlers
+for these client functions:
+</p>
+
+<ul class="- topic/ul ul">
+<li class="- topic/li li"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/c/chmod.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">chmod()</span></a></li>
+
+<li class="- topic/li li"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/c/chown.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">chown()</span></a></li>
+
+<li class="- topic/li li"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/c/close.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">close()</span></a></li>
+
+<li class="- topic/li li"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/d/devctl.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">devctl()</span></a></li>
+
+<li class="- topic/li li"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fpathconf.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">fpathconf()</span></a></li>
+
+<li class="- topic/li li"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fseek.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">fseek()</span></a></li>
+
+<li class="- topic/li li"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/f/fstat.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">fstat()</span></a></li>
+
+<li class="- topic/li li"><span class="+ topic/keyword pr-d/apiname keyword apiname">lock()</span></li>
+
+<li class="- topic/li li"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/l/lseek.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">lseek()</span></a></li>
+
+<li class="- topic/li li"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/m/mmap.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">mmap()</span></a></li>
+
+<li class="- topic/li li"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/o/open.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">open()</span></a></li>
+
+<li class="- topic/li li"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/p/pathconf.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">pathconf()</span></a></li>
+
+<li class="- topic/li li"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/s/stat.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">stat()</span></a></li>
+
+<li class="- topic/li li"><a class="- topic/xref xref" href="../../com.qnx.doc.neutrino.lib_ref/topic/u/utime.html"><span class="+ topic/keyword pr-d/apiname keyword apiname">utime()</span></a>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+</li>
+
+</ul>
+
+</div>
+<div style="text-align: right;"><span>Page updated: <time>November 05, 2026</time></span></div></article></main></div>
+                        
+                        
+                        <div class=" wh_related_links d-print-none "><nav aria-label="Related Links" role="navigation" class="- topic/related-links related-links"><div class="- topic/linklist linklist relinfo" xml:lang="en-us" lang="en-us"><strong>Related information</strong><ul class="linklist related_link"><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.getting_started/topic/s1_resmgr.html" title="Resource Managers (Getting Started with the QNX OS)">Resource Managers (Getting Started with the QNX OS)</a></li><li class="linklist"><a class="- topic/link link navheader_parent_path" href="../../com.qnx.doc.neutrino.resmgr/topic/about.html" title="Writing a Resource Manager">Writing a Resource Manager</a></li></ul></div></nav></div>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

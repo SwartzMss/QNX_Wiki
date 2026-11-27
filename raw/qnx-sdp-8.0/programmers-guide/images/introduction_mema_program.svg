@@ -1,0 +1,2209 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="svg14536"
+   viewBox="0 0 707.09068 322.35332"
+   version="1.1"
+   sodipodi:docname="introduction_mema_program.svg"
+   width="707.0907"
+   height="322.35333"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview98"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.709823"
+     inkscape:cx="352.96051"
+     inkscape:cy="155.86409"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg14536"
+     showgrid="false" />
+  <defs
+     id="defs3">
+    <clipPath
+       id="clippath">
+      <polygon
+         points="315.291,53.682 315.291,273.682 344.221,273.682 373.151,273.682 402.081,273.682 402.081,53.682 373.151,53.682 344.221,53.682 "
+         style="fill:none;stroke-width:0px"
+         id="polygon1" />
+    </clipPath>
+    <clipPath
+       id="clippath-1">
+      <polygon
+         points="590.121,53.682 590.121,339.682 619.052,339.682 647.981,339.682 676.912,339.682 676.912,53.682 647.981,53.682 619.052,53.682 "
+         style="fill:none;stroke-width:0px"
+         id="polygon2" />
+    </clipPath>
+    <clipPath
+       id="clippath-2">
+      <rect
+         width="705.92102"
+         height="348.08701"
+         style="fill:none;stroke-width:0px"
+         id="rect2"
+         x="0"
+         y="0" />
+    </clipPath>
+    <clipPath
+       id="clippath-3">
+      <rect
+         width="705.92102"
+         height="348.08701"
+         style="fill:none;stroke-width:0px"
+         id="rect3"
+         x="0"
+         y="0" />
+    </clipPath>
+  </defs>
+  <g
+     id="g14546"
+     transform="translate(0,-18.130532)">
+    <g
+       clip-path="url(#clippath)"
+       id="g4">
+      <g
+         id="g3">
+        <g
+           id="g14548">
+          <g
+             id="g14554">
+            <g
+               id="g14556">
+              <g
+                 id="g14558">
+                <path
+                   id="path14560"
+                   d="m 315.291,273.682 v -55 h 1.808 v 55 z"
+                   style="fill:#83d0e1;stroke-width:0px" />
+                <path
+                   id="path14562"
+                   d="m 317.099,273.682 v -55 h 1.808 v 55 z"
+                   style="fill:#90d5e4;stroke-width:0px" />
+                <path
+                   id="path14564"
+                   d="m 315.291,218.682 v -55 h 1.808 v 55 z"
+                   style="fill:#83d0e1;stroke-width:0px" />
+                <path
+                   id="path14566"
+                   d="m 317.099,218.682 v -55 h 1.808 v 55 z"
+                   style="fill:#90d5e4;stroke-width:0px" />
+                <path
+                   id="path14568"
+                   d="m 318.907,273.682 v -55 h 1.808 v 55 z"
+                   style="fill:#9edae7;stroke-width:0px" />
+                <path
+                   id="path14570"
+                   d="m 320.715,273.682 v -55 h 1.808 v 55 z"
+                   style="fill:#abe0eb;stroke-width:0px" />
+                <path
+                   id="path14572"
+                   d="m 318.907,218.682 v -55 h 1.808 v 55 z"
+                   style="fill:#9edae7;stroke-width:0px" />
+                <path
+                   id="path14574"
+                   d="m 320.715,218.682 v -55 h 1.808 v 55 z"
+                   style="fill:#abe0eb;stroke-width:0px" />
+                <path
+                   id="path14576"
+                   d="m 315.291,163.682 v -55 h 1.808 v 55 z"
+                   style="fill:#83d0e1;stroke-width:0px" />
+                <path
+                   id="path14578"
+                   d="m 317.099,163.682 v -55 h 1.808 v 55 z"
+                   style="fill:#90d5e4;stroke-width:0px" />
+                <path
+                   id="path14580"
+                   d="m 315.291,108.682 v -55 h 1.808 v 55 z"
+                   style="fill:#83d0e1;stroke-width:0px" />
+                <path
+                   id="path14582"
+                   d="m 317.099,108.682 v -55 h 1.808 v 55 z"
+                   style="fill:#90d5e4;stroke-width:0px" />
+                <path
+                   id="path14584"
+                   d="m 318.907,163.682 v -55 h 1.808 v 55 z"
+                   style="fill:#9edae7;stroke-width:0px" />
+                <path
+                   id="path14586"
+                   d="m 320.715,163.682 v -55 h 1.808 v 55 z"
+                   style="fill:#abe0eb;stroke-width:0px" />
+                <path
+                   id="path14588"
+                   d="m 318.907,108.682 v -55 h 1.808 v 55 z"
+                   style="fill:#9edae7;stroke-width:0px" />
+                <path
+                   id="path14590"
+                   d="m 320.715,108.682 v -55 h 1.808 v 55 z"
+                   style="fill:#abe0eb;stroke-width:0px" />
+                <path
+                   id="path14592"
+                   d="m 322.523,273.682 v -55 h 1.808 v 55 z"
+                   style="fill:#b9e5ee;stroke-width:0px" />
+                <path
+                   id="path14594"
+                   d="m 324.331,273.682 v -55 h 1.808 v 55 z"
+                   style="fill:#c3e8f0;stroke-width:0px" />
+                <path
+                   id="path14596"
+                   d="m 322.523,218.682 v -55 h 1.808 v 55 z"
+                   style="fill:#b9e5ee;stroke-width:0px" />
+                <path
+                   id="path14598"
+                   d="m 324.331,218.682 v -55 h 1.808 v 55 z"
+                   style="fill:#c3e8f0;stroke-width:0px" />
+                <path
+                   id="path14600"
+                   d="m 326.139,273.682 v -55 h 1.808 v 55 z"
+                   style="fill:#ccecf3;stroke-width:0px" />
+                <path
+                   id="path14602"
+                   d="m 327.948,273.682 v -55 h 1.808 v 55 z"
+                   style="fill:#d6eff5;stroke-width:0px" />
+                <path
+                   id="path14604"
+                   d="m 326.139,218.682 v -55 h 1.808 v 55 z"
+                   style="fill:#ccecf3;stroke-width:0px" />
+                <path
+                   id="path14606"
+                   d="m 327.948,218.682 v -55 h 1.808 v 55 z"
+                   style="fill:#d6eff5;stroke-width:0px" />
+                <path
+                   id="path14608"
+                   d="m 322.523,163.682 v -55 h 1.808 v 55 z"
+                   style="fill:#b9e5ee;stroke-width:0px" />
+                <path
+                   id="path14610"
+                   d="m 324.331,163.682 v -55 h 1.808 v 55 z"
+                   style="fill:#c3e8f0;stroke-width:0px" />
+                <path
+                   id="path14612"
+                   d="m 322.523,108.682 v -55 h 1.808 v 55 z"
+                   style="fill:#b9e5ee;stroke-width:0px" />
+                <path
+                   id="path14614"
+                   d="m 324.331,108.682 v -55 h 1.808 v 55 z"
+                   style="fill:#c3e8f0;stroke-width:0px" />
+                <path
+                   id="path14616"
+                   d="m 326.139,163.682 v -55 h 1.808 v 55 z"
+                   style="fill:#ccecf3;stroke-width:0px" />
+                <path
+                   id="path14618"
+                   d="m 327.948,163.682 v -55 h 1.808 v 55 z"
+                   style="fill:#d6eff5;stroke-width:0px" />
+                <path
+                   id="path14620"
+                   d="m 326.139,108.682 v -55 h 1.808 v 55 z"
+                   style="fill:#ccecf3;stroke-width:0px" />
+                <path
+                   id="path14622"
+                   d="m 327.948,108.682 v -55 h 1.808 v 55 z"
+                   style="fill:#d6eff5;stroke-width:0px" />
+                <path
+                   id="path14624"
+                   d="m 329.756,273.682 v -110 h 3.616 v 110 z"
+                   style="fill:#e0f3f8;stroke-width:0px" />
+                <path
+                   id="path14626"
+                   d="m 333.372,273.682 v -110 h 3.616 v 110 z"
+                   style="fill:#ebf7fa;stroke-width:0px" />
+                <path
+                   id="path14628"
+                   d="m 329.756,163.682 v -110 h 3.616 v 110 z"
+                   style="fill:#e0f3f8;stroke-width:0px" />
+                <path
+                   id="path14630"
+                   d="m 333.372,163.682 v -110 h 3.616 v 110 z"
+                   style="fill:#ebf7fa;stroke-width:0px" />
+                <path
+                   id="path14632"
+                   d="m 336.988,273.682 v -220 h 7.233 v 220 z"
+                   style="fill:#f7fcfd;stroke-width:0px" />
+                <path
+                   id="path14634"
+                   d="m 344.221,273.682 h 28.93 c 10e-4,-73.332 10e-4,-146.668 0,-220 h -28.93 z"
+                   style="fill:#ffffff;stroke-width:0px" />
+                <path
+                   id="path14636"
+                   d="m 373.151,273.682 c 10e-4,-73.332 10e-4,-146.668 0,-220 h 7.232 c 0.001,73.332 0.001,146.668 0,220 z"
+                   style="fill:#ffffff;stroke-width:0px" />
+                <path
+                   id="path14638"
+                   d="m 380.383,273.682 v -110 h 3.616 v 110 h -3.617 z"
+                   style="fill:#f7fcfd;stroke-width:0px" />
+                <path
+                   id="path14640"
+                   d="m 383.999,273.682 v -110 h 3.616 v 110 h -3.617 z"
+                   style="fill:#ebf7fa;stroke-width:0px" />
+                <path
+                   id="path14642"
+                   d="m 380.384,163.682 v -110 h 3.617 v 110 z"
+                   style="fill:#f7fcfd;stroke-width:0px" />
+                <path
+                   id="path14644"
+                   d="m 384,163.682 v -110 h 3.617 v 110 z"
+                   style="fill:#ebf7fa;stroke-width:0px" />
+                <path
+                   id="path14646"
+                   d="m 387.616,273.682 v -54.999 h 1.808 v 55 h -1.808 z"
+                   style="fill:#e0f3f8;stroke-width:0px" />
+                <path
+                   id="path14648"
+                   d="m 389.424,273.682 v -55 h 1.808 v 55 z"
+                   style="fill:#d6eff5;stroke-width:0px" />
+                <path
+                   id="path14650"
+                   d="m 387.616,218.682 v -55 h 1.808 v 55 z"
+                   style="fill:#e0f3f8;stroke-width:0px" />
+                <path
+                   id="path14652"
+                   d="m 389.424,218.682 v -55 h 1.808 v 55 z"
+                   style="fill:#d6eff5;stroke-width:0px" />
+                <path
+                   id="path14654"
+                   d="m 391.232,273.682 v -55 h 1.808 v 55 z"
+                   style="fill:#ccecf3;stroke-width:0px" />
+                <path
+                   id="path14656"
+                   d="m 393.04,273.682 v -55 h 1.808 v 55 z"
+                   style="fill:#c3e8f0;stroke-width:0px" />
+                <path
+                   id="path14658"
+                   d="m 391.232,218.682 v -55 h 1.808 v 55 z"
+                   style="fill:#ccecf3;stroke-width:0px" />
+                <path
+                   id="path14660"
+                   d="m 393.04,218.682 v -55 h 1.808 v 55 z"
+                   style="fill:#c3e8f0;stroke-width:0px" />
+                <path
+                   id="path14662"
+                   d="m 387.616,163.682 v -55 h 1.808 v 55 z"
+                   style="fill:#e0f3f8;stroke-width:0px" />
+                <path
+                   id="path14664"
+                   d="m 389.424,163.682 v -55 h 1.808 v 55 z"
+                   style="fill:#d6eff5;stroke-width:0px" />
+                <path
+                   id="path14666"
+                   d="m 387.616,108.682 v -55 h 1.808 v 55 z"
+                   style="fill:#e0f3f8;stroke-width:0px" />
+                <path
+                   id="path14668"
+                   d="m 389.424,108.682 v -55 h 1.808 v 55 z"
+                   style="fill:#d6eff5;stroke-width:0px" />
+                <path
+                   id="path14670"
+                   d="m 391.232,163.682 v -55 h 1.808 v 55 z"
+                   style="fill:#ccecf3;stroke-width:0px" />
+                <path
+                   id="path14672"
+                   d="m 393.04,163.682 v -55 h 1.808 v 55 z"
+                   style="fill:#c3e8f0;stroke-width:0px" />
+                <path
+                   id="path14674"
+                   d="m 391.232,108.682 v -55 h 1.808 v 55 z"
+                   style="fill:#ccecf3;stroke-width:0px" />
+                <path
+                   id="path14676"
+                   d="m 393.04,108.682 v -55 h 1.808 v 55 z"
+                   style="fill:#c3e8f0;stroke-width:0px" />
+                <path
+                   id="path14678"
+                   d="m 394.848,273.682 v -55 h 1.808 v 55 h -1.809 v 0 z"
+                   style="fill:#b9e5ee;stroke-width:0px" />
+                <path
+                   id="path14680"
+                   d="m 396.656,273.682 v -55 h 1.808 v 55 z"
+                   style="fill:#abe0eb;stroke-width:0px" />
+                <path
+                   id="path14682"
+                   d="m 394.848,218.682 v -55 h 1.808 v 55 z"
+                   style="fill:#b9e5ee;stroke-width:0px" />
+                <path
+                   id="path14684"
+                   d="m 396.657,218.682 v -55 h 1.808 v 55 z"
+                   style="fill:#abe0eb;stroke-width:0px" />
+                <path
+                   id="path14686"
+                   d="m 398.465,273.682 v -55 h 1.808 v 55 z"
+                   style="fill:#9edae7;stroke-width:0px" />
+                <path
+                   id="path14688"
+                   d="m 400.273,273.682 v -55 h 1.808 v 55 z"
+                   style="fill:#90d5e4;stroke-width:0px" />
+                <path
+                   id="path14690"
+                   d="m 398.465,218.682 v -55 h 1.808 v 55 z"
+                   style="fill:#9edae7;stroke-width:0px" />
+                <path
+                   id="path14692"
+                   d="m 400.273,218.682 v -55 h 1.808 v 55 z"
+                   style="fill:#90d5e4;stroke-width:0px" />
+                <path
+                   id="path14694"
+                   d="m 394.849,163.682 v -55 h 1.808 v 55 z"
+                   style="fill:#b9e5ee;stroke-width:0px" />
+                <path
+                   id="path14696"
+                   d="m 396.657,163.682 v -55 h 1.808 v 55 z"
+                   style="fill:#abe0eb;stroke-width:0px" />
+                <path
+                   id="path14698"
+                   d="m 394.848,108.682 v -55 h 1.809 v 55 z"
+                   style="fill:#b9e5ee;stroke-width:0px" />
+                <path
+                   id="path14700"
+                   d="m 396.657,108.682 v -55 h 1.808 v 55 z"
+                   style="fill:#abe0eb;stroke-width:0px" />
+                <path
+                   id="path14702"
+                   d="m 398.465,163.682 v -55 h 1.808 v 55 z"
+                   style="fill:#9edae7;stroke-width:0px" />
+                <path
+                   id="path14704"
+                   d="m 400.273,163.682 v -55 h 1.808 v 55 z"
+                   style="fill:#90d5e4;stroke-width:0px" />
+                <path
+                   id="path14706"
+                   d="m 398.465,108.682 v -55 h 1.808 v 55 z"
+                   style="fill:#9edae7;stroke-width:0px" />
+                <path
+                   id="path14708"
+                   d="m 400.273,108.682 v -55 h 1.808 v 55 z"
+                   style="fill:#90d5e4;stroke-width:0px" />
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g
+     id="g14714"
+     transform="translate(0,-18.130532)">
+    <path
+       id="path14716"
+       d="m 315.29,53.682 v 220"
+       style="fill:none;stroke:#000000;stroke-width:1.25px" />
+  </g>
+  <g
+     id="g14722"
+     transform="translate(0,-18.130532)">
+    <path
+       id="path14724"
+       d="m 402.081,53.682 v 220"
+       style="fill:none;stroke:#000000;stroke-width:1.25px" />
+  </g>
+  <g
+     id="g14730"
+     transform="translate(0,-18.130532)">
+    <path
+       id="path14732"
+       d="m 315.29,80.565 h 86.791"
+       style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+  </g>
+  <g
+     id="g14738"
+     transform="translate(0,-18.130532)">
+    <path
+       id="path14740"
+       d="m 315.29,122.122 h 86.791"
+       style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+  </g>
+  <g
+     id="g14742"
+     transform="translate(0,-18.130532)">
+    <g
+       clip-path="url(#clippath-1)"
+       id="g6">
+      <g
+         id="g5">
+        <g
+           id="g14744">
+          <g
+             id="g14750">
+            <g
+               id="g14752">
+              <g
+                 id="g14754">
+                <path
+                   id="path14756"
+                   d="m 590.121,339.682 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#83d0e1;stroke-width:0px" />
+                <path
+                   id="path14758"
+                   d="m 591.929,339.682 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#90d5e4;stroke-width:0px" />
+                <path
+                   id="path14760"
+                   d="m 590.121,268.182 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#83d0e1;stroke-width:0px" />
+                <path
+                   id="path14762"
+                   d="m 591.929,268.182 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#90d5e4;stroke-width:0px" />
+                <path
+                   id="path14764"
+                   d="m 593.737,339.682 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#9edae7;stroke-width:0px" />
+                <path
+                   id="path14766"
+                   d="m 595.546,339.682 v -71.5 h 1.809 v 71.5 z"
+                   style="fill:#abe0eb;stroke-width:0px" />
+                <path
+                   id="path14768"
+                   d="m 593.737,268.182 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#9edae7;stroke-width:0px" />
+                <path
+                   id="path14770"
+                   d="m 595.546,268.182 v -71.5 h 1.809 v 71.5 z"
+                   style="fill:#abe0eb;stroke-width:0px" />
+                <path
+                   id="path14772"
+                   d="m 590.121,196.682 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#83d0e1;stroke-width:0px" />
+                <path
+                   id="path14774"
+                   d="m 591.929,196.682 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#90d5e4;stroke-width:0px" />
+                <path
+                   id="path14776"
+                   d="m 590.121,125.182 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#83d0e1;stroke-width:0px" />
+                <path
+                   id="path14778"
+                   d="m 591.929,125.182 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#90d5e4;stroke-width:0px" />
+                <path
+                   id="path14780"
+                   d="m 593.737,196.682 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#9edae7;stroke-width:0px" />
+                <path
+                   id="path14782"
+                   d="m 595.546,196.682 v -71.5 h 1.809 v 71.5 z"
+                   style="fill:#abe0eb;stroke-width:0px" />
+                <path
+                   id="path14784"
+                   d="m 593.737,125.182 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#9edae7;stroke-width:0px" />
+                <path
+                   id="path14786"
+                   d="m 595.546,125.182 v -71.5 h 1.809 v 71.5 z"
+                   style="fill:#abe0eb;stroke-width:0px" />
+                <path
+                   id="path14788"
+                   d="m 597.354,339.682 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#b9e5ee;stroke-width:0px" />
+                <path
+                   id="path14790"
+                   d="m 599.162,339.682 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#c3e8f0;stroke-width:0px" />
+                <path
+                   id="path14792"
+                   d="m 597.354,268.182 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#b9e5ee;stroke-width:0px" />
+                <path
+                   id="path14794"
+                   d="m 599.162,268.182 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#c3e8f0;stroke-width:0px" />
+                <path
+                   id="path14796"
+                   d="m 600.971,339.682 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#ccecf3;stroke-width:0px" />
+                <path
+                   id="path14798"
+                   d="m 602.779,339.682 v -71.5 h 1.809 v 71.5 z"
+                   style="fill:#d6eff5;stroke-width:0px" />
+                <path
+                   id="path14800"
+                   d="m 600.971,268.182 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#ccecf3;stroke-width:0px" />
+                <path
+                   id="path14802"
+                   d="m 602.779,268.182 v -71.5 h 1.809 v 71.5 z"
+                   style="fill:#d6eff5;stroke-width:0px" />
+                <path
+                   id="path14804"
+                   d="m 597.354,196.682 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#b9e5ee;stroke-width:0px" />
+                <path
+                   id="path14806"
+                   d="m 599.162,196.682 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#c3e8f0;stroke-width:0px" />
+                <path
+                   id="path14808"
+                   d="m 597.354,125.182 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#b9e5ee;stroke-width:0px" />
+                <path
+                   id="path14810"
+                   d="m 599.162,125.182 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#c3e8f0;stroke-width:0px" />
+                <path
+                   id="path14812"
+                   d="m 600.971,196.682 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#ccecf3;stroke-width:0px" />
+                <path
+                   id="path14814"
+                   d="m 602.779,196.682 v -71.5 h 1.809 v 71.5 z"
+                   style="fill:#d6eff5;stroke-width:0px" />
+                <path
+                   id="path14816"
+                   d="m 600.971,125.182 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#ccecf3;stroke-width:0px" />
+                <path
+                   id="path14818"
+                   d="m 602.779,125.182 v -71.5 h 1.809 v 71.5 z"
+                   style="fill:#d6eff5;stroke-width:0px" />
+                <path
+                   id="path14820"
+                   d="m 604.588,339.682 v -143 h 3.616 v 143 z"
+                   style="fill:#e0f3f8;stroke-width:0px" />
+                <path
+                   id="path14822"
+                   d="m 608.203,339.682 v -143 h 3.616 v 143 z"
+                   style="fill:#ebf7fa;stroke-width:0px" />
+                <path
+                   id="path14824"
+                   d="m 604.588,196.682 v -143 h 3.616 v 143 z"
+                   style="fill:#e0f3f8;stroke-width:0px" />
+                <path
+                   id="path14826"
+                   d="m 608.203,196.682 v -143 h 3.616 v 143 z"
+                   style="fill:#ebf7fa;stroke-width:0px" />
+                <path
+                   id="path14828"
+                   d="m 611.819,339.682 v -286 h 7.233 v 286 z"
+                   style="fill:#f7fcfd;stroke-width:0px" />
+                <path
+                   id="path14830"
+                   d="m 619.052,339.682 h 28.93 c 0,-95.331 0,-190.67 0,-286 h -28.93 z"
+                   style="fill:#ffffff;stroke-width:0px" />
+                <path
+                   id="path14832"
+                   d="m 647.982,339.682 c 0,-95.331 0,-190.67 0,-286 h 7.232 c 0,95.33 0,190.669 0,286 z"
+                   style="fill:#ffffff;stroke-width:0px" />
+                <path
+                   id="path14834"
+                   d="m 655.214,339.682 v -143 h 3.617 v 143 z"
+                   style="fill:#f7fcfd;stroke-width:0px" />
+                <path
+                   id="path14836"
+                   d="m 658.831,339.682 v -143 h 3.617 v 143 z"
+                   style="fill:#ebf7fa;stroke-width:0px" />
+                <path
+                   id="path14838"
+                   d="m 655.215,196.682 v -143 h 3.617 v 143 z"
+                   style="fill:#f7fcfd;stroke-width:0px" />
+                <path
+                   id="path14840"
+                   d="m 658.832,196.682 v -143 h 3.617 v 143 z"
+                   style="fill:#ebf7fa;stroke-width:0px" />
+                <path
+                   id="path14842"
+                   d="m 662.447,339.682 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#e0f3f8;stroke-width:0px" />
+                <path
+                   id="path14844"
+                   d="m 664.255,339.682 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#d6eff5;stroke-width:0px" />
+                <path
+                   id="path14846"
+                   d="m 662.448,268.182 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#e0f3f8;stroke-width:0px" />
+                <path
+                   id="path14848"
+                   d="m 664.256,268.182 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#d6eff5;stroke-width:0px" />
+                <path
+                   id="path14850"
+                   d="m 666.063,339.682 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#ccecf3;stroke-width:0px" />
+                <path
+                   id="path14852"
+                   d="m 667.871,339.682 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#c3e8f0;stroke-width:0px" />
+                <path
+                   id="path14854"
+                   d="m 666.063,268.182 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#ccecf3;stroke-width:0px" />
+                <path
+                   id="path14856"
+                   d="m 667.871,268.182 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#c3e8f0;stroke-width:0px" />
+                <path
+                   id="path14858"
+                   d="m 662.448,196.682 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#e0f3f8;stroke-width:0px" />
+                <path
+                   id="path14860"
+                   d="m 664.256,196.682 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#d6eff5;stroke-width:0px" />
+                <path
+                   id="path14862"
+                   d="M 662.448,125.181 V 53.682 h 1.808 v 71.499 z"
+                   style="fill:#e0f3f8;stroke-width:0px" />
+                <path
+                   id="path14864"
+                   d="M 664.256,125.181 V 53.682 h 1.808 v 71.499 z"
+                   style="fill:#d6eff5;stroke-width:0px" />
+                <path
+                   id="path14866"
+                   d="m 666.064,196.682 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#ccecf3;stroke-width:0px" />
+                <path
+                   id="path14868"
+                   d="m 667.872,196.682 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#c3e8f0;stroke-width:0px" />
+                <path
+                   id="path14870"
+                   d="M 666.063,125.181 V 53.682 h 1.808 v 71.5 h -1.808 z"
+                   style="fill:#ccecf3;stroke-width:0px" />
+                <path
+                   id="path14872"
+                   d="m 667.871,125.182 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#c3e8f0;stroke-width:0px" />
+                <path
+                   id="path14874"
+                   d="m 669.679,339.682 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#b9e5ee;stroke-width:0px" />
+                <path
+                   id="path14876"
+                   d="m 671.487,339.682 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#abe0eb;stroke-width:0px" />
+                <path
+                   id="path14878"
+                   d="m 669.68,268.182 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#b9e5ee;stroke-width:0px" />
+                <path
+                   id="path14880"
+                   d="m 671.488,268.182 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#abe0eb;stroke-width:0px" />
+                <path
+                   id="path14882"
+                   d="m 673.295,339.682 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#9edae7;stroke-width:0px" />
+                <path
+                   id="path14884"
+                   d="m 675.104,339.682 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#90d5e4;stroke-width:0px" />
+                <path
+                   id="path14886"
+                   d="m 673.295,268.182 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#9edae7;stroke-width:0px" />
+                <path
+                   id="path14888"
+                   d="m 675.104,268.182 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#90d5e4;stroke-width:0px" />
+                <path
+                   id="path14890"
+                   d="m 669.68,196.682 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#b9e5ee;stroke-width:0px" />
+                <path
+                   id="path14892"
+                   d="m 671.488,196.682 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#abe0eb;stroke-width:0px" />
+                <path
+                   id="path14894"
+                   d="m 669.68,125.182 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#b9e5ee;stroke-width:0px" />
+                <path
+                   id="path14896"
+                   d="m 671.488,125.182 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#abe0eb;stroke-width:0px" />
+                <path
+                   id="path14898"
+                   d="m 673.296,196.682 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#9edae7;stroke-width:0px" />
+                <path
+                   id="path14900"
+                   d="m 675.104,196.682 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#90d5e4;stroke-width:0px" />
+                <path
+                   id="path14902"
+                   d="m 673.295,125.182 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#9edae7;stroke-width:0px" />
+                <path
+                   id="path14904"
+                   d="m 675.104,125.182 v -71.5 h 1.808 v 71.5 z"
+                   style="fill:#90d5e4;stroke-width:0px" />
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g
+     id="g14910"
+     transform="translate(0,-18.130532)">
+    <path
+       id="path14912"
+       d="m 590.121,213.756 h 86.791"
+       style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+  </g>
+  <g
+     id="g14918"
+     transform="translate(0,-18.130532)">
+    <path
+       id="path14920"
+       d="m 590.121,59.231 h 86.791"
+       style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+  </g>
+  <g
+     id="g14926"
+     transform="translate(0,-18.130532)">
+    <path
+       id="path14928"
+       d="m 590.121,101.826 h 86.791"
+       style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+  </g>
+  <g
+     id="g14934"
+     transform="translate(0,-18.130532)">
+    <path
+       id="path14936"
+       d="m 590.121,256.35 h 86.791"
+       style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+  </g>
+  <g
+     id="text14948"
+     transform="translate(0,-20.130532)">
+    <g
+       id="text4"
+       style="isolation:isolate">
+      <text
+         transform="translate(323.775,31.584)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text6"><tspan
+           x="0"
+           y="0"
+           id="tspan6">P</tspan></text>
+    </g>
+    <g
+       id="text5"
+       style="isolation:isolate">
+      <text
+         transform="translate(331.815,31.584)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text7"><tspan
+           x="0"
+           y="0"
+           id="tspan7">r</tspan></text>
+    </g>
+    <g
+       id="g8"
+       style="isolation:isolate">
+      <text
+         transform="translate(337.509,31.584)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text8"><tspan
+           x="0"
+           y="0"
+           id="tspan8">o</tspan></text>
+    </g>
+    <g
+       id="g9"
+       style="isolation:isolate">
+      <text
+         transform="translate(345.602,31.584)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text9"><tspan
+           x="0"
+           y="0"
+           id="tspan9">g</tspan></text>
+    </g>
+    <g
+       id="g10"
+       style="isolation:isolate">
+      <text
+         transform="translate(353.908,31.584)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text10"><tspan
+           x="0"
+           y="0"
+           id="tspan10">r</tspan></text>
+    </g>
+    <g
+       id="g11"
+       style="isolation:isolate">
+      <text
+         transform="translate(359.362,31.584)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text11"><tspan
+           x="0"
+           y="0"
+           id="tspan11">a</tspan></text>
+    </g>
+    <g
+       id="g12"
+       style="isolation:isolate">
+      <text
+         transform="translate(367.375,31.584)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text12"><tspan
+           x="0"
+           y="0"
+           id="tspan12">m</tspan></text>
+    </g>
+    <g
+       id="g13"
+       style="isolation:isolate">
+      <text
+         transform="translate(380.349,31.584)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text13"><tspan
+           x="0"
+           y="0"
+           id="tspan13">'</tspan></text>
+    </g>
+    <g
+       id="g14"
+       style="isolation:isolate">
+      <text
+         transform="translate(383.936,31.584)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text14"><tspan
+           x="0"
+           y="0"
+           id="tspan14">s</tspan></text>
+    </g>
+    <g
+       id="g15"
+       style="isolation:isolate">
+      <text
+         transform="translate(305.896,47.584)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text15"><tspan
+           x="0"
+           y="0"
+           id="tspan15">v</tspan></text>
+    </g>
+    <g
+       id="g16"
+       style="isolation:isolate">
+      <text
+         transform="translate(313.789,47.584)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text16"><tspan
+           x="0"
+           y="0"
+           id="tspan16">i</tspan></text>
+    </g>
+    <g
+       id="g17"
+       style="isolation:isolate">
+      <text
+         transform="translate(317.442,47.584)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text17"><tspan
+           x="0"
+           y="0"
+           id="tspan17">r</tspan></text>
+    </g>
+    <g
+       id="g18"
+       style="isolation:isolate">
+      <text
+         transform="translate(323.135,47.584)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text18"><tspan
+           x="0"
+           y="0"
+           id="tspan18">t</tspan></text>
+    </g>
+    <g
+       id="g19"
+       style="isolation:isolate">
+      <text
+         transform="translate(328.389,47.584)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text19"><tspan
+           x="0"
+           y="0"
+           id="tspan19">u</tspan></text>
+    </g>
+    <g
+       id="g20"
+       style="isolation:isolate">
+      <text
+         transform="translate(336.829,47.584)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text20"><tspan
+           x="0"
+           y="0"
+           id="tspan20">a</tspan></text>
+    </g>
+    <g
+       id="g21"
+       style="isolation:isolate">
+      <text
+         transform="translate(344.842,47.584)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text21"><tspan
+           x="0"
+           y="0"
+           id="tspan21">l</tspan></text>
+    </g>
+    <g
+       id="g22"
+       style="isolation:isolate">
+      <text
+         transform="translate(353.188,47.584)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text22"><tspan
+           x="0"
+           y="0"
+           id="tspan22">m</tspan></text>
+    </g>
+    <g
+       id="g23"
+       style="isolation:isolate">
+      <text
+         transform="translate(366.162,47.584)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text23"><tspan
+           x="0"
+           y="0"
+           id="tspan23">e</tspan></text>
+    </g>
+    <g
+       id="g24"
+       style="isolation:isolate">
+      <text
+         transform="translate(374.108,47.584)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text24"><tspan
+           x="0"
+           y="0"
+           id="tspan24">m</tspan></text>
+    </g>
+    <g
+       id="g25"
+       style="isolation:isolate">
+      <text
+         transform="translate(387.082,47.584)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text25"><tspan
+           x="0"
+           y="0"
+           id="tspan25">o</tspan></text>
+    </g>
+    <g
+       id="g26"
+       style="isolation:isolate">
+      <text
+         transform="translate(395.175,47.584)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text26"><tspan
+           x="0"
+           y="0"
+           id="tspan26">r</tspan></text>
+    </g>
+    <g
+       id="g27"
+       style="isolation:isolate">
+      <text
+         transform="translate(400.869,47.584)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text27"><tspan
+           x="0"
+           y="0"
+           xml:space="preserve"
+           id="tspan27">y            Mapping</tspan></text>
+    </g>
+    <g
+       id="g28"
+       style="isolation:isolate">
+      <text
+         transform="translate(331.242,180.917)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text28"><tspan
+           x="0"
+           y="0"
+           id="tspan28">P</tspan></text>
+    </g>
+    <g
+       id="g29"
+       style="isolation:isolate">
+      <text
+         transform="translate(339.282,180.917)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text29"><tspan
+           x="0"
+           y="0"
+           id="tspan29">r</tspan></text>
+    </g>
+    <g
+       id="g30"
+       style="isolation:isolate">
+      <text
+         transform="translate(344.976,180.917)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text30"><tspan
+           x="0"
+           y="0"
+           id="tspan30">o</tspan></text>
+    </g>
+    <g
+       id="g31"
+       style="isolation:isolate">
+      <text
+         transform="translate(353.068,180.917)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text31"><tspan
+           x="0"
+           y="0"
+           id="tspan31">g</tspan></text>
+    </g>
+    <g
+       id="g32"
+       style="isolation:isolate">
+      <text
+         transform="translate(361.375,180.917)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text32"><tspan
+           x="0"
+           y="0"
+           id="tspan32">r</tspan></text>
+    </g>
+    <g
+       id="g33"
+       style="isolation:isolate">
+      <text
+         transform="translate(366.829,180.917)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text33"><tspan
+           x="0"
+           y="0"
+           id="tspan33">a</tspan></text>
+    </g>
+    <g
+       id="g34"
+       style="isolation:isolate">
+      <text
+         transform="translate(374.842,180.917)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text34"><tspan
+           x="0"
+           y="0"
+           id="tspan34">m</tspan></text>
+    </g>
+    <g
+       id="g35"
+       style="isolation:isolate">
+      <text
+         transform="translate(343.882,196.917)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text35"><tspan
+           x="0"
+           y="0"
+           id="tspan35">c</tspan></text>
+    </g>
+    <g
+       id="g36"
+       style="isolation:isolate">
+      <text
+         transform="translate(350.829,196.917)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text36"><tspan
+           x="0"
+           y="0"
+           id="tspan36">o</tspan></text>
+    </g>
+    <g
+       id="g37"
+       style="isolation:isolate">
+      <text
+         transform="translate(358.922,196.917)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text37"><tspan
+           x="0"
+           y="0"
+           id="tspan37">d</tspan></text>
+    </g>
+    <g
+       id="g38"
+       style="isolation:isolate">
+      <text
+         transform="translate(367.229,196.917)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text38"><tspan
+           x="0"
+           y="0"
+           id="tspan38">e</tspan></text>
+    </g>
+    <g
+       id="g39"
+       style="isolation:isolate">
+      <text
+         transform="translate(576.668,47.584)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text39"><tspan
+           x="0"
+           y="0"
+           id="tspan39">P</tspan></text>
+    </g>
+    <g
+       id="g40"
+       style="isolation:isolate">
+      <text
+         transform="translate(584.708,47.584)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text40"><tspan
+           x="0"
+           y="0"
+           id="tspan40">h</tspan></text>
+    </g>
+    <g
+       id="g41"
+       style="isolation:isolate">
+      <text
+         transform="translate(593.015,47.584)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text41"><tspan
+           x="0"
+           y="0"
+           id="tspan41">y</tspan></text>
+    </g>
+    <g
+       id="g42"
+       style="isolation:isolate">
+      <text
+         transform="translate(600.909,47.584)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text42"><tspan
+           x="0"
+           y="0"
+           id="tspan42">s</tspan></text>
+    </g>
+    <g
+       id="g43"
+       style="isolation:isolate">
+      <text
+         transform="translate(607.855,47.584)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text43"><tspan
+           x="0"
+           y="0"
+           id="tspan43">i</tspan></text>
+    </g>
+    <g
+       id="g44"
+       style="isolation:isolate">
+      <text
+         transform="translate(611.509,47.584)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text44"><tspan
+           x="0"
+           y="0"
+           id="tspan44">c</tspan></text>
+    </g>
+    <g
+       id="g45"
+       style="isolation:isolate">
+      <text
+         transform="translate(618.455,47.584)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text45"><tspan
+           x="0"
+           y="0"
+           id="tspan45">a</tspan></text>
+    </g>
+    <g
+       id="g46"
+       style="isolation:isolate">
+      <text
+         transform="translate(626.469,47.584)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text46"><tspan
+           x="0"
+           y="0"
+           id="tspan46">l</tspan></text>
+    </g>
+    <g
+       id="g47"
+       style="isolation:isolate">
+      <text
+         transform="translate(634.815,47.584)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text47"><tspan
+           x="0"
+           y="0"
+           id="tspan47">m</tspan></text>
+    </g>
+    <g
+       id="g48"
+       style="isolation:isolate">
+      <text
+         transform="translate(647.789,47.584)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text48"><tspan
+           x="0"
+           y="0"
+           id="tspan48">e</tspan></text>
+    </g>
+    <g
+       id="g49"
+       style="isolation:isolate">
+      <text
+         transform="translate(655.735,47.584)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text49"><tspan
+           x="0"
+           y="0"
+           id="tspan49">m</tspan></text>
+    </g>
+    <g
+       id="g50"
+       style="isolation:isolate">
+      <text
+         transform="translate(668.708,47.584)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text50"><tspan
+           x="0"
+           y="0"
+           id="tspan50">o</tspan></text>
+    </g>
+    <g
+       id="g51"
+       style="isolation:isolate">
+      <text
+         transform="translate(676.802,47.584)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text51"><tspan
+           x="0"
+           y="0"
+           id="tspan51">r</tspan></text>
+    </g>
+    <g
+       id="g52"
+       style="isolation:isolate">
+      <text
+         transform="translate(682.495,47.584)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text52"><tspan
+           x="0"
+           y="0"
+           id="tspan52">y</tspan></text>
+    </g>
+  </g>
+  <g
+     id="g14954"
+     transform="translate(0,-18.130532)">
+    <path
+       id="path14956"
+       d="m 590.121,145.826 h 86.791"
+       style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+  </g>
+  <g
+     id="g14962"
+     transform="translate(0,-18.130532)">
+    <path
+       id="path14964"
+       d="m 590.121,188.423 h 86.791"
+       style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+  </g>
+  <g
+     id="g14970"
+     transform="translate(0,-18.130532)">
+    <path
+       id="path14972"
+       d="m 590.121,206.465 v 67.913"
+       style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+  </g>
+  <g
+     id="g14982"
+     transform="translate(0,-18.130532)">
+    <path
+       id="path14984"
+       d="m 597.355,194.55 c -0.513,-3.932 -5.913,-4.312 -6.943,-0.487"
+       style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+  </g>
+  <g
+     id="g14986"
+     transform="translate(0,-18.130532)">
+    <path
+       id="path14988"
+       d="m 583.501,192.944 c 0.503,3.675 5.539,4.336 6.976,0.916"
+       style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+  </g>
+  <g
+     id="g14990"
+     transform="translate(0,-18.130532)">
+    <path
+       id="path14992"
+       d="m 590.121,132.836 v 61.745"
+       style="fill:#ffffff;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+  </g>
+  <g
+     id="g14994"
+     transform="translate(0,-18.130532)">
+    <path
+       id="path14996"
+       d="m 590.121,53.682 v 67"
+       style="fill:#ffffff;stroke:#000000;stroke-width:1.25px" />
+  </g>
+  <g
+     id="g14998"
+     transform="translate(0,-18.130532)">
+    <path
+       id="path15000"
+       d="m 597.355,206.847 c -0.513,-3.932 -5.913,-4.312 -6.943,-0.487"
+       style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+  </g>
+  <g
+     id="g15002"
+     transform="translate(0,-18.130532)">
+    <path
+       id="path15004"
+       d="m 583.501,205.241 c 0.503,3.675 5.539,4.336 6.976,0.916"
+       style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+  </g>
+  <g
+     id="g15006"
+     transform="translate(0,-18.130532)">
+    <path
+       id="path15008"
+       d="m 597.355,133.504 c -0.513,-3.932 -5.913,-4.312 -6.943,-0.487"
+       style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+  </g>
+  <g
+     id="g15010"
+     transform="translate(0,-18.130532)">
+    <path
+       id="path15012"
+       d="m 583.501,131.897 c 0.503,3.675 5.539,4.336 6.976,0.916"
+       style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+  </g>
+  <g
+     id="g15014"
+     transform="translate(0,-18.130532)">
+    <path
+       id="path15016"
+       d="m 597.355,121.154 c -0.513,-3.932 -5.913,-4.312 -6.943,-0.487"
+       style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+  </g>
+  <g
+     id="g15018"
+     transform="translate(0,-18.130532)">
+    <path
+       id="path15020"
+       d="m 583.501,119.547 c 0.503,3.675 5.539,4.336 6.976,0.916"
+       style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+  </g>
+  <g
+     id="g15022"
+     transform="translate(0,-18.130532)">
+    <path
+       id="path15024"
+       d="m 676.787,206.465 v 67.913"
+       style="fill:#ffffff;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+  </g>
+  <g
+     id="g15026"
+     transform="translate(0,-18.130532)">
+    <path
+       id="path15028"
+       d="m 684.022,194.55 c -0.513,-3.932 -5.913,-4.312 -6.943,-0.487"
+       style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+  </g>
+  <g
+     id="g15030"
+     transform="translate(0,-18.130532)">
+    <path
+       id="path15032"
+       d="m 670.168,192.944 c 0.503,3.675 5.539,4.336 6.976,0.916"
+       style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+  </g>
+  <g
+     id="g15034"
+     transform="translate(0,-18.130532)">
+    <path
+       id="path15036"
+       d="m 676.787,132.836 v 61.745"
+       style="fill:#ffffff;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+  </g>
+  <g
+     id="g15038"
+     transform="translate(0,-18.130532)">
+    <path
+       id="path15040"
+       d="m 676.787,53.682 v 67"
+       style="fill:#ffffff;stroke:#000000;stroke-width:1.25px" />
+  </g>
+  <g
+     id="g15042"
+     transform="translate(0,-18.130532)">
+    <path
+       id="path15044"
+       d="m 684.022,206.847 c -0.513,-3.932 -5.913,-4.312 -6.943,-0.487"
+       style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+  </g>
+  <g
+     id="g15046"
+     transform="translate(0,-18.130532)">
+    <path
+       id="path15048"
+       d="m 670.168,205.241 c 0.503,3.675 5.539,4.336 6.976,0.916"
+       style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+  </g>
+  <g
+     id="g15050"
+     transform="translate(0,-18.130532)">
+    <path
+       id="path15052"
+       d="m 684.022,133.504 c -0.513,-3.932 -5.913,-4.312 -6.943,-0.487"
+       style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+  </g>
+  <g
+     id="g15054"
+     transform="translate(0,-18.130532)">
+    <path
+       id="path15056"
+       d="m 670.168,131.897 c 0.503,3.675 5.539,4.336 6.976,0.916"
+       style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+  </g>
+  <g
+     id="g15058"
+     transform="translate(0,-18.130532)">
+    <path
+       id="path15060"
+       d="m 684.022,121.154 c -0.513,-3.932 -5.913,-4.312 -6.943,-0.487"
+       style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+  </g>
+  <g
+     id="g15062"
+     transform="translate(0,-18.130532)">
+    <path
+       id="path15064"
+       d="m 670.168,119.547 c 0.503,3.675 5.539,4.336 6.976,0.916"
+       style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+  </g>
+  <g
+     id="g15066"
+     transform="translate(0,-18.130532)">
+    <path
+       id="path15068"
+       d="M 587.457,256.298 404.432,208.481"
+       style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333;stroke-dasharray:0, 0, 0, 0, 0, 0, 2.667, 5.333" />
+  </g>
+  <g
+     id="g15070"
+     transform="translate(0,-18.130532)">
+    <path
+       id="path15072"
+       d="M 587.457,213.428 404.432,165.611 587.457,188.694"
+       style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333;stroke-dasharray:0, 0, 0, 0, 0, 0, 2.667, 5.333" />
+  </g>
+  <g
+     id="g15074"
+     transform="translate(0,-18.130532)">
+    <path
+       id="path15076"
+       d="M 587.457,145.274 404.432,123.289 587.457,101.304"
+       style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333;stroke-dasharray:0, 0, 0, 0, 0, 0, 2.667, 5.333" />
+  </g>
+  <g
+     id="g15078"
+     transform="translate(0,-18.130532)">
+    <path
+       id="path15080"
+       d="M 404.432,79.869 587.457,58.984"
+       style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333;stroke-dasharray:0, 0, 0, 0, 0, 0, 2.667, 5.333" />
+  </g>
+  <path
+     id="path15082"
+     d="M 198.945,261.88847 H 8.279 V 97.058468 H 198.946 V 261.88747 h -0.001 z"
+     style="fill:#fffddc;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+  <g
+     id="text15086"
+     transform="translate(0,-18.130532)">
+    <g
+       id="g53"
+       style="isolation:isolate">
+      <text
+         transform="translate(19.52,101.251)"
+         style="font-weight:700;font-size:14.667px;font-family:CourierNewPS-BoldMT, 'Courier New';isolation:isolate"
+         id="text53"><tspan
+           x="0"
+           y="0"
+           id="tspan53">M</tspan></text>
+    </g>
+    <g
+       id="g54"
+       style="isolation:isolate">
+      <text
+         transform="translate(28.319,101.251)"
+         style="font-weight:700;font-size:14.667px;font-family:CourierNewPS-BoldMT, 'Courier New';isolation:isolate"
+         id="text54"><tspan
+           x="0"
+           y="0"
+           id="tspan54">y</tspan></text>
+    </g>
+    <g
+       id="g55"
+       style="isolation:isolate">
+      <text
+         transform="translate(37.119,101.251)"
+         style="font-weight:700;font-size:14.667px;font-family:CourierNewPS-BoldMT, 'Courier New';isolation:isolate"
+         id="text55"><tspan
+           x="0"
+           y="0"
+           id="tspan55">P</tspan></text>
+    </g>
+    <g
+       id="g56"
+       style="isolation:isolate">
+      <text
+         transform="translate(45.919,101.251)"
+         style="font-weight:700;font-size:14.667px;font-family:CourierNewPS-BoldMT, 'Courier New';isolation:isolate"
+         id="text56"><tspan
+           x="0"
+           y="0"
+           id="tspan56">r</tspan></text>
+    </g>
+    <g
+       id="g57"
+       style="isolation:isolate">
+      <text
+         transform="translate(54.72,101.251)"
+         style="font-weight:700;font-size:14.667px;font-family:CourierNewPS-BoldMT, 'Courier New';isolation:isolate"
+         id="text57"><tspan
+           x="0"
+           y="0"
+           id="tspan57">o</tspan></text>
+    </g>
+    <g
+       id="g58"
+       style="isolation:isolate">
+      <text
+         transform="translate(63.52,101.251)"
+         style="font-weight:700;font-size:14.667px;font-family:CourierNewPS-BoldMT, 'Courier New';isolation:isolate"
+         id="text58"><tspan
+           x="0"
+           y="0"
+           id="tspan58">g</tspan></text>
+    </g>
+    <g
+       id="g59"
+       style="isolation:isolate">
+      <text
+         transform="translate(72.319,101.251)"
+         style="font-weight:700;font-size:14.667px;font-family:CourierNewPS-BoldMT, 'Courier New';isolation:isolate"
+         id="text59"><tspan
+           x="0"
+           y="0"
+           id="tspan59">r</tspan></text>
+    </g>
+    <g
+       id="g60"
+       style="isolation:isolate">
+      <text
+         transform="translate(81.119,101.251)"
+         style="font-weight:700;font-size:14.667px;font-family:CourierNewPS-BoldMT, 'Courier New';isolation:isolate"
+         id="text60"><tspan
+           x="0"
+           y="0"
+           id="tspan60">a</tspan></text>
+    </g>
+    <g
+       id="g61"
+       style="isolation:isolate">
+      <text
+         transform="translate(89.919,101.251)"
+         style="font-weight:700;font-size:14.667px;font-family:CourierNewPS-BoldMT, 'Courier New';isolation:isolate"
+         id="text61"><tspan
+           x="0"
+           y="0"
+           id="tspan61">m</tspan></text>
+    </g>
+  </g>
+  <g
+     id="text15090"
+     transform="translate(0,-18.130532)">
+    <g
+       id="g62"
+       style="isolation:isolate">
+      <text
+         transform="translate(103.426,101.251)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text62"><tspan
+           x="0"
+           y="0"
+           id="tspan62">(</tspan></text>
+    </g>
+    <g
+       id="g63"
+       style="isolation:isolate">
+      <text
+         transform="translate(109.479,101.251)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text63"><tspan
+           x="0"
+           y="0"
+           id="tspan63">e</tspan></text>
+    </g>
+    <g
+       id="g64"
+       style="isolation:isolate">
+      <text
+         transform="translate(117.413,101.251)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text64"><tspan
+           x="0"
+           y="0"
+           id="tspan64">x</tspan></text>
+    </g>
+    <g
+       id="g65"
+       style="isolation:isolate">
+      <text
+         transform="translate(125.146,101.251)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text65"><tspan
+           x="0"
+           y="0"
+           id="tspan65">e</tspan></text>
+    </g>
+    <g
+       id="g66"
+       style="isolation:isolate">
+      <text
+         transform="translate(133.093,101.251)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text66"><tspan
+           x="0"
+           y="0"
+           id="tspan66">c</tspan></text>
+    </g>
+    <g
+       id="g67"
+       style="isolation:isolate">
+      <text
+         transform="translate(140.04,101.251)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text67"><tspan
+           x="0"
+           y="0"
+           id="tspan67">u</tspan></text>
+    </g>
+    <g
+       id="g68"
+       style="isolation:isolate">
+      <text
+         transform="translate(148.479,101.251)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text68"><tspan
+           x="0"
+           y="0"
+           id="tspan68">t</tspan></text>
+    </g>
+    <g
+       id="g69"
+       style="isolation:isolate">
+      <text
+         transform="translate(153.733,101.251)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text69"><tspan
+           x="0"
+           y="0"
+           id="tspan69">a</tspan></text>
+    </g>
+    <g
+       id="g70"
+       style="isolation:isolate">
+      <text
+         transform="translate(161.746,101.251)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text70"><tspan
+           x="0"
+           y="0"
+           id="tspan70">b</tspan></text>
+    </g>
+    <g
+       id="g71"
+       style="isolation:isolate">
+      <text
+         transform="translate(170.053,101.251)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text71"><tspan
+           x="0"
+           y="0"
+           id="tspan71">l</tspan></text>
+    </g>
+    <g
+       id="g72"
+       style="isolation:isolate">
+      <text
+         transform="translate(173.706,101.251)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text72"><tspan
+           x="0"
+           y="0"
+           id="tspan72">e</tspan></text>
+    </g>
+    <g
+       id="g73"
+       style="isolation:isolate">
+      <text
+         transform="translate(181.653,101.251)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text73"><tspan
+           x="0"
+           y="0"
+           id="tspan73">)</tspan></text>
+    </g>
+  </g>
+  <g
+     id="g15102"
+     transform="translate(0,-18.130532)">
+    <g
+       clip-path="url(#clippath-2)"
+       id="g75">
+      <g
+         id="g74">
+        <g
+           id="g15104">
+          <g
+             id="g15110">
+            <path
+               id="path15112"
+               d="m 315.29,251.017 h 86.791"
+               style="fill:#ffffff;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g
+     id="text15118"
+     transform="translate(0,-18.130532)">
+    <g
+       id="text74"
+       style="isolation:isolate">
+      <text
+         transform="translate(331.249,95.776)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text75"><tspan
+           x="0"
+           y="0"
+           id="tspan75">P</tspan></text>
+    </g>
+    <g
+       id="g76"
+       style="isolation:isolate">
+      <text
+         transform="translate(339.289,95.776)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text76"><tspan
+           x="0"
+           y="0"
+           id="tspan76">r</tspan></text>
+    </g>
+    <g
+       id="g77"
+       style="isolation:isolate">
+      <text
+         transform="translate(344.982,95.776)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text77"><tspan
+           x="0"
+           y="0"
+           id="tspan77">o</tspan></text>
+    </g>
+    <g
+       id="g78"
+       style="isolation:isolate">
+      <text
+         transform="translate(353.075,95.776)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text78"><tspan
+           x="0"
+           y="0"
+           id="tspan78">g</tspan></text>
+    </g>
+    <g
+       id="g79"
+       style="isolation:isolate">
+      <text
+         transform="translate(361.382,95.776)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text79"><tspan
+           x="0"
+           y="0"
+           id="tspan79">r</tspan></text>
+    </g>
+    <g
+       id="g80"
+       style="isolation:isolate">
+      <text
+         transform="translate(366.835,95.776)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text80"><tspan
+           x="0"
+           y="0"
+           id="tspan80">a</tspan></text>
+    </g>
+    <g
+       id="g81"
+       style="isolation:isolate">
+      <text
+         transform="translate(374.849,95.776)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text81"><tspan
+           x="0"
+           y="0"
+           id="tspan81">m</tspan></text>
+    </g>
+    <g
+       id="g82"
+       style="isolation:isolate">
+      <text
+         transform="translate(344.742,111.776)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text82"><tspan
+           x="0"
+           y="0"
+           id="tspan82">d</tspan></text>
+    </g>
+    <g
+       id="g83"
+       style="isolation:isolate">
+      <text
+         transform="translate(353.049,111.776)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text83"><tspan
+           x="0"
+           y="0"
+           id="tspan83">a</tspan></text>
+    </g>
+    <g
+       id="g84"
+       style="isolation:isolate">
+      <text
+         transform="translate(361.062,111.776)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text84"><tspan
+           x="0"
+           y="0"
+           id="tspan84">t</tspan></text>
+    </g>
+    <g
+       id="g85"
+       style="isolation:isolate">
+      <text
+         transform="translate(366.315,111.776)"
+         style="font-size:13.333px;font-family:Verdana, Verdana;isolation:isolate"
+         id="text85"><tspan
+           x="0"
+           y="0"
+           id="tspan85">a</tspan></text>
+    </g>
+  </g>
+  <g
+     id="text15124"
+     transform="translate(0,-18.130532)">
+    <g
+       id="g86"
+       style="isolation:isolate">
+      <text
+         transform="translate(243.959,93.754)"
+         style="font-weight:700;font-size:14.667px;font-family:CourierNewPS-BoldMT, 'Courier New';isolation:isolate"
+         id="text86"><tspan
+           x="0"
+           y="0"
+           id="tspan86">&amp;</tspan></text>
+    </g>
+    <g
+       id="g87"
+       style="isolation:isolate">
+      <text
+         transform="translate(252.76,93.754)"
+         style="font-weight:700;font-size:14.667px;font-family:CourierNewPS-BoldMT, 'Courier New';isolation:isolate"
+         id="text87"><tspan
+           x="0"
+           y="0"
+           id="tspan87">m</tspan></text>
+    </g>
+    <g
+       id="g88"
+       style="isolation:isolate">
+      <text
+         transform="translate(261.56,93.754)"
+         style="font-weight:700;font-size:14.667px;font-family:CourierNewPS-BoldMT, 'Courier New';isolation:isolate"
+         id="text88"><tspan
+           x="0"
+           y="0"
+           id="tspan88">i</tspan></text>
+    </g>
+    <g
+       id="g89"
+       style="isolation:isolate">
+      <text
+         transform="translate(270.359,93.754)"
+         style="font-weight:700;font-size:14.667px;font-family:CourierNewPS-BoldMT, 'Courier New';isolation:isolate"
+         id="text89"><tspan
+           x="0"
+           y="0"
+           id="tspan89">n</tspan></text>
+    </g>
+    <g
+       id="g90"
+       style="isolation:isolate">
+      <text
+         transform="translate(242.053,111.75)"
+         style="font-weight:700;font-size:14.667px;font-family:CourierNewPS-BoldMT, 'Courier New';isolation:isolate"
+         id="text90"><tspan
+           x="0"
+           y="0"
+           id="tspan90">&amp;</tspan></text>
+    </g>
+    <g
+       id="g91"
+       style="isolation:isolate">
+      <text
+         transform="translate(250.853,111.75)"
+         style="font-weight:700;font-size:14.667px;font-family:CourierNewPS-BoldMT, 'Courier New';isolation:isolate"
+         id="text91"><tspan
+           x="0"
+           y="0"
+           id="tspan91">m</tspan></text>
+    </g>
+    <g
+       id="g92"
+       style="isolation:isolate">
+      <text
+         transform="translate(259.653,111.75)"
+         style="font-weight:700;font-size:14.667px;font-family:CourierNewPS-BoldMT, 'Courier New';isolation:isolate"
+         id="text92"><tspan
+           x="0"
+           y="0"
+           id="tspan92">a</tspan></text>
+    </g>
+    <g
+       id="g93"
+       style="isolation:isolate">
+      <text
+         transform="translate(268.453,111.75)"
+         style="font-weight:700;font-size:14.667px;font-family:CourierNewPS-BoldMT, 'Courier New';isolation:isolate"
+         id="text93"><tspan
+           x="0"
+           y="0"
+           id="tspan93">x</tspan></text>
+    </g>
+  </g>
+  <g
+     id="g15126"
+     transform="translate(0,-18.130532)">
+    <g
+       clip-path="url(#clippath-3)"
+       id="g95">
+      <g
+         id="g94">
+        <g
+           id="g15128">
+          <g
+             id="g15134">
+            <path
+               id="path15136"
+               d="m 282.978,88.465 h 18.667"
+               style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+          </g>
+          <g
+             id="g15138">
+            <path
+               id="path15140"
+               d="m 311.058,88.465 -13.267,5.419 3.149,-5.419 -3.149,-5.419 z"
+               style="stroke-width:0px" />
+          </g>
+          <g
+             id="g15142">
+            <path
+               id="path15144"
+               d="m 282.978,106.465 h 18.667"
+               style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+          </g>
+          <g
+             id="g15146">
+            <path
+               id="path15148"
+               d="m 311.058,106.465 -13.265,5.419 3.148,-5.419 -3.148,-5.419 z"
+               style="stroke-width:0px" />
+          </g>
+          <g
+             id="g15150">
+            <path
+               id="path15152"
+               d="m 590.121,286.92 v 53.388"
+               style="fill:#ffffff;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+          </g>
+          <g
+             id="g15154">
+            <path
+               id="path15156"
+               d="m 597.355,274.919 c -0.513,-3.932 -5.913,-4.312 -6.943,-0.487"
+               style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+          </g>
+          <g
+             id="g15158">
+            <path
+               id="path15160"
+               d="m 583.501,273.312 c 0.503,3.675 5.539,4.336 6.976,0.916"
+               style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+          </g>
+          <g
+             id="g15162">
+            <path
+               id="path15164"
+               d="m 597.355,287.216 c -0.513,-3.932 -5.913,-4.312 -6.943,-0.487"
+               style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+          </g>
+          <g
+             id="g15166">
+            <path
+               id="path15168"
+               d="m 583.501,285.609 c 0.503,3.675 5.539,4.336 6.976,0.916"
+               style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+          </g>
+          <g
+             id="g15170">
+            <path
+               id="path15172"
+               d="m 676.787,286.92 v 53.388"
+               style="fill:#ffffff;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+          </g>
+          <g
+             id="g15174">
+            <path
+               id="path15176"
+               d="m 684.022,274.919 c -0.513,-3.932 -5.913,-4.312 -6.943,-0.487"
+               style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+          </g>
+          <g
+             id="g15178">
+            <path
+               id="path15180"
+               d="m 670.168,273.312 c 0.503,3.675 5.539,4.336 6.976,0.916"
+               style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+          </g>
+          <g
+             id="g15182">
+            <path
+               id="path15184"
+               d="m 684.022,287.216 c -0.513,-3.932 -5.913,-4.312 -6.943,-0.487"
+               style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+          </g>
+          <g
+             id="g15186">
+            <path
+               id="path15188"
+               d="m 670.168,285.609 c 0.503,3.675 5.539,4.336 6.976,0.916"
+               style="fill:none;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+          </g>
+          <g
+             id="g15190">
+            <path
+               id="path15192"
+               d="m 590.121,293.936 h 86.791"
+               style="fill:#ffffff;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+          </g>
+          <g
+             id="g15194">
+            <path
+               id="path15196"
+               d="m 590.121,336.395 h 86.791"
+               style="fill:#ffffff;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333" />
+          </g>
+          <g
+             id="g15198">
+            <path
+               id="path15200"
+               d="m 406.811,207.16 179.503,86.319"
+               style="fill:#ffffff;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333;stroke-dasharray:0, 0, 0, 0, 0, 0, 2.667, 5.333" />
+          </g>
+          <g
+             id="g15202">
+            <path
+               id="path15204"
+               d="m 406.787,250.319 179.527,85.829"
+               style="fill:#ffffff;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333;stroke-dasharray:0, 0, 0, 0, 0, 0, 2.667, 5.333" />
+          </g>
+          <g
+             id="g15206">
+            <path
+               id="path15208"
+               d="m 197.689,114.841 113.369,6.691"
+               style="fill:#fffddc;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333;stroke-dasharray:0, 0, 0, 0, 0, 0, 2.667, 5.333" />
+          </g>
+          <g
+             id="g15210">
+            <path
+               id="path15212"
+               d="M 198.945,280.019 311.618,251.315"
+               style="fill:#fffddc;stroke:#000000;stroke-width:1.333px;stroke-miterlimit:5.333;stroke-dasharray:0, 0, 0, 0, 0, 0, 2.667, 5.333" />
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g
+     id="text1"
+     transform="translate(0,-18.130532)">
+    <g
+       id="g96"
+       style="isolation:isolate">
+      <text
+         transform="translate(22,139.682)"
+         style="font-weight:700;font-size:14px;font-family:CourierNewPS-BoldMT, 'Courier New';isolation:isolate;fill:#1a1a1a"
+         id="text95"><tspan
+           x="0"
+           y="0"
+           id="tspan95">int min = 10;</tspan></text>
+    </g>
+    <g
+       id="text94"
+       style="isolation:isolate">
+      <text
+         transform="translate(22,156.652)"
+         style="font-weight:700;font-size:14px;font-family:CourierNewPS-BoldMT, 'Courier New';isolation:isolate;fill:#1a1a1a"
+         id="text96"><tspan
+           x="0"
+           y="0"
+           id="tspan96">int max = 50;</tspan></text>
+    </g>
+    <g
+       id="g97"
+       style="isolation:isolate">
+      <text
+         transform="translate(22,190.591)"
+         style="font-weight:700;font-size:14px;font-family:CourierNewPS-BoldMT, 'Courier New';isolation:isolate;fill:#1a1a1a"
+         id="text97"><tspan
+           x="0"
+           y="0"
+           id="tspan97">int main() {</tspan></text>
+    </g>
+    <g
+       id="g98"
+       style="isolation:isolate">
+      <text
+         transform="translate(22,241.5)"
+         style="font-weight:700;font-size:14px;font-family:CourierNewPS-BoldMT, 'Courier New';isolation:isolate;fill:#1a1a1a"
+         id="text98"><tspan
+           x="0"
+           y="0"
+           id="tspan98">}</tspan></text>
+    </g>
+  </g>
+</svg>
