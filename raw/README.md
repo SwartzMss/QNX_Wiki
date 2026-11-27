@@ -16,3 +16,5 @@
 | `qnx-sdp-8.0/release-notes-8.0.6.html` | QNX SDP 8.0.6 Release Notes | 1 | — | https://www.qnx.com/developers/docs/relnotes8.0/com.qnx.doc.release_notes/topic/8.0.6_prod_release_notes/8.0.6_rn.html |
 
 正文和正文引用的图示均已保存，共 730 个 HTML 页面、124 张图示。HTML 保持官网原文，图示放在各指南的 `images/` 子目录。这些是本地阅读副本，不提交到 Git。具体技术结论应标明适用的 SDP 版本，并引用官方文档中的具体页面。官方文档可能继续更新，快照内容以抓取日期为准。
+
+`manifest.tsv` 列出全部 854 个本地文件的路径、官方 URL、字节数和 SHA-256。清单可以提交到仓库，用于核对本地快照；官方原文仍只保存在本地。
